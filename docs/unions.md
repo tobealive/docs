@@ -7,7 +7,7 @@ The size of a union is equal to the size of the largest field.
 
 To understand what a union is, consider an example:
 
-```v
+```v play
 union IntOrString {
 mut:
 	i int
@@ -105,7 +105,7 @@ as an integer and returns the result.
 
 Just like structs, unions support embedding.
 
-```v
+```v play
 struct Rgba32_Component {
 	r byte
 	g byte
