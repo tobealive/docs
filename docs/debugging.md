@@ -57,9 +57,9 @@ use `v help`, `v help build` and `v help build-c`.
 Currently, there is no debugging support for binaries, created by the
 native backend (flag: `-b native`).
 
-## Javascript Backend
+## JavaScript Backend
 
-To debug the generated Javascript output you can activate source maps:
+To debug the generated JavaScript output you can activate source maps:
 `v -b js -sourcemap hello.v -o hello.js`
 
 For all supported options check the latest help:
