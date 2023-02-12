@@ -131,7 +131,7 @@ clr2 := Rgba32{
 sz := sizeof(Rgba32)
 unsafe {
 	println('Size: ${sz}B,clr1.b: ${clr1.b},clr2.b: ${clr2.b}')
-    // Size: 4B, clr1.b: 136, clr2.b: 0
+	// Size: 4B, clr1.b: 136, clr2.b: 0
 }
 ```
 
