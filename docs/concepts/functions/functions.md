@@ -182,3 +182,37 @@ fn main() {
 V currently does not guarantee, that it will print 100, 200, 300 in that order.
 The only guarantee is that 600 (from the body of `f`), will be printed after all of them.
 That *may* change in V 1.0.
+
+## Generic functions
+
+Functions can have generic parameters, which are specified using square brackets after the function name:
+
+```v
+fn each[T](a []T, cb fn (T)) { /*...*/ }
+```
+
+See [Generics](generics.md) for more information.
+
+## Inline functions
+
+Functions can be declared as inline using the `inline` attribute:
+
+```v
+[inline]
+fn add(x int, y int) int {
+    return x + y
+}
+```
+
+This will cause the function to be inlined at the call site.
+This can improve performance, but also increase the size of the binary.
+
+To prevent the inlining of a function, use the `noinline` attribute:
+
+```v
+[noinline]
+fn add(x int, y int) int {
+    return x + y
+}
+```
+
