@@ -20,7 +20,7 @@ Function parameters are written in the Go style, first comes the name, then the 
 
 ```v
 fn greet(name string, age int) {
-	println('Hello, $name! You are $age years old.')
+	println('Hello, ${name}! You are ${age} years old.')
 }
 ```
 
@@ -35,7 +35,7 @@ If the function does not return a value, then the return type is omitted:
 
 ```v
 fn greet(name string) {
-	println('Hello, $name!')
+	println('Hello, ${name}!')
 }
 ```
 
