@@ -1,3 +1,4 @@
+
 ## Introduction
 
 V is a statically typed compiled programming language designed for building maintainable software.
@@ -792,7 +793,7 @@ An array can be of these types:
 
 | Types        | Example Definition                   |
 |--------------|--------------------------------------|
-| Number       | `[]int,[]i64`                        |
+| Number       | `[]int, []i64`                       |
 | String       | `[]string`                           |
 | Rune         | `[]rune`                             |
 | Boolean      | `[]bool`                             |

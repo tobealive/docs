@@ -14,11 +14,15 @@ fn main() {
 	parts := docs
 		.split('\n## ')
 		.map(it.trim(' '))
+		.filter(it.len > 0)
 
 	for i, part in parts {
-		title := part.split_into_lines().first().trim(' ')
-		filename := title.replace_each([' ', '-', '`', '', '/', '', '\\', '', ':', '']).to_lower()
+		title := part.trim(' ').split_into_lines().first().trim(' ')
+		filename := title.replace_each([' ', '-', '`', '', '/', '', '\\', '', ':', '', '&', '']).to_lower()
 
-		os.write_file('docs/${filename}.md', '## ' + part)!
+		fixed := ('## ' + part)
+			.replace_each(['## ', '# ', '### ', '## ', '#### ', '### ', '##### ', '#### ', '###### ', '##### '])
+
+		os.write_file('docs/${filename}.md', fixed)!
 	}
 }
