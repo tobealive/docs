@@ -1,12 +1,11 @@
 ## Table of Contents
 
-* [Hello world](getting-started/hello-world.md)
 * [Running a project folder](./running-a-project-folder-with-several-files.md)
 * [Comments](./comments.md)
 * [Functions](./functions.md)
 * [Symbol visibility](./symbol-visibility.md)
 * [Variables](./variables.md)
-* [V types](./types.md)
+* [Types](./types.md)
 * [Module imports](./module-imports.md)
 * [Statements & expressions](./statements--expressions.md)
 * [Structs](./structs.md)
