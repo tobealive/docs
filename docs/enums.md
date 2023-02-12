@@ -51,8 +51,8 @@ enum Color {
 }
 ```
 
-If you do not specify a value for the first option, then it will be 0.
-If you do not specify a value for the next option, then it will be equal to the value of the previous option plus 1.
+If you do not specify a value for the first field, then it will be 0.
+If you do not specify a value for the next field, then it will be equal to the value of the previous field plus 1.
 
 ```v
 enum Color {
@@ -74,7 +74,8 @@ enum Color {
 
 mut color := Color.red
 color = .green
-// V knows that `color` is a `Color`. No need to use `color = Color.green` here.
+//      ^^^^^^
+//      V knows that `color` is a `Color`. No need to use `color = Color.green` here.
 
 println(color) // green
 ```
