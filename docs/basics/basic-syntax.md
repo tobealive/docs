@@ -352,5 +352,3 @@ This is a multiline comment.
    /* It can be nested. */
 */
 ```
-
-See [Comments](/docs/xxx/comments) for more information.

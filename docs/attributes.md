@@ -5,32 +5,6 @@ V has several attributes that modify the behavior of functions and structs.
 An attribute is a compiler instruction specified inside `[]` right before a
 function/struct/enum declaration and applies only to the following declaration.
 
-```v
-// [flag] enables Enum types to be used as bitfields
-
-[flag]
-enum BitField {
-	read
-	write
-	other
-}
-
-fn main() {
-	assert 1 == int(BitField.read)
-	assert 2 == int(BitField.write)
-	mut bf := BitField.read
-	assert bf.has(.read | .other) // test if *at least one* of the flags is set
-	assert !bf.all(.read | .other) // test if *all* of the flags is set
-	bf.set(.write | .other)
-	assert bf.has(.read | .write | .other)
-	assert bf.all(.read | .write | .other)
-	bf.toggle(.other)
-	assert bf == BitField.read | .write
-	assert bf.all(.read | .write)
-	assert !bf.has(.other)
-}
-```
-
 Struct field deprecations:
 
 ```v oksyntax
