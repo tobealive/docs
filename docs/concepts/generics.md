@@ -67,16 +67,16 @@ This structure can be used with any data type; when creating an object, the para
 types must be specified after the structure name and before the curly brace:
 
 ```v
-Option[int]{value: 10}
-	Option[string]{value: 'hello'}
+op1 := Option[int]{value: 10}
+op2 := Option[string]{value: 'hello'}
 ```
 
 Unlike functions, when creating a generic structure object, the parameter types must always
 be specified explicitly:
 
 ```v
-Option[int]{value: 10}
-	Option{value: 'hello'} // error: generic struct init must specify type parameter, e.g. Foo[int]
+op1 := Option[int]{value: 10}
+op2 := Option{value: 'hello'} // error: generic struct init must specify type parameter, e.g. Foo[int]
 ```
 
 ### Methods of generic structs
@@ -223,7 +223,7 @@ mut arr := Array{
 each[int](mut arr)
 ```
 
-Note that in this case the compiler will not be able to calculate the type when calling `each()` 
+Note that in this case the compiler will not be able to calculate the type when calling `each()`
 and must be specified explicitly.
 
 At the moment, methods declared in the interface cannot have their own parameter types:
