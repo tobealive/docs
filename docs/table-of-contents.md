@@ -12,7 +12,7 @@
 * [Unions](concepts/unions.md)
 * [Functions 2](./functions-2.md)
 * [References](./references.md)
-* [Constants](./constants.md)
+* [Constants](concepts/constants.md)
 * [Builtin functions](./builtin-functions.md)
 * [Modules](./modules.md)
 * [Type Declarations](./type-declarations.md)

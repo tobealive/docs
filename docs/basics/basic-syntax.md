@@ -55,7 +55,7 @@ fn say_hello() {
 }
 ```
 
-See [Functions](/docs/xxx/functions) for more information.
+See [Functions](../concepts/functions) for more information.
 
 ## Variables
 
@@ -79,7 +79,7 @@ mut name := 'V'
 name = 'V Language'
 ```
 
-See [Variables](/docs/xxx/variables) for more information.
+See [Variables](../concepts/variables) for more information.
 
 ## Constants
 
@@ -107,7 +107,7 @@ fn main() {
 }
 ```
 
-See [Constants](/docs/xxx/constants) for more information.
+See [Constants](../concepts/constants) for more information.
 
 ## Structs
 
@@ -188,7 +188,7 @@ fn main() {
 }
 ```
 
-See [Structs](/docs/xxx/structs) for more information.
+See [Structs](../concepts/structs) for more information.
 
 ## Interfaces
 
@@ -212,7 +212,7 @@ fn greet(g Greeter) {
 }
 ```
 
-See [Interfaces](/docs/xxx/interfaces) for more information.
+See [Interfaces](../concepts/interfaces) for more information.
 
 ## String templates
 
@@ -224,7 +224,7 @@ age := 4
 println('V is ${age} years old!')
 ```
 
-See [String templates](/docs/xxx/string-templates) for more information.
+See [String templates](../concepts/string-templates) for more information.
 
 ## Conditional expressions
 
@@ -280,7 +280,7 @@ for index, item in items {
 }
 ```
 
-See [For loop](/docs/xxx/for-loop) for more information.
+See [For loop](../concepts/for-loop) for more information.
 
 ## Match expression
 
@@ -322,8 +322,8 @@ match status {
 }
 ```
 
-See [Match expression](/docs/xxx/match-expression) for more information.
-For more information about Sum types see [Sum types](/docs/xxx/sum-types).
+See [Match expression](../concepts/match-expression) for more information.
+For more information about Sum types see [Sum types](../concepts/sum-types).
 
 ## Error handling
 
@@ -341,7 +341,7 @@ fn main() {
 }
 ```
 
-See [Error handling](/docs/xxx/error-handling) for more information.
+See [Error handling](../concepts/error-handling) for more information.
 
 ## Comments
 
