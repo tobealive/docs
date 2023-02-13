@@ -191,7 +191,7 @@ Functions can have generic parameters, which are specified using square brackets
 fn each[T](a []T, cb fn (T)) { /*...*/ }
 ```
 
-See [Generics](generics.md) for more information.
+See [Generics](../generics.md) for more information.
 
 ## Inline functions
 
