@@ -1,4 +1,5 @@
 {
+  "title": "Getting Started",
   "order": [
     "installation.md",
     "hello-world.md"

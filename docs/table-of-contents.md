@@ -22,7 +22,7 @@
 * [Memory management](./memory-management.md)
 * [ORM](./orm.md)
 * [Writing documentation](./writing-documentation.md)
-* [Tools](./tools.md)
+* [Tools](tools/tools.md)
 * [Package Management](./package-management.md)
 * Advanced Topics
     * [Attributes](./attributes.md)

@@ -1,5 +1,7 @@
 # Tools
 
+V has built-in tools to simplify development.
+
 ## v fmt
 
 You don't need to worry about formatting your code or setting style guidelines.
@@ -30,21 +32,25 @@ before using the shader in your code.
 
 ## Profiling
 
-V has good support for profiling your programs: `v -profile profile.txt run file.v`
-That will produce a profile.txt file, which you can then analyze.
+V has initial support for profiling your programs: `v -profile profile.txt run file.v`
+That will produce a **profile.txt** file, which you can then analyze.
 
 The generated profile.txt file will have lines with 4 columns:
-a) how many times a function was called
-b) how much time in total a function took (in ms)
-c) how much time on average, a call to a function took (in ns)
-d) the name of the V function
+
+1. how many times a function was called
+2. how much time in total a function took (in ms)
+3. how much time on average, a call to a function took (in ns)
+4. the name of the V function
 
 You can sort on column 3 (average time per function) using:
-`sort -n -k3 profile.txt|tail`
+
+```shell
+sort -n -k3 profile.txt | tail
+```
 
 You can also use stopwatches to measure just portions of your code explicitly:
 
-```v
+```v play
 import time
 
 fn main() {
