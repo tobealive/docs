@@ -179,3 +179,66 @@ fn main() {
 ```
 
 If the value stored in the sum type is not of the specified type, then the program will panic.
+Because of this, the `as` operator should be used with caution.
+Smart casts can be used as a replacement.
+
+## Smart casts
+
+The V compiler can automatically type cast inside `if` and `match` blocks:
+
+```v play
+type Width = int | string
+
+fn main() {
+    width := Width(10)
+    if width is int {
+        println(width.hex2()) // 0xa
+    }
+}
+```
+
+In this example, `width` is of type `int` within the body of the `if` block.
+The compiler understands that inside the `if` block, the `width` variable is of type `int`, 
+since the condition of the `if` block checks that `width is int`.
+
+If `width` is a mutable identifier, it would be unsafe if the compiler smart casts it without a warning.
+That's why you have to declare a `mut` before the `is` expression:
+
+```v play
+type Width = int | string
+
+fn main() {
+    mut width := Width(10)
+    if mut width is int {
+        println(width.hex2()) // 0xa
+    }
+Ъ
+```
+
+Otherwise `width` would keep its original type.
+
+This works for both, simple variables and complex expressions like `user.name`:
+
+```v play
+type Width = int | string
+
+struct Component {
+    width Width
+}
+
+fn main() {
+    component := Component{
+        width: Width(10)
+    }
+    match component.width {
+        int {
+            // smartcasted to int
+            println(component.width.hex2()) // 0xa
+        }
+        string {
+            // smartcasted to string
+            println(component.width.len)
+        }
+    }
+}
+```
