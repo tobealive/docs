@@ -8,7 +8,7 @@ Since V does not support overloading functions by intention there are wrapper fu
 C headers named `atomic.h` that are part of the V compiler infrastructure.
 
 There are dedicated wrappers for all unsigned integer types and for pointers.
-(`byte` is not fully supported on Windows) &ndash; the function names include the type name
+(`byte` is not fully supported on Windows) – the function names include the type name
 as suffix. e.g. `C.atomic_load_ptr()` or `C.atomic_fetch_add_u64()`.
 
 To use these functions the C header for the used OS has to be included and the functions
@@ -85,4 +85,4 @@ thread finish.
 
 It is not predictable how many replacements occur in which thread, but the sum will always
 be 10000000. (With the non-atomic commands from the comments the value will be higher or the program
-will hang &ndash; dependent on the compiler optimization used.)
+will hang – dependent on the compiler optimization used.)

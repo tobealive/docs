@@ -33,7 +33,7 @@
     * [Limited operator overloading](concepts/functions/limited-operator-overloading.md)
     * [Performance tuning](./performance-tuning.md)
     * [Atomics](./atomics.md)
-    * [Global Variables](./global-variables.md)
+    * [Global Variables](concepts/global-variables.md)
     * [Cross compilation](./cross-compilation.md)
     * [Debugging](./debugging.md)
 * [V and C](./v-and-c.md)

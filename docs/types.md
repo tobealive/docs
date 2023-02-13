@@ -642,7 +642,7 @@ There are further built-in methods for arrays:
 * `a.trim(new_len)` truncates the length (if `new_length < a.len`, otherwise does nothing)
 * `a.clear()` empties the array without changing `cap` (equivalent to `a.trim(0)`)
 * `a.delete_many(start, size)` removes `size` consecutive elements from index `start`
-  &ndash; triggers reallocation
+  – triggers reallocation
 * `a.delete(index)` equivalent to `a.delete_many(index, 1)`
 * `a.delete_last()` removes the last element
 * `a.first()` equivalent to `a[0]`

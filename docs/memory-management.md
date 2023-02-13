@@ -90,7 +90,7 @@ Like with most other programming languages there are two locations where data ca
 be stored:
 
 * The *stack* allows fast allocations with almost zero administrative overhead. The
-  stack grows and shrinks with the function call depth &ndash; so every called
+  stack grows and shrinks with the function call depth – so every called
   function has its stack segment that remains valid until the function returns.
   No freeing is necessary, however, this also means that a reference to a stack
   object becomes invalid on function return. Furthermore, stack space is
@@ -179,7 +179,7 @@ on the stack.
 
 In the last example the V compiler could put `q` and `w` on the stack
 because it assumed that in the call `q.f(&w)` these references were only
-used for reading and modifying the referred values &ndash; and not to pass the
+used for reading and modifying the referred values – and not to pass the
 references themselves somewhere else. This can be seen in a way that the
 references to `q` and `w` are only *borrowed* to `f()`.
 
@@ -218,7 +218,7 @@ fn (mut r RefStruct) f(s &MyStruct) {
 }
 ```
 
-Here `f()` looks quite innocent but is doing nasty things &ndash; it inserts a
+Here `f()` looks quite innocent but is doing nasty things – it inserts a
 reference to `s` into `r`. The problem with this is that `s` lives only as long
 as `g()` is running but `r` is used in `main()` after that. For this reason
 the compiler would complain about the assignment in `f()` because `s` *"might
@@ -244,7 +244,7 @@ fn (mut a MyStruct) f() &MyStruct {
 Here `f()` is passed a reference `a` as receiver that is passed back to the caller and returned
 as result at the same time. The intention behind such a declaration is method chaining like
 `y = x.f().g()`. However, the problem with this approach is that a second reference
-to `a` is created &ndash; so it is not only borrowed and `MyStruct` has to be
+to `a` is created – so it is not only borrowed and `MyStruct` has to be
 declared as `[heap]`.
 
 In V the better approach is:
@@ -272,7 +272,7 @@ fn main() {
 }
 ```
 
-This way the `[heap]` attribute can be avoided &ndash; resulting in better performance.
+This way the `[heap]` attribute can be avoided – resulting in better performance.
 
 However, stack space is very limited as mentioned above. For this reason the `[heap]`
 attribute might be suitable for very large structures even if not required by use cases

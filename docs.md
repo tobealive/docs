@@ -933,7 +933,7 @@ There are further built-in methods for arrays:
 * `a.trim(new_len)` truncates the length (if `new_length < a.len`, otherwise does nothing)
 * `a.clear()` empties the array without changing `cap` (equivalent to `a.trim(0)`)
 * `a.delete_many(start, size)` removes `size` consecutive elements from index `start`
-  &ndash; triggers reallocation
+  – triggers reallocation
 * `a.delete(index)` equivalent to `a.delete_many(index, 1)`
 * `a.delete_last()` removes the last element
 * `a.first()` equivalent to `a[0]`
@@ -4394,7 +4394,7 @@ Like with most other programming languages there are two locations where data ca
 be stored:
 
 * The *stack* allows fast allocations with almost zero administrative overhead. The
-  stack grows and shrinks with the function call depth &ndash; so every called
+  stack grows and shrinks with the function call depth – so every called
   function has its stack segment that remains valid until the function returns.
   No freeing is necessary, however, this also means that a reference to a stack
   object becomes invalid on function return. Furthermore, stack space is
@@ -4483,7 +4483,7 @@ on the stack.
 
 In the last example the V compiler could put `q` and `w` on the stack
 because it assumed that in the call `q.f(&w)` these references were only
-used for reading and modifying the referred values &ndash; and not to pass the
+used for reading and modifying the referred values – and not to pass the
 references themselves somewhere else. This can be seen in a way that the
 references to `q` and `w` are only *borrowed* to `f()`.
 
@@ -4522,7 +4522,7 @@ fn (mut r RefStruct) f(s &MyStruct) {
 }
 ```
 
-Here `f()` looks quite innocent but is doing nasty things &ndash; it inserts a
+Here `f()` looks quite innocent but is doing nasty things – it inserts a
 reference to `s` into `r`. The problem with this is that `s` lives only as long
 as `g()` is running but `r` is used in `main()` after that. For this reason
 the compiler would complain about the assignment in `f()` because `s` *"might
@@ -4548,7 +4548,7 @@ fn (mut a MyStruct) f() &MyStruct {
 Here `f()` is passed a reference `a` as receiver that is passed back to the caller and returned
 as result at the same time. The intention behind such a declaration is method chaining like
 `y = x.f().g()`. However, the problem with this approach is that a second reference
-to `a` is created &ndash; so it is not only borrowed and `MyStruct` has to be
+to `a` is created – so it is not only borrowed and `MyStruct` has to be
 declared as `[heap]`.
 
 In V the better approach is:
@@ -4576,7 +4576,7 @@ fn main() {
 }
 ```
 
-This way the `[heap]` attribute can be avoided &ndash; resulting in better performance.
+This way the `[heap]` attribute can be avoided – resulting in better performance.
 
 However, stack space is very limited as mentioned above. For this reason the `[heap]`
 attribute might be suitable for very large structures even if not required by use cases
@@ -5689,7 +5689,7 @@ Since V does not support overloading functions by intention there are wrapper fu
 C headers named `atomic.h` that are part of the V compiler infrastructure.
 
 There are dedicated wrappers for all unsigned integer types and for pointers.
-(`byte` is not fully supported on Windows) &ndash; the function names include the type name
+(`byte` is not fully supported on Windows) – the function names include the type name
 as suffix. e.g. `C.atomic_load_ptr()` or `C.atomic_fetch_add_u64()`.
 
 To use these functions the C header for the used OS has to be included and the functions
@@ -5766,20 +5766,20 @@ thread finish.
 
 It is not predictable how many replacements occur in which thread, but the sum will always
 be 10000000. (With the non-atomic commands from the comments the value will be higher or the program
-will hang &ndash; dependent on the compiler optimization used.)
+will hang – dependent on the compiler optimization used.)
 
 ## Global Variables
 
 By default, V does not allow global variables. However, in low level applications they have their
 place so their usage can be enabled with the compiler flag `-enable-globals`.
 Declarations of global variables must be surrounded with a `__global ( ... )`
-specification &ndash; as in the example [above](#atomics).
+specification – as in the example [above](#atomics).
 
 An initializer for global variables must be explicitly converted to the
 desired target type. If no initializer is given a default initialization is done.
 Some objects like semaphores and mutexes require an explicit initialization *in place*, i.e.
 not with a value returned from a function call but with a method call by reference.
-A separate `init()` function can be used for this purpose &ndash; it will be called before `main()`:
+A separate `init()` function can be used for this purpose – it will be called before `main()`:
 
 ```v globals
 import sync
@@ -5806,7 +5806,7 @@ to race conditions. There are several approaches to deal with these:
 - handle primitive data types as "atomics" using special C-functions (see [above](#atomics)).
 - use explicit synchronization primitives like mutexes to control access. The compiler
   cannot really help in this case, so you have to know what you are doing.
-- don't care &ndash; this approach is possible but makes only sense if the exact values
+- don't care – this approach is possible but makes only sense if the exact values
   of global variables do not really matter. An example can be found in the `rand` module
   where global variables are used to generate (non-cryptographic) pseudo random numbers.
   In this case data races lead to random numbers in different threads becoming somewhat
