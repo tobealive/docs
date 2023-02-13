@@ -151,3 +151,31 @@ fn main() {
 	println(sum(tree)) // 0.2 + 0.3 + 0.4 + 0.5 = 1.4
 }
 ```
+
+## `is` and `as` operators
+
+The `is` operator checks if the value stored in the sum type is of the specified type:
+
+```v play
+type Width = int | string
+
+fn main() {
+    width := Width(10)
+    println(width is int) // true
+    println(width is string) // false
+}
+```
+
+The `as` operator casts the value stored in the sum type to the specified type:
+
+```v play
+type Width = int | string
+
+fn main() {
+    width := Width(10)
+    int_width := width as int
+    println(int_width.hex2()) // 0xa
+}
+```
+
+If the value stored in the sum type is not of the specified type, then the program will panic.
