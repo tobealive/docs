@@ -154,7 +154,7 @@ A struct can also be generic:
 ```v play
 interface Iterator[T] {
 	has_next() bool
-	mut:
+mut:
 	next() T
 }
 
