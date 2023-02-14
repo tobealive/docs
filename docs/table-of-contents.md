@@ -16,7 +16,7 @@
 * [Builtin functions](concepts/builtin-functions.md)
 * [Modules](concepts/modules/modules.md)
 * [Type Declarations](./type-declarations.md)
-* [Concurrency](./concurrency.md)
+* [Concurrency](concepts/concurrency.md)
 * [JSON](./json.md)
 * [Testing](concepts/testing.md)
 * [Memory management](./memory-management.md)

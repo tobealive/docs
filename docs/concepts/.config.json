@@ -79,6 +79,10 @@
       "url": "printing-custom-types.md"
     },
     {
+      "title": "Concurrency",
+      "url": "concurrency.md"
+    },
+    {
       "title": "Debugging",
       "url": "debugging.md"
     },

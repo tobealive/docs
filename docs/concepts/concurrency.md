@@ -24,12 +24,12 @@ fn main() {
 }
 ```
 
-There's also a `go` keyword. Right now `go foo()` will be automatically renamed via vfmt
-to `spawn foo()`, and there will be a way to launch a coroutine with `go` (a lightweight
-thread managed by the runtime).
+There's also a `go` keyword.
+Right now `go foo()` will be automatically renamed via vfmt to `spawn foo()`, and
+there will be a way to launch a coroutine with `go` (a lightweight thread managed by the runtime).
 
-Sometimes it is necessary to wait until a parallel thread has finished. This can
-be done by assigning a *handle* to the started thread and calling the `wait()` method
+Sometimes it is necessary to wait until a parallel thread has finished.
+This can be done by assigning a *handle* to the started thread and calling the `wait()` method
 to this handle later:
 
 ```v
@@ -49,8 +49,8 @@ fn main() {
 ```
 
 This approach can also be used to get a return value from a function that is run in a
-parallel thread. There is no need to modify the function itself to be able to call it
-concurrently.
+parallel thread.
+There is no need to modify the function itself to be able to call it concurrently.
 
 ```v
 import math { sqrt }
@@ -122,8 +122,9 @@ fn main() {
 
 ## Channels
 
-Channels are the preferred way to communicate between threads. V's channels work basically like
-those in Go. You can push objects into a channel on one end and pop objects from the other end.
+Channels are the preferred way to communicate between threads.
+V's channels work basically like those in Go.
+You can push objects into a channel on one end and pop objects from the other end.
 Channels can be buffered or unbuffered, and it is possible to `select` from multiple channels.
 
 ### Syntax and Usage
@@ -136,9 +137,9 @@ ch := chan int{} // unbuffered – "synchronous"
 ch2 := chan f64{cap: 100} // buffer length 100
 ```
 
-Channels do not have to be declared as `mut`. The buffer length is not part of the type but
-a field of the individual channel object. Channels can be passed to threads like normal
-variables:
+Channels do not have to be declared as `mut`.
+The buffer length is not part of the type but a field of the individual channel object.
+Channels can be passed to threads like normal variables:
 
 ```v
 fn f(ch chan int) {
@@ -152,8 +153,8 @@ fn main() {
 }
 ```
 
-Objects can be pushed to channels using the arrow operator. The same operator can be used to
-pop objects from the other end:
+Objects can be pushed to channels using the arrow operator.
+The same operator can be used to pop objects from the other end:
 
 ```v
 // make buffered channels so pushing does not block (if there is room in the buffer)
@@ -168,11 +169,12 @@ m := <-ch // pop creating new variable
 y = <-ch2 // pop into existing variable
 ```
 
-A channel can be closed to indicate that no further objects can be pushed. Any attempt
-to do so will then result in a runtime panic (except `select` and
-`try_push()` – see below). Attempts to pop will return immediately if the
-associated channel has been closed and the buffer is empty. This situation can be
-handled using an `or {}` block (see [Handling options/results](#handling-optionsresults)).
+A channel can be closed to indicate that no further objects can be pushed.
+Any attempt to do so will then result in a runtime panic (except `select` and
+`try_push()` – see below).
+Attempts to pop will return immediately if the associated channel has been closed and
+the buffer is empty.
+This situation can be handled using an `or {}` block (see [Handling options/results](error-handling.md)).
 
 ```v wip
 ch := chan int{}
@@ -191,8 +193,9 @@ y := <-ch2 ?
 ### Channel Select
 
 The `select` command allows monitoring several channels at the same time
-without noticeable CPU load. It consists of a list of possible transfers and associated branches
-of statements – similar to the [match](#match) command:
+without noticeable CPU load.
+It consists of a list of possible transfers and associated branches of statements – similar to
+the [match](control-flow/conditions.md#match-expression) expression:
 
 ```v
 import time
@@ -239,12 +242,13 @@ fn main() {
 }
 ```
 
-The timeout branch is optional. If it is absent `select` waits for an unlimited amount of time.
+The timeout branch is optional.
+If it is absent `select` waits for an unlimited amount of time.
 It is also possible to proceed immediately if no channel is ready in the moment `select` is called
 by adding an `else { ... }` branch. `else` and `<timeout>` are mutually exclusive.
 
-The `select` command can be used as an *expression* of type `bool`
-that becomes `false` if all channels are closed:
+The `select` command can be used as an *expression* of type `bool`that becomes `false`
+if all channels are closed:
 
 ```v wip
 if select {
@@ -285,8 +289,8 @@ The `try_push/pop()` methods will return immediately with one of the results
 `.success`, `.not_ready` or `.closed` – dependent on whether the object has been transferred or
 the reason why not.
 Usage of these methods and fields in production is not recommended -
-algorithms based on them are often subject to race conditions. Especially `.len` and
-`.closed` should not be used to make decisions.
+algorithms based on them are often subject to race conditions.
+Especially `.len` and `.closed` should not be used to make decisions.
 Use `or` branches, error propagation or `select` instead (see [Syntax and Usage](#syntax-and-usage)
 and [Channel Select](#channel-select) above).
 
@@ -299,7 +303,7 @@ using `rlock` for read-only and `lock` for read/write access.
 
 ```v
 struct St {
-mut:
+	mut:
 	x int // data to be shared
 }
 
