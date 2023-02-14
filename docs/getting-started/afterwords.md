@@ -1,7 +1,10 @@
 # What's next?
 
-Now you know the basics of how to work with V, to see simple examples for basic syntax see
-[Basic Syntax](../basics/basic-syntax.md) article.
+Now you know the basics of how to work with V!
+
+To see simple examples for basic syntax see
+[Basic Syntax](../basics/basic-syntax.md) 
+article.
 
 You can then go to the articles in the
 [Concepts](../concepts)
