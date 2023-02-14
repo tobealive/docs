@@ -5182,9 +5182,9 @@ that are substituted at compile time:
 - `@VEXEROOT`  – will be substituted with the *folder*,
   where the V executable is (as a string).
 - `@VHASH`  – replaced with the shortened commit hash of the V compiler (as a string).
-- `@VMOD_FILE` – replaced with the contents of the nearest v.mod file (as a string).
+- `@VMOD_FILE` – replaced with the contents of the nearest **v.mod** file (as a string).
 - `@VMODROOT` – will be substituted with the *folder*,
-  where the nearest v.mod file is (as a string).
+  where the nearest **v.mod** file is (as a string).
 
 That allows you to do the following example, useful while debugging/logging/tracing your code:
 
@@ -5192,7 +5192,7 @@ That allows you to do the following example, useful while debugging/logging/trac
 eprintln('file: ' + @FILE + ' | line: ' + @LINE + ' | fn: ' + @MOD + '.' + @FN)
 ```
 
-Another example, is if you want to embed the version/name from v.mod *inside* your executable:
+Another example, is if you want to embed the version/name from **v.mod** *inside* your executable:
 
 ```v ignore
 import v.vmod
@@ -6067,8 +6067,8 @@ You can also include C code directly in your V module.
 For example, let's say that your C code is located in a folder named 'c' inside your module folder.
 Then:
 
-* Put a v.mod file inside the toplevel folder of your module (if you
-  created your module with `v new` you already have v.mod file). For example:
+* Put a **v.mod** file inside the toplevel folder of your module (if you
+  created your module with `v new` you already have **v.mod** file). For example:
 
 ```v ignore
 Module {
@@ -6089,8 +6089,8 @@ Module {
 
 > **Note**
 > @VMODROOT will be replaced by V with the *nearest parent folder,
-> where there is a v.mod file*.
-> Any **.v** file beside or below the folder where the v.mod file is,
+> where there is a **v.mod** file*.
+> Any **.v** file beside or below the folder where the **v.mod** file is,
 > can use `#flag @VMODROOT/abc` to refer to this folder.
 > The @VMODROOT folder is also *prepended* to the module lookup path,
 > so you can *import* other modules under your @VMODROOT, by just naming them.

@@ -234,6 +234,56 @@ interface Iterator[T] {
 }
 ```
 
+## Compile-time conditions
+
+Due to the fact that V has [compile-time](./compile-time/control-flow.md) `if`, in the body of generic functions, you can 
+separate the code depending on the type passed:
+
+```v play
+fn myprintln[T](data T) {
+	$if T is $Array {
+		println('array: [')
+		for i, elem in data {
+			myprintln(elem)
+			if i < data.len - 1 {
+				print(', ')
+			}
+			println('')
+		}
+		println(']')
+	} $else $if T is $Map {
+		println('map: {')
+		for key, val in data {
+			print('\t(key) ')
+			myprintln(key)
+			print(' -> (value) ')
+			myprintln(val)
+		}
+		println('}')
+	} $else {
+		println(data)
+	}
+}
+
+myprintln([1,2,3])
+// array: [
+// 1, 
+// 2, 
+// 3
+// ]
+
+myprintln({
+	"key1": 100
+	"key2": 200
+})
+// map: {
+// 	  (key) key1
+//  -> (value) 100
+// 	  (key) key2
+//  -> (value) 200
+// }
+```
+
 ## Under the hood
 
 In V, generics are implemented using compile-time code generation for each parameter type.

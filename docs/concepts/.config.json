@@ -27,6 +27,11 @@
       "is_folder": true
     },
     {
+      "title": "Compile Time",
+      "url": "compile-time",
+      "is_folder": true
+    },
+    {
       "title": "Variables",
       "url": "variables.md"
     },
