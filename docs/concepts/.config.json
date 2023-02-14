@@ -102,6 +102,10 @@
     {
       "title": "Writing Documentation",
       "url": "writing-documentation.md"
+    },
+    {
+      "title": "Performance Tuning",
+      "url": "performance-tuning.md"
     }
   ]
 }
