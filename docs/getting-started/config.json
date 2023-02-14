@@ -3,6 +3,7 @@
   "order": [
     "installation.md",
     "hello-world.md",
-    "first-project.md"
+    "first-project.md",
+    "setup-editor.md"
   ]
 }
