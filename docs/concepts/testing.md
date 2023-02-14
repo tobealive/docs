@@ -71,26 +71,26 @@ tag, for example running this program:
 
 ```v
 [assert_continues]
-fn abc(ii int) {
-	assert ii == 2
+fn check(num int) {
+	assert num == 2
 }
 
 for i in 0 .. 4 {
-	abc(i)
+	check(i)
 }
 ```
 
 will produce this output:
 
 ```
-assert_continues_example.v:3: FAIL: fn main.abc: assert ii == 2
-   left value: ii = 0
+assert_continues_example.v:3: FAIL: fn main.abc: assert num == 2
+   left value: num = 0
    right value: 2
-assert_continues_example.v:3: FAIL: fn main.abc: assert ii == 2
-   left value: ii = 1
+assert_continues_example.v:3: FAIL: fn main.abc: assert num == 2
+   left value: num = 1
   right value: 2
-assert_continues_example.v:3: FAIL: fn main.abc: assert ii == 2
-   left value: ii = 3
+assert_continues_example.v:3: FAIL: fn main.abc: assert num == 2
+   left value: num = 3
   right value: 2
 ```
 
@@ -138,17 +138,18 @@ You can pass the `-stats` option to see more details about the individual tests 
 
 You can only run certain tests using the `-run-only GLOB_PATTERN` flag.
 In this case, only tests that match the `GLOB_PATTERN` pattern will be run.
-Glob patterns can be separated by commas.
-
-> **Note**
-> glob patterns support `*` which matches anything, and `?`, that matches any single character.
-> They are *NOT* regular expressions, however.
+[Glob patterns](https://www.malikbrowne.com/blog/a-beginners-guide-glob-patterns)
+can be separated by commas.
 
 ```shell
 v test -run-only 'test_hello,test_add'
 ```
 
 Will only run the `test_hello` and `test_add` tests.
+
+> **Note**
+> Glob patterns support `*` which matches anything, and `?`, that matches any single character.
+> They are *NOT* regular expressions, however.
 
 ### Alternative test runners
 
@@ -188,7 +189,7 @@ fn test_arrays() {
 
 ## Special begin/end functions
 
-V provides a path to execute code before and after all test functions.
+V provides a path to execute code before and after all test functions in a test file.
 
 * `testsuite_begin` which will be run *before* all other test functions.
 * `testsuite_end` which will be run *after* all other test functions.
