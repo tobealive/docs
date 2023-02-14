@@ -1,6 +1,6 @@
 # Running a project folder with several files
 
-Suppose you have a folder with several .v files in it, where one of them
+Suppose you have a folder with several **.v** files in it, where one of them
 contains your `main()` function, and the other files have other helper
 functions. They may be organized by topic, but still *not yet* structured
 enough to be their own separate reusable modules, and you want to compile
@@ -10,7 +10,7 @@ In other languages, you would have to use includes or a build system
 to enumerate all files, compile them separately to object files,
 then link them into one final executable.
 
-In V however, you can compile and run the whole folder of .v files together,
+In V however, you can compile and run the whole folder of **.v** files together,
 using just `v run .`. Passing parameters also works, so you can
 do: `v run . --yourparam some_other_stuff`
 

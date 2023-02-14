@@ -77,6 +77,10 @@
     {
       "title": "Printing Custom Types",
       "url": "printing-custom-types.md"
+    },
+    {
+      "title": "Debugging",
+      "url": "debugging.md"
     }
   ]
 }

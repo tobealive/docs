@@ -1,6 +1,6 @@
 # Package management
 
-A V *module* is a single folder with .v files inside. A V *package* can
+A V *module* is a single folder with **.v** files inside. A V *package* can
 contain one or more V modules. A V *package* should have a `v.mod` file
 at its top folder, describing the contents of the package.
 

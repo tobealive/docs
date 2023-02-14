@@ -5,7 +5,7 @@
 To debug issues in the generated binary (flag: `-b c`), you can pass these flags:
 
 - `-g` – produces a less optimized executable with more debug information in it.
-  V will enforce line numbers from the .v files in the stacktraces, that the
+  V will enforce line numbers from the **.v** files in the stacktraces, that the
   executable will produce on panic. It is usually better to pass -g, unless
   you are writing low level code, in which case use the next option `-cg`.
 - `-cg` – produces a less optimized executable with more debug information in it.
@@ -25,8 +25,8 @@ C library, you can pass several of these flags at the same time:
 `v -keepc -cg -showcc yourprogram.v`, then just run your debugger (gdb/lldb) or IDE
 on the produced executable `yourprogram`.
 
-If you just want to inspect the generated C code,
-without further compilation, you can also use the `-o` flag (e.g. `-o file.c`).
+If you just want to inspect the generated C code, without further compilation,
+you can also use the `-o` flag (e.g. `-o file.c`).
 This will make V produce the `file.c` then stop.
 
 If you want to see the generated C source code for *just* a single C function,
@@ -34,23 +34,22 @@ for example `main`, you can use: `-printfn main -o file.c`.
 
 To debug the V executable itself you need to compile from src with `./v -g -o v cmd/v`.
 
-You can debug tests with for example `v -g -keepc prog_test.v`. The `-keepc` flag is needed,
-so that the executable is not deleted, after it was created and ran.
+You can debug tests with for example `v -g -keepc prog_test.v`.
+The `-keepc` flag is needed, so that the executable is not deleted, after it was created and ran.
 
-To see a detailed list of all flags that V supports,
-use `v help`, `v help build` and `v help build-c`.
+To see a detailed list of all flags that V supports, use `v help`, `v help build` and `v help build-c`.
 
-**Commandline Debugging**
+### Commandline Debugging
 
-1. compile your binary with debugging info `v -g hello.v`
-2. debug with [lldb](https://lldb.llvm.org) or [GDB](https://www.gnu.org/software/gdb/)
-   e.g. `lldb hello`
+1. Compile your binary with debugging info `v -g hello.v`
+2. Debug with [lldb](https://lldb.llvm.org) or [GDB](https://www.gnu.org/software/gdb/) e.g. `lldb hello`
 
 [Troubleshooting (debugging) executables created with V in GDB](https://github.com/vlang/v/wiki/Troubleshooting-(debugging)-executables-created-with-V-in-GDB)
 
-**Visual debugging Setup:**
+### Visual Debugging Setup
 
-* [Visual Studio Code](vscode.md)
+* [Visual Studio Code](https://github.com/vlang/v/blob/master/doc/vscode.md)
+* [IntelliJ V](https://plugins.jetbrains.com/plugin/20287-vlang/docs/quick-start-guide.html#debug)
 
 ## Native Backend binaries
 

@@ -35,6 +35,6 @@
     * [Atomics](./atomics.md)
     * [Global Variables](concepts/global-variables.md)
     * [Cross compilation](./cross-compilation.md)
-    * [Debugging](./debugging.md)
+    * [Debugging](concepts/debugging.md)
 * [V and C](./v-and-c.md)
 * [Other V Features](./other-v-features.md)

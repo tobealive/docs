@@ -91,7 +91,7 @@ println('hello world')
 
 ## Running a project folder with several files
 
-Suppose you have a folder with several .v files in it, where one of them
+Suppose you have a folder with several **.v** files in it, where one of them
 contains your `main()` function, and the other files have other helper
 functions. They may be organized by topic, but still *not yet* structured
 enough to be their own separate reusable modules, and you want to compile
@@ -101,7 +101,7 @@ In other languages, you would have to use includes or a build system
 to enumerate all files, compile them separately to object files,
 then link them into one final executable.
 
-In V however, you can compile and run the whole folder of .v files together,
+In V however, you can compile and run the whole folder of **.v** files together,
 using just `v run .`. Passing parameters also works, so you can
 do: `v run . --yourparam some_other_stuff`
 
@@ -2879,7 +2879,7 @@ fn main() {
 * Module names should be short, under 10 characters.
 * Module names must use `snake_case`.
 * Circular imports are not allowed.
-* You can have as many .v files in a module as you want.
+* You can have as many **.v** files in a module as you want.
 * You can create modules anywhere.
 * All modules are compiled statically into a single executable.
 
@@ -4255,7 +4255,7 @@ In the example above, `test_hello` is an internal test, that can call
 the private function `hello()` because **hello_test.v** has `module main`,
 just like **hello.v**, i.e. both are part of the same module. Note also that
 since `module main` is a regular module like the others, internal tests can
-be used to test private functions in your main program .v files too.
+be used to test private functions in your main program **.v** files too.
 
 You can also define these special test functions in a test file:
 
@@ -4281,10 +4281,10 @@ To test an entire module, use `v test mymodule`. You can also use `v test .` to 
 everything inside your current folder (and subfolders). You can pass the `-stats`
 option to see more details about the individual tests run.
 
-You can put additional test data, including .v source files in a folder, named
+You can put additional test data, including **.v** source files in a folder, named
 `testdata`, right next to your **_test.v** files. V's test framework will *ignore*
 such folders, while scanning for tests to run. This is useful, if you want to
-put .v files with invalid V source code, or other tests, including known
+put **.v** files with invalid V source code, or other tests, including known
 failing ones, that should be run in a specific way/options by a parent _test.v
 file.
 
@@ -4812,7 +4812,7 @@ fn main() {
 
 ## Package management
 
-A V *module* is a single folder with .v files inside. A V *package* can
+A V *module* is a single folder with **.v** files inside. A V *package* can
 contain one or more V modules. A V *package* should have a `v.mod` file
 at its top folder, describing the contents of the package.
 
@@ -5858,7 +5858,7 @@ libraries and include files for Windows and Linux. V will provide you with a lin
 To debug issues in the generated binary (flag: `-b c`), you can pass these flags:
 
 - `-g` – produces a less optimized executable with more debug information in it.
-  V will enforce line numbers from the .v files in the stacktraces, that the
+  V will enforce line numbers from the **.v** files in the stacktraces, that the
   executable will produce on panic. It is usually better to pass -g, unless
   you are writing low level code, in which case use the next option `-cg`.
 - `-cg` – produces a less optimized executable with more debug information in it.
@@ -6090,7 +6090,7 @@ Module {
 > **Note**
 > @VMODROOT will be replaced by V with the *nearest parent folder,
 > where there is a v.mod file*.
-> Any .v file beside or below the folder where the v.mod file is,
+> Any **.v** file beside or below the folder where the v.mod file is,
 > can use `#flag @VMODROOT/abc` to refer to this folder.
 > The @VMODROOT folder is also *prepended* to the module lookup path,
 > so you can *import* other modules under your @VMODROOT, by just naming them.
