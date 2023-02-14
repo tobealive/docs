@@ -343,6 +343,18 @@ fn main() {
 
 See [Error handling](../concepts/error-handling) for more information.
 
+## Import modules
+
+```v play
+import os
+
+fn main() {
+    println(os.args)
+}
+```
+
+See [Modules](../concepts/modules/main) for more information.
+
 ## Comments
 
 ```v
