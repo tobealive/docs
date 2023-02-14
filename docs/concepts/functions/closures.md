@@ -1,3 +1,4 @@
+TODO: улучшить
 # Closures
 
 V supports closures too.

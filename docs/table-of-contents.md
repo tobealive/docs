@@ -8,7 +8,7 @@
 * [Types](concepts/types/maps.md)
 * [Module imports](concepts/modules/module-imports.md)
 * [Statements & expressions](./statements--expressions.md)
-* [Structs](./structs.md)
+* [Structs](concepts/structs.md)
 * [Unions](concepts/unions.md)
 * [Functions 2](./functions-2.md)
 * [References](./references.md)
