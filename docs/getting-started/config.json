@@ -2,6 +2,7 @@
   "title": "Getting Started",
   "order": [
     "installation.md",
-    "hello-world.md"
+    "hello-world.md",
+    "first-project.md"
   ]
 }
