@@ -114,6 +114,10 @@
     {
       "title": "Performance Tuning",
       "url": "performance-tuning.md"
+    },
+    {
+      "title": "Cross-platform Shell Scripts",
+      "url": "cross-platform-shell-scripts.md"
     }
   ]
 }
