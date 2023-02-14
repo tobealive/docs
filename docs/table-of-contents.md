@@ -11,7 +11,7 @@
 * [Structs](concepts/structs/structs.md)
 * [Unions](concepts/unions.md)
 * [Functions 2](./functions-2.md)
-* [References](./references.md)
+* [References](concepts/types/references.md)
 * [Constants](concepts/constants.md)
 * [Builtin functions](./builtin-functions.md)
 * [Modules](concepts/modules/modules.md)
