@@ -18,7 +18,7 @@ fn foo(foo &Foo) {
 }
 ```
 
-## Get address
+## Take address
 
 To create a reference, you need to take the address of a variable.
 In V, this is done with the `&` operator:
@@ -33,7 +33,7 @@ foo_ptr := &foo
 ```
 
 Now `foo_ptr` is a reference to `foo`.
-Note that you cannot change fields through this link as it is immutable.
+Note that you cannot change fields through this reference as it is immutable.
 
 You can take a mutable reference from a mutable variable with which to change fields:
 
