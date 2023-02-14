@@ -1,0 +1,21 @@
+{
+  "title": "Types",
+  "content-map": {
+    "primitive-types.md": "Primitive Types",
+    "numbers.md": "Numbers",
+    "strings.md": "Strings",
+    "runes.md": "Runes",
+    "arrays.md": "Arrays",
+    "maps.md": "Maps",
+    "references.md": "References"
+  },
+  "order": [
+    "primitive-types.md",
+    "numbers.md",
+    "strings.md",
+    "runes.md",
+    "arrays.md",
+    "maps.md",
+    "references.md"
+  ]
+}

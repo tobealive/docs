@@ -1,0 +1,17 @@
+{
+  "title": "Control Flow",
+  "content-map": {
+    "conditions.md": "Conditions",
+    "loops.md": "Loops",
+    "defer.md": "Defer",
+    "operators.md": "Operators",
+    "jumps.md": "Jumps"
+  },
+  "order": [
+    "conditions.md",
+    "loops.md",
+    "defer.md",
+    "operators.md",
+    "jumps.md"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Editor Plugins",
+  "content-map": {
+    "vs-code.md": "VS Code",
+    "jetbrains-ide.md": "JetBrains IDE",
+    "vim.md": "Vim",
+    "emacs.md": "Emacs",
+    "sublime-text.md": "Sublime Text",
+    "atom.md": "Atom"
+  },
+  "order": [
+    "vs-code.md",
+    "jetbrains-ide.md",
+    "vim.md",
+    "emacs.md",
+    "sublime-text.md",
+    "atom.md"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Basics",
+  "content-map": {
+    "functions": "Funtions",
+    "structs": "Structs",
+    "types": "Types",
+    "modules": "Modules",
+    "control-flow": "Control Flow",
+    "variables.md": "Variables",
+    "constants.md": "Constants",
+    "error-handling.md": "Error Handling",
+    "interfaces.md": "Interfaces",
+    "enums.md": "Enums",
+    "sum-types.md": "Sum Types",
+    "type-aliases.md": "Type Aliases",
+    "unions.md": "Unions",
+    "testing.md": "Testing",
+    "generics.md": "Generics",
+    "global-variables.md": "Global Variables"
+  },
+  "order": [
+    "functions",
+    "structs",
+    "types",
+    "modules",
+    "control-flow",
+    "variables.md",
+    "constants.md",
+    "error-handling.md",
+    "interfaces.md",
+    "enums.md",
+    "sum-types.md",
+    "type-aliases.md",
+    "unions.md",
+    "testing.md",
+    "generics.md",
+    "global-variables.md"
+  ]
+}

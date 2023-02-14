@@ -1,0 +1,11 @@
+{
+  "title": "Nodules",
+  "content-map": {
+    "module-imports.md": "Module Imports",
+    "symbol-visibility.md": "Symbol Visibility"
+  },
+  "order": [
+    "module-imports.md",
+    "symbol-visibility.md"
+  ]
+}

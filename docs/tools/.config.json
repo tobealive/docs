@@ -1,0 +1,11 @@
+{
+  "title": "Tools",
+  "content-map": {
+    "tools.md": "Tools",
+    "editor_plugins": "Editor Plugins"
+  },
+  "order": [
+    "tools.md",
+    "editor_plugins"
+  ]
+}

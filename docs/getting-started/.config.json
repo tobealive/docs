@@ -1,0 +1,17 @@
+{
+  "title": "Getting Started",
+  "content-map": {
+    "installation.md": "Installation",
+    "hello-world.md": "Hello World",
+    "first-project.md": "First Project",
+    "setup-editor.md": "Setup Editor",
+    "afterwords.md": "Afterwords"
+  },
+  "order": [
+    "installation.md",
+    "hello-world.md",
+    "first-project.md",
+    "setup-editor.md",
+    "afterwords.md"
+  ]
+}
