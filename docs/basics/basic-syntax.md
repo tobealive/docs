@@ -224,7 +224,7 @@ age := 4
 println('V is ${age} years old!')
 ```
 
-See [String templates](../concepts/string-templates) for more information.
+See [String templates](../concepts/types/strings.md#string-interpolation) for more information.
 
 ## Conditional expressions
 
@@ -280,7 +280,7 @@ for index, item in items {
 }
 ```
 
-See [For loop](../concepts/for-loop) for more information.
+See [For loop](../concepts/control-flow/loops.md) for more information.
 
 ## Match expression
 
@@ -322,7 +322,7 @@ match status {
 }
 ```
 
-See [Match expression](../concepts/match-expression) for more information.
+See [Match expression](../concepts/control-flow/conditions.md#match-expression) for more information.
 For more information about Sum types see [Sum types](../concepts/sum-types).
 
 ## Error handling
