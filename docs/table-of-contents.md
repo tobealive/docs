@@ -5,7 +5,7 @@
 * [Functions](concepts/functions/functions.md)
 * [Symbol visibility](concepts/modules/symbol-visibility.md)
 * [Variables](./variables.md)
-* [Types](./types.md)
+* [Types](concepts/types/maps.md)
 * [Module imports](concepts/modules/module-imports.md)
 * [Statements & expressions](./statements--expressions.md)
 * [Structs](./structs.md)
