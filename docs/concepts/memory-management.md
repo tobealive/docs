@@ -1,5 +1,10 @@
 # Memory management
 
+> **Note**
+> Autofree is still WIP. Until it stabilises and becomes the default, please
+> avoid using it. Right now allocations are handled by a minimal and well performing GC
+> until V's autofree engine is production ready.
+
 V avoids doing unnecessary allocations in the first place by using value types,
 string buffers, promoting a simple abstraction-free code style.
 
@@ -32,12 +37,8 @@ Autofree can be enabled with an `-autofree` flag.
 
 For developers willing to have more low level control, autofree can be disabled with
 `-manualfree`, or by adding a `[manualfree]` on each function that wants manage its
-memory manually. (See [attributes](#attributes)).
-
-> **Note**
-> Autofree is still WIP. Until it stabilises and becomes the default, please
-> avoid using it. Right now allocations are handled by a minimal and well performing GC
-> until V's autofree engine is production ready.
+memory manually.
+See [attributes](./attributes) for more information.
 
 **Examples**
 
@@ -145,9 +146,9 @@ However, a reference to `b` is part of `e` which is returned. Also, a reference 
 
 Things become less obvious when a reference to an object is passed as function argument:
 
-```v
+```v play
 struct MyStruct {
-mut:
+  mut:
 	n int
 }
 
@@ -185,7 +186,7 @@ references to `q` and `w` are only *borrowed* to `f()`.
 
 Things become different if `f()` is doing something with a reference itself:
 
-```v
+```v play
 struct RefStruct {
 mut:
 	r &MyStruct
@@ -225,7 +226,7 @@ the compiler would complain about the assignment in `f()` because `s` *"might
 refer to an object stored on stack"*. The assumption made in `g()` that the call
 `r.f(&s)` would only borrow the reference to `s` is wrong.
 
-A solution to this dilemma is the `[heap]` [attribute](#attributes) at the declaration of
+A solution to this dilemma is the `[heap]` [attribute](./attributes) at the declaration of
 `struct MyStruct`. It instructs the compiler to *always* allocate `MyStruct`-objects
 on the heap. This way the reference to `s` remains valid even after `g()` returns.
 The compiler takes into consideration that `MyStruct` objects are always heap
@@ -249,7 +250,7 @@ declared as `[heap]`.
 
 In V the better approach is:
 
-```v
+```v play
 struct MyStruct {
 mut:
 	n int
@@ -281,7 +282,7 @@ like those mentioned above.
 There is an alternative way to manually control allocation on a case to case basis. This
 approach is not recommended but shown here for the sake of completeness:
 
-```v
+```v play
 struct MyStruct {
 	n int
 }
