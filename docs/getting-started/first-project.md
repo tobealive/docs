@@ -40,7 +40,7 @@ To learn more about modules, see the article [Modules](/docs/concepts/modules).
 Modules can be located both in the project root folder and in the **src** folder.
 The **src** folder itself is not a module, it is used to store all project modules in one place.
 
-### v.nod
+### v.mod
 
 The **v.mod** file contains information about the project, such as its name and version.
 It also contains a list of the project's dependencies, which we'll look at [Modules](/docs/concepts/modules) article.
