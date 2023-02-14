@@ -64,8 +64,8 @@
       "url": "unions.md"
     },
     {
-      "title": "Testing",
-      "url": "testing.md"
+      "title": "Attributes",
+      "url": "attributes.md"
     },
     {
       "title": "Generics",
@@ -86,6 +86,10 @@
     {
       "title": "Concurrency",
       "url": "concurrency.md"
+    },
+    {
+      "title": "Testing",
+      "url": "testing.md"
     },
     {
       "title": "Debugging",
