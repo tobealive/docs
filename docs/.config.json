@@ -1,0 +1,15 @@
+{
+  "title": "Root",
+  "content-map": {
+    "getting-started": "Getting Started",
+    "basics": "Basics",
+    "concepts": "Concepts",
+    "tools": "Tools"
+  },
+  "order": [
+    "getting-started",
+    "basics",
+    "concepts",
+    "tools"
+  ]
+}
