@@ -11,7 +11,7 @@ You can then go to the articles in the
 section to find out what a V program consists of.
 
 You can also play with V in the online playground:
-[play.vlang.foundation/](https://play.vlang.foundation/).
+[play.vlang.foundation](https://play.vlang.foundation/).
 It also provides a number of commented examples for you to explore.
 
 Join our Discord server:
