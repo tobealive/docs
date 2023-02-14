@@ -21,7 +21,7 @@
 * [Testing](concepts/testing.md)
 * [Memory management](./memory-management.md)
 * [ORM](./orm.md)
-* [Writing documentation](./writing-documentation.md)
+* [Writing documentation](concepts/writing-documentation.md)
 * [Tools](tools/tools.md)
 * [Package Management](./package-management.md)
 * Advanced Topics

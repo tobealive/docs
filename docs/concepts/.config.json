@@ -81,6 +81,10 @@
     {
       "title": "Debugging",
       "url": "debugging.md"
+    },
+    {
+      "title": "Writing Documentation",
+      "url": "writing-documentation.md"
     }
   ]
 }
