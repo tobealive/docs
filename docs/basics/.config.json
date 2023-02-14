@@ -1,9 +1,9 @@
 {
   "title": "Basics",
-  "content-map": {
-    "basic-syntax.md": "Basic Syntax"
-  },
-  "order": [
-    "basic-syntax.md"
+  "contents": [
+    {
+      "title": "Basic Syntax",
+      "url": "basic-syntax.md"
+    }
   ]
 }

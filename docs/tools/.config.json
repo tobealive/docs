@@ -1,11 +1,14 @@
 {
   "title": "Tools",
-  "content-map": {
-    "tools.md": "Tools",
-    "editor_plugins": "Editor Plugins"
-  },
-  "order": [
-    "tools.md",
-    "editor_plugins"
+  "contents": [
+    {
+      "title": "Tools",
+      "url": "tools.md"
+    },
+    {
+      "title": "Editor Plugins",
+      "url": "editor_plugins",
+      "is_folder": true
+    }
   ]
 }

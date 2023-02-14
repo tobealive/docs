@@ -1,39 +1,74 @@
 {
   "title": "Basics",
-  "content-map": {
-    "functions": "Funtions",
-    "structs": "Structs",
-    "types": "Types",
-    "modules": "Modules",
-    "control-flow": "Control Flow",
-    "variables.md": "Variables",
-    "constants.md": "Constants",
-    "error-handling.md": "Error Handling",
-    "interfaces.md": "Interfaces",
-    "enums.md": "Enums",
-    "sum-types.md": "Sum Types",
-    "type-aliases.md": "Type Aliases",
-    "unions.md": "Unions",
-    "testing.md": "Testing",
-    "generics.md": "Generics",
-    "global-variables.md": "Global Variables"
-  },
-  "order": [
-    "functions",
-    "structs",
-    "types",
-    "modules",
-    "control-flow",
-    "variables.md",
-    "constants.md",
-    "error-handling.md",
-    "interfaces.md",
-    "enums.md",
-    "sum-types.md",
-    "type-aliases.md",
-    "unions.md",
-    "testing.md",
-    "generics.md",
-    "global-variables.md"
+  "contents": [
+    {
+      "title": "Functions",
+      "url": "functions",
+      "is_folder": true
+    },
+    {
+      "title": "Structs",
+      "url": "structs",
+      "is_folder": true
+    },
+    {
+      "title": "Types",
+      "url": "types",
+      "is_folder": true
+    },
+    {
+      "title": "Modules",
+      "url": "modules",
+      "is_folder": true
+    },
+    {
+      "title": "Control Flow",
+      "url": "control-flow",
+      "is_folder": true
+    },
+    {
+      "title": "Variables",
+      "url": "variables.md"
+    },
+    {
+      "title": "Constants",
+      "url": "constants.md"
+    },
+    {
+      "title": "Error Handling",
+      "url": "error-handling.md"
+    },
+    {
+      "title": "Interfaces",
+      "url": "interfaces.md"
+    },
+    {
+      "title": "Enums",
+      "url": "enums.md"
+    },
+    {
+      "title": "Sum Types",
+      "url": "sum-types.md"
+    },
+    {
+      "title": "Type Aliases",
+      "url": "type-aliases.md"
+    },
+    {
+      "title": "Unions",
+      "url": "unions.md"
+    },
+    {
+      "title": "Testing",
+      "url": "testing.md"
+    },
+    {
+      "title": "Generics",
+      "url": "generics.md"
+    },
+    {
+      "title": "Global Variables",
+      "url": "global-variables.md"
+    }
   ]
 }

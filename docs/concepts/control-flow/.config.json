@@ -1,17 +1,25 @@
 {
   "title": "Control Flow",
-  "content-map": {
-    "conditions.md": "Conditions",
-    "loops.md": "Loops",
-    "defer.md": "Defer",
-    "operators.md": "Operators",
-    "jumps.md": "Jumps"
-  },
-  "order": [
-    "conditions.md",
-    "loops.md",
-    "defer.md",
-    "operators.md",
-    "jumps.md"
+  "contents": [
+    {
+      "title": "Conditions",
+      "url": "conditions.md"
+    },
+    {
+      "title": "Loops",
+      "url": "loops.md"
+    },
+    {
+      "title": "Defer",
+      "url": "defer.md"
+    },
+    {
+      "title": "Operators",
+      "url": "operators.md"
+    },
+    {
+      "title": "Jumps",
+      "url": "jumps.md"
+    }
   ]
 }

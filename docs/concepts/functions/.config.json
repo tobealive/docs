@@ -1,13 +1,17 @@
 {
   "title": "Functions",
-  "content-map": {
-    "closures.md": "Closures",
-    "anonymous-and-higher-order-functions.md": "Anonymous and Higher Order Functions",
-    "limited-operator-overloading.md": "Limited Operator Overloading"
-  },
-  "order": [
-    "closures.md",
-    "anonymous-and-higher-order-functions.md",
-    "limited-operator-overloading.md"
+  "contents": [
+    {
+      "title": "Closures",
+      "url": "closures.md"
+    },
+    {
+      "title": "Anonymous and Higher Order Functions",
+      "url": "anonymous-and-higher-order-functions.md"
+    },
+    {
+      "title": "Limited Operator Overloading",
+      "url": "limited-operator-overloading.md"
+    }
   ]
 }

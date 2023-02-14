@@ -1,9 +1,9 @@
 {
   "title": "Structures",
-  "content-map": {
-    "embedding.md": "Embedding"
-  },
-  "order": [
-    "embedding.md"
+  "contents": [
+    {
+      "title": "Embedding",
+      "url": "embedding.md"
+    }
   ]
 }

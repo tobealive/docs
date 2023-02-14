@@ -1,15 +1,21 @@
 {
   "title": "Root",
-  "content-map": {
-    "getting-started": "Getting Started",
-    "basics": "Basics",
-    "concepts": "Concepts",
-    "tools": "Tools"
-  },
-  "order": [
-    "getting-started",
-    "basics",
-    "concepts",
-    "tools"
+  "contents": [
+    {
+      "title": "Getting Started",
+      "url": "getting-started.md"
+    },
+    {
+      "title": "Basics",
+      "url": "basics.md"
+    },
+    {
+      "title": "Concepts",
+      "url": "concepts.md"
+    },
+    {
+      "title": "Tools",
+      "url": "tools.md"
+    }
   ]
 }

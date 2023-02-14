@@ -1,21 +1,33 @@
 {
   "title": "Types",
-  "content-map": {
-    "primitive-types.md": "Primitive Types",
-    "numbers.md": "Numbers",
-    "strings.md": "Strings",
-    "runes.md": "Runes",
-    "arrays.md": "Arrays",
-    "maps.md": "Maps",
-    "references.md": "References"
-  },
-  "order": [
-    "primitive-types.md",
-    "numbers.md",
-    "strings.md",
-    "runes.md",
-    "arrays.md",
-    "maps.md",
-    "references.md"
+  "contents": [
+    {
+      "title": "Primitive Types",
+      "url": "primitive-types.md"
+    },
+    {
+      "title": "Numbers",
+      "url": "numbers.md"
+    },
+    {
+      "title": "Strings",
+      "url": "strings.md"
+    },
+    {
+      "title": "Runes",
+      "url": "runes.md"
+    },
+    {
+      "title": "Arrays",
+      "url": "arrays.md"
+    },
+    {
+      "title": "Maps",
+      "url": "maps.md"
+    },
+    {
+      "title": "References",
+      "url": "references.md"
+    }
   ]
 }
