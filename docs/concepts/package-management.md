@@ -1,54 +1,54 @@
 # Package management
 
-A V *module* is a single folder with **.v** files inside. A V *package* can
-contain one or more V modules. A V *package* should have a `v.mod` file
-at its top folder, describing the contents of the package.
+A V *module* is a single folder with **.v** files inside.
+A V *package* can contain one or more V modules.
+A V *package* must have a `v.mod` file at its top folder, describing the contents of the package.
 
-V packages are installed normally in your `~/.vmodules` folder. That
-location can be overriden by setting the env variable `VMODULES`.
+V packages are installed normally in your `~/.vmodules` folder.
+That location can be overridden by setting the env variable `VMODULES`.
 
 ## Package commands
 
 You can use the V frontend to do package operations, just like you can
 use it for compiling code, formatting code, vetting code etc.
 
-```powershell
+```bash
 v [package_command] [param]
 ```
 
-where a package command can be one of:
+Where a package command can be one of:
 
 ```
-   install           Install a package from VPM.
-   remove            Remove a package that was installed from VPM.
-   search            Search for a package from VPM.
-   update            Update an installed package from VPM.
-   upgrade           Upgrade all the outdated packages.
-   list              List all installed packages.
-   outdated          Show installed packages that need updates.
+install           Install a package from VPM.
+remove            Remove a package that was installed from VPM.
+search            Search for a package from VPM.
+update            Update an installed package from VPM.
+upgrade           Upgrade all the outdated packages.
+list              List all installed packages.
+outdated          Show installed packages that need updates.
 ```
 
 You can install packages already created by someone else with [VPM](https://vpm.vlang.io/):
 
-```powershell
+```bash
 v install [package]
 ```
 
 **Example:**
 
-```powershell
+```bash
 v install ui
 ```
 
 Packages can be installed directly from git or mercurial repositories.
 
-```powershell
+```bash
 v install [--once] [--git|--hg] [url]
 ```
 
 **Example:**
 
-```powershell
+```bash
 v install --git https://github.com/vlang/markdown
 ```
 
@@ -58,45 +58,45 @@ Sometimes you may want to install the dependencies **ONLY** if those are not ins
 v install --once [package]
 ```
 
-Removing a package with v:
+Removing a package with V:
 
-```powershell
+```bash
 v remove [package]
 ```
 
 **Example:**
 
-```powershell
+```bash
 v remove ui
 ```
 
 Updating an installed package from [VPM](https://vpm.vlang.io/):
 
-```powershell
+```bash
 v update [package]
 ```
 
 **Example:**
 
-```powershell
+```bash
 v update ui
 ```
 
 Or you can update all your packages:
 
-```powershell
+```bash
 v update
 ```
 
 To see all the packages you have installed, you can use:
 
-```powershell
+```bash
 v list
 ```
 
 **Example:**
 
-```powershell
+```bash
 > v list
 Installed packages:
   markdown
@@ -105,13 +105,13 @@ Installed packages:
 
 To see all the packages that need updates:
 
-```powershell
+```bash
 v outdated
 ```
 
 **Example:**
 
-```powershell
+```bash
 > v outdated
 Package are up to date.
 ```
@@ -179,5 +179,3 @@ Package are up to date.
 
 **Optional:** tag your V package with `vlang` and `vlang-package` on github.com
 to allow for a better search experience.
-
-# Advanced Topics

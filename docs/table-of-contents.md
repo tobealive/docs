@@ -23,7 +23,7 @@
 * [ORM](./orm.md)
 * [Writing documentation](concepts/writing-documentation.md)
 * [Tools](tools/tools.md)
-* [Package Management](./package-management.md)
+* [Package Management](concepts/package-management.md)
 * Advanced Topics
     * [Attributes](./attributes.md)
     * [Conditional compilation](./conditional-compilation.md)

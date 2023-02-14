@@ -83,6 +83,10 @@
       "url": "debugging.md"
     },
     {
+      "title": "Package Management",
+      "url": "package-management.md"
+    },
+    {
       "title": "Writing Documentation",
       "url": "writing-documentation.md"
     }

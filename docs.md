@@ -4824,7 +4824,7 @@ location can be overriden by setting the env variable `VMODULES`.
 You can use the V frontend to do package operations, just like you can
 use it for compiling code, formatting code, vetting code etc.
 
-```powershell
+```bash
 v [package_command] [param]
 ```
 
@@ -4842,25 +4842,25 @@ where a package command can be one of:
 
 You can install packages already created by someone else with [VPM](https://vpm.vlang.io/):
 
-```powershell
+```bash
 v install [package]
 ```
 
 **Example:**
 
-```powershell
+```bash
 v install ui
 ```
 
 Packages can be installed directly from git or mercurial repositories.
 
-```powershell
+```bash
 v install [--once] [--git|--hg] [url]
 ```
 
 **Example:**
 
-```powershell
+```bash
 v install --git https://github.com/vlang/markdown
 ```
 
@@ -4872,43 +4872,43 @@ v install --once [package]
 
 Removing a package with v:
 
-```powershell
+```bash
 v remove [package]
 ```
 
 **Example:**
 
-```powershell
+```bash
 v remove ui
 ```
 
 Updating an installed package from [VPM](https://vpm.vlang.io/):
 
-```powershell
+```bash
 v update [package]
 ```
 
 **Example:**
 
-```powershell
+```bash
 v update ui
 ```
 
 Or you can update all your packages:
 
-```powershell
+```bash
 v update
 ```
 
 To see all the packages you have installed, you can use:
 
-```powershell
+```bash
 v list
 ```
 
 **Example:**
 
-```powershell
+```bash
 > v list
 Installed packages:
   markdown
@@ -4917,13 +4917,13 @@ Installed packages:
 
 To see all the packages that need updates:
 
-```powershell
+```bash
 v outdated
 ```
 
 **Example:**
 
-```powershell
+```bash
 > v outdated
 Package are up to date.
 ```
