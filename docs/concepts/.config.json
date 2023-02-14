@@ -69,6 +69,14 @@
     {
       "title": "Global Variables",
       "url": "global-variables.md"
+    },
+    {
+      "title": "Built-in Functions",
+      "url": "builtin-functions.md"
+    },
+    {
+      "title": "Printing Custom Types",
+      "url": "printing-custom-types.md"
     }
   ]
 }
