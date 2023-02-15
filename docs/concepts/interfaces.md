@@ -1,171 +1,177 @@
-TODO: улучшить
 # Interfaces
 
+Interfaces in V define some behavior in the form of methods and fields.
+Interfaces can be implemented by any type that has the appropriate methods and fields.
+Interfaces are conventions by which types can work together.
+
+Take for example the `Speaker` interface, which defines the `speak()` method:
+
 ```v
-// interface-example.1
-struct Dog {
-	breed string
-}
-
-fn (d Dog) speak() string {
-	return 'woof'
-}
-
-struct Cat {
-	breed string
-}
-
-fn (c Cat) speak() string {
-	return 'meow'
-}
-
-// unlike Go and like TypeScript, V's interfaces can define fields, not just methods.
 interface Speaker {
-	breed string
-	speak() string
-}
-
-fn main() {
-	dog := Dog{'Leonberger'}
-	cat := Cat{'Siamese'}
-
-	mut arr := []Speaker{}
-	arr << dog
-	arr << cat
-	for item in arr {
-		println('a ${item.breed} says: ${item.speak()}')
-	}
+	speak(msg string) string
 }
 ```
 
-### Implement an interface
+When we define a function that takes the `Speaker` interface as an argument, we abstract away
+from the actual implementation and only use what the interface defines:
+
+```v
+fn greet(s Speaker) {
+	println(s.speak("Hello"))
+}
+```
+
+Now we can call `greet()` with any type that implements the `Speaker` interface:
+
+```v play
+interface Speaker {
+	speak(msg string) string
+}
+
+struct Dog {}
+   
+fn (d Dog) speak(msg string) string {
+    return '${msg}. Woof, woof!'
+}
+
+fn greet(s Speaker) {
+    println(s.speak("Hello"))
+}
+    
+fn main() {
+    d := Dog{}
+    greet(d) // Hello. Woof, woof!
+}
+```
+
+## Implement an interface
 
 A type implements an interface by implementing its methods and fields.
 There is no explicit declaration of intent, no "implements" keyword.
 
-An interface can have a `mut:` section. Implementing types will need
-to have a `mut` receiver, for methods declared in the `mut:` section
-of an interface.
+In the example above, we have implemented the `Speaker` interface for the `Dog` type.
+To do this, we have defined a `speak()` method for the `Dog` type, which has the same
+signature as the `speak()` method in the `Speaker` interface.
+
+To implement an interface that contains fields, a type must have fields with
+the same names and types.
+
+```v play
+interface IdOwner {
+	id int
+}
+
+struct User {
+	id int
+}
+
+fn print_id(o IdOwner) {
+	println(o.id)
+}
+
+fn main() {
+	u := User{
+		id: 123
+	}
+	print_id(u) // 123
+}
+```
+
+## Mutable section
+
+As with structs, you can define a `mut` section in an interface.
+Types that implement an interface must have a `mut` receiver for methods
+defined in the `mut` section of the interface.
 
 ```v
-// interface-example.2
-module main
-
-interface Foo {
-	write(string) string
-}
-
-// => the method signature of a type, implementing interface Foo should be:
-// `fn (s Type) write(a string) string`
-
 interface Bar {
-mut:
+	mut:
 	write(string) string
 }
-
-// => the method signature of a type, implementing interface Bar should be:
-// `fn (mut s Type) write(a string) string`
 
 struct MyStruct {}
 
-// MyStruct implements the interface Foo, but *not* interface Bar
-fn (s MyStruct) write(a string) string {
+fn (mut s MyStruct) write(a string) string {
 	return a
 }
 
 fn main() {
-	s1 := MyStruct{}
-	fn1(s1)
-	// fn2(s1) -> compile error, since MyStruct does not implement Bar
+	mut str := MyStruct{}
+	write(mut str)
 }
 
-fn fn1(s Foo) {
-	println(s.write('Foo'))
+fn write(mut s Bar) {
+	println(s.write('Bar')) // Bar
 }
-
-// fn fn2(s Bar) { // does not match
-//      println(s.write('Foo'))
-// }
 ```
 
 ### Casting an interface
 
-We can test the underlying type of interface using dynamic cast operators:
+Interfaces allow you to abstract away from a specific implementation,
+but sometimes you need to access a specific implementation.
 
-```v oksyntax
-// interface-exmaple.3 (continued from interface-exampe.1)
-interface Something {}
+For this, smartcasts and the `is` operator are used:
 
-fn announce(s Something) {
-	if s is Dog {
-		println('a ${s.breed} dog') // `s` is automatically cast to `Dog` (smart cast)
-	} else if s is Cat {
-		println('a cat speaks ${s.speak()}')
-	} else {
-		println('something else')
-	}
+The `is` operator checks if the value that implements the interface is of the specified type:
+
+```v play
+interface Speaker {
+	speak(msg string) string
+}
+
+struct Dog {}
+   
+fn (d Dog) speak(msg string) string {
+    return '${msg}. Woof, woof!'
+}
+    
+struct Cat {}
+    
+fn (c Cat) speak(msg string) string {
+    return '${msg}. Meow, meow!'
+}
+
+fn greet(s Speaker) {
+    if s is Dog {
+        println('a dog speaks: ${s.speak("Hello")}')
+    } else if s is Cat {
+        println('a cat speaks: ${s.speak("Hello")}')
+    } else {
+        println('something else')
+    }
 }
 
 fn main() {
-	dog := Dog{'Leonberger'}
-	cat := Cat{'Siamese'}
-	announce(dog)
-	announce(cat)
+    d := Dog{}
+    greet(d) // a dog speaks: Hello. Woof, woof!
 }
 ```
 
+We can also use `match` for type checking:
+
 ```v
-// interface-example.4
-interface IFoo {
-	foo()
-}
-
-interface IBar {
-	bar()
-}
-
-// implements only IFoo
-struct SFoo {}
-
-fn (sf SFoo) foo() {}
-
-// implements both IFoo and IBar
-struct SFooBar {}
-
-fn (sfb SFooBar) foo() {}
-
-fn (sfb SFooBar) bar() {
-	dump('This implements IBar')
-}
-
-fn main() {
-	mut arr := []IFoo{}
-	arr << SFoo{}
-	arr << SFooBar{}
-
-	for a in arr {
-		dump(a)
-		// In order to execute instances that implements IBar.
-		if a is IBar {
-			// a.bar() // Error.
-			b := a as IBar
-			dump(b)
-			b.bar()
+fn greet(s Speaker) {
+	match s {
+		Dog {
+			println('a dog speaks: ${s.speak("Hello")}')
+		}
+		Cat {
+			println('a cat speaks: ${s.speak("Hello")}')
+		}
+		else {
+			println('something else')
 		}
 	}
 }
 ```
 
-For more information, see [Dynamic casts](#dynamic-casts).
-
 ### Interface method definitions
 
 Also unlike Go, an interface can have its own methods, similar to how
-structs can have their methods. These 'interface methods' do not have
-to be implemented, by structs which implement that interface.
-They are just a convenient way to write `i.some_function()` instead of
-`some_function(i)`, similar to how struct methods can be looked at, as
-a convenience for writing `s.xyz()` instead of `xyz(s)`.
+structs can have their methods.
+These 'interface methods' do not have to be implemented, by structs which implement that interface.
+They are just a convenient way to write `i.some_function()` instead of `some_function(i)`,
+similar to how struct methods can be looked at, as a convenience for writing `s.xyz()` instead of `xyz(s)`.
 
 > **Note**
 > This feature is NOT a "default implementation" like in C#.
@@ -174,7 +180,7 @@ For example, if a struct `cat` is wrapped in an interface `a`, that has
 implemented a method with the same name `speak`, as a method implemented by
 the struct, and you do `a.speak()`, *only* the interface method is called:
 
-```v
+```v play
 interface Adoptable {}
 
 fn (a Adoptable) speak() string {
@@ -191,46 +197,64 @@ struct Dog {}
 
 fn main() {
 	cat := Cat{}
-	assert dump(cat.speak()) == 'meow!'
-	//
+	println(cat.speak()) // meow!
+
 	a := Adoptable(cat)
-	assert dump(a.speak()) == 'adopt me!' // call Adoptable's `speak`
+	println(a.speak()) // adopt me! (called Adoptable's `speak()`)
 	if a is Cat {
 		// Inside this `if` however, V knows that `a` is not just any
 		// kind of Adoptable, but actually a Cat, so it will use the
 		// Cat `speak`, NOT the Adoptable `speak`:
-		dump(a.speak()) // meow!
+		println(a.speak()) // meow!
 	}
-	//
+
 	b := Adoptable(Dog{})
-	assert dump(b.speak()) == 'adopt me!' // call Adoptable's `speak`
-	// if b is Dog {
-	// 	dump(b.speak()) // error: unknown method or field: Dog.speak
-	// }
+	println(b.speak()) // adopt me! (called Adoptable's `speak`)
 }
 ```
 
 ### Embedded interface
 
-Interfaces support embedding, just like structs:
+Interfaces support embedding, just like structs.
+In this case, all methods and fields of the interface will belong to the parent
+interface and the type will need to implement methods and fields from all interfaces.
+
+For example, we have two interfaces, `Reader` and `Writer`:
 
 ```v
 pub interface Reader {
-mut:
+	mut:
 	read(mut buf []byte) ?int
 }
 
 pub interface Writer {
-mut:
+	mut:
 	write(buf []byte) ?int
 }
+```
 
-// ReaderWriter embeds both Reader and Writer.
-// The effect is the same as copy/pasting all of the
-// Reader and all of the Writer methods/fields into
-// ReaderWriter.
+Now, if we want to declare a `ReaderWriter` interface that requires the implementation
+of the `read()` and `write()` methods, then instead of copying the methods from `Reader`
+and `Writer` to `ReaderWriter`, we simply embed interfaces themselves in `ReaderWriter`:
+
+```v
 pub interface ReaderWriter {
 	Reader
 	Writer
+}
+```
+
+Now, if we want to implement `ReaderWriter`, we need to implement the `read()` and `write()`
+methods from both built-in interfaces:
+
+```v
+struct MyReaderWriter {}
+
+fn (mut m MyReaderWriter) read(mut buf []byte) ?int {
+	// ...
+}
+
+fn (mut m MyReaderWriter) write(buf []byte) ?int {
+	// ...
 }
 ```
