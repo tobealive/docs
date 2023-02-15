@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const activeLink = document.querySelector(".link.active");
     if (activeLink !== null) {
-        activeLink.scrollIntoView({block: "center", behavior: "auto"});
-
         let parentItem = activeLink.closest('.js-item');
         // skip first item
         parentItem = parentItem.parentElement.closest('.js-item');
@@ -20,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             }
         }
+
+        activeLink.scrollIntoView({block: "center", behavior: "auto"});
     }
 })
 
