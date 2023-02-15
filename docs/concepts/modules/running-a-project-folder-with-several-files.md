@@ -2,9 +2,9 @@
 
 Suppose you have a folder with several **.v** files in it, where one of them
 contains your `main()` function, and the other files have other helper
-functions. They may be organized by topic, but still *not yet* structured
-enough to be their own separate reusable modules, and you want to compile
-them all into one program.
+functions. 
+They may be organized by topic, but still *not yet* structured enough to be their 
+own separate reusable modules, and you want to compile them all into one program.
 
 In other languages, you would have to use includes or a build system
 to enumerate all files, compile them separately to object files,

@@ -1,7 +1,5 @@
 # Module imports
 
-For information about creating a module, see [Modules](#modules).
-
 Modules can be imported using the `import` keyword:
 
 ```v
@@ -15,13 +13,14 @@ fn main() {
 ```
 
 This program can use any public definitions from the `os` module, such
-as the `input` function. See the [standard library](https://modules.vlang.io/)
-documentation for a list of common modules and their public symbols.
+as the `input` function. 
+See the [standard library](https://modules.vlang.io/) documentation for a list of 
+common modules and their public symbols.
 
 By default, you have to specify the module prefix every time you call an external function.
-This may seem verbose at first, but it makes code much more readable
-and easier to understand – it's always clear which function from
-which module is being called. This is especially useful in large code bases.
+This may seem verbose at first, but it makes code much more readable and easier to 
+understand – it's always clear which function from which module is being called. 
+This is especially useful in large code bases.
 
 Cyclic module imports are not allowed, like in Go.
 
@@ -58,22 +57,21 @@ println('Your OS is ${current_os}.')
 
 Any imported module name can be aliased using the `as` keyword:
 
-> **Note**
-> This example will not compile unless you have created **mymod/sha256.v**
-
-```v failcompile
+```v
 import crypto.sha256
 import mymod.sha256 as mysha256
 
 fn main() {
 	v_hash := sha256.sum('hi'.bytes()).hex()
 	my_hash := mysha256.sum('hi'.bytes()).hex()
-	assert my_hash == v_hash
+	println(my_hash == v_hash) // true
 }
 ```
 
-You cannot alias an imported function or type.
-However, you _can_ redeclare a type.
+You cannot define methods for imported types.
+However, you _can_ redeclare a type using 
+[type aliases](../type-aliases.md)
+and add methods for it:
 
 ```v
 import time
