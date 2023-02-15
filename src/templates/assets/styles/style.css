@@ -209,25 +209,50 @@ aside .group section {
   height: 100%;
   overflow-y: scroll;
 }
+aside .group section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+aside .group section ul.sub-list {
+  padding-left: 20px;
+  display: none;
+}
+aside .group section ul.sub-list.open {
+  display: block;
+}
 aside .group .title {
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 10px;
 }
-aside .group .items {
+aside .group .item {
+  position: relative;
   margin: 10px 0;
 }
-aside .group .items .link {
+aside .group .item svg {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -5px;
+  fill: var(--secondary-color);
+}
+aside .group .item.open > svg {
+  transform: rotate(90deg);
+}
+aside .group .item .link {
+  position: relative;
   display: block;
   margin: 4px 0;
+  padding-left: 17px;
   color: var(--secondary-color);
   text-decoration: none;
 }
-aside .group .items .link:hover {
+aside .group .item .link:hover {
   cursor: pointer;
   color: var(--color);
 }
-aside .group .items .link.active {
+aside .group .item .link.active {
   color: var(--theme-color);
 }
 

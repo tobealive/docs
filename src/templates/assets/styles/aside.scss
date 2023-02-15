@@ -47,6 +47,21 @@ aside {
     section {
       height: 100%;
       overflow-y: scroll;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        &.sub-list {
+          padding-left: 20px;
+          display: none;
+
+          &.open {
+            display: block;
+          }
+        }
+      }
     }
 
     .title {
@@ -55,12 +70,28 @@ aside {
       margin-bottom: 10px;
     }
 
-    .items {
+    .item {
+      position: relative;
       margin: 10px 0;
 
+      svg {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        left: -5px;
+
+        fill: var(--secondary-color)
+      }
+
+      &.open > svg {
+        transform: rotate(90deg);
+      }
+
       .link {
+        position: relative;
         display: block;
         margin: 4px 0;
+        padding-left: 17px;
         color: var(--secondary-color);
         text-decoration: none;
 
