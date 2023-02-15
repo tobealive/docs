@@ -40,10 +40,17 @@ html[data-theme=dark] {
   --theme-color: #ff6b00;
   --theme-color-dark: #cc5307;
   --code-text-color: #d0d0d0;
-  --code-background-color: #484848;
+  --code-background-color: rgba(65, 65, 65, 0.85);
   --code-block-background-color: #1e1f22;
   --code-block-border-color: #323438;
   --code-block-text-color: #bbb;
+  --blockquote-text-color: #bbb;
+  --blockquote-note-background-color: rgba(77, 187, 95, 0.2);
+  --blockquote-note-icon-color: #4dbb5f;
+  --blockquote-tip-background-color: rgba(255, 255, 255, 0.05);
+  --blockquote-tip-icon-color: #bebebf;
+  --blockquote-warning-background-color: rgba(244, 92, 74, 0.2);
+  --blockquote-warning-icon-color: #f45c4b;
   --blockquote-tip-color: #b3b3b3;
   --blockquote-warning-color: #ff6b00;
   --blockquote-info-color: #00bfa5;
@@ -67,6 +74,13 @@ html {
   --code-block-background-color: #fff;
   --code-block-border-color: #ecedf1;
   --code-block-text-color: #000;
+  --blockquote-text-color: rgba(25, 25, 28, .7);
+  --blockquote-note-background-color: rgba(77, 187, 95, 0.2);
+  --blockquote-note-icon-color: #4dbb5f;
+  --blockquote-tip-background-color: rgba(25, 25, 28, 0.05);
+  --blockquote-tip-icon-color: #5a5a5c;
+  --blockquote-warning-background-color: rgba(244, 92, 74, 0.2);
+  --blockquote-warning-icon-color: #f45c4b;
   --blockquote-tip-color: #7f7f7f;
   --blockquote-warning-color: #ff6b00;
   --blockquote-info-color: #00bfa5;
@@ -254,6 +268,48 @@ aside .group .item .link:hover {
 }
 aside .group .item .link.active {
   color: var(--theme-color);
+}
+
+blockquote {
+  border-radius: 6px;
+  color: var(--blockquote-text-color);
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  grid-column-gap: 15px;
+  box-sizing: border-box;
+  margin: 20px 0 30px;
+  padding: 16px;
+}
+blockquote .prompt__icon {
+  width: 24px;
+  height: 24px;
+}
+blockquote .prompt__content > p:first-child {
+  margin-top: 0;
+}
+blockquote .prompt__content > p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote.note {
+  background-color: var(--blockquote-note-background-color);
+}
+blockquote.note .prompt__icon {
+  fill: var(--blockquote-note-icon-color);
+}
+
+blockquote.tip {
+  background-color: var(--blockquote-tip-background-color);
+}
+blockquote.tip .prompt__icon {
+  fill: var(--blockquote-tip-icon-color);
+}
+
+blockquote.warning {
+  background-color: var(--blockquote-warning-background-color);
+}
+blockquote.warning .prompt__icon {
+  fill: var(--blockquote-warning-icon-color);
 }
 
 * {
@@ -622,54 +678,6 @@ article main kbd {
   border: solid 1px #d1d5da;
   border-bottom-color: #c6cbd1;
   border-radius: 3px;
-}
-article main blockquote.tip {
-  border-left: 3px solid var(--blockquote-tip-color);
-  padding: 0 0 0 15px;
-  margin: 20px 0;
-}
-article main blockquote.tip .title {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--blockquote-tip-color);
-  margin-bottom: 5px;
-}
-article main blockquote.tip .message {
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--blockquote-tip-color);
-}
-article main blockquote.warning {
-  border-left: 3px solid var(--blockquote-warning-color);
-  padding: 0 0 0 15px;
-  margin: 20px 0;
-}
-article main blockquote.warning .title {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--blockquote-warning-color);
-  margin-bottom: 5px;
-}
-article main blockquote.warning .message {
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--blockquote-warning-color);
-}
-article main blockquote.info {
-  border-left: 3px solid var(--blockquote-info-color);
-  padding: 0 0 0 15px;
-  margin: 20px 0;
-}
-article main blockquote.info .title {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--blockquote-info-color);
-  margin-bottom: 5px;
-}
-article main blockquote.info .message {
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--blockquote-info-color);
 }
 article main ul {
   list-style: disc;

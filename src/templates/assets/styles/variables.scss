@@ -8,12 +8,21 @@ html[data-theme="dark"] {
   --divider-color: #3a3a3a;
   --theme-color: #ff6b00;
   --theme-color-dark: #cc5307;
+
   --code-text-color: #d0d0d0;
-  --code-background-color: #484848;
+  --code-background-color: rgba(65, 65, 65, 0.85);
 
   --code-block-background-color: #1e1f22;
   --code-block-border-color: #323438;
   --code-block-text-color: #bbb;
+
+  --blockquote-text-color: #bbb;
+  --blockquote-note-background-color: rgba(77, 187, 95, 0.2);
+  --blockquote-note-icon-color: #4dbb5f;
+  --blockquote-tip-background-color: rgba(255, 255, 255, 0.05);
+  --blockquote-tip-icon-color: #bebebf;
+  --blockquote-warning-background-color: rgba(244, 92, 74, 0.2);
+  --blockquote-warning-icon-color: #f45c4b;
 
   --blockquote-tip-color: #b3b3b3;
   --blockquote-warning-color: #ff6b00;
@@ -35,12 +44,21 @@ html {
   --divider-color: #e0e0e0;
   --theme-color: #ff6b00;
   --theme-color-dark: #cc5307;
+
   --code-text-color: #000000;
   --code-background-color: #f9f9f9;
 
   --code-block-background-color: #fff;
   --code-block-border-color: #ecedf1;
   --code-block-text-color: #000;
+
+  --blockquote-text-color: rgba(25, 25, 28, .7);
+  --blockquote-note-background-color: rgba(77, 187, 95, 0.2);
+  --blockquote-note-icon-color: #4dbb5f;
+  --blockquote-tip-background-color: rgba(25, 25, 28, 0.05);
+  --blockquote-tip-icon-color: #5a5a5c;
+  --blockquote-warning-background-color: rgba(244, 92, 74, 0.2);
+  --blockquote-warning-icon-color: #f45c4b;
 
   --blockquote-tip-color: #7f7f7f;
   --blockquote-warning-color: #ff6b00;

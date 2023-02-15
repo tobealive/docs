@@ -2,6 +2,7 @@
 @import "variables";
 @import "header";
 @import "aside";
+@import "blockquote";
 
 * {
   box-sizing: border-box;
@@ -425,27 +426,6 @@ article {
       border: solid 1px #d1d5da;
       border-bottom-color: #c6cbd1;
       border-radius: 3px;
-    }
-
-    @each $type in tip, warning, info {
-      blockquote.#{$type} {
-        border-left: 3px solid var(--blockquote-#{$type}-color);
-        padding: 0 0 0 15px;
-        margin: 20px 0;
-
-        .title {
-          font-size: 18px;
-          font-weight: 600;
-          color: var(--blockquote-#{$type}-color);
-          margin-bottom: 5px;
-        }
-
-        .message {
-          font-size: 14px;
-          font-weight: 400;
-          color: var(--blockquote-#{$type}-color);
-        }
-      }
     }
 
     ul {
