@@ -1,29 +1,35 @@
-TODO: улучшить
 # Closures
 
-V supports closures too.
+V also supports closures.
 This means that anonymous functions can inherit variables from the scope they were created in.
-They must do so explicitly by listing all variables that are inherited.
 
-```v oksyntax
+However, from a large number of languages, captured variables must be explicitly listed after the `fn` keyword
+inside square brackets.
+
+```v play
 my_int := 1
+
 my_closure := fn [my_int] () {
 	println(my_int)
 }
-my_closure() // prints 1
+
+my_closure() // 1
 ```
 
 Inherited variables are copied when the anonymous function is created.
 This means that if the original variable is modified after the creation of the function,
 the modification won't be reflected in the function.
 
-```v oksyntax
+```v play
 mut i := 1
 func := fn [i] () int {
 	return i
 }
+
 println(func() == 1) // true
+
 i = 123
+
 println(func() == 1) // still true
 ```
 

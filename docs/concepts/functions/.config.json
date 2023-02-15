@@ -2,12 +2,12 @@
   "title": "Functions",
   "contents": [
     {
-      "title": "Closures",
-      "url": "closures.md"
-    },
-    {
       "title": "Anonymous and Higher Order Functions",
       "url": "anonymous-and-higher-order-functions.md"
+    },
+    {
+      "title": "Closures",
+      "url": "closures.md"
     },
     {
       "title": "Limited Operator Overloading",

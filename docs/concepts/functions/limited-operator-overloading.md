@@ -1,5 +1,11 @@
-TODO: улучшить
 # Limited operator overloading
+
+> **Note**
+> Operator overloading goes against V's philosophy of simplicity and predictability.
+> But since scientific and graphical applications are among V's domains,
+> operator overloading is an important feature to have in order to improve readability:
+>
+> `a.add(b).add(c.mul(d))` is a lot less readable than `a + b + c * d`.
 
 Operator overloading defines the behavior of certain binary operators for certain types.
 
@@ -33,12 +39,6 @@ fn main() {
 	println(c) // "{3, 5}"
 }
 ```
-
-> Operator overloading goes against V's philosophy of simplicity and predictability.
-> But since scientific and graphical applications are among V's domains,
-> operator overloading is an important feature to have in order to improve readability:
->
-> `a.add(b).add(c.mul(d))` is a lot less readable than `a + b + c * d`.
 
 Operator overloading is possible for the following binary operators: `+, -, *, /, %, <, ==`.
 
