@@ -128,6 +128,10 @@
       "url": "cross-compilation.md"
     },
     {
+      "title": "V and C",
+      "url": "v-and-c.md"
+    },
+    {
       "title": "Cross-platform Shell Scripts",
       "url": "cross-platform-shell-scripts.md"
     }
