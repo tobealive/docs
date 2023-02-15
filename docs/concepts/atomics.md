@@ -1,11 +1,13 @@
 # Atomics
 
 V has no special support for atomics, yet, nevertheless it's possible to treat variables as atomics
-by [calling C](#v-and-c) functions from V. The standard C11 atomic functions like `atomic_store()`
-are usually defined with the help of macros and C compiler magic to provide a kind of
-*overloaded C functions*.
+by [calling C](./v-and-c) functions from V.
+
+The standard C11 atomic functions like `atomic_store()` are usually defined with the help of macros
+and C compiler magic to provide a kind of *overloaded C functions*.
+
 Since V does not support overloading functions by intention there are wrapper functions defined in
-C headers named `atomic.h` that are part of the V compiler infrastructure.
+C headers named **atomic.h** that are part of the V compiler infrastructure.
 
 There are dedicated wrappers for all unsigned integer types and for pointers.
 (`byte` is not fully supported on Windows) – the function names include the type name
@@ -79,10 +81,11 @@ fn main() {
 ```
 
 In this example both `main()` and the spawned thread `change()` try to replace a value of `17`
-in the global `atom` with a value of `23`. The replacement in the opposite direction is
-done exactly 10000000 times. The last replacement will be with `31` which makes the spawned
-thread finish.
+in the global `atom` with a value of `23`.
+The replacement in the opposite direction is done exactly 10000000 times.
+The last replacement will be with `31` which makes the spawned thread finish.
 
 It is not predictable how many replacements occur in which thread, but the sum will always
-be 10000000. (With the non-atomic commands from the comments the value will be higher or the program
-will hang – dependent on the compiler optimization used.)
+be 10000000.
+With the non-atomic commands from the comments the value will be higher or the program
+will hang – dependent on the compiler optimization used.

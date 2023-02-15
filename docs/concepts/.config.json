@@ -136,6 +136,10 @@
       "url": "v-and-c.md"
     },
     {
+      "title": "Atomics",
+      "url": "atomics.md"
+    },
+    {
       "title": "Cross-platform Shell Scripts",
       "url": "cross-platform-shell-scripts.md"
     },
