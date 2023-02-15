@@ -138,6 +138,10 @@
     {
       "title": "Cross-platform Shell Scripts",
       "url": "cross-platform-shell-scripts.md"
+    },
+    {
+      "title": "Inline Assembly",
+      "url": "inline-assembly.md"
     }
   ]
 }

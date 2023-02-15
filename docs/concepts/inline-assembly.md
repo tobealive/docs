@@ -1,8 +1,6 @@
-# Other V Features
+# Inline assembly
 
-## Inline assembly
-
-```v ignore
+```v play
 a := 100
 b := 20
 mut c := 0
@@ -20,4 +18,4 @@ println('c: ${c}') // 120
 ```
 
 For more examples, see
-[github.com/vlang/v/tree/master/vlib/v/tests/assembly/asm_test.amd64.v](https://github.com/vlang/v/tree/master/vlib/v/tests/assembly/asm_test.amd64.v)
+[Assembler Tests](https://github.com/vlang/v/blob/master/vlib/v/slow_tests/assembly/asm_test.amd64.v).
