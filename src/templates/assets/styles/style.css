@@ -471,7 +471,12 @@ article .container .aside ul {
   margin: 0;
 }
 article .container .aside ul li {
-  margin: 3px 0;
+  margin: 5px 0;
+  border-left: 3px solid var(--background);
+  padding: 0 0 0 10px;
+}
+article .container .aside ul li.active {
+  border-left: 3px solid var(--theme-color);
 }
 article .container .aside ul li.active a {
   color: var(--color);
@@ -479,6 +484,9 @@ article .container .aside ul li.active a {
 article .container .aside ul li a {
   color: var(--secondary-color);
   text-decoration: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  vertical-align: baseline;
 }
 article .container .aside ul li a:hover {
   cursor: pointer;

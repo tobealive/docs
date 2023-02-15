@@ -135,7 +135,7 @@
                         <nav>
                             <ul>
                                 @for subtopic in subtopics
-                                <li class="active">
+                                <li>
                                     <a href="#@{subtopic.id}">@{subtopic.title}</a>
                                 </li>
                                 @end
@@ -190,6 +190,7 @@
 </script>
 
 <script src="assets/scripts/theme.js"></script>
+<script src="assets/scripts/rightside.js"></script>
 
 <script>
     document.addEventListener("keydown", (event) => {
