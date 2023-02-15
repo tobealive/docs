@@ -3,19 +3,23 @@
   "contents": [
     {
       "title": "Getting Started",
-      "url": "getting-started.md"
+      "url": "getting-started"
     },
     {
       "title": "Basics",
-      "url": "basics.md"
+      "url": "basics"
     },
     {
       "title": "Concepts",
-      "url": "concepts.md"
+      "url": "concepts"
     },
     {
       "title": "Tools",
-      "url": "tools.md"
+      "url": "tools"
+    },
+    {
+      "title": "Language Reference",
+      "url": "language-reference"
     }
   ]
 }

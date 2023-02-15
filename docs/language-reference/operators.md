@@ -1,6 +1,7 @@
 # Operators
 
-This lists operators for [primitive types](#primitive-types) only.
+V supports the following operators.
+It can be used with [primitive types](../concepts/types/primitive-types.md) only.
 
 ```v ignore
 +    sum                    integers, floats, strings
@@ -23,17 +24,20 @@ This lists operators for [primitive types](#primitive-types) only.
 >>   right shift            integer >> unsigned integer
 >>>  unsigned right shift   integer >> unsigned integer
 
-
-Precedence    Operator
-    5            *  /  %  <<  >> >>> &
-    4            +  -  |  ^
-    3            ==  !=  <  <=  >  >=
-    2            &&
-    1            ||
-
-
 Assignment Operators
 +=   -=   *=   /=   %=
 &=   |=   ^=
 >>=  <<=  >>>=
 ```
+
+## Operator Precedence
+
+| Precedence | Operator                            |
+|------------|-------------------------------------|
+| 5          | `*`  `/`  `%`  `<<`  `>>` `>>>` `&` |
+| 4          | `+`  `-`  `^`                       |
+| 3          | `==`  `!=`  `<`  `<=`  `>`  `>=`    |
+| 2          | `&&`                                |
+| 1          | `&#124;&#124;`                      |
+
+See also [Limited Operator Overloading](../concepts/functions/limited-operator-overloading.md).
