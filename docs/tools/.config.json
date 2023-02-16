@@ -7,8 +7,7 @@
     },
     {
       "title": "Editor Plugins",
-      "url": "editor_plugins",
-      "is_folder": true
+      "url": "editor_plugins"
     }
   ]
 }

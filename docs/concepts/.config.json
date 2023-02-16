@@ -3,33 +3,27 @@
   "contents": [
     {
       "title": "Functions",
-      "url": "functions",
-      "is_folder": true
+      "url": "functions"
     },
     {
       "title": "Structs",
-      "url": "structs",
-      "is_folder": true
+      "url": "structs"
     },
     {
       "title": "Types",
-      "url": "types",
-      "is_folder": true
+      "url": "types"
     },
     {
       "title": "Modules",
-      "url": "modules",
-      "is_folder": true
+      "url": "modules"
     },
     {
       "title": "Control Flow",
-      "url": "control-flow",
-      "is_folder": true
+      "url": "control-flow"
     },
     {
       "title": "Compile Time",
-      "url": "compile-time",
-      "is_folder": true
+      "url": "compile-time"
     },
     {
       "title": "Variables",
