@@ -234,44 +234,7 @@
 </div>
 
 <script src="assets/scripts/vlang-playground.js"></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const playgroundElements = [...document.querySelectorAll(".language-v"), ...document.querySelectorAll(".language-c")];
-        playgroundElements.forEach(playgroundElement => {
-            const playground = Playground.create(playgroundElement, {
-                fontSize: "14px",
-                highlightOnly: true,
-                showFooter: false,
-                showLineNumbers: false,
-            });
-            playgrounds.push(playground);
-        });
-    })
-</script>
-
 <script src="assets/scripts/aside.js"></script>
 <script src="assets/scripts/theme.js"></script>
-
-<script>
-    document.addEventListener("keydown", (event) => {
-        //@if prev_topic.url != ''
-        if (event.key === "ArrowLeft") {
-            window.open("@prev_topic.url", "_self")
-        }
-        //@end
-
-        //@if next_topic.url != ''
-        if (event.key === "ArrowRight") {
-            window.open("@next_topic.url", "_self")
-        }
-        //@end
-    })
-
-    window.onload = () => {
-        const html = document.querySelector("html");
-        html.style.opacity = '1'
-    }
-</script>
 </body>
 </html>

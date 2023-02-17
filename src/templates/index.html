@@ -63,16 +63,51 @@
         <nav>
             <div class="group">
                 <section>
-                    <div class="title">Topics</div>
-                    @for topic in topics
-                    <div class="items">
-                        @if topic.title == title
-                        <a class="link active" href="@{topic.url}">@{topic.title}</a>
-                        @else
-                        <a class="link" href="@{topic.url}">@{topic.title}</a>
+                    <ul>
+                        @for first_child in root_node.contents
+                            @if first_child.contents.len == 0
+                                <li class="js-item item">
+                                    <a class="link" href="#">@first_child.title</a>
+                                </li>
+                            @else
+                                <li class="js-item item with-sublist">
+                                    <svg viewBox="-5 -3 24 24">
+                                        <path d="M11 9l-6 5.25V3.75z"></path>
+                                    </svg>
+
+                                    <a class="link" href="#">@first_child.title</a>
+
+                                    <ul class="js-sub-list sub-list">
+                                        @for first_subchild in first_child.contents
+                                            @for second_child in first_subchild.contents
+                                                @if second_child.contents.len == 0
+                                                <li class="js-item item">
+                                                    <a class="link" href="#">@second_child.title</a>
+                                                </li>
+                                                @else
+                                                    <li class="js-item item with-sublist">
+                                                        <svg viewBox="-5 -3 24 24">
+                                                            <path d="M11 9l-6 5.25V3.75z"></path>
+                                                        </svg>
+                                                        <a class="link" href="#">@second_child.title</a>
+                                                        @for second_subchild in second_child.contents
+                                                            @for third_child in second_subchild.contents
+                                                            <ul class="js-sub-list sub-list open">
+                                                                <li class="js-item item">
+                                                                    <a class="link" href="#">@third_child.title</a>
+                                                                </li>
+                                                            </ul>
+                                                            @end
+                                                        @end
+                                                    </li>
+                                                @end
+                                            @end
+                                        @end
+                                    </ul>
+                                </li>
+                            @end
                         @end
-                    </div>
-                    @end
+                    </ul>
                 </section>
             </div>
         </nav>
@@ -189,6 +224,7 @@
     })
 </script>
 
+<script src="assets/scripts/aside.js"></script>
 <script src="assets/scripts/theme.js"></script>
 <script src="assets/scripts/rightside.js"></script>
 
