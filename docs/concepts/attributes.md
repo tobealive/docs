@@ -58,6 +58,13 @@ For custom options:
 fn log() {}
 ```
 
+You also can declare string attribute:
+
+```v
+['/run']
+fn run() {}
+```
+
 ## General attributes
 
 ### `[deprecated]`, `[deprecated_after]`
