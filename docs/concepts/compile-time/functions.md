@@ -2,7 +2,13 @@
 
 V provides several compile-time functions.
 
-### `$env`
+## `$tmpl`
+
+`$tmpl` is a compile-time function that allows you to embed a template into your code.
+
+See [Templates](../templates/main.md) for more information.
+
+## `$env`
 
 V can bring in values at compile time from environment variables.
 
@@ -18,7 +24,7 @@ fn main() {
 }
 ```
 
-### `$compile_error` and `$compile_warn`
+## `$compile_error` and `$compile_warn`
 
 These two compile time functions are very useful for displaying custom errors/warnings during
 compile time.

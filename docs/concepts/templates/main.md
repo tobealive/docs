@@ -56,4 +56,4 @@ As you can see, we didn't explicitly pass the `name`, `age`, and `numbers` varia
 However, they are still available within the template, because templates have access to the variables 
 of the outer function in which they are used.
 
-For more information about template directives, see [template directives](./directives.md).
+For more information about template directives, see [template directives](directives.md).

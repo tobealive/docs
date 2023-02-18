@@ -147,7 +147,7 @@ In `else` you can use `if` to mimic `else if`, however the inner `if` must end w
 
 ## `for` statement
 
-The `for` directive is similar to the [`for`](../control-flow.md#for-statement) loop in V.
+The `for` directive is similar to the [`for`](../control-flow/loops.md) loop in V.
 As with `if`, the `for` directive has a body that ends with `@end`.
 Within a loop, you can access variables defined for iteration.
 

@@ -2,10 +2,6 @@
   "title": "Compile Time",
   "contents": [
     {
-      "title": "Templates",
-      "url": "templates"
-    },
-    {
       "title": "File embedding",
       "url": "file-embedding.md"
     },

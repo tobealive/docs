@@ -26,6 +26,10 @@
       "url": "compile-time"
     },
     {
+      "title": "Templates",
+      "url": "templates"
+    },
+    {
       "title": "Variables",
       "url": "variables.md"
     },
