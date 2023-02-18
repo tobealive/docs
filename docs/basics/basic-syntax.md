@@ -37,6 +37,8 @@ println("I'm V!")
 
 Try to run this examples to see the difference.
 
+See [Builtin functions](../concepts/builtin-functions.md) for more information.
+
 ## Functions
 
 A function with two string arguments and string return type.
@@ -53,6 +55,12 @@ If function doesn't return anything, you can omit the return type.
 fn say_hello() {
     println('Hello, World!')
 }
+```
+
+Function calls looks like this:
+
+```v
+concatenate('Hello, ', 'World!')
 ```
 
 See [Functions](../concepts/functions) for more information.
@@ -112,7 +120,7 @@ See [Constants](../concepts/constants) for more information.
 ## Structs
 
 V is not an object-oriented language, it doesn't have classes.
-But it has structs, which are similar to classes in other languages.
+But it has structs:
 
 ```v play
 struct Person {
@@ -192,7 +200,9 @@ See [Structs](../concepts/structs) for more information.
 
 ## Interfaces
 
-V has interfaces, which are similar to interfaces in other languages. V uses duck typing.
+V has interfaces, which are similar to interfaces in other languages. V uses 
+[duck typing](https://en.wikipedia.org/wiki/Duck_typing).
+This means that there is no `implements` keyword.
 
 ```v play
 interface Greeter {
@@ -253,9 +263,11 @@ status := if age < 18 {
 println(status)
 ```
 
+See [Conditional expressions](../concepts/control-flow/conditions.md) for more information.
+
 ## For loop
 
-V has only `for` loops.
+V has only `for` loops in different forms.
 
 ```v play
 for i := 0; i < 10; i++ {
@@ -323,7 +335,7 @@ match status {
 ```
 
 See [Match expression](../concepts/control-flow/conditions.md#match-expression) for more information.
-For more information about Sum types see [Sum types](../concepts/sum-types).
+For more information about sum types see [Sum types](../concepts/sum-types).
 
 ## Error handling
 
