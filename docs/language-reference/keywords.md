@@ -17,7 +17,7 @@ The following tokens are always interpreted as keywords and cannot be used as id
 - `else` – defines the branch of an [if expression](../concepts/control-flow/conditions.md#if-expression) that is
   executed when the condition is false.
 - `enum` – declares an [enum](../concepts/enums.md)
-- `false` – literal falsy boolean value
+- `false` – literal falsely boolean value
 - `fn` – declares a [function](../concepts/functions/main.md)
 - `for` – begins a [for loop](../concepts/control-flow/loops.md)
 - `go` – starts a [separate thread](../concepts/concurrency.md)

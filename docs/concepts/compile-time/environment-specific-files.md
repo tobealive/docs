@@ -73,7 +73,7 @@ contain arbitrary characters (only lower case latin letters + numbers + `_`).
 > **Note**
 > A combinatorial `_d_customflag_linux.c.v` postfix will not work.
 > If you do need a custom flag file, that has platform dependent code, use the
-> postfix **_d_customflag.v**, and then use plaftorm dependent compile time
+> postfix **_d_customflag.v**, and then use platform dependent compile time
 > conditional blocks inside it, i.e. `$if linux {}` etc.
 
 **_notd_customflag.v** – similar to **_d_customflag.v**, but will be used
