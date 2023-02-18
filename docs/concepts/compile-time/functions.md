@@ -1,6 +1,6 @@
 # Compile-time functions
 
-V provides access to some compile-time functions.
+V provides several compile-time functions.
 
 ### `$env`
 
@@ -9,7 +9,7 @@ V can bring in values at compile time from environment variables.
 `$env('ENV_VAR')` can also be used in top-level `#flag` and `#include` statements:
 `#flag linux -I $env('JAVA_HOME')/include`.
 
-```v
+```v play
 module main
 
 fn main() {

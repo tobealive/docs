@@ -6,7 +6,7 @@
 compiler, platform or compilation options.
 It can also be used to check the types of fields or methods when iterating them, see
 [Compile-time Reflection](./reflection.md).
-And also specify different code depending on the type in generic functions, see
+It can also specify different code depending on the type in generic functions, see
 [Generics](../generics.md#compile-time-conditions).
 
 It supports multiple conditions in one branch:
@@ -78,6 +78,13 @@ Below are all the main supported options:
 
 ## `$for` statement
 
-`$for` allows you to iterate over special arrays, currently arrays for fields of structures and methods of types.
+`$for` allows you to iterate over special arrays, currently arrays for fields of structures, 
+methods of types, attributes of types and other.
+
+```v
+$for field in User.fields {
+    println(field.name)
+}
+```
 
 See the [Compile-time Reflection](./reflection.md) article for more details.

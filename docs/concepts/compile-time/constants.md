@@ -1,7 +1,6 @@
 # Compile time constants
 
 V provides access to some constants at compile time.
-At compile time, they are replaced by specific values.
 
 - `@FN` – name of the current V function
 - `@METHOD` – ReceiverType.MethodName
@@ -12,10 +11,10 @@ At compile time, they are replaced by specific values.
 - `@FILE_LINE` – like `@FILE:@LINE`, but the file part is a relative path
 - `@COLUMN` – column where it appears (as a string).
 - `@VEXE` – path to the V compiler
-- `@VEXEROOT` – *folder*, where the V executable is (as a string).
+- `@VEXEROOT` – folder, where the V executable is (as a string).
 - `@VHASH` – shortened commit hash of the V compiler (as a string).
 - `@VMOD_FILE` – contents of the nearest **v.mod** file (as a string).
-- `@VMODROOT` – *folder*, where the nearest **v.mod** file is (as a string).
+- `@VMODROOT` – folder, where the nearest **v.mod** file is (as a string).
 
 That allows you to do the following example, useful while debugging/logging/tracing your code:
 
