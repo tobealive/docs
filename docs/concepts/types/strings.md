@@ -146,6 +146,25 @@ To turn an array of bytes into a string, use the `.bytestr()` method:
 s2 := arr.bytestr()
 ```
 
+### to `[]rune`
+
+To get an array of runes from a string, use the `.runes()` method:
+
+```v
+arr := 'hello 🌎'.runes()
+println(arr.len) // 7
+```
+
+### from `[]rune`
+
+To turn an array of runes into a string, use the `.string()` method:
+
+```v
+arr := 'hello 🌎'.runes()
+s2 := arr.string()
+println(s2) // hello 🌎
+```
+
 For more advanced `string` processing and conversions, refer to the
 [vlib/strconv](https://modules.vlang.io/strconv.html)
 module.
