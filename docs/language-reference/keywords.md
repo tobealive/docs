@@ -6,17 +6,18 @@ The following tokens are always interpreted as keywords and cannot be used as id
 - `as`
     - used in [sum types](../concepts/sum-types.md#is-and-as-operators)
     - specify an [alias for an import](../concepts/modules/module-imports.md)
+    - specify a inner type for a [Enum](../concepts/enums.md)
 - `asm` – used in [inline assembly](../concepts/inline-assembly.md)
 - `assert` – used in [testing](../concepts/testing.md)
 - `atomic` – used in [atomics](../concepts/atomics.md)
-- `break` – [terminates the execution of a loop](../concepts/control-flow/loops.md)
+- `break` – [terminates the execution of a loop](../concepts/control-flow/loops.md#break--continue)
 - `const` – declares a [constant](../concepts/constants.md)
-- `continue` – [proceeds to the next step of the nearest enclosing loop](../concepts/control-flow/loops.md)
+- `continue` – [proceeds to the next step of the nearest enclosing loop](../concepts/control-flow/loops.md#break--continue)
 - `defer` – defines [deferred block](../concepts/control-flow/defer.md)
 - `else` – defines the branch of an [if expression](../concepts/control-flow/conditions.md#if-expression) that is
   executed when the condition is false.
 - `enum` – declares an [enum](../concepts/enums.md)
-- `false` – literal boolean value
+- `false` – literal falsy boolean value
 - `fn` – declares a [function](../concepts/functions/main.md)
 - `for` – begins a [for loop](../concepts/control-flow/loops.md)
 - `go` – starts a [separate thread](../concepts/concurrency.md)
@@ -30,15 +31,19 @@ The following tokens are always interpreted as keywords and cannot be used as id
 - `is`
     - used in [sum types](../concepts/sum-types.md#is-and-as-operators)
     - used in [interfaces](../concepts/interfaces.md)
-- `isreftype` – checks if a type is
-  a [reference type](../concepts/builtin-functions.md#isreftype--checking-if-a-type-is-a-reference-type)
+- `isreftype` – [checks if a type is a reference type](../concepts/builtin-functions.md#isreftype--checking-if-a-type-is-a-reference-type)
 - `lock` – used in [locking](../concepts/concurrency.md)
 - `match` – begins a [match expression](../concepts/control-flow/conditions.md#match-expression)
 - `module` – declares a [module](../concepts/modules/main.md)
-- `mut` – declares a [mutable variable](../concepts/variables.md)
+- `mut`
+  - declares a [mutable variable](../concepts/variables.md)
+  - starts a [mutable fields block](../concepts/structs/main.md#fields)
+  - declares method receiver as [mutable](../concepts/structs/main.md#mutable-receivers)
 - `none` – literal value of the [none type](../concepts/error-handling.md)
 - `or` – defines the branch for [result or option type](../concepts/error-handling.md)
-- `pub` – makes a [declaration](../concepts/modules/main.md#symbol-visibility) public
+- `pub`
+  - makes a [declaration](../concepts/modules/main.md#symbol-visibility) public
+  - starts a [public fields block](../concepts/structs/main.md#fields)
 - `return` – [returns a value from a function](../concepts/functions/main.md)
 - `rlock` – used in [locking](../concepts/concurrency.md)
 - `select` – used in [select statement](../concepts/concurrency.md)
@@ -47,7 +52,7 @@ The following tokens are always interpreted as keywords and cannot be used as id
 - `spawn` – starts a [separate thread](../concepts/concurrency.md)
 - `static` – used in [static variables](../concepts/variables.md)
 - `struct` – declares a [struct](../concepts/structs/main.md)
-- `true` – literal boolean value
+- `true` – literal truthy boolean value
 - `type` – declares a [type alias](../concepts/type-aliases.md) or [sum types](../concepts/sum-types.md)
 - `typeof` – returns the [type of expression](../concepts/builtin-functions.md#typeof--getting-the-type-of-expression)
 - `union` – declares a [union](../concepts/unions.md)
@@ -59,8 +64,9 @@ The following tokens are always interpreted as keywords and cannot be used as id
 
 ## Special identifiers
 
-The following identifiers are defined by the compiler in specific contexts, and they can be used as regular 
+The following identifiers are defined by the compiler in specific contexts, and they can be used as regular
 identifiers in other contexts:
 
 - `it` is used inside a `array` or `map` method calls to refer to its parameter implicitly.
+- `a` and `b` is used inside a `sort()` method for `array` to refer left and right elements respectively.
 
