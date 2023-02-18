@@ -21,13 +21,13 @@ Let's check if it works:
 
 ```bash
 ./v run examples/hello_world.v
-## or on Windows:
+# or on Windows:
 v run examples/hello_world.v
 ```
 
 This command should print `Hello, World!` to the console.
 
-[//]: # Не должны ли мы иметь отдельную статью Troubleshooting?
+[//]: # TODO: Не должны ли мы иметь отдельную статью Troubleshooting?
 
 If it doesn't, please see
 [Installation Issues](https://github.com/vlang/v/discussions/categories/installation-issues)
@@ -68,7 +68,7 @@ type:
 
 ```bat
 v symlink
-## on PowerShell:
+# on PowerShell:
 ./v symlink
 ```
 
@@ -95,9 +95,9 @@ v up
 ```bash
 ## xbps-install -Su base-devel
 ## xbps-install libatomic-devel
-$ git clone https://github.com/vlang/v
-$ cd v
-$ make
+git clone https://github.com/vlang/v
+cd v
+make
 ```
 
 ## Docker
@@ -135,7 +135,7 @@ make
 
 `net.http`, `net.websocket` module, and the `v install` command may all use SSL.
 
-V comes with a version of mbedtls, which should work on all systems. If you find a need to
+V comes with a version of `mbedtls`, which should work on all systems. If you find a need to
 use OpenSSL instead, you will need to make sure that it is installed on your system, then
 use the `-d use_openssl` switch when you compile.
 
