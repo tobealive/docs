@@ -81,12 +81,12 @@ struct TypeInfo {
 `isreftype` returns `true` if the type is a reference type, `false` otherwise.
 
 ```v nofmt
-println(isreftype[int]()) // false
-println(isreftype[string]()) // true
-println(isreftype[[]int]()) // true
+println(isreftype[int]())            // false
+println(isreftype[string]())         // true
+println(isreftype[[]int]())          // true
 println(isreftype[map[string]int]()) // true
-println(isreftype('hello')) // true
-println(isreftype(10)) // true
+println(isreftype('hello'))          // true
+println(isreftype(10))               // true
 ```
 
 ## `__offsetof`: Getting the offset of a struct field

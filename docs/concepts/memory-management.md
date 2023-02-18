@@ -148,7 +148,7 @@ Things become less obvious when a reference to an object is passed as function a
 
 ```v play
 struct MyStruct {
-  mut:
+mut:
 	n int
 }
 

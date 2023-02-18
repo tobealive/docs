@@ -113,7 +113,7 @@ fn risky_business() {
         // code that *will not be* checked, like pointer arithmetic,
         // accessing union fields, calling other `[unsafe]` fns, etc...
         // Usually, it is a good idea to try minimizing code wrapped
-        // in unsafe{} as much as possible.
+        // in `unsafe {}` as much as possible.
     }
     // code that will be checked, perhaps checking post conditions
 }

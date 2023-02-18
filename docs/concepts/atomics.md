@@ -31,7 +31,7 @@ fn C.atomic_compare_exchange_strong_u32(&u32, &u32, u32) bool
 
 const num_iterations = 10000000
 
-// see section "Global Variables" below
+// see "Global Variables" section
 __global (
 	atom u32 // ordinary variable but used as atomic
 )

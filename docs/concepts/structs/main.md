@@ -378,8 +378,8 @@ pub fn new_information(data string) !Information {
 }
 ```
 
-Note that `new_information` is a *factory* function. Now when we want to use this struct
-outside the module:
+Note that `new_information` is a *factory* function.
+Now when we want to use this struct outside the module:
 
 ```v okfmt
 import sample
