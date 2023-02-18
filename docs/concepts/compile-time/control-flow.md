@@ -31,13 +31,13 @@ Can have `$else-$if` and `$else` branches:
 
 ```v
 $if tinyc {
-    println('tinyc')
+	println('tinyc')
 } $else $if clang {
-    println('clang')
+	println('clang')
 } $else $if gcc {
-    println('gcc')
+	println('gcc')
 } $else {
-    println('different compiler')
+	println('different compiler')
 }
 ```
 
@@ -45,7 +45,7 @@ Can be used to check compilation options:
 
 ```v
 $if test {
-    println('testing')
+	println('testing')
 }
 // v -cg ...
 $if debug {
@@ -62,7 +62,7 @@ Custom compiler options passed via `-d` can be checked with `$if option ? {}`:
 ```v
 // v -d option ...
 $if option ? {
-    println('custom option')
+	println('custom option')
 }
 ```
 

@@ -29,7 +29,7 @@ Both receive as their only argument a string literal that contains the message t
 
 ```v play
 $if linux {
-    $compile_error('Linux is not supported')
+	$compile_error('Linux is not supported')
 }
 
 fn main() {

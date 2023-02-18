@@ -9,7 +9,7 @@ To display the value of a variable in a template, use `@{}`:
 
 ```html
 <p>
-    @{name}
+	@{name}
 </p>
 ```
 
@@ -58,7 +58,7 @@ You can embed any V code in a template by enclosing it in `@{}`:
 
 ```html
 <p>
-    @{"Hello, " + name}
+	@{"Hello, " + name}
 </p>
 ```
 
@@ -90,7 +90,7 @@ For example:
 ```html
 @if is_greeting
 <p>
-    @{"Hello, " + name}
+	@{"Hello, " + name}
 </p>
 @end
 ```
@@ -99,7 +99,7 @@ Result when `is_greeting` is true:
 
 ```html
 <p>
-    Hello, John
+	Hello, John
 </p>
 ```
 
@@ -108,11 +108,11 @@ Example with `else` branch:
 ```html
 @if is_greeting
 <p>
-    @{"Hello, " + name}
+	@{"Hello, " + name}
 </p>
 @else
 <p>
-    @{"Goodbye, " + name}
+	@{"Goodbye, " + name}
 </p>
 @end
 ```
@@ -121,7 +121,7 @@ Result when `is_greeting` is `true`:
 
 ```html
 <p>
-    Hello, John
+	Hello, John
 </p>
 ```
 
@@ -129,7 +129,7 @@ Result when `is_greeting` is `false`:
 
 ```html
 <p>
-    Goodbye, John
+	Goodbye, John
 </p>
 ```
 
@@ -139,9 +139,9 @@ In `else` you can use `if` to mimic `else if`, however the inner `if` must end w
 @if <condition>
 
 @else
-    @if <condition 2>
-    
-    @end
+	@if <condition 2>
+
+	@end
 @end
 ```
 

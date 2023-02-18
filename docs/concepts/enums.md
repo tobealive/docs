@@ -193,16 +193,16 @@ single variable.
 ```v play
 [flag]
 enum BitField {
-    read
-    write
-    other
+	read
+	write
+	other
 }
 
 fn main() {
-    mut flags := BitField.read
-    flags.set(.write)
-    println(flags) // BitField{.read | .write}
-    println(int(flags)) // 3 or 0b0011
+	mut flags := BitField.read
+	flags.set(.write)
+	println(flags) // BitField{.read | .write}
+	println(int(flags)) // 3 or 0b0011
 }
 ```
 

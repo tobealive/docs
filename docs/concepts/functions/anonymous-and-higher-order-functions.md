@@ -6,10 +6,10 @@ Anonymous functions can be declared inside other functions:
 
 ```v play
 fn main() {
-    double_fn := fn (n int) int {
-        return n + n
-    }
-    println(double_fn(5)) // 10
+	double_fn := fn (n int) int {
+		return n + n
+	}
+	println(double_fn(5)) // 10
 }
 ```
 
@@ -17,13 +17,13 @@ Such functions do not have a name and can be passed to other functions as argume
 
 ```v play
 fn run(value int, op fn (int) int) int {
-    return op(value)
+	return op(value)
 }
-    
+
 fn main() {
-    println(run(5, fn (n int) int {
-        return n + n
-    })) // 10
+	println(run(5, fn (n int) int {
+		return n + n
+	})) // 10
 }
 ```
 
@@ -44,10 +44,10 @@ In the example:
 
 ```v play
 fn main() {
-    double_fn := fn (n int) int {
-        return n + n
-    }
-    println(double_fn(5)) // 10
+	double_fn := fn (n int) int {
+		return n + n
+	}
+	println(double_fn(5)) // 10
 }
 ```
 
@@ -59,17 +59,17 @@ For example, you can have an array of functions:
 
 ```v play
 fn sqr(n int) int {
-    return n * n
+	return n * n
 }
 
 fn cube(n int) int {
-    return n * n * n
+	return n * n * n
 }
 
 fn main() {
-    fns := [sqr, cube]
-    println(fns[0](10)) // 100
-    println(fns[1](10)) // 1000
+	fns := [sqr, cube]
+	println(fns[0](10)) // 100
+	println(fns[1](10)) // 1000
 }
 ```
 
@@ -77,20 +77,20 @@ Or a function map:
 
 ```v play
 fn sqr(n int) int {
-    return n * n
+	return n * n
 }
 
 fn cube(n int) int {
-    return n * n * n
+	return n * n * n
 }
 
 fn main() {
-    fns_map := {
-        'sqr':  sqr
-        'cube': cube
-    }
-    println(fns_map['sqr'](10)) // 100
-    println(fns_map['cube'](10)) // 1000
+	fns_map := {
+		'sqr':  sqr
+		'cube': cube
+	}
+	println(fns_map['sqr'](10)) // 100
+	println(fns_map['cube'](10)) // 1000
 }
 ```
 
@@ -98,9 +98,9 @@ Anonymous functions can be called right after they are declared:
 
 ```v play
 fn main() {
-    fn (n int) {
-        println(n + n) // 10
-    }(5)
+	fn (n int) {
+		println(n + n) // 10
+	}(5)
 }
 ```
 
@@ -110,13 +110,13 @@ Thanks to [type aliases](../type-aliases.md), you can give names to functional t
 type Filter = fn (string) string
 
 fn filter(s string, f Filter) string {
-    return f(s)
+	return f(s)
 }
 
 fn main() {
-    println(filter('Hello world', fn (s string) string {
-        return s.to_upper()
-    })) // HELLO WORLD
+	println(filter('Hello world', fn (s string) string {
+		return s.to_upper()
+	})) // HELLO WORLD
 }
 ```
 

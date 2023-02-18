@@ -85,15 +85,15 @@ To describe methods of generic structures, the receiver must be of type `Type[<g
 
 ```v play
 struct Optional[T] {
-    value      T
-    is_defined bool = true
+	value      T
+	is_defined bool = true
 }
    
 fn (o Optional[T]) or_else(default T) T {
-    if o.is_defined {
-        return o.value
-    }
-    return default
+	if o.is_defined {
+		return o.value
+	}
+	return default
 }
 
 fn main() {

@@ -43,9 +43,9 @@ V supports multiple return values:
 
 ```v play
 fn foo() (int, int) {
-    return 2, 3
+	return 2, 3
 }
-    
+
 a, b := foo()
 println(a) // 2
 println(b) // 3
@@ -200,7 +200,7 @@ Functions can be declared as inline using the `inline` [attribute](../attributes
 ```v
 [inline]
 fn add(x int, y int) int {
-    return x + y
+	return x + y
 }
 ```
 
@@ -212,7 +212,7 @@ To prevent the inlining of a function, use the `noinline` [attribute](../attribu
 ```v
 [noinline]
 fn add(x int, y int) int {
-    return x + y
+	return x + y
 }
 ```
 

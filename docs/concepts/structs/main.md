@@ -131,17 +131,17 @@ Just like accessing the fields of a structure, a dot is used:
 
 ```v play
 struct Person {
-    name string
-    age  int
+	name string
+	age  int
 }
-    
+
 fn (p Person) say_hi() {
-    println('Hi, my name is ${p.name}')
+	println('Hi, my name is ${p.name}')
 }
 
 p := Person{
-    name: 'Bob'
-    age:  20
+	name: 'Bob'
+	age:  20
 }
 p.say_hi() // Hi, my name is Bob
 ```

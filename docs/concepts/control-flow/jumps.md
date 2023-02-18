@@ -10,18 +10,18 @@ that has already been freed, so it requires `unsafe`.
 
 ```v play
 fn main() {
-    x := true
-    y := true
-    if x {
-        if y {
-            unsafe {
-                goto my_label
-            }
-            println('never reached')
+	x := true
+	y := true
+	if x {
+		if y {
+		    unsafe {
+				goto my_label
+			}
+			println('never reached')
         }
-    }
-    my_label:
-    println('hello')
+	}
+	my_label:
+	println('hello')
 }
 ```
 

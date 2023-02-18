@@ -45,7 +45,7 @@ A function with two string arguments and string return type.
 
 ```v play
 fn concatenate(a string, b string) string {
-    return a + b
+	return a + b
 }
 ```
 
@@ -53,7 +53,7 @@ If function doesn't return anything, you can omit the return type.
 
 ```v play
 fn say_hello() {
-    println('Hello, World!')
+	println('Hello, World!')
 }
 ```
 
@@ -97,7 +97,7 @@ Constants in V declared with `const` keyword. It can be declared only in the top
 const name = 'V'
 
 fn main() {
-    println(name)
+	println(name)
 }
 ```
 
@@ -105,13 +105,13 @@ You can define several constants with next syntax:
 
 ```v play
 const (
-    name = 'V'
-    age = 4
+	name = 'V'
+	age = 4
 )
 
 fn main() {
-    println(name)
-    println(age)
+	println(name)
+	println(age)
 }
 ```
 
@@ -124,16 +124,16 @@ But it has structs:
 
 ```v play
 struct Person {
-    name string
-    age  int
+	name string
+	age  int
 }
 
 fn main() {
-    p := Person{
-        name: 'Bob'
-        age: 42
-    }
-    println(p)
+	p := Person{
+		name: 'Bob'
+		age: 42
+	}
+	println(p)
 }
 ```
 
@@ -142,18 +142,18 @@ To make a field mutable, use `mut` keyword.
 
 ```v play
 struct Person {
-    name string
+	name string
 mut:
-    age int
+	age int
 }
 
 fn main() {
-    mut p := Person{
-        name: 'Bob'
-        age: 42
-    }
-    p.age++
-    println(p)
+	mut p := Person{
+		name: 'Bob'
+		age: 42
+	}
+	p.age++
+	println(p)
 }
 ```
 
@@ -161,17 +161,17 @@ To make field public, use `pub` keyword.
 
 ```v play
 struct Person {
-    name string
+	name string
 pub:
-    age int
+	age int
 }
 
 fn main() {
-    mut p := Person{
-        name: 'Bob'
-        age: 42
-    }
-    println(.age)
+	mut p := Person{
+		name: 'Bob'
+		age: 42
+	}
+	println(.age)
 }
 ```
 
@@ -179,20 +179,20 @@ Structs can have methods:
 
 ```v play
 struct Person {
-    name string
-    age  int
+	name string
+	age  int
 }
 
 fn (p Person) say_hello() {
-    println('Hello, ${p.name}!')
+	println('Hello, ${p.name}!')
 }
 
 fn main() {
-    p := Person{
-        name: 'Bob'
-        age: 42
-    }
-    p.say_hello()
+	p := Person{
+		name: 'Bob'
+		age: 42
+	}
+	p.say_hello()
 }
 ```
 
@@ -206,19 +206,19 @@ This means that there is no `implements` keyword.
 
 ```v play
 interface Greeter {
-    greet()
+	greet()
 }
 
 struct Person {
-    name string
+	name string
 }
 
 fn (p Person) greet() {
-    println('Hello, ${p.name}!')
+	println('Hello, ${p.name}!')
 }
 
 fn greet(g Greeter) {
-    g.greet()
+	g.greet()
 }
 ```
 
@@ -241,11 +241,11 @@ See [String templates](../concepts/types/strings.md#string-interpolation) for mo
 ```v play
 age := 4
 if age < 18 {
-    println('You are a child!')
+	println('You are a child!')
 } else if age < 60 {
-    println('You are an adult!')
+	println('You are an adult!')
 } else {
-    println('You are a senior!')
+	println('You are a senior!')
 }
 ```
 
@@ -254,11 +254,11 @@ if age < 18 {
 ```v play
 age := 4
 status := if age < 18 {
-    'You are a child!'
+	'You are a child!'
 } else if age < 60 {
-    'You are an adult!'
+	'You are an adult!'
 } else {
-    'You are a senior!'
+	'You are a senior!'
 }
 println(status)
 ```
@@ -271,7 +271,7 @@ V has only `for` loops in different forms.
 
 ```v play
 for i := 0; i < 10; i++ {
-    println(i)
+	println(i)
 }
 ```
 
@@ -279,7 +279,7 @@ or
 
 ```v play
 for i in 0..10 {
-    println(i)
+	println(i)
 }
 ```
 
@@ -288,7 +288,7 @@ or
 ```v play
 items := ['a', 'b', 'c']
 for index, item in items {
-    println('${index}: ${item}')
+	println('${index}: ${item}')
 }
 ```
 
@@ -299,15 +299,15 @@ See [For loop](../concepts/control-flow/loops.md) for more information.
 ```v play
 age := 4
 match age {
-    age < 18 {
-        println('You are a child!')
-    }
-    age < 60 {
-        println('You are an adult!')
-    }
-    else {
-        println('You are a senior!')
-    }
+	age < 18 {
+		println('You are a child!')
+	}
+	age < 60 {
+		println('You are an adult!')
+	}
+	else {
+		println('You are a senior!')
+	}
 }
 ```
 
@@ -317,20 +317,20 @@ Or for sum types:
 type Status = string | int
 
 fn get_status() Status {
-    return 'OK'
+	return 'OK'
 }
 
 status := get_status()
 match status {
-    string {
-        println('Status is a string: ${status}')
-    }
-    int {
-        println('Status is an integer: ${status}')
-    }
-    else {
-        println('Unknown status type')
-    }
+	string {
+		println('Status is a string: ${status}')
+	}
+	int {
+		println('Status is an integer: ${status}')
+	}
+	else {
+		println('Unknown status type')
+	}
 }
 ```
 
@@ -341,15 +341,15 @@ For more information about sum types see [Sum types](../concepts/sum-types).
 
 ```v play
 fn get_age() !int {
-    return error('Age is not set')
+	return error('Age is not set')
 }
 
 fn main() {
-    age := get_age() or {
-        println('Age is not set')
-        return
-    }
-    println(age)
+	age := get_age() or {
+		println('Age is not set')
+		return
+	}
+	println(age)
 }
 ```
 
@@ -361,7 +361,7 @@ See [Error handling](../concepts/error-handling) for more information.
 import os
 
 fn main() {
-    println(os.args)
+	println(os.args)
 }
 ```
 

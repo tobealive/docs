@@ -40,9 +40,9 @@ You can take a mutable reference from a mutable variable with which to change fi
 ```v play
 struct Foo {
 mut:
-    abc int
+	abc int
 }
-    
+
 mut foo := Foo{}
 mut foo_ptr := &foo
 
@@ -54,9 +54,9 @@ Taking the address from an immutable variable and assigning it to a mutable refe
 
 ```v play
 struct Foo {
-    abc int
+	abc int
 }
-    
+
 foo := Foo{}
 foo_ptr := &foo
 mut foo_ptr2 := foo_ptr
@@ -70,7 +70,7 @@ This is done with the `*` operator:
 
 ```v play
 struct Foo {
-    abc int
+	abc int
 }
 
 foo := Foo{}
@@ -105,7 +105,7 @@ display the address of the reference, you should use string interpolation:
 
 ```v play
 struct Foo {
-    abc int
+	abc int
 }
 
 foo := Foo{}

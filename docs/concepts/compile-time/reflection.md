@@ -71,7 +71,7 @@ fn main() {
 		} $else {
 			println("${method.name}'s first arg IS `string`")
 		}
-        
+
 		$if method.typ is fn () {
 			println('${method.name} IS a void method')
 		} $else {
@@ -122,7 +122,7 @@ As with normal `if` expressions, you can use the `in` statement:
 
 ```v
 $if field.typ in [string, int] {
-    println('${field.name} is of type int or float')
+	println('${field.name} is of type int or float')
 }
 ```
 
