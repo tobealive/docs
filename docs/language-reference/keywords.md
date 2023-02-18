@@ -6,7 +6,7 @@ The following tokens are always interpreted as keywords and cannot be used as id
 - `as`
     - used in [sum types](../concepts/sum-types.md#is-and-as-operators)
     - specify an [alias for an import](../concepts/modules/module-imports.md)
-    - specify a inner type for a [Enum](../concepts/enums.md)
+    - specify a inner type for a [enum](../concepts/enums.md)
 - `asm` – used in [inline assembly](../concepts/inline-assembly.md)
 - `assert` – used in [testing](../concepts/testing.md)
 - `atomic` – used in [atomics](../concepts/atomics.md)
