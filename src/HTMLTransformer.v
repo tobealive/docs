@@ -4,11 +4,13 @@ import markdown
 import pcre
 
 const (
-	v_code_tag   = '<pre><code class="language-v">'
-	c_code_tag   = '<pre><code class="language-c">'
-	code_tag_end = '</code></pre>'
-	h2_tag       = '<h2>'
-	h2_tag_end   = '</h2>'
+	v_code_tag         = '<pre><code class="language-v">'
+	c_code_tag         = '<pre><code class="language-c">'
+	code_tag_end       = '</code></pre>'
+	h2_tag             = '<h2>'
+	h2_tag_end         = '</h2>'
+	strong_note_tag    = '<strong>Note</strong>'
+	strong_warning_tag = '<strong>Warning</strong>'
 )
 
 struct HTMLTransformer {
@@ -35,11 +37,10 @@ fn (mut t HTMLTransformer) process_blockquotes() {
 	blockquote := matched_blockquote.get(0) or { return }
 	content := matched_blockquote.get(1) or { return }
 
-	if content.contains('<strong>Note</strong>') {
-		t.process_note_blockquotes(blockquote, content.replace('<strong>Note</strong>',
-			''))
-	} else if content.contains('<strong>Warning</strong>') {
-		t.process_warning_blockquotes(blockquote, content.replace('<strong>Warning</strong>',
+	if content.contains(strong_note_tag) {
+		t.process_note_blockquotes(blockquote, content.replace(strong_note_tag, ''))
+	} else if content.contains(strong_warning_tag) {
+		t.process_warning_blockquotes(blockquote, content.replace(strong_warning_tag,
 			''))
 	} else {
 		t.process_tip_blockquotes(blockquote, content)

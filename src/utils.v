@@ -10,8 +10,12 @@ fn clean_output_directory() ! {
 }
 
 fn create_output_directory() ! {
-	if !os.exists(output_path) {
-		os.mkdir(output_path)!
+	mkdir_if_not_exists(output_path)!
+}
+
+fn mkdir_if_not_exists(path string) ! {
+	if !os.exists(path) {
+		os.mkdir(path)!
 	}
 }
 

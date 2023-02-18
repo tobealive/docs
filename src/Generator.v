@@ -1,6 +1,7 @@
 module main
 
 import markdown
+import os
 
 const (
 	config_filename = '.config.json'
@@ -32,13 +33,18 @@ fn (g &Generator) generate_from_tree(node &Node) ! {
 		if child.body != '' {
 			page_content := g.render_page_from_template(g.root_node, child.title, child.body,
 				Topic{}, Topic{})
-			filename := '${title_to_filename(child.title)}.html'
+			html_filename := '${title_to_filename(child.title)}.html'
+			directory_name := title_to_filename(child.parent.title)
+			directory_path := os.join_path(output_path, directory_name)
+			html_file_path := '${directory_name}/${html_filename}'
+
+			mkdir_if_not_exists(directory_path)!
 
 			mut transformer := HTMLTransformer{
 				content: page_content
 			}
 
-			write_output_file(filename, transformer.process())!
+			write_output_file(html_file_path, transformer.process())!
 		}
 
 		if child.contents.len > 0 {

@@ -11,6 +11,7 @@ mut:
 	contents  []Node
 	body      string
 	is_folder bool
+	parent    &Node = unsafe { nil }
 }
 
 fn build_docs_tree(path string) !&Node {
@@ -19,6 +20,7 @@ fn build_docs_tree(path string) !&Node {
 	for mut child in node_config.contents {
 		is_markdown_url := is_markdown_file(child.url)
 		child.is_folder = !is_markdown_url
+		child.parent = &node_config
 
 		if is_markdown_url {
 			markdown_path := os.join_path(path, child.url)
