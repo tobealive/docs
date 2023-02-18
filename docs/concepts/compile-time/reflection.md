@@ -6,10 +6,10 @@ be generated during compilation.
 
 ## Fields
 
-Each 
-[structure](../structs/main.md) 
-or 
-[union](../unions.md) 
+Each
+[structure](../structs/main.md)
+or
+[union](../unions.md)
 has a `fields` field that contains information about the fields of the structure:
 
 ```v play

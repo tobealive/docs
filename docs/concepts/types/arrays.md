@@ -1,8 +1,8 @@
 # Arrays
 
-An array is a collection of data elements of the same type. 
-An array literal is a list of expressions surrounded by square brackets. 
-An individual element can be accessed using an *index* expression. 
+An array is a collection of data elements of the same type.
+An array literal is a list of expressions surrounded by square brackets.
+An individual element can be accessed using an *index* expression.
 Indexes start from `0`:
 
 ```v play
@@ -39,19 +39,19 @@ names << 10
 //    ^^ error: cannot append `int literal` to `[]string`
 ```
 
-`val in array` returns true if the array contains `val`. See [`in` operator](#in-operator).
+`val in array` returns true if the array contains `val`. See [`in` operator](../control-flow/operators.md#in-operator).
 
 ```v
 names := ['John', 'Peter', 'Sam']
-println('Alex' in names) // "false"
+println('Alex' in names) // false
 ```
 
-### Array Fields
+## Array Fields
 
 There are two fields that control the "size" of an array:
 
-* `len`: *length* – the number of pre-allocated and initialized elements in the array
-* `cap`: *capacity* – the amount of memory space which has been reserved for elements,
+- `len`: *length* – the number of pre-allocated and initialized elements in the array
+- `cap`: *capacity* – the amount of memory space which has been reserved for elements,
   but not initialized or counted as elements. The array can grow up to this size without
   being reallocated. Usually, V takes care of this field automatically but there are
   cases where the user may want to do manual optimizations (see [below](#array-initialization)).
@@ -65,18 +65,18 @@ nums = [] // array is now empty
 println(nums.len) // 0
 ```
 
-`data` is a field (of type `voidptr`) with the address of the first
-element. This is for low-level [`unsafe`](#memory-unsafe-code) code.
+`data` is a field (of type `voidptr`) with the address of the first element.
+This is for low-level [`unsafe`](../memory-unsafe-code.md) code.
 
 > **Note**
 > Fields are read-only and can't be modified by the user.
 
-### Array Initialization
+## Array Initialization
 
 The type of array is determined by the first element:
 
-* `[1, 2, 3]` is an array of ints (`[]int`).
-* `['a', 'b']` is an array of strings (`[]string`).
+- `[1, 2, 3]` is an array of ints (`[]int`).
+- `['a', 'b']` is an array of strings (`[]string`).
 
 The user can explicitly specify the type for the first element: `[u8(16), 32, 64, 128]`.
 V arrays are homogeneous (all elements must have the same type).
@@ -116,7 +116,7 @@ for i in 0 .. 1000 {
 ```
 
 > **Note**
-> The above code uses a [range `for`](#range-for) statement.
+> The above code uses a [range `for`](../control-flow/loops.md#range-for) statement.
 
 You can initialize the array by accessing the `it` variable which gives
 the index as shown here:
@@ -129,7 +129,7 @@ mut square := []int{len: 6, init: it * it}
 // square == [0, 1, 4, 9, 16, 25]
 ```
 
-### Array Types
+## Array Types
 
 An array can be of these types:
 
@@ -195,7 +195,7 @@ object_list: [ObjectSumType(Point{
 */
 ```
 
-### Multidimensional Arrays
+## Multidimensional Arrays
 
 Arrays can have more than one dimension.
 
@@ -215,7 +215,7 @@ a[0][1][1] = 2
 println(a) // [[[0, 0], [0, 2], [0, 0]], [[0, 0], [0, 0], [0, 0]]]
 ```
 
-### Array methods
+## Array methods
 
 All arrays can be easily printed with `println(arr)` and converted to a string
 with `s := arr.str()`.
@@ -266,31 +266,31 @@ println(nums.all(it >= 2)) // false
 
 There are further built-in methods for arrays:
 
-* `a.repeat(n)` concatenates the array elements `n` times
-* `a.insert(i, val)` inserts a new element `val` at index `i` and
+- `a.repeat(n)` concatenates the array elements `n` times
+- `a.insert(i, val)` inserts a new element `val` at index `i` and
   shifts all following elements to the right
-* `a.insert(i, [3, 4, 5])` inserts several elements
-* `a.prepend(val)` inserts a value at the beginning, equivalent to `a.insert(0, val)`
-* `a.prepend(arr)` inserts elements of array `arr` at the beginning
-* `a.trim(new_len)` truncates the length (if `new_length < a.len`, otherwise does nothing)
-* `a.clear()` empties the array without changing `cap` (equivalent to `a.trim(0)`)
-* `a.delete_many(start, size)` removes `size` consecutive elements from index `start`
+- `a.insert(i, [3, 4, 5])` inserts several elements
+- `a.prepend(val)` inserts a value at the beginning, equivalent to `a.insert(0, val)`
+- `a.prepend(arr)` inserts elements of array `arr` at the beginning
+- `a.trim(new_len)` truncates the length (if `new_length < a.len`, otherwise does nothing)
+- `a.clear()` empties the array without changing `cap` (equivalent to `a.trim(0)`)
+- `a.delete_many(start, size)` removes `size` consecutive elements from index `start`
   – triggers reallocation
-* `a.delete(index)` equivalent to `a.delete_many(index, 1)`
-* `a.delete_last()` removes the last element
-* `a.first()` equivalent to `a[0]`
-* `a.last()` equivalent to `a[a.len - 1]`
-* `a.pop()` removes the last element and returns it
-* `a.reverse()` makes a new array with the elements of `a` in reverse order
-* `a.reverse_in_place()` reverses the order of elements in `a`
-* `a.join(joiner)` concatenates an array of strings into one string
+- `a.delete(index)` equivalent to `a.delete_many(index, 1)`
+- `a.delete_last()` removes the last element
+- `a.first()` equivalent to `a[0]`
+- `a.last()` equivalent to `a[a.len - 1]`
+- `a.pop()` removes the last element and returns it
+- `a.reverse()` makes a new array with the elements of `a` in reverse order
+- `a.reverse_in_place()` reverses the order of elements in `a`
+- `a.join(joiner)` concatenates an array of strings into one string
   using `joiner` string as a separator
 
 See all methods of [array](https://modules.vlang.io/index.html#array)
 
 See also [vlib/arrays](https://modules.vlang.io/arrays.html).
 
-#### Sorting Arrays
+### Sorting Arrays
 
 Sorting arrays of all kinds is very simple and intuitive. Special variables `a` and `b`
 are used when providing a custom sorting condition.
@@ -348,7 +348,7 @@ custom_sort_fn := fn (a &User, b &User) int {
 users.sort_with_compare(custom_sort_fn)
 ```
 
-### Array Slices
+## Array Slices
 
 A slice is a part of a parent array. Initially it refers to the elements
 between two indices separated by a `..` operator. The right-side index must
@@ -419,7 +419,7 @@ println(a) // [0, 1, 2, 3, 4, 5]
 println(b) // [7, 3]
 ```
 
-#### Slices with negative indexes
+### Slices with negative indexes
 
 V supports array and string slices with negative indexes.
 Negative indexing starts from the end of the array towards the start,
@@ -443,7 +443,7 @@ println(a#[20..10]) // []
 println(a#[20..30]) // []
 ```
 
-### Array method chaining
+## Array method chaining
 
 You can chain the calls of array methods like `.filter()` and `.map()` and use
 the `it` built-in variable to achieve a classic `map/filter` functional paradigm:

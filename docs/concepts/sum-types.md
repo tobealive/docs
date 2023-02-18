@@ -34,7 +34,7 @@ To create a new instance of the sum type, use type casting:
 int_width := Width(10)
 ```
 
-In this case, the expression that is cast to the sum type must be one of the 
+In this case, the expression that is cast to the sum type must be one of the
 types listed through `|` when declaring the sum type.
 Otherwise, there will be a compilation error.
 
@@ -71,13 +71,13 @@ fn main() {
 
 ## Calling methods from structures in sum type
 
-Unlike fields, even if all structures in a sum type have a method with the same name, 
+Unlike fields, even if all structures in a sum type have a method with the same name,
 they cannot be accessed through the sum type!
 
 ## Get the type of the stored value
 
 Sometimes you need to find out what type is stored in an instance of the sum type.
-To do this, for any sum type, the `type_name()` method is defined, which returns 
+To do this, for any sum type, the `type_name()` method is defined, which returns
 the name of the type that is currently stored.
 
 ```v play
@@ -96,7 +96,7 @@ println(world)
 
 ## Working with sum type
 
-To conveniently handle the type of the sum, the `match` expression can be 
+To conveniently handle the type of the sum, the `match` expression can be
 used to check the type of the stored value.
 
 ```v
@@ -110,7 +110,7 @@ fn absolute_width(width Width) int {
 }
 ```
 
-At the same time, `match` must be exhaustive, that is, handle all possible 
+At the same time, `match` must be exhaustive, that is, handle all possible
 variants of the sum type or have an `else` branch:
 
 ```v
@@ -198,7 +198,7 @@ fn main() {
 ```
 
 In this example, `width` is of type `int` within the body of the `if` block.
-The compiler understands that inside the `if` block, the `width` variable is of type `int`, 
+The compiler understands that inside the `if` block, the `width` variable is of type `int`,
 since the condition of the `if` block checks that `width is int`.
 
 If `width` is a mutable identifier, it would be unsafe if the compiler smart casts it without a warning.

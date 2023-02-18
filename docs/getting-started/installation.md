@@ -4,7 +4,7 @@
 
 To install from source, we need `git` and `make`.
 
-### Linux, macOS, Windows, *BSD, Solaris, WSL, etc.
+### Linux, macOS, Windows, *BSD, Solaris, WSL, etc
 
 To get started, simply try to execute the following in your terminal/shell:
 

@@ -33,7 +33,7 @@ The folder cannot contain files that define another module.
 
 Now you can use the module in your code:
 
-**main.v**
+**main.v:**
 
 ```v
 import mymodule
@@ -107,5 +107,5 @@ fn init() {
 }
 ```
 
-The `init` function cannot be public – it will be called automatically. 
+The `init` function cannot be public – it will be called automatically.
 This feature is particularly useful for initializing a C library.

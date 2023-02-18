@@ -48,8 +48,8 @@ To see a detailed list of all flags that V supports, use `v help`, `v help build
 
 ### Visual Debugging Setup
 
-* [Visual Studio Code](https://github.com/vlang/v/blob/master/doc/vscode.md)
-* [IntelliJ V](https://plugins.jetbrains.com/plugin/20287-vlang/docs/quick-start-guide.html#debug)
+- [Visual Studio Code](https://github.com/vlang/v/blob/master/doc/vscode.md)
+- [IntelliJ V](https://plugins.jetbrains.com/plugin/20287-vlang/docs/quick-start-guide.html#debug)
 
 ## Native Backend binaries
 

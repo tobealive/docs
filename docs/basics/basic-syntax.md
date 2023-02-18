@@ -200,7 +200,7 @@ See [Structs](../concepts/structs) for more information.
 
 ## Interfaces
 
-V has interfaces, which are similar to interfaces in other languages. V uses 
+V has interfaces, which are similar to interfaces in other languages. V uses
 [duck typing](https://en.wikipedia.org/wiki/Duck_typing).
 This means that there is no `implements` keyword.
 

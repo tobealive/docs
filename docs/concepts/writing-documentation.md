@@ -51,4 +51,4 @@ Comments spanning multiple lines are merged together using spaces, unless
 - the line is purely of at least 3 of `-`, `=`, `_`, `*`, `~` (horizontal rule)
 - the line starts with at least one `#` followed by a space (header)
 - the line starts and ends with a `|` (table)
-- the line starts with `- ` (list)
+- the line starts with `-` (list)

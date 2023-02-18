@@ -2,7 +2,7 @@
 
 ## Option/Result types
 
-Option types are for types which may represent `none`. 
+Option types are for types which may represent `none`.
 Result types may represent an error returned from a function.
 
 `Option` types are declared by prepending `?` to the type name: `?Type`.
@@ -58,8 +58,8 @@ V used to combine `Option` and `Result` into one type, now they are separate.
 The amount of work required to "upgrade" a function to an option/result function is minimal;
 you have to add a `?` or `!` to the return type and return an error when something goes wrong.
 
-This is the primary mechanism for error handling in V. 
-They are still values, like in Go, but the advantage is that errors can't be unhandled, and 
+This is the primary mechanism for error handling in V.
+They are still values, like in Go, but the advantage is that errors can't be unhandled, and
 handling them is a lot less verbose.
 Unlike other languages, V does not handle exceptions with `throw/try/catch` blocks.
 
@@ -87,11 +87,11 @@ fn f(url string) !string {
 }
 ```
 
-`http.get` returns `!http.Response`. Because `!` follows the call, the error will be propagated 
-to the caller of `f`. 
+`http.get` returns `!http.Response`. Because `!` follows the call, the error will be propagated
+to the caller of `f`.
 When using `?` after a function call producing an option, the enclosing function must return
-an option as well. 
-If error propagation is used in the `main()` function it will `panic` instead, since the 
+an option as well.
+If error propagation is used in the `main()` function it will `panic` instead, since the
 error cannot be propagated any further.
 
 The body of `f` is essentially a condensed version of:
@@ -115,7 +115,7 @@ to break from the current block.
 > `break` and `continue` can only be used inside a `for` loop.
 
 V does not have a way to forcibly "unwrap" an option (as other languages do,
-for instance Rust's `unwrap()` or Swift's `!`). 
+for instance Rust's `unwrap()` or Swift's `!`).
 To do this, use `or { panic(err) }` instead.
 
 The third method is to provide a default value at the end of the `or` block.
@@ -154,12 +154,12 @@ Above, `http.get` returns a `!http.Response`. `resp` is only in scope for the fi
 ## Custom error types
 
 V gives you the ability to define custom error types through the `IError` interface.
-The interface requires two methods: `msg() string` and `code() int`. 
+The interface requires two methods: `msg() string` and `code() int`.
 Every type that implements these methods can be used as an error.
 
 When defining a custom error type it is recommended to embed the builtin `Error` default
-implementation. 
-This provides an empty default implementation for both required methods, so you only have 
+implementation.
+This provides an empty default implementation for both required methods, so you only have
 to implement what you really need, and may provide additional utility functions in the future.
 
 ```v

@@ -13,13 +13,13 @@ fn main() {
 ```
 
 This program can use any public definitions from the `os` module, such
-as the `input` function. 
-See the [standard library](https://modules.vlang.io/) documentation for a list of 
+as the `input` function.
+See the [standard library](https://modules.vlang.io/) documentation for a list of
 common modules and their public symbols.
 
 By default, you have to specify the module prefix every time you call an external function.
-This may seem verbose at first, but it makes code much more readable and easier to 
-understand – it's always clear which function from which module is being called. 
+This may seem verbose at first, but it makes code much more readable and easier to
+understand – it's always clear which function from which module is being called.
 This is especially useful in large code bases.
 
 Cyclic module imports are not allowed, like in Go.
@@ -69,7 +69,7 @@ fn main() {
 ```
 
 You cannot define methods for imported types.
-However, you _can_ redeclare a type using 
+However, you _can_ redeclare a type using
 [type aliases](../type-aliases.md)
 and add methods for it:
 

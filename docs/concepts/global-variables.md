@@ -1,6 +1,6 @@
 # Global Variables
 
-By default, V does not allow global variables. 
+By default, V does not allow global variables.
 However, for low-level code, it can be useful to have global variables.
 
 For this purpose, you can enable global variables with the compiler flag `-enable-globals`.
@@ -14,7 +14,7 @@ __global (
 )
 ```
 
-An initializer for global variables must be explicitly converted to the desired target type. 
+An initializer for global variables must be explicitly converted to the desired target type.
 If no initializer is given a default initialization is done.
 
 Some objects like semaphores and mutexes require an explicit initialization *in place*, i.e.
@@ -40,13 +40,13 @@ fn init() {
 ```
 
 Be aware that in multithreaded applications the access to global variables is subject
-to race conditions. 
+to race conditions.
 There are several approaches to deal with these:
 
 - use `shared` types for the variable declarations and use `lock` blocks for access.
   This is most appropriate for larger objects like structs, arrays or maps.
 
-- handle primitive data types as "atomics" using special C-functions (see [above](#atomics)).
+- handle primitive data types as [`atomics`](../concepts/atomics.md) using special C-functions.
 
 - use explicit synchronization primitives like mutexes to control access. The compiler
   cannot really help in this case, so you have to know what you are doing.

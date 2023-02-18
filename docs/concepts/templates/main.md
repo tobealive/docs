@@ -1,7 +1,7 @@
 # Templates
 
-V allows for easily using text templates, expanded at compile time to V functions, 
-that efficiently produce text output. 
+V allows for easily using text templates, expanded at compile time to V functions,
+that efficiently produce text output.
 This is especially useful for templated HTML views, but the mechanism is general enough
 to be used for other kinds of text output also.
 
@@ -26,7 +26,7 @@ fn main() {
 
 **template.txt:**
 
-```
+```text
 name: @{name}
 
 age: @{age}
@@ -40,7 +40,7 @@ numbers: @{numbers}
 
 Output:
 
-```
+```text
 name: Peter
 
 age: 25
@@ -53,7 +53,7 @@ numbers: [1, 2, 3]
 ```
 
 As you can see, we didn't explicitly pass the `name`, `age`, and `numbers` variables to the `$tmpl()` function.
-However, they are still available within the template, because templates have access to the variables 
+However, they are still available within the template, because templates have access to the variables
 of the outer function in which they are used.
 
 For more information about template directives, see [template directives](directives.md).

@@ -33,7 +33,7 @@ size of `string`, i.e. 16.
 
 In memory, it will look like this:
 
-```
+```text
           IntOrString union
 +---------------+  +---------------+
 | | | | | | | | |  | | | | | | | | |
@@ -45,7 +45,7 @@ After creation, we assign `val.i = 10`. So `val` now stores an integer.
 
 In memory, it would look like this (`x` marks the bytes that store some value):
 
-```
+```text
           IntOrString union
 +---------------+  +---------------+
 |x|x|x|x| | | | |  | | | | | | | | |
@@ -63,7 +63,7 @@ Previously stored data is overwritten with new.
 
 In memory, it will look like this:
 
-```
+```text
           IntOrString union
 +---------------+  +---------------+
 |x|x|x|x|x|x|x|x|  |x|x|x|x|x|x|x|x|
@@ -74,18 +74,18 @@ In memory, it will look like this:
       8 bytes           8 bytes
 ```
 
-The first 8 bytes store a pointer to the character array, the first 4 bytes of the 
-second 8 bytes store the length of the string, and the remaining 4 bytes store additional 
+The first 8 bytes store a pointer to the character array, the first 4 bytes of the
+second 8 bytes store the length of the string, and the remaining 4 bytes store additional
 information.
 
 Now try replacing `println(val.s)` with `println(val.i)` in the example above and run the example.
 
 You will get `6829482` or some other number in the output.
 
-This happened because the compiler accessed the first 4 bytes of the first 8 bytes and 
+This happened because the compiler accessed the first 4 bytes of the first 8 bytes and
 interpreted them as an integer.
 
-```
+```text
           IntOrString union
 +---------------+  +---------------+
 |x|x|x|x|x|x|x|x|  |x|x|x|x|x|x|x|x|
@@ -98,7 +98,7 @@ interpreted them as an integer.
       8 bytes           8 bytes
 ```
 
-And since a pointer to an array of characters is stored there, the compiler interprets it 
+And since a pointer to an array of characters is stored there, the compiler interprets it
 as an integer and returns the result.
 
 ## Embedding

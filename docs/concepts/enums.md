@@ -145,7 +145,7 @@ for _ in 0 .. 10 {
 
 Output:
 
-```
+```text
 one
 two
 three

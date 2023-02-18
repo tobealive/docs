@@ -40,7 +40,7 @@ For developers willing to have more low level control, autofree can be disabled 
 memory manually.
 See [attributes](./attributes) for more information.
 
-**Examples**
+For example:
 
 ```v
 import strings
@@ -90,13 +90,13 @@ fn test() []int {
 Like with most other programming languages there are two locations where data can
 be stored:
 
-* The *stack* allows fast allocations with almost zero administrative overhead. The
+- The *stack* allows fast allocations with almost zero administrative overhead. The
   stack grows and shrinks with the function call depth – so every called
   function has its stack segment that remains valid until the function returns.
   No freeing is necessary, however, this also means that a reference to a stack
   object becomes invalid on function return. Furthermore, stack space is
   limited (typically to a few Megabytes per thread).
-* The *heap* is a large memory area (typically some Gigabytes) that is administrated
+- The *heap* is a large memory area (typically some Gigabytes) that is administrated
   by the operating system. Heap objects are allocated and freed by special function
   calls that delegate the administrative tasks to the OS. This means that they can
   remain valid across several function calls, however, the administration is

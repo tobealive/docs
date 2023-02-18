@@ -1,6 +1,6 @@
 # Variables
 
-Variables are declared and initialized with `:=`. 
+Variables are declared and initialized with `:=`.
 This is the only way to declare variables in V.
 
 ```v
@@ -12,11 +12,11 @@ large_number := i64(9999999999)
 This means that variables always have an initial value.
 
 The variable's type is inferred from the value on the right hand side.
-To choose a different type, use type conversion: the expression `T(v)` 
+To choose a different type, use type conversion: the expression `T(v)`
 converts the value `v` to the type `T`.
 
 Unlike most other languages, V only allows defining variables in functions.
-By default, V does not allow **global variables**, but you can enable them for low-level code. 
+By default, V does not allow **global variables**, but you can enable them for low-level code.
 See [Global variables](./global-variables) for more details.
 
 For consistency across different code bases, all variable and function names

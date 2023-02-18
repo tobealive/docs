@@ -151,7 +151,7 @@ p.say_hi() // Hi, my name is Bob
 
 ### Reference receiver
 
-In the example above, we declared the receiver as `p Person`. 
+In the example above, we declared the receiver as `p Person`.
 This means that the method will be called on a copy of the structure.
 To call a method on the original structure, you need to use `&` before the receiver type:
 
@@ -175,7 +175,7 @@ p.say_hi() // Hi, my name is Bob
 In this case, an instance of the structure will be passed to the method by reference.
 
 This can be useful for large structures where copying them can be an expensive operation.
-Note that although a struct is passed by reference, you cannot change the fields of a struct 
+Note that although a struct is passed by reference, you cannot change the fields of a struct
 within a method, even if they are marked `mut`.
 
 ### Mutable receivers
@@ -229,9 +229,9 @@ immut_person.birthday()
 //^^^^^^^^^^ `immut_person` is immutable, declare it with `mut` to make it mutable
 ```
 
-Note that in this case the receiver becomes implicitly referential, i.e. 
+Note that in this case the receiver becomes implicitly referential, i.e.
 its type becomes `&Person` instead of `Person`.
-This means that the structure instance will not be copied when the method 
+This means that the structure instance will not be copied when the method
 is called, but a pointer to it will be passed.
 
 > **Note**
@@ -302,7 +302,7 @@ println(user)
 // }
 ```
 
-The passed structure will be copied, and only those fields specified in the update 
+The passed structure will be copied, and only those fields specified in the update
 syntax after the `...u` will be changed in the copy.
 
 ## Trailing struct literal arguments
@@ -357,7 +357,7 @@ when you call the function with no parameters:
 
 V supports `[noinit]` structs, which are structs that cannot be initialised outside the module
 they are defined in. They are either meant to be used internally or they can be used externally
-through _factory functions_.
+through *factory functions*.
 
 For an example, consider the following source in a directory `sample`:
 
@@ -378,7 +378,7 @@ pub fn new_information(data string) !Information {
 }
 ```
 
-Note that `new_information` is a _factory_ function. Now when we want to use this struct
+Note that `new_information` is a *factory* function. Now when we want to use this struct
 outside the module:
 
 ```v okfmt

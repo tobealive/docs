@@ -236,8 +236,8 @@ interface Iterator[T] {
 
 ## Compile-time conditions
 
-Due to the fact that V has [compile-time](./compile-time/control-flow.md) `if`, in the body of generic functions, you can 
-separate the code depending on the type passed:
+Due to the fact that V has [compile-time](./compile-time/control-flow.md) `if`, in the body of generic functions,
+you can separate the code depending on the type passed:
 
 ```v play
 fn myprintln[T](data T) {

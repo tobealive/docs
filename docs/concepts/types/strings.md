@@ -48,7 +48,7 @@ s[0] = `H`
 ```
 
 Note that indexing a string will produce a `byte`, not a `rune` nor another `string`. Indexes
-correspond to _bytes_ in the string, not Unicode code points. 
+correspond to _bytes_ in the string, not Unicode code points.
 If you want to convert the `byte` to a `string`, use the `.ascii_str()` method on the `byte`:
 
 ```v
@@ -57,7 +57,7 @@ println(country[0]) // 78
 println(country[0].ascii_str()) // N
 ```
 
-Both single and double quotes can be used to denote strings. 
+Both single and double quotes can be used to denote strings.
 For consistency, `vfmt` converts double quotes to single quotes unless the string contains a single quote character.
 
 For raw strings, prepend `r`. Escape handling is not done for raw strings:
@@ -83,7 +83,7 @@ assert '-0b1111_0000_1010'.int() == -3850
 For more advanced `string` processing and conversions, refer to the
 [vlib/strconv](https://modules.vlang.io/strconv.html) module.
 
-### String interpolation
+## String interpolation
 
 Basic interpolation syntax is pretty simple – use `${` before a variable name and `}` after. The
 variable will be converted to a string and embedded into the literal:
@@ -153,7 +153,7 @@ println('[${10.0000:.2}]') // remove insignificant 0s at the end => [10]
 println('[${10.0000:.2f}]') // do show the 0s at the end, even though they do not change the number => [10.00]
 ```
 
-### String operators
+## String operators
 
 ```v
 name := 'Bob'
@@ -164,7 +164,7 @@ s += 'world' // `+=` is used to append to a string
 println(s) // "hello world"
 ```
 
-All operators in V must have values of the same type on both sides. 
+All operators in V must have values of the same type on both sides.
 You cannot concatenate an integer to a string:
 
 ```v failcompile
@@ -187,8 +187,8 @@ age := 12
 println('age = ${age}')
 ```
 
-See all methods of 
+See all methods of
 [string](https://modules.vlang.io/index.html#string)
-and related modules 
+and related modules
 [strings](https://modules.vlang.io/strings.html),
 [strconv](https://modules.vlang.io/strconv.html).

@@ -2,10 +2,10 @@
 
 ## Goto
 
-V allows unconditionally jumping to a label with `goto`. 
-The label name must be contained within the same function as the `goto` statement. 
-A program may `goto` a label outside or deeper than the current scope. `goto` allows 
-jumping past variable initialization or jumping back to code that accesses memory 
+V allows unconditionally jumping to a label with `goto`.
+The label name must be contained within the same function as the `goto` statement.
+A program may `goto` a label outside or deeper than the current scope. `goto` allows
+jumping past variable initialization or jumping back to code that accesses memory
 that has already been freed, so it requires `unsafe`.
 
 ```v play

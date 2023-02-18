@@ -1,7 +1,7 @@
 # Memory-unsafe code
 
 Sometimes for efficiency you may want to write low-level code that can potentially
-corrupt memory or be vulnerable to security exploits. 
+corrupt memory or be vulnerable to security exploits.
 V supports writing such code, but not by default.
 
 V requires that any potentially memory-unsafe operations are marked intentionally.
@@ -38,8 +38,8 @@ println((*p).ascii_str()) // l
 ```
 
 Best practice is to avoid putting memory-safe expressions inside an `unsafe` block,
-so that the reason for using `unsafe` is as clear as possible. 
-Generally any code you think is memory-safe should not be inside an `unsafe` block, 
+so that the reason for using `unsafe` is as clear as possible.
+Generally any code you think is memory-safe should not be inside an `unsafe` block,
 so the compiler can verify it.
 
 If you suspect your program does violate memory-safety, you have a head start on

@@ -18,7 +18,7 @@ v [package_command] [param]
 
 Where a package command can be one of:
 
-```
+```text
 install           Install a package from VPM.
 remove            Remove a package that was installed from VPM.
 search            Search for a package from VPM.
@@ -54,7 +54,7 @@ v install --git https://github.com/vlang/markdown
 
 Sometimes you may want to install the dependencies **ONLY** if those are not installed:
 
-```
+```text
 v install --once [package]
 ```
 
@@ -132,6 +132,7 @@ Package are up to date.
    ```
 
    Example `v.mod`:
+
    ```v ignore
    Module {
        name: 'mypackage'
@@ -143,13 +144,15 @@ Package are up to date.
    ```
 
    Minimal file structure:
-   ```
+
+   ```text
    v.mod
    mypackage.v
    ```
 
    The name of your package should be used with the `module` directive
    at the top of all files in your package. For **mypackage.v**:
+
    ```v
    module mypackage
 
@@ -160,6 +163,7 @@ Package are up to date.
 
 2. Create a git repository in the folder with the `v.mod` file
    (this is not required if you used `v new` or `v init`):
+
    ```sh
    git init
    git add .
@@ -169,11 +173,13 @@ Package are up to date.
 3. Create a public repository on GitHub.com.
 4. Connect your local repository to the remote repository and push the changes.
 5. Add your package to the public V package registry VPM:
-   https://vpm.vlang.io/new
+   <https://vpm.vlang.io/new>
 
    You will have to log in with your GitHub account to register the package.
-   **Warning:** _Currently it is not possible to edit your entry after submitting.
-   Check your package name and GitHub url twice as this cannot be changed by you later._
+
+   > **Warning**
+   > Currently it is not possible to edit your entry after submitting.
+   > Check your package name and GitHub url twice as this cannot be changed by you later.
 6. The final package name is a combination of your GitHub account and
    the package name you provided e.g. `mygithubname.mypackage`.
 

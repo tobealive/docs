@@ -123,7 +123,7 @@ fn main() {
 
 Output:
 
-```
+```text
 [factorial.v:2] n <= 1: false
 [factorial.v:2] n <= 1: false
 [factorial.v:2] n <= 1: false

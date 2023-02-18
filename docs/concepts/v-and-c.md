@@ -6,7 +6,7 @@ You can include C code directly in your V module.
 For example, let's say that your C code is located in a folder named **'c'** inside your module folder.
 Then:
 
-* Put a **v.mod** file inside the toplevel folder of your module (if you
+- Put a **v.mod** file inside the toplevel folder of your module (if you
   created your module with `v new` you already have **v.mod** file).
   For example:
 
@@ -19,7 +19,7 @@ Module {
 }
 ```
 
-* Add these lines to the top of your module:
+- Add these lines to the top of your module:
 
 ```v oksyntax
 #flag -I @VMODROOT/c
@@ -72,8 +72,8 @@ Currently the `linux`, `darwin` , `freebsd`, and `windows` flags are supported.
 
 In the console build command, you can use:
 
-* `-cflags` to pass custom flags to the backend C compiler.
-* `-cc` to change the default C backend compiler.
+- `-cflags` to pass custom flags to the backend C compiler.
+- `-cc` to change the default C backend compiler.
 
 For example:
 
@@ -121,7 +121,7 @@ Ordinary zero terminated C strings can be converted to V strings with
 
 ```v
 unsafe { &char(cstring).vstring() }
-``` 
+```
 
 or if you know their length already with:
 

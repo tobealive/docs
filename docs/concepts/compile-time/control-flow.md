@@ -78,7 +78,7 @@ Below are all the main supported options:
 
 ## `$for` statement
 
-`$for` allows you to iterate over special arrays, currently arrays for fields of structures, 
+`$for` allows you to iterate over special arrays, currently arrays for fields of structures,
 methods of types, attributes of types and other.
 
 ```v

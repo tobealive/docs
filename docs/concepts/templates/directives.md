@@ -24,7 +24,7 @@ fn main() {
 
 **template.txt:**
 
-```
+```text
 name: @{name}
 ```
 
@@ -47,7 +47,7 @@ fn main() {
 
 **template.txt:**
 
-```
+```text
 name: @{person.name}
 age: @{person.age}
 ```
@@ -77,7 +77,7 @@ and the body, where you can write text or html, which will be rendered if the co
 Optionally, the `if` directive can have an `else` branch.
 The full syntax of the `if` directive is:
 
-```
+```text
 @if <condition>
 
 @else
@@ -135,7 +135,7 @@ Result when `is_greeting` is `false`:
 
 In `else` you can use `if` to mimic `else if`, however the inner `if` must end with `@end`:
 
-```
+```text
 @if <condition>
 
 @else
@@ -151,7 +151,7 @@ The `for` directive is similar to the [`for`](../control-flow/loops.md) loop in 
 As with `if`, the `for` directive has a body that ends with `@end`.
 Within a loop, you can access variables defined for iteration.
 
-```
+```text
 @for <condition>
 
 @end
@@ -187,9 +187,9 @@ The `include` directive is for including other template files (which will be pro
 and consists of two parts, the `@include` tag and a following `'<path>'` string.
 The path parameter is relative to the `/templates` directory in the corresponding project.
 
-#### Example for the folder structure of a project using templates:
+#### Example for the folder structure of a project using templates
 
-```
+```text
 <project root>
 /templates
     - index.html
@@ -197,10 +197,9 @@ The path parameter is relative to the `/templates` directory in the correspondin
         - base.html
 ```
 
-**index.html**
+**index.html:**
 
 ```html
-
 <div>@include 'header/base'</div>
 ```
 

@@ -31,7 +31,7 @@ compile time.
 
 Both receive as their only argument a string literal that contains the message to display:
 
-**example.v**
+**example.v:**
 
 ```v play
 $if linux {
@@ -44,7 +44,7 @@ fn main() {
 
 Output:
 
-```
+```text
 example.v:4:5: error: Linux is not supported
     2 |
     3 | $if linux {

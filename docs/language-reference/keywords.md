@@ -36,14 +36,14 @@ The following tokens are always interpreted as keywords and cannot be used as id
 - `match` – begins a [match expression](../concepts/control-flow/conditions.md#match-expression)
 - `module` – declares a [module](../concepts/modules/main.md)
 - `mut`
-  - declares a [mutable variable](../concepts/variables.md)
-  - starts a [mutable fields block](../concepts/structs/main.md#fields)
-  - declares method receiver as [mutable](../concepts/structs/main.md#mutable-receivers)
+    - declares a [mutable variable](../concepts/variables.md)
+    - starts a [mutable fields block](../concepts/structs/main.md#fields)
+    - declares method receiver as [mutable](../concepts/structs/main.md#mutable-receivers)
 - `none` – literal value of the [none type](../concepts/error-handling.md)
 - `or` – defines the branch for [result or option type](../concepts/error-handling.md)
 - `pub`
-  - makes a [declaration](../concepts/modules/main.md#symbol-visibility) public
-  - starts a [public fields block](../concepts/structs/main.md#fields)
+    - makes a [declaration](../concepts/modules/main.md#symbol-visibility) public
+    - starts a [public fields block](../concepts/structs/main.md#fields)
 - `return` – [returns a value from a function](../concepts/functions/main.md)
 - `rlock` – used in [locking](../concepts/concurrency.md)
 - `select` – used in [select statement](../concepts/concurrency.md)
@@ -69,4 +69,3 @@ identifiers in other contexts:
 
 - `it` is used inside a `array` or `map` method calls to refer to its parameter implicitly.
 - `a` and `b` is used inside a `sort()` method for `array` to refer left and right elements respectively.
-

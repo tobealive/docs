@@ -82,7 +82,7 @@ for i in 0 .. 4 {
 
 will produce this output:
 
-```
+```text
 assert_continues_example.v:3: FAIL: fn main.abc: assert num == 2
    left value: num = 0
    right value: 2
@@ -191,8 +191,8 @@ fn test_arrays() {
 
 V provides a path to execute code before and after all test functions in a test file.
 
-* `testsuite_begin` which will be run *before* all other test functions.
-* `testsuite_end` which will be run *after* all other test functions.
+- `testsuite_begin` which will be run *before* all other test functions.
+- `testsuite_end` which will be run *after* all other test functions.
 
 ## Error propagation
 

@@ -1,6 +1,6 @@
 # First project
 
-In the previous article, we ran a single V file, but projects typically consist of multiple files. 
+In the previous article, we ran a single V file, but projects typically consist of multiple files.
 Let's create a new project, V provides the handy `v new` command for this:
 
 ```bash
@@ -45,7 +45,7 @@ The **src** folder itself is not a module, it is used to store all project modul
 The **v.mod** file contains information about the project, such as its name and version.
 It also contains a list of the project's dependencies, which we'll look at [Modules](/docs/concepts/modules) article.
 
-This file can be used as a marker for the project's root folder, `@VMODROOT` constant 
+This file can be used as a marker for the project's root folder, `@VMODROOT` constant
 can be used to get the path to the project's root folder.
 
 ## Additional commands
