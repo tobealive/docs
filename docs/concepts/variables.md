@@ -90,7 +90,7 @@ By default, in development mode, V will only warn you if you have unused variabl
 In production mode (enabled by passing the [`-prod` flag](production-builds.md) to V – `v -prod foo.v`)
 it will not compile at all (like in Go).
 
-```v failcompile nofmt
+```v nofmt
 fn main() {
 	a := 10
 	// error: unused variable `a`

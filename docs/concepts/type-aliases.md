@@ -16,7 +16,7 @@ type SafeHtml = string
 
 Like other types, alias types can have methods:
 
-```v
+```v oksyntax
 type RawHtml = string
 type SafeHtml = string
 
@@ -49,6 +49,6 @@ fn main() {
 
 Type aliases are also useful for shortening long type names:
 
-```v
+```v oksyntax
 type IDs = GenericMap[string, GenericMap[string, int]]
 ```

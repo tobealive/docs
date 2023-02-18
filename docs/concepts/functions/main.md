@@ -10,7 +10,7 @@ fn add(x int, y int) int {
 
 A function is called using a function name and a list of arguments:
 
-```v
+```v failcompile
 add(2, 3)
 ```
 
@@ -56,7 +56,7 @@ The number of variables must match the number of return values.
 
 If you want to ignore one or more return values, you can use `_`:
 
-```v
+```v failcompile
 a, _ := foo()
 ```
 
@@ -98,7 +98,7 @@ fn sum(a ...int) int {
 
 In such a case, you can call the function with any number of arguments:
 
-```v
+```v failcompile
 println(sum()) // 0
 println(sum(1)) // 1
 println(sum(2, 3)) // 5
@@ -106,7 +106,7 @@ println(sum(2, 3)) // 5
 
 Using `...a` array unpacking, you can pass an array as a function argument:
 
-```v
+```v failcompile
 a := [2, 3, 4]
 println(sum(...a)) // 9
 b := [5, 6, 7]
@@ -129,7 +129,7 @@ sum(2, 3, 4) // [2, 3, 4]
 In V function arguments are immutable by default, and mutable args have to be
 marked on call.
 
-```v
+```v failcompile
 fn mutate(x []int) {
 	x << 2
 	// error: `x` is immutable, declare it with `mut` to make it mutable
@@ -188,7 +188,9 @@ That *may* change in V 1.0.
 Functions can have generic parameters, which are specified using square brackets after the function name:
 
 ```v
-fn each[T](a []T, cb fn (T)) { /*...*/ }
+fn each[T](a []T, cb fn (T)) {
+	//...
+}
 ```
 
 See [Generics](../generics.md) for more information.

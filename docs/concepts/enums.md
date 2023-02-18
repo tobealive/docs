@@ -177,7 +177,7 @@ the maximum number of fields will be 32.
 
 In such an enumeration, the fields will have the following values:
 
-```v
+```v nofmt failcompile
 println(BitField.read)  // 1 or 0b0001
 println(BitField.write) // 2 or 0b0010
 println(BitField.other) // 4 or 0b0100

@@ -53,9 +53,7 @@ fn write_log(s State) !int {
 }
 
 fn main() {
-	n := write_log(.return_error) or {
-		panic('Error: ${err}')
-	}
+	n := write_log(.return_error) or { panic('Error: ${err}') }
 	println('${n} bytes written')
 }
 ```

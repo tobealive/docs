@@ -23,7 +23,7 @@ fn foo() {}
 
 You can also declare attributes on multiple lines:
 
-```v
+```v nofmt
 [inline]
 [unsafe]
 fn foo() {}
@@ -210,10 +210,10 @@ For example: `stdcall`, `fastcall` and `cdecl`.
 This list also applies to alias types.
 
 ```v
-[callconv: "stdcall"]
+[callconv: 'stdcall']
 fn C.DefWindowProc(hwnd int, msg int, lparam int, wparam int)
 
-[callconv: "fastcall"]
+[callconv: 'fastcall']
 type FastFn = fn (int) bool
 ```
 

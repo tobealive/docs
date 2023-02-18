@@ -15,9 +15,9 @@ interface Speaker {
 When we define a function that takes the `Speaker` interface as an argument, we abstract away
 from the actual implementation and only use what the interface defines:
 
-```v
+```v failcompile
 fn greet(s Speaker) {
-	println(s.speak("Hello"))
+	println(s.speak('Hello'))
 }
 ```
 
@@ -85,7 +85,7 @@ defined in the `mut` section of the interface.
 
 ```v
 interface Bar {
-	mut:
+mut:
 	write(string) string
 }
 
@@ -149,14 +149,14 @@ fn main() {
 
 We can also use `match` for type checking:
 
-```v
+```v failcompile
 fn greet(s Speaker) {
 	match s {
 		Dog {
-			println('a dog speaks: ${s.speak("Hello")}')
+			println('a dog speaks: ${s.speak('Hello')}')
 		}
 		Cat {
-			println('a cat speaks: ${s.speak("Hello")}')
+			println('a cat speaks: ${s.speak('Hello')}')
 		}
 		else {
 			println('something else')
@@ -223,12 +223,12 @@ For example, we have two interfaces, `Reader` and `Writer`:
 
 ```v
 pub interface Reader {
-	mut:
+mut:
 	read(mut buf []byte) ?int
 }
 
 pub interface Writer {
-	mut:
+mut:
 	write(buf []byte) ?int
 }
 ```
@@ -237,7 +237,7 @@ Now, if we want to declare a `ReaderWriter` interface that requires the implemen
 of the `read()` and `write()` methods, then instead of copying the methods from `Reader`
 and `Writer` to `ReaderWriter`, we simply embed interfaces themselves in `ReaderWriter`:
 
-```v
+```v failcompile
 pub interface ReaderWriter {
 	Reader
 	Writer
@@ -247,7 +247,7 @@ pub interface ReaderWriter {
 Now, if we want to implement `ReaderWriter`, we need to implement the `read()` and `write()`
 methods from both built-in interfaces:
 
-```v
+```v failcompile
 struct MyReaderWriter {}
 
 fn (mut m MyReaderWriter) read(mut buf []byte) ?int {

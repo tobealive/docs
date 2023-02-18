@@ -20,7 +20,7 @@ mkdir mymodule
 
 Let's add the file **mymodule/myfile.v**:
 
-```v
+```v failcompile
 module mymodule
 
 pub fn say_hi() {
@@ -35,7 +35,7 @@ Now you can use the module in your code:
 
 **main.v:**
 
-```v
+```v failcompile
 import mymodule
 
 fn main() {
@@ -57,7 +57,7 @@ mkdir mymodule/submodule
 
 Let's create a file **mymodule/submodule/myfile.v**:
 
-```v
+```v failcompile
 module submodule
 
 pub fn say_hello() {
@@ -67,7 +67,7 @@ pub fn say_hello() {
 
 Now, to use a submodule, you need to specify the full path to it, separating the names with a dot:
 
-```v
+```v failcompile
 import mymodule.submodule
 
 fn main() {

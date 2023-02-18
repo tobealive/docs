@@ -15,7 +15,7 @@ To display the value of a variable in a template, use `@{}`:
 
 V templates can use variables from the outer function in which they are used:
 
-```v
+```v failcompile
 fn main() {
 	name := 'John'
 	println($tmpl('template.txt'))
@@ -30,7 +30,7 @@ name: @{name}
 
 You can also access the fields of structures:
 
-```v
+```v failcompile
 struct Person {
 	name string
 	age  int

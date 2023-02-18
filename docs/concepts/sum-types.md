@@ -30,7 +30,7 @@ fn main() {
 
 To create a new instance of the sum type, use type casting:
 
-```v
+```v oksyntax
 int_width := Width(10)
 ```
 
@@ -44,7 +44,7 @@ The sum type can be recursive, i.e. refer to itself, but only if it is defined
 as an array or map element type:
 
 ```v
-type JsonValue = string | int | f64 | bool | []JsonValue | map[string]JsonValue
+type JsonValue = []JsonValue | bool | f64 | int | map[string]JsonValue | string
 ```
 
 ## Accessing fields from structures in the sum type
@@ -61,7 +61,7 @@ struct Planet {
 	name string
 }
 
-type Object = Star | Planet
+type Object = Planet | Star
 
 fn main() {
 	star := Object(Star{'Sun'})
@@ -104,8 +104,12 @@ type Width = int | string
 
 fn absolute_width(width Width) int {
 	return match width {
-		int { width }
-		string { /*...*/ }
+		int {
+			width
+		}
+		string {
+			0
+		}
 	}
 }
 ```
@@ -114,7 +118,7 @@ At the same time, `match` must be exhaustive, that is, handle all possible
 variants of the sum type or have an `else` branch:
 
 ```v
-type Width = int | string | f64
+type Width = f64 | int | string
 
 fn absolute_width(width Width) int {
 	return match width {

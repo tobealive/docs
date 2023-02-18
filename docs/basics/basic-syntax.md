@@ -59,7 +59,7 @@ fn say_hello() {
 
 Function calls looks like this:
 
-```v
+```v ignore
 concatenate('Hello, ', 'World!')
 ```
 

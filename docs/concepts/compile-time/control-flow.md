@@ -11,7 +11,7 @@ It can also specify different code depending on the type in generic functions, s
 
 It supports multiple conditions in one branch:
 
-```v
+```v failcompile
 $if ios || android {
 	println('Running on a mobile device!')
 }
@@ -29,7 +29,7 @@ println('Using ${os}')
 
 Can have `$else-$if` and `$else` branches:
 
-```v
+```v failcompile
 $if tinyc {
 	println('tinyc')
 } $else $if clang {
@@ -43,7 +43,7 @@ $if tinyc {
 
 Can be used to check compilation options:
 
-```v
+```v failcompile
 $if test {
 	println('testing')
 }
@@ -59,7 +59,7 @@ $if prod {
 
 Custom compiler options passed via `-d` can be checked with `$if option ? {}`:
 
-```v
+```v failcompile
 // v -d option ...
 $if option ? {
 	println('custom option')
@@ -82,9 +82,19 @@ Below are all the main supported options:
 methods of types, attributes of types and other.
 
 ```v
-$for field in User.fields {
-    println(field.name)
+struct User {
+	name string
+	age  int
 }
+
+fn main() {
+	$for field in User.fields {
+		println(field.name)
+	}
+}
+
+// name
+// age
 ```
 
 See the [Compile-time Reflection](./reflection.md) article for more details.

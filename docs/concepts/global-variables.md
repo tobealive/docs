@@ -7,10 +7,10 @@ For this purpose, you can enable global variables with the compiler flag `-enabl
 
 Global variables declared with `__global ( ... )`:
 
-```v globals
+```v failcompile
 __global (
-    sem   sync.Semaphore
-    float = 20.0
+	sem   sync.Semaphore
+	float = 20.0
 )
 ```
 

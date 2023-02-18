@@ -119,13 +119,13 @@ $if $pkgconfig('mysqlclient') {
 
 Ordinary zero terminated C strings can be converted to V strings with
 
-```v
+```v failcompile
 unsafe { &char(cstring).vstring() }
 ```
 
 or if you know their length already with:
 
-```v
+```v failcompile
 unsafe { &char(cstring).vstring_with_len(len) }
 ```
 
@@ -138,7 +138,7 @@ unsafe { &char(cstring).vstring_with_len(len) }
 On Windows, C APIs often return so called `wide` strings (utf16 encoding).
 These can be converted to V strings with
 
-```v
+```v failcompile
 string_from_wide(&u16(cwidestring))
 ```
 
@@ -151,13 +151,13 @@ V has these types for easier interoperability with C:
 
 To cast a `voidptr` to a V reference, use:
 
-```v
+```v failcompile
 user := unsafe { &User(user_void_ptr) }
 ```
 
 `voidptr` can also be dereferenced into a V struct through casting:
 
-```v
+```v failcompile
 user := unsafe { User(user_void_ptr) }
 ```
 

@@ -14,7 +14,7 @@ Multiple constants can be declared in one block:
 ```v
 const (
 	pi = 3.14
-	e = 2.71828
+	e  = 2.71828
 )
 ```
 

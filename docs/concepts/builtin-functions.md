@@ -80,7 +80,7 @@ struct TypeInfo {
 
 `isreftype` returns `true` if the type is a reference type, `false` otherwise.
 
-```v
+```v nofmt
 println(isreftype[int]()) // false
 println(isreftype[string]()) // true
 println(isreftype[[]int]()) // true

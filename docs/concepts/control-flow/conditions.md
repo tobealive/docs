@@ -52,7 +52,7 @@ fn get_user(id int) ?User {
 if user := get_user(0) {
 	println(user)
 } else {
-	// err is implicitly declared here and point 
+	// err is implicitly declared here and point
 	// to the error returned by `get_user()` if any
 	println(err)
 }

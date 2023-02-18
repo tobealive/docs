@@ -32,7 +32,7 @@ Embedded structs must come before all own struct fields.
 With embedding, the struct `Button` will automatically have get all the fields and methods from
 the struct `Size`, which allows you to do:
 
-```v
+```v failcompile
 mut button := Button{
 	title: 'Click me'
 	height: 2

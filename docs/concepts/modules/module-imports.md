@@ -57,7 +57,7 @@ println('Your OS is ${current_os}.')
 
 Any imported module name can be aliased using the `as` keyword:
 
-```v
+```v failcompile
 import crypto.sha256
 import mymod.sha256 as mysha256
 
@@ -73,7 +73,7 @@ However, you _can_ redeclare a type using
 [type aliases](../type-aliases.md)
 and add methods for it:
 
-```v
+```v play
 import time
 import math
 

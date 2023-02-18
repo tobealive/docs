@@ -32,7 +32,7 @@ its type describes the function type.
 
 Such a type is described as `fn (<param_types>) <return_type>`, for example:
 
-```v
+```v badsyntax
 fn (int) int
 fn (string, int) string
 fn (string, int)

@@ -19,10 +19,10 @@ Each field must have a unique name and type.
 
 To instantiate a struct, use a struct literal:
 
-```v
+```v failcompile
 p := Person{
 	name: 'Bob'
-	age:  20
+	age: 20
 }
 ```
 
@@ -30,16 +30,16 @@ Fields can be initialized in any order or omitted when they are created.
 
 There is also a short syntax for instantiating structures:
 
-```v
+```v failcompile
 p := Person{'Bob', 20}
 ```
 
 To refer to a structure field, use a dot:
 
-```v
+```v failcompile
 p := Person{
 	name: 'Bob'
-	age:  20
+	age: 20
 }
 
 println(p.name) // Bob
@@ -77,7 +77,7 @@ __global:
 All struct fields are zeroed by default during the creation of the struct.
 Array and map fields are allocated.
 
-```v
+```v nofmt
 struct Foo {
 	num int            // 0 by default
 	str string         // '' by default
@@ -213,15 +213,15 @@ fn (mut p Person) birthday() {
 In this case, we can freely change the mutable fields of the structure inside the method.
 Such methods can only be called on mutable struct instances:
 
-```v
+```v failcompile
 mut mut_person := Person{
 	name: 'Bob'
-	age:  20
+	age: 20
 }
 
 immut_person := Person{
 	name: 'Bob'
-	age:  20
+	age: 20
 }
 
 mut_person.birthday() // ok

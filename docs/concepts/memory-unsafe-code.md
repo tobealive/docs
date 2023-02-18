@@ -23,17 +23,16 @@ mut p := unsafe { malloc(3) }
 p[0] = `h` // warning: pointer indexing is only allowed in `unsafe` blocks
 
 unsafe {
-    p[0] = `h` // ok
-    p[1] = `e`
+	p[0] = `h` // ok
+	p[1] = `e`
 	p[2] = `l`
 }
-
-p++ // warning: pointer arithmetic is only allowed in `unsafe` blocks
+p++
+// warning: pointer arithmetic is only allowed in `unsafe` blocks
 
 unsafe {
-    p++ // ok
+	p++ // ok
 }
-
 println((*p).ascii_str()) // l
 ```
 

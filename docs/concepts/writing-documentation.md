@@ -6,7 +6,7 @@ in the source code.
 
 Documentation for each function/type/const must be placed right before the declaration:
 
-```v fmt
+```v okfmt
 // clearall clears all bits in the array
 fn clearall() {
 }
@@ -17,7 +17,7 @@ The comment must start with the name of the definition.
 Sometimes one line isn't enough to explain what a function does, in that case comments should
 span to the documented function using single line comments:
 
-```v fmt
+```v okfmt
 // copy_all recursively copies all elements of the array by their value,
 // if `dupes` is false all duplicate values are eliminated in the process.
 fn copy_all(dupes bool) {

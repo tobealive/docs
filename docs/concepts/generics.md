@@ -28,9 +28,9 @@ fn compare[T](a T, b T) int {
 Such a function can be called with any data type that supports the `<` and `>` operators.
 When calling a function, the parameter types must optionally be specified in square brackets:
 
-```v
+```v failcompile
 println(compare[int](1, 0))
-println(compare[string]("a", "b"))
+println(compare[string]('a', 'b'))
 println(compare(10.0, 20.0))
 ```
 
@@ -38,17 +38,17 @@ In the first case `compare` will be generated for type `int` and called with `in
 
 If you try to pass `"b"` instead of `0`, you will get a compilation error:
 
-```v
-println(compare[int](0, "b"))
+```v failcompile
+println(compare[int](0, 'b'))
 // error: cannot use `string` as `int` in argument 2 to `compare`
 ```
 
 The V compiler is smart enough to be able to determine the types of the parameters if
 they are not explicitly specified:
 
-```v
+```v failcompile
 println(compare(1, 0)) // T will be inferred as `int`
-println(compare("a", "b")) // T will be inferred as `string`
+println(compare('a', 'b')) // T will be inferred as `string`
 ```
 
 ## Structs
@@ -66,17 +66,25 @@ struct Optional[T] {
 This structure can be used with any data type; when creating an object, the parameter
 types must be specified after the structure name and before the curly brace:
 
-```v
-op1 := Option[int]{value: 10}
-op2 := Option[string]{value: 'hello'}
+```v failcompile
+op1 := Optional[int]{
+	value: 10
+}
+op2 := Optional[string]{
+	value: 'hello'
+}
 ```
 
 Unlike functions, when creating a generic structure object, the parameter types must always
 be specified explicitly:
 
-```v
-op1 := Option[int]{value: 10}
-op2 := Option{value: 'hello'} // error: generic struct init must specify type parameter, e.g. Foo[int]
+```v failcompile
+op1 := Optional[int]{
+	value: 10
+}
+op2 := Option{
+	value: 'hello'
+} // error: generic struct init must specify type parameter, e.g. Foo[int]
 ```
 
 ### Methods of generic structs
@@ -228,7 +236,7 @@ and must be specified explicitly.
 
 At the moment, methods declared in the interface cannot have their own parameter types:
 
-```v
+```v badsyntax
 interface Iterator[T] {
 	map[U](fn (T) U) []U // not allowed
 }
