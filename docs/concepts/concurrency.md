@@ -89,7 +89,6 @@ fn main() {
 	println('done')
 }
 
-// Output:
 // task 1 begin
 // task 2 begin
 // task 3 begin
@@ -117,7 +116,7 @@ fn main() {
 	println('All jobs finished: ${r}')
 }
 
-// Output: All jobs finished: [1, 4, 9, 16, 25, 36, 49, 64, 81]
+// All jobs finished: [1, 4, 9, 16, 25, 36, 49, 64, 81]
 ```
 
 ## Channels
