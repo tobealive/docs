@@ -31,6 +31,35 @@ it to a variable, the else branch is mandatory.
 
 Therefore, there is no ternary operator (`condition ? then : else`) because ordinary `if` works fine in this role.
 
+To handle Result/Optional types, there is a special `if`:
+
+```v
+struct User {
+	id   int
+	name string
+}
+
+fn get_user(id int) ?User {
+	if id == 1 {
+		return User{
+			id: 1
+			name: 'John'
+		}
+	}
+	return error('user not found')
+}
+
+if user := get_user(0) {
+	println(user)
+} else {
+	// err is implicitly declared here and point 
+    // to the error returned by `get_user()` if any
+	println(err)
+}
+```
+
+See [Error handling](../error-handling.md) for more information.
+
 ## Match expression
 
 ```v play

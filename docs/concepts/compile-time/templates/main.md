@@ -16,7 +16,7 @@ fn build() string {
 	name := 'Peter'
 	age := 25
 	numbers := [1, 2, 3]
-	return $tmpl('1.txt')
+	return $tmpl('template.txt')
 }
 
 fn main() {
@@ -24,7 +24,7 @@ fn main() {
 }
 ```
 
-**1.txt:**
+**template.txt:**
 
 ```
 name: @{name}

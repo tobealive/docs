@@ -11,9 +11,9 @@ If an index is required, an alternative form `for index, value in arr` can be us
 numbers := [1, 2, 3]
 for num in numbers {
 	println(num)
-    // 1
-    // 2
-    // 3
+	// 1
+	// 2
+	// 3
 }
 
 names := ['Sam', 'Peter']
@@ -138,10 +138,17 @@ for i := 0; i < 10; i += 2 {
 
 Here `i` doesn't need to be declared with `mut` since it's always going to be mutable by definition.
 
+## Break & continue
+
+`break` and `continue` control the innermost `for` loop.
+
+- `break` terminates the innermost `for` loop.
+- `continue` skips the rest of the current iteration and proceeds to the next step of the nearest enclosing loop.
+
 ## Labelled break & continue
 
 `break` and `continue` control the innermost `for` loop by default.
-You can also use `break` and `continue` followed by a label name to refer to an outer `for`loop:
+You can also use `break` and `continue` followed by a label name to refer to an outer `for` loop:
 
 ```v play
 outer: for i := 4; true; i++ {
