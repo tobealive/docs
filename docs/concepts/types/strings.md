@@ -104,35 +104,52 @@ To use a format specifier, follow this pattern:
 
 `${varname:[flags][width][.precision][type]}`
 
-- flags: may be zero or more of the following: `-` to left-align output within the field, `0` to use
-  `0` as the padding character instead of the default `space` character.
-  > **Note**
-  > V does not currently support the use of `'` or `#` as format flags, and V supports but
-  > doesn't need `+` to right-align since that's the default.
-- width: may be an integer value describing the minimum width of total field to output.
-- precision: an integer value preceded by a `.` will guarantee that many digits after the decimal
-  point, if the input variable is a float. Ignored if variable is an integer.
-- type: `f` and `F` specify the input is a float and should be rendered as such, `e` and `E` specify
-  the input is a float and should be rendered as an exponent (partially broken), `g` and `G` specify
-  the input is a float--the renderer will use floating point notation for small values and exponent
-  notation for large values, `d` specifies the input is an integer and should be rendered in base-10
-  digits, `x` and `X` require an integer and will render it as hexadecimal digits, `o` requires an
-  integer and will render it as octal digits, `b` requires an integer and will render it as binary
-  digits, `s` requires a string (almost never used).
+### Flags
 
-  > **Note**
-  > When a numeric type can render alphabetic characters, such as hex strings or special values
-  > like `infinity`, the lowercase version of the type forces lowercase alphabetics and the
-  > uppercase version forces uppercase alphabetics.
+Zero or more of the following:
 
-  > **Note**
-  > In most cases, it's best to leave the format type empty. Floats will be rendered by
-  > default as `g`, integers will be rendered by default as `d`, and `s` is almost always redundant.
-  > There are only three cases where specifying a type is recommended:
+- `-` – left-align output within the field. The default is to right-align.
+- `0` – use `0` as the padding character instead of the default `space` character.
+
+> **Note**
+> V does not currently support the use of `'` or `#` as format flags, and V supports but
+> doesn't need `+` to right-align since that's the default.
+
+### Width
+
+Integer value describing the minimum width of total field to output.
+
+### Precision
+
+Integer value preceded by a `.` will guarantee that many digits after the decimal
+point, if the input variable is a float.
+
+Ignored if variable is an integer.
+
+### Type
+
+- `f` and `F` specify the input is a float and should be rendered as such.
+- `e` and `E` specify the input is a float and should be rendered as an exponent (partially broken).
+- `g` and `G` specify the input is a float--the renderer will use floating point notation for small values and exponent
+  notation for large values.
+- `d` specifies the input is an integer and should be rendered in base-10 digits.
+- `x` and `X` require an integer and will render it as hexadecimal digits.
+- `o` requires an integer and will render it as octal digits.
+- `b` requires an integer and will render it as binary digits.
+- `s` requires a string (almost never used).
+
+> **Note**
+> When a numeric type can render alphabetic characters, such as hex strings or special values
+> like `infinity`, the lowercase version of the type forces lowercase alphabetics and the
+> uppercase version forces uppercase alphabetics.
+
+In most cases, it's best to leave the format type empty. Floats will be rendered by
+default as `g`, integers will be rendered by default as `d`, and `s` is almost always redundant.
+There are only three cases where specifying a type is recommended:
 
 - format strings are parsed at compile time, so specifying a type can help detect errors then
-- format strings default to using lowercase letters for hex digits and the `e` in exponents. Use an
-  uppercase type to force the use of uppercase hex digits and an uppercase `E` in exponents.
+- format strings default to using lowercase letters for hex digits and the `e` in exponents.
+  Use an uppercase type to force the use of uppercase hex digits and an uppercase `E` in exponents.
 - format strings are the most convenient way to get hex, binary or octal strings from an integer.
 
 See
