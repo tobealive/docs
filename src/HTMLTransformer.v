@@ -96,14 +96,18 @@ fn (mut t HTMLTransformer) prepare_v_and_c_code_for_playground() {
 	// Until V has no good regex library.
 	mut result := ''
 	mut in_v_code_tag := false
+	lines := t.content.split_into_lines()
 
-	for line in t.content.split_into_lines() {
+	for index, line in lines {
 		mut new_line := line
 
 		if line.starts_with(v_code_tag) || line.starts_with(c_code_tag) {
+			next_line := lines[index + 1]
+			classes := if next_line == 'play' { next_line } else { '' }
+
 			new_line = new_line
-				.replace(v_code_tag, '<div class="language-v">')
-				.replace(c_code_tag, '<div class="language-c">')
+				.replace(v_code_tag, '<div class="language-v ${classes}">')
+				.replace(c_code_tag, '<div class="language-c ${classes}">')
 
 			in_v_code_tag = true
 		}
@@ -113,6 +117,10 @@ fn (mut t HTMLTransformer) prepare_v_and_c_code_for_playground() {
 				new_line = new_line.replace(code_tag_end, '</div>')
 
 				in_v_code_tag = false
+			}
+
+			if line == 'play' {
+				continue
 			}
 		}
 

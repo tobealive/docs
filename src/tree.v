@@ -24,7 +24,13 @@ fn build_docs_tree(path string) !&Node {
 
 		if is_markdown_url {
 			markdown_path := os.join_path(path, child.url)
-			child.body = os.read_file(markdown_path)!
+			markdown_content := os.read_file(markdown_path)!
+
+			mut transformer := MarkdownTransformer{
+				content: markdown_content
+			}
+
+			child.body = transformer.process()
 			continue
 		}
 
