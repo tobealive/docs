@@ -1,12 +1,9 @@
 module main
 
-import os
-
 const (
-	root_path   = os.abs_path('..')
-	docs_path   = os.join_path(root_path, 'docs')
-	output_path = os.join_path(root_path, 'output')
-	assets_path = os.join_path(root_path, 'src/templates/assets')
+	docs_path   = 'docs'
+	output_path = 'output'
+	assets_path = 'src/templates/assets'
 )
 
 fn main() {
