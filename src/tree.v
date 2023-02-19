@@ -8,6 +8,7 @@ struct Node {
 	title string
 	url   string
 mut:
+	html_url  string
 	contents  []Node
 	body      string
 	is_folder bool
@@ -26,6 +27,10 @@ fn build_docs_tree(path string) !&Node {
 			markdown_path := os.join_path(path, child.url)
 			markdown_content := os.read_file(markdown_path)!
 
+			html_filename := '${title_to_filename(child.title)}.html'
+			directory_name := title_to_filename(child.parent.title)
+			child.html_url = '${directory_name}/${html_filename}'
+
 			mut transformer := MarkdownTransformer{
 				content: markdown_content
 			}
@@ -35,7 +40,7 @@ fn build_docs_tree(path string) !&Node {
 		}
 
 		child_path := os.join_path(path, child.url)
-		child.contents << build_docs_tree(child_path)!
+		child = build_docs_tree(child_path)!
 	}
 
 	return &node_config

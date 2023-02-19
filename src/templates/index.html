@@ -56,7 +56,7 @@
 
 <div class="wrapper">
     <aside>
-        <a href="index.html" class="title">
+        <a href="/index.html" class="title">
             <img src="/assets/images/logo.svg" alt="">
             <span>Documentation</span>
         </a>
@@ -67,7 +67,11 @@
                         @for first_child in root_node.contents
                             @if first_child.contents.len == 0
                                 <li class="js-item item">
-                                    <a class="link" href="#">@first_child.title</a>
+                                    @if first_child.html_url == html_url
+                                        <a class="link active" href="/@first_child.html_url">@first_child.title</a>
+                                    @else
+                                        <a class="link" href="/@first_child.html_url">@first_child.title</a>
+                                    @end
                                 </li>
                             @else
                                 <li class="js-item item with-sublist">
@@ -78,29 +82,33 @@
                                     <a class="link" href="#">@first_child.title</a>
 
                                     <ul class="js-sub-list sub-list">
-                                        @for first_subchild in first_child.contents
-                                            @for second_child in first_subchild.contents
-                                                @if second_child.contents.len == 0
+                                        @for second_child in first_child.contents
+                                            @if second_child.contents.len == 0
                                                 <li class="js-item item">
-                                                    <a class="link" href="#">@second_child.title</a>
+                                                    @if second_child.html_url == html_url
+                                                        <a class="link active" href="/@second_child.html_url">@second_child.title</a>
+                                                    @else
+                                                        <a class="link" href="/@second_child.html_url">@second_child.title</a>
+                                                    @end
                                                 </li>
-                                                @else
-                                                    <li class="js-item item with-sublist">
-                                                        <svg viewBox="-5 -3 24 24">
-                                                            <path d="M11 9l-6 5.25V3.75z"></path>
-                                                        </svg>
-                                                        <a class="link" href="#">@second_child.title</a>
-                                                        @for second_subchild in second_child.contents
-                                                            @for third_child in second_subchild.contents
-                                                            <ul class="js-sub-list sub-list open">
-                                                                <li class="js-item item">
-                                                                    <a class="link" href="#">@third_child.title</a>
-                                                                </li>
-                                                            </ul>
-                                                            @end
+                                            @else
+                                                <li class="js-item item with-sublist">
+                                                    <svg viewBox="-5 -3 24 24">
+                                                        <path d="M11 9l-6 5.25V3.75z"></path>
+                                                    </svg>
+                                                    <a class="link" href="#">@second_child.title</a>
+                                                    <ul class="js-sub-list sub-list">
+                                                        @for third_child in second_child.contents
+                                                            <li class="js-item item">
+                                                                @if third_child.html_url == html_url
+                                                                    <a class="link active" href="/@third_child.html_url">@third_child.title</a>
+                                                                @else
+                                                                    <a class="link" href="/@third_child.html_url">@third_child.title</a>
+                                                                @end
+                                                            </li>
                                                         @end
-                                                    </li>
-                                                @end
+                                                    </ul>
+                                                </li>
                                             @end
                                         @end
                                     </ul>
@@ -205,6 +213,7 @@
             currentNavigationItem.scrollIntoView({block: "center", behavior: "auto"});
         }
     })
+
 </script>
 
 <script src="/assets/scripts/vlang-playground.js"></script>
@@ -222,6 +231,7 @@
             playgrounds.push(playground);
         });
     })
+
 </script>
 
 <script src="/assets/scripts/aside.js"></script>
@@ -247,6 +257,7 @@
         const html = document.querySelector("html");
         html.style.opacity = '1'
     }
+
 </script>
 </body>
 </html>
