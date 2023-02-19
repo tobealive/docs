@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="stylesheet" href="assets/styles/vlang-playground.css">
+    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="/assets/styles/vlang-playground.css">
 
     <title>V Documentation</title>
 </head>
@@ -57,7 +57,7 @@
 <div class="wrapper">
     <aside>
         <a href="index.html" class="title">
-            <img src="assets/images/logo.svg" alt="">
+            <img src="/assets/images/logo.svg" alt="">
             <span>Documentation</span>
         </a>
         <nav>
@@ -207,7 +207,7 @@
     })
 </script>
 
-<script src="assets/scripts/vlang-playground.js"></script>
+<script src="/assets/scripts/vlang-playground.js"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -215,7 +215,7 @@
         playgroundElements.forEach(playgroundElement => {
             const playground = Playground.create(playgroundElement, {
                 fontSize: "14px",
-                highlightOnly: true,
+                highlightOnly: !playgroundElement.classList.contains("play"),
                 showFooter: false,
                 showLineNumbers: false,
             });
@@ -224,9 +224,9 @@
     })
 </script>
 
-<script src="assets/scripts/aside.js"></script>
-<script src="assets/scripts/theme.js"></script>
-<script src="assets/scripts/rightside.js"></script>
+<script src="/assets/scripts/aside.js"></script>
+<script src="/assets/scripts/theme.js"></script>
+<script src="/assets/scripts/rightside.js"></script>
 
 <script>
     document.addEventListener("keydown", (event) => {
