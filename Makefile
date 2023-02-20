@@ -6,3 +6,6 @@ build:
 
 server:
 	python3 -m http.server -d output 8080
+
+fmt:
+	v fmt -w .
