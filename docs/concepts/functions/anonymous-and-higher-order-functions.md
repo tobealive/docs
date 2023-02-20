@@ -104,7 +104,7 @@ fn main() {
 }
 ```
 
-Thanks to [type aliases](../type-aliases.md), you can give names to functional types:
+Thanks to [type aliases](../type-aliases.md), you can give names to function types:
 
 ```v play
 type Filter = fn (string) string
