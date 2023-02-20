@@ -7,8 +7,6 @@ const (
 	v_code_tag         = '<pre><code class="language-v">'
 	c_code_tag         = '<pre><code class="language-c">'
 	code_tag_end       = '</code></pre>'
-	h2_tag             = '<h2>'
-	h2_tag_end         = '</h2>'
 	strong_note_tag    = '<strong>Note</strong>'
 	strong_warning_tag = '<strong>Warning</strong>'
 )
@@ -22,7 +20,8 @@ fn (mut t HTMLTransformer) process() string {
 	t.add_main_class_to_first_h1()
 	t.process_blockquotes()
 	t.prepare_v_and_c_code_for_playground()
-	t.add_anchors()
+	t.add_anchors('h2')
+	t.add_anchors('h3')
 
 	return t.content
 }
@@ -130,20 +129,22 @@ fn (mut t HTMLTransformer) prepare_v_and_c_code_for_playground() {
 	t.content = result
 }
 
-fn (mut t HTMLTransformer) add_anchors() {
+fn (mut t HTMLTransformer) add_anchors(tag_name string) {
 	mut result := ''
+	tag := '<${tag_name}>'
+	tag_end := '</${tag_name}>'
 
 	for line in t.content.split_into_lines() {
 		mut new_line := line
 
-		if line.starts_with(h2_tag) && line.ends_with(h2_tag_end) {
-			title := line.substr_ni(h2_tag.len, -h2_tag_end.len)
+		if line.starts_with(tag) && line.ends_with(tag_end) {
+			title := line.substr_ni(tag.len, -tag_end.len)
 			plain_title := markdown.to_plain(title)
 			id := title_to_filename(plain_title)
 
 			new_line = new_line
 				.replace(title, '${title} <a href="#${id}" class="header-anchor" aria-hidden="true">#</a>')
-				.replace('<h2>', '<h2 id="${id}">')
+				.replace('<${tag_name}>', '<${tag_name} id="${id}">')
 		}
 
 		result += '${new_line}\n'
