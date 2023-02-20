@@ -2,7 +2,7 @@
 
 V has built-in tools to simplify development.
 
-## v fmt
+## `v fmt`
 
 You don't need to worry about formatting your code or setting style guidelines.
 `v fmt` takes care of that:
@@ -16,7 +16,28 @@ A vfmt run is usually pretty cheap (takes <30ms).
 
 Always run `v fmt -w file.v` before pushing your code.
 
-## v shader
+### Disabling formatting
+
+To disable formatting for a block of code, wrap it with `// vfmt off` and `// vfmt on` comments:
+
+```v
+// Affected by fmt
+a := [1, 2, 3]
+
+// vfmt off
+// This code will not be formatted
+b := [
+		1,
+		2,
+		3,
+	 ]
+// vfmt on
+
+// Affected by fmt
+c := [1, 2, 3]
+```
+
+## `v shader`
 
 You can use GPU shaders with V graphical apps. You write your shaders in an
 [annotated GLSL dialect](https://github.com/vlang/v/blob/1d8ece7/examples/sokol/02_cubes_glsl/cube_glsl.glsl)
@@ -35,7 +56,7 @@ before using the shader in your code.
 V has initial support for profiling your programs: `v -profile profile.txt run file.v`
 That will produce a **profile.txt** file, which you can then analyze.
 
-The generated profile.txt file will have lines with 4 columns:
+The generated **profile.txt** file will have lines with 4 columns:
 
 1. how many times a function was called
 2. how much time in total a function took (in ms)
