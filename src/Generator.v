@@ -22,7 +22,7 @@ fn new_generator(docs_path string, output_path string) !&Generator {
 }
 
 fn (g &Generator) generate() ! {
-	write_output_file('index.html', g.render_page_from_template(g.root_node, g.root_node.html_url,
+	write_output_file('index.html', g.render_page_from_template(g.root_node, 'index.html',
 		'V Documentation', g.root_node.body, Topic{}, Topic{})) or { return }
 
 	g.generate_from_tree(g.root_node)!

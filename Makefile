@@ -3,3 +3,6 @@ run: build
 
 build:
 	v -o generator src
+
+server:
+	python3 -m http.server -d output 8080
