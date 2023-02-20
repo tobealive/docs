@@ -67,7 +67,7 @@
                         @for first_child in root_node.contents
                             @if first_child.contents.len == 0
                                 <li class="js-item item">
-                                    @if first_child.html_url == html_url
+                                    @if first_child.html_url == node.html_url
                                         <a class="link active" href="/@first_child.html_url">@first_child.title</a>
                                     @else
                                         <a class="link" href="/@first_child.html_url">@first_child.title</a>
@@ -85,7 +85,7 @@
                                         @for second_child in first_child.contents
                                             @if second_child.contents.len == 0
                                                 <li class="js-item item">
-                                                    @if second_child.html_url == html_url
+                                                    @if second_child.html_url == node.html_url
                                                         <a class="link active" href="/@second_child.html_url">@second_child.title</a>
                                                     @else
                                                         <a class="link" href="/@second_child.html_url">@second_child.title</a>
@@ -100,7 +100,7 @@
                                                     <ul class="js-sub-list sub-list">
                                                         @for third_child in second_child.contents
                                                             <li class="js-item item">
-                                                                @if third_child.html_url == html_url
+                                                                @if third_child.html_url == node.html_url
                                                                     <a class="link active" href="/@third_child.html_url">@third_child.title</a>
                                                                 @else
                                                                     <a class="link" href="/@third_child.html_url">@third_child.title</a>
@@ -132,7 +132,7 @@
                         <div class="edit-info">
                             <div class="edit-link">
                                 <a class="link edit-link-button"
-                                   href="https://github.com/vlang/v/edit/master/doc/docs.md" target="_blank"
+                                   href="https://github.com/vlang-foundation/docs/edit/main/@{node.markdown_path}" target="_blank"
                                    rel="noreferrer">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="edit-link-icon">
                                         <path d="M18,23H4c-1.7,0-3-1.3-3-3V6c0-1.7,1.3-3,3-3h7c0.6,0,1,0.4,1,1s-0.4,1-1,1H4C3.4,5,3,5.4,3,6v14c0,0.6,0.4,1,1,1h14c0.6,0,1-0.4,1-1v-7c0-0.6,0.4-1,1-1s1,0.4,1,1v7C21,21.7,19.7,23,18,23z"></path>
