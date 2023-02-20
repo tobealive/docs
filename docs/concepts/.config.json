@@ -122,6 +122,10 @@
       "url": "memory-unsafe-code.md"
     },
     {
+      "title": "Profiling",
+      "url": "profiling.md"
+    },
+    {
       "title": "Performance Tuning",
       "url": "performance-tuning.md"
     },
