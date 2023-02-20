@@ -5,10 +5,11 @@
 `in` allows to check whether an array or a map contains an element.
 To do the opposite, use `!in`.
 
-```v
+```v play
 nums := [1, 2, 3]
 println(1 in nums) // true
 println(4 !in nums) // true
+
 m := {
 	'one': 1
 	'two': 2
@@ -32,10 +33,10 @@ struct Parser {
 }
 
 parser := Parser{}
-if parser.token == .plus || parser.token == .minus || parser.token == .div || parser.token == .mult {
+if parser.token == .plus || parser.token == .minus || parser.token == .div {
 	// ...
 }
-if parser.token in [.plus, .minus, .div, .mult] {
+if parser.token in [.plus, .minus, .div] {
 	// ...
 }
 ```

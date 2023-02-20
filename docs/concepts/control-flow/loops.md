@@ -11,17 +11,17 @@ If an index is required, an alternative form `for index, value in arr` can be us
 numbers := [1, 2, 3]
 for num in numbers {
 	println(num)
-	// 1
-	// 2
-	// 3
 }
+// 1
+// 2
+// 3
 
 names := ['Sam', 'Peter']
 for i, name in names {
 	println('${i + 1}. ${name}')
-	// 1. Sam
-	// 2. Peter
 }
+// 1. Sam
+// 2. Peter
 ```
 
 Note, that the value is read-only.
@@ -48,9 +48,9 @@ m := {
 }
 for key, value in m {
 	println('${key} -> ${value}')
-	// one -> 1
-	// two -> 2
 }
+// one -> 1
+// two -> 2
 ```
 
 Either key or value can be ignored by using a single underscore as the identifier.
@@ -60,19 +60,20 @@ m := {
 	'one': 1
 	'two': 2
 }
+
 // iterate over keys
 for key, _ in m {
 	println(key)
-	// one
-	// two
 }
+// one
+// two
 
 // iterate over values
 for _, value in m {
 	println(value)
-	// 1
-	// 2
 }
+// 1
+// 2
 ```
 
 ## Range `for`
@@ -172,7 +173,9 @@ The label must immediately precede the outer loop.
 
 ## Custom iterators
 
-Types that implement a `next()` method returning an `Option` can be iterated with a `for` loop.
+Types that implement a `next()` method returning an
+[`Option`](../error-handling.md#optionresult-types)
+can be iterated with a `for` loop.
 
 ```v play
 struct SquareIterator {
