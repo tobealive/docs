@@ -13,7 +13,7 @@ fn main() {
 
 It can be omitted if the program is a single file.
 
-```v play
+```v
 println('Hello, World!')
 ```
 
@@ -43,7 +43,7 @@ See [Builtin functions](../concepts/builtin-functions.md) for more information.
 
 A function with two string arguments and string return type.
 
-```v play
+```v
 fn concatenate(a string, b string) string {
 	return a + b
 }
@@ -51,7 +51,7 @@ fn concatenate(a string, b string) string {
 
 If function doesn't return anything, you can omit the return type.
 
-```v play
+```v
 fn say_hello() {
 	println('Hello, World!')
 }
@@ -69,20 +69,20 @@ See [Functions](../concepts/functions) for more information.
 
 Variables in V declared with `:=` operator.
 
-```v play
+```v
 name := 'V'
 age := 4
 ```
 
 You can also declare multiple variables in one line.
 
-```v play
+```v
 name, age := 'V', 4
 ```
 
 By default all variables are immutable. To make a variable mutable, use `mut` keyword.
 
-```v play
+```v
 mut name := 'V'
 name = 'V Language'
 ```
