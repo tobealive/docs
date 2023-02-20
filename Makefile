@@ -1,10 +1,10 @@
-run: build
-	./generator
-
 build:
 	v -o generator src
 
-server:
+generate: build
+	./generator
+
+server: generate
 	python3 -m http.server -d output 8080
 
 fmt:
