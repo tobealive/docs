@@ -1,5 +1,12 @@
 # Runes
 
+## Overview
+
+Many languages have a type like `char` which represents a character, usually ASCII,
+since the size of `char` is defined as 1 byte.
+
+V does not have a `char` type as such (the `u8` type can be used instead), instead V has a `rune` type.
+
 A `rune` represents a single Unicode character and is an alias for `u32`.
 To denote them, use <code>`</code> (backticks):
 
@@ -9,30 +16,30 @@ rocket := `🚀`
 
 A `rune` can be converted to a UTF-8 string by using the `.str()` method.
 
-```v
+```v play
 rocket := `🚀`
-assert rocket.str() == '🚀'
+println(rocket.str()) // 🚀
 ```
 
 A `rune` can be converted to UTF-8 bytes by using the `.bytes()` method.
 
-```v
+```v play
 rocket := `🚀`
-assert rocket.bytes() == [u8(0xf0), 0x9f, 0x9a, 0x80]
+println(rocket.bytes()) // [240, 159, 154, 128]
 ```
 
 Hex, Unicode, and Octal escape sequences also work in a `rune` literal:
 
-```v
-assert `\x61` == `a`
-assert `\141` == `a`
-assert `\u0061` == `a`
+```v play
+println(`\x61`) // a
+println(`\141`) // a
+println(`\u0061`) // a
 
 // multibyte literals work too
-assert `\u2605` == `★`
-assert `\u2605`.bytes() == [u8(0xe2), 0x98, 0x85]
-assert `\xe2\x98\x85`.bytes() == [u8(0xe2), 0x98, 0x85]
-assert `\342\230\205`.bytes() == [u8(0xe2), 0x98, 0x85]
+println(`\u2605`) // ★
+println(`\u2605`.bytes()) // [226, 152, 133]
+println(`\xe2\x98\x85`.bytes()) // [226, 152, 133]
+println(`\342\230\205`.bytes()) // [226, 152, 133]
 ```
 
 Note that `rune` literals use the same escape syntax as strings, but they can only hold one unicode
@@ -41,16 +48,18 @@ error at compile time.
 
 Also remember that strings are indexed as bytes, not runes, so beware:
 
-```v
+```v play
 rocket_string := '🚀'
-assert rocket_string[0] != `🚀`
-assert 'aloha!'[0] == `a`
+println(rocket_string[0] != `🚀`) // true
+println('aloha!'[0]) // 97
+println('aloha!'[0].ascii_str()) // a
 ```
 
 A string can be converted to runes by the `.runes()` method.
 
-```v
-hello := 'Hello World 👋'
-hello_runes := hello.runes() // [`H`, `e`, `l`, `l`, `o`, ` `, `W`, `o`, `r`, `l`, `d`, ` `, `👋`]
-assert hello_runes.string() == hello
+```v play
+hello := 'Hello 👋'
+hello_runes := hello.runes()
+println(hello_runes) // [`H`, `e`, `l`, `l`, `o`, ` `, `👋`]
+println(hello_runes.string()) // Hello 👋
 ```

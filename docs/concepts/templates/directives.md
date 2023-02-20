@@ -68,7 +68,7 @@ All the following directives have bodies that end with `@end`.
 Everything between the directive and `@end` is considered to be its body.
 
 Inside the body, newlines at the beginning and at the end are ignored,
-to avoid extra spaces in the resulting html.
+to avoid extra spaces in the resulting text.
 
 ### `if` statement
 

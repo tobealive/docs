@@ -1,5 +1,10 @@
 # Primitive types
 
+## Overview
+
+V supports a wide range of primitive types.
+Below is a list of all supported primitive types:
+
 ```v ignore
 bool
 
@@ -12,9 +17,11 @@ rune // represents a Unicode code point
 
 f32 f64
 
-isize, usize // platform-dependent, the size is how many bytes it takes to reference any location in memory
+isize, usize // platform-dependent,
+             // the size is how many bytes it takes
+             // to reference any location in memory
 
-voidptr // this one is mostly used for [C interoperability](#v-and-c)
+voidptr // this one is mostly used for C interoperability
 
 any // similar to C's void* and Go's interface{}
 ```
@@ -22,10 +29,12 @@ any // similar to C's void* and Go's interface{}
 > **Note**
 > Unlike C and Go, `int` is always a 32-bit integer.
 
-There is an exception to the rule that all operators
-in V must have values of the same type on both sides. A small primitive type
-on one side can be automatically promoted if it fits
-completely into the data range of the type on the other side.
+## Promotions
+
+There is an exception to the rule that all operators in V must have values of the same type on both sides.
+A small primitive type on one side can be automatically promoted if it fits completely into the data
+range of the type on the other side.
+
 These are the allowed possibilities:
 
 ```v ignore
@@ -39,7 +48,7 @@ These are the allowed possibilities:
 ```
 
 An `int` value for example can be automatically promoted to `f64`
-or `i64` but not to `u32`. (`u32` would mean loss of the sign for
+or `i64` but not to `u32` (`u32` would mean loss of the sign for
 negative values).
 Promotion from `int` to `f32`, however, is currently done automatically
 (but can lead to precision loss for large values).

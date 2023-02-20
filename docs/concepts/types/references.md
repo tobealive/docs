@@ -20,7 +20,7 @@ fn foo(foo &Foo) {
 
 ## Take address
 
-To create a reference, you need to take the address of a variable.
+To create a reference, you need to take the address, e.g. of a variable.
 In V, this is done with the `&` operator:
 
 ```v
@@ -50,7 +50,7 @@ foo_ptr.abc = 123
 println(foo.abc) // 123
 ```
 
-Taking the address from an immutable variable and assigning it to a mutable reference is prohibited:
+Taking the address from an immutable variable and assigning it to a mutable reference is **prohibited**:
 
 ```v play
 struct Foo {
@@ -111,6 +111,6 @@ struct Foo {
 foo := Foo{}
 foo_ptr := &foo
 
-println(${foo_ptr:p})
-// 7ffefb7f9a90
+println('${foo_ptr:p}')
+// 2ae32cf2dfe0
 ```

@@ -67,5 +67,8 @@ The following tokens are always interpreted as keywords and cannot be used as id
 The following identifiers are defined by the compiler in specific contexts, and they can be used as regular
 identifiers in other contexts:
 
-- `it` is used inside a `array` or `map` method calls to refer to its parameter implicitly.
-- `a` and `b` is used inside a `sort()` method for `array` to refer left and right elements respectively.
+- `it` is used inside a `array` or `map` method calls to
+  [refer to its parameter implicitly](../concepts/types/arrays.md#it-variable).
+- `a` and `b` is used inside a `sort()` method for `array` to
+  [refer left and right elements](../concepts/types/arrays.md#sorting-arrays)
+  respectively.
