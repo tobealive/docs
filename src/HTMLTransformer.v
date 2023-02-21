@@ -9,6 +9,73 @@ const (
 	code_tag_end       = '</code></pre>'
 	strong_note_tag    = '<strong>Note</strong>'
 	strong_warning_tag = '<strong>Warning</strong>'
+	v_keywords         = [
+		'as',
+		'asm',
+		'assert',
+		'atomic',
+		'break',
+		'const',
+		'continue',
+		'defer',
+		'else',
+		'enum',
+		'false',
+		'fn',
+		'for',
+		'go',
+		'goto',
+		'if',
+		'import',
+		'in',
+		'interface',
+		'is',
+		'isreftype',
+		'lock',
+		'match',
+		'module',
+		'mut',
+		'none',
+		'or',
+		'pub',
+		'return',
+		'rlock',
+		'select',
+		'shared',
+		'sizeof',
+		'spawn',
+		'static',
+		'struct',
+		'true',
+		'type',
+		'typeof',
+		'union',
+		'unsafe',
+		'volatile',
+		'__global',
+		'__offsetof',
+	]
+	v_types            = [
+		'bool',
+		'string',
+		'i8',
+		'i16',
+		'int',
+		'i64',
+		'i128',
+		'u8',
+		'u16',
+		'u32',
+		'u64',
+		'u128',
+		'rune',
+		'f32',
+		'f64',
+		'isize',
+		'usize',
+		'voidptr',
+		'any',
+	]
 )
 
 struct HTMLTransformer {
@@ -22,7 +89,7 @@ fn (mut t HTMLTransformer) process() string {
 	t.prepare_v_and_c_code_for_playground()
 	t.add_anchors('h2')
 	t.add_anchors('h3')
-	t.add_keyword_class_to_code_tags()
+	t.add_classes_to_code_tags(0)
 
 	return t.content
 }
@@ -154,12 +221,18 @@ fn (mut t HTMLTransformer) add_anchors(tag_name string) {
 	t.content = result
 }
 
-fn (mut t HTMLTransformer) add_keyword_class_to_code_tags() {
-	code_re := pcre.new_regex(r'(?<!<pre>)<code>(.*?)<\/code>', 0) or { panic(err) }
-	matched_code := code_re.match_str(t.content, 0, 0) or { return }
+fn (mut t HTMLTransformer) add_classes_to_code_tags(pos int) {
+	code_re := pcre.new_regex(r'(?<!<pre>)<code>(.*?)</code>', 0) or { panic(err) }
+	matched_code := code_re.match_str(t.content, pos, 0) or { return }
 	code := matched_code.get(0) or { return }
+	code_content := matched_code.get(1) or { return }
+	trimmed_code := code_content.trim_space()
 
-	t.content = t.content.replace(code, code.replace('<code>', '<code class="keyword">'))
+	if v_keywords.contains(trimmed_code) {
+		t.content = t.content.replace(code, code.replace('<code>', '<code class="keyword">'))
+	} else if v_types.contains(trimmed_code) {
+		t.content = t.content.replace(code, code.replace('<code>', '<code class="type">'))
+	}
 
-	t.add_keyword_class_to_code_tags()
+	t.add_classes_to_code_tags(matched_code.pos + code.len)
 }
