@@ -22,6 +22,7 @@ fn (mut t HTMLTransformer) process() string {
 	t.prepare_v_and_c_code_for_playground()
 	t.add_anchors('h2')
 	t.add_anchors('h3')
+	t.add_keyword_class_to_code_tags()
 
 	return t.content
 }
@@ -151,4 +152,14 @@ fn (mut t HTMLTransformer) add_anchors(tag_name string) {
 	}
 
 	t.content = result
+}
+
+fn (mut t HTMLTransformer) add_keyword_class_to_code_tags() {
+	code_re := pcre.new_regex(r'(?<!<pre>)<code>(.*?)<\/code>', 0) or { panic(err) }
+	matched_code := code_re.match_str(t.content, 0, 0) or { return }
+	code := matched_code.get(0) or { return }
+
+	t.content = t.content.replace(code, code.replace('<code>', '<code class="keyword">'))
+
+	t.add_keyword_class_to_code_tags()
 }
