@@ -1,6 +1,7 @@
 {
   "title": "V Language Documentation",
   "is_root": true,
+  "url": "main.md",
   "contents": [
     {
       "title": "Getting Started",

@@ -20,6 +20,7 @@ mut:
 fn build_config_tree(path string) !&ConfigNode {
 	mut node_config := read_node_config(path) or { return &ConfigNode{} }
 	node_config.is_folder = true
+	node_config.url = os.join_path(path, node_config.url)
 
 	mut contents := []ConfigNode{}
 
