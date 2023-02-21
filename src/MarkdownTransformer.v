@@ -12,5 +12,17 @@ fn (mut t MarkdownTransformer) process() string {
 }
 
 fn (mut t MarkdownTransformer) process_code_blocks() {
-	t.content = t.content.replace('```v play', '```v\n\nplay')
+	mut result := ''
+
+	for line in t.content.split_into_lines() {
+		new_line := if line.starts_with('```v ') && line.contains('play') {
+			'```v\n\nplay'
+		} else {
+			line
+		}
+
+		result += '${new_line}\n'
+	}
+
+	t.content = result
 }
