@@ -96,7 +96,9 @@
                                                     <svg viewBox="-5 -3 24 24">
                                                         <path d="M11 9l-6 5.25V3.75z"></path>
                                                     </svg>
+
                                                     <a class="link" href="#">@second_child.title</a>
+
                                                     <ul class="js-sub-list sub-list">
                                                         @for third_child in second_child.contents
                                                             <li class="js-item item">
@@ -132,7 +134,7 @@
                         <div class="edit-info">
                             <div class="edit-link">
                                 <a class="link edit-link-button"
-                                   href="https://github.com/vlang-foundation/docs/edit/main/@{node.markdown_path}" target="_blank"
+                                   href="https://github.com/vlang-foundation/docs/edit/main/@{node.url}" target="_blank"
                                    rel="noreferrer">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="edit-link-icon">
                                         <path d="M18,23H4c-1.7,0-3-1.3-3-3V6c0-1.7,1.3-3,3-3h7c0.6,0,1,0.4,1,1s-0.4,1-1,1H4C3.4,5,3,5.4,3,6v14c0,0.6,0.4,1,1,1h14c0.6,0,1-0.4,1-1v-7c0-0.6,0.4-1,1-1s1,0.4,1,1v7C21,21.7,19.7,23,18,23z"></path>
@@ -149,22 +151,22 @@
 
                         <!-- only-prev or only-next -->
                         <div class="prev-next">
-                            @if prev_topic.url != ''
-                            <div class="page prev-page">
-                                <a class="page-link" href="@prev_topic.url">
-                                    <span class="desc">Previous page</span>
-                                    <span class="title">@prev_topic.title</span>
-                                </a>
-                            </div>
+                            @if prev_node.html_url != ''
+                                <div class="page prev-page">
+                                    <a class="page-link" href="/@prev_node.html_url">
+                                        <span class="desc">Previous page</span>
+                                        <span class="title">@prev_node.title</span>
+                                    </a>
+                                </div>
                             @end
 
-                            @if next_topic.url != ''
-                            <div class="page next-page">
-                                <a class="page-link" href="@next_topic.url">
-                                    <span class="desc">Next page</span>
-                                    <span class="title">@next_topic.title</span>
-                                </a>
-                            </div>
+                            @if next_node.html_url != ''
+                                <div class="page next-page">
+                                    <a class="page-link" href="/@next_node.html_url">
+                                        <span class="desc">Next page</span>
+                                        <span class="title">@next_node.title</span>
+                                    </a>
+                                </div>
                             @end
                         </div>
                     </footer>
@@ -240,24 +242,23 @@
 
 <script>
     document.addEventListener("keydown", (event) => {
-        //@if prev_topic.url != ''
-        if (event.key === "ArrowLeft") {
-            window.open("@prev_topic.url", "_self")
-        }
-        //@end
+        @if prev_node.html_url != ''
+            if (event.key === "ArrowLeft") {
+                window.open("/@prev_node.html_url", "_self");
+            }
+        @end
 
-        //@if next_topic.url != ''
-        if (event.key === "ArrowRight") {
-            window.open("@next_topic.url", "_self")
-        }
-        //@end
-    })
+        @if next_node.html_url != ''
+            if (event.key === "ArrowRight") {
+                window.open("/@next_node.html_url", "_self");
+            }
+        @end
+    });
 
     window.onload = () => {
         const html = document.querySelector("html");
-        html.style.opacity = '1'
-    }
-
+        html.style.opacity = '1';
+    };
 </script>
 </body>
 </html>

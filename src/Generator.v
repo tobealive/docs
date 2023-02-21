@@ -4,39 +4,35 @@ import markdown
 import os
 
 const (
-	config_filename = '.config.json'
-	template_path   = './templates/index.html'
+	template_path = './templates/index.html'
 )
 
 [noinit]
 struct Generator {
-	root_node   &Node
+	root_node   &DocumentNode
 	output_path string
 }
 
-fn new_generator(docs_path string, output_path string) !&Generator {
+fn new_generator(document_node &DocumentNode, output_path string) !&Generator {
 	return &Generator{
-		root_node: build_docs_tree(docs_path)!
+		root_node: document_node
 		output_path: output_path
 	}
 }
 
 fn (g &Generator) generate() ! {
 	write_output_file('index.html', g.render_page_from_template(g.root_node, g.root_node,
-		'V Documentation', g.root_node.body, Topic{}, Topic{})) or { return }
+		g.root_node.markdown_content))!
 
 	g.generate_from_tree(g.root_node)!
 }
 
-fn (g &Generator) generate_from_tree(node &Node) ! {
+fn (g &Generator) generate_from_tree(node &DocumentNode) ! {
 	for child in node.contents {
-		if child.body != '' {
-			page_content := g.render_page_from_template(g.root_node, child, child.title,
-				child.body, Topic{}, Topic{})
-			directory_name := title_to_filename(child.parent.title)
-			directory_path := os.join_path(output_path, directory_name)
+		page_content := g.render_page_from_template(g.root_node, child, child.markdown_content)
 
-			mkdir_if_not_exists(directory_path)!
+		if child.html_url != '' {
+			mkdir_if_not_exists(os.join_path(output_path, os.dir(child.html_url)))!
 
 			mut transformer := HTMLTransformer{
 				content: page_content
@@ -51,7 +47,10 @@ fn (g &Generator) generate_from_tree(node &Node) ! {
 	}
 }
 
-fn (_ &Generator) render_page_from_template(root_node &Node, node &Node, title string, markdown_content string, prev_topic Topic, next_topic Topic) string {
+fn (_ &Generator) render_page_from_template(root_node &DocumentNode, node &DocumentNode, markdown_content string) string {
+	next_node := node.next()
+	prev_node := node.prev()
+
 	markdown_subtopics := split_source_by_topics(markdown_content, 2)
 	subtopics := extract_topics_from_markdown_parts(markdown_subtopics, true)
 	content := markdown.to_html(markdown_content)
