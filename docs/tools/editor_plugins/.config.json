@@ -2,6 +2,10 @@
   "title": "Editor Plugins",
   "contents": [
     {
+      "title": "Overview",
+      "url": "overview.md"
+    },
+    {
       "title": "VS Code",
       "url": "vs-code.md"
     },

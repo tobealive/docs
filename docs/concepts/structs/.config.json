@@ -1,6 +1,10 @@
 {
-  "title": "Structures",
+  "title": "Structs",
   "contents": [
+    {
+      "title": "Overview",
+      "url": "overview.md"
+    },
     {
       "title": "Embedding",
       "url": "embedding.md"

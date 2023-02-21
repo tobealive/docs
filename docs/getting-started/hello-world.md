@@ -1,6 +1,6 @@
 # Hello World
 
-```v
+```v play
 fn main() {
 	println('hello world')
 }

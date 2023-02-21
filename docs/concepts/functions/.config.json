@@ -2,6 +2,10 @@
   "title": "Functions",
   "contents": [
     {
+      "title": "Overview",
+      "url": "overview.md"
+    },
+    {
       "title": "Anonymous and Higher Order Functions",
       "url": "anonymous-and-higher-order-functions.md"
     },

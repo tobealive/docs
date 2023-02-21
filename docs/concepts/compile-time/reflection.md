@@ -7,7 +7,7 @@ be generated during compilation.
 ## Fields
 
 Each
-[structure](../structs/main.md)
+[structure](../structs/overview.md)
 or
 [union](../unions.md)
 has a `fields` field that contains information about the fields of the structure:
@@ -59,13 +59,13 @@ fn main() {
 		} $else {
 			println('${method.name} is NOT `fn(string) string`')
 		}
-		
+
 		$if method.return_type !is int {
 			println('${method.name} does NOT return `int`')
 		} $else {
 			println('${method.name} DOES return `int`')
 		}
-		
+
 		$if method.args[0].typ !is string {
 			println("${method.name}'s first arg is NOT `string`")
 		} $else {

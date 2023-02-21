@@ -153,7 +153,7 @@ fn forever() {
 ### `[heap]`
 
 The `[heap]` attribute specifies that the structure should always be allocated on the heap.
-See [Structs](structs/main.md#always-heap-allocated-structs) for more details.
+See [Structs](structs/overview.md#always-heap-allocated-structs) for more details.
 
 ### `[if debug]`, `[if my_flag ?]`
 

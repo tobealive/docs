@@ -18,7 +18,7 @@ The following tokens are always interpreted as keywords and cannot be used as id
   executed when the condition is false.
 - `enum` – declares an [enum](../concepts/enums.md)
 - `false` – literal falsely boolean value
-- `fn` – declares a [function](../concepts/functions/main.md)
+- `fn` – declares a [function](../concepts/functions/overview.md)
 - `for` – begins a [for loop](../concepts/control-flow/loops.md)
 - `go` – starts a [separate thread](../concepts/concurrency.md)
 - `goto` – [jumps to a label](../concepts/control-flow/jumps.md)
@@ -34,24 +34,24 @@ The following tokens are always interpreted as keywords and cannot be used as id
 - `isreftype` – [checks if a type is a reference type](../concepts/builtin-functions.md#isreftype--checking-if-a-type-is-a-reference-type)
 - `lock` – used in [locking](../concepts/concurrency.md)
 - `match` – begins a [match expression](../concepts/control-flow/conditions.md#match-expression)
-- `module` – declares a [module](../concepts/modules/main.md)
+- `module` – declares a [module](../concepts/modules/overview.md)
 - `mut`
     - declares a [mutable variable](../concepts/variables.md)
-    - starts a [mutable fields block](../concepts/structs/main.md#fields)
-    - declares method receiver as [mutable](../concepts/structs/main.md#mutable-receivers)
+    - starts a [mutable fields block](../concepts/structs/overview.md#fields)
+    - declares method receiver as [mutable](../concepts/structs/overview.md#mutable-receivers)
 - `none` – literal value of the [none type](../concepts/error-handling.md)
 - `or` – defines the branch for [result or option type](../concepts/error-handling.md)
 - `pub`
-    - makes a [declaration](../concepts/modules/main.md#symbol-visibility) public
-    - starts a [public fields block](../concepts/structs/main.md#fields)
-- `return` – [returns a value from a function](../concepts/functions/main.md)
+    - makes a [declaration](../concepts/modules/overview.md#symbol-visibility) public
+    - starts a [public fields block](../concepts/structs/overview.md#fields)
+- `return` – [returns a value from a function](../concepts/functions/overview.md)
 - `rlock` – used in [locking](../concepts/concurrency.md)
 - `select` – used in [select statement](../concepts/concurrency.md)
 - `shared` – used in [shared variables](../concepts/concurrency.md)
 - `sizeof` – returns the [size of a type](../concepts/builtin-functions.md#sizeof--getting-the-size-of-a-type)
 - `spawn` – starts a [separate thread](../concepts/concurrency.md)
 - `static` – used in [static variables](../concepts/variables.md)
-- `struct` – declares a [struct](../concepts/structs/main.md)
+- `struct` – declares a [struct](../concepts/structs/overview.md)
 - `true` – literal truthy boolean value
 - `type` – declares a [type alias](../concepts/type-aliases.md) or [sum types](../concepts/sum-types.md)
 - `typeof` – returns the [type of expression](../concepts/builtin-functions.md#typeof--getting-the-type-of-expression)

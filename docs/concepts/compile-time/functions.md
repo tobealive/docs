@@ -6,7 +6,7 @@ V provides several compile-time functions.
 
 `$tmpl` is a compile-time function that allows you to embed a template into your code.
 
-See [Templates](../templates/main.md) for more information.
+See [Templates](../templates/overview.md) for more information.
 
 ## `$env`
 

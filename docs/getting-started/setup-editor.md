@@ -1,7 +1,7 @@
 # Editor/IDE setup
 
 V has plugins for many popular code editors. You can find a list of plugins in the section
-[Editor plugins](../tools/editor_plugins/main.md).
+[Editor plugins](../tools/editor_plugins/overview.md).
 
 Currently, the best support is provided by
 [plugin](../tools/editor_plugins/jetbrains-ide.md)

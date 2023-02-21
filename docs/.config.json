@@ -1,5 +1,6 @@
 {
-  "title": "Root",
+  "title": "V Language Documentation",
+  "is_root": true,
   "contents": [
     {
       "title": "Getting Started",

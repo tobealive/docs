@@ -365,7 +365,7 @@ fn main() {
 }
 ```
 
-See [Modules](../concepts/modules/main) for more information.
+See [Modules](../concepts/modules/overview) for more information.
 
 ## Comments
 

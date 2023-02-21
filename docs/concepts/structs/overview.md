@@ -51,7 +51,7 @@ println(p.name) // Bob
 
 As already described above, structures can have fields.
 By default, all fields are immutable and private.
-Privacy means that access to them will be only within the current [module](../modules/main.md).
+Privacy means that access to them will be only within the current [module](../modules/overview.md).
 
 Fields access modifiers can be changed with `pub` and `mut` keywords.
 In total, there are 5 possible options:
