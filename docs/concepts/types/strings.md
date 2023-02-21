@@ -25,7 +25,7 @@ avoid having to escape the single quotes:
 println("String with 'single quotes'")
 ```
 
-[vfmt](../../tools/tools.md#v-fmt) will automatically convert double quotes to single quotes when possible.
+[vfmt](../../tools/builtin-tools.md#v-fmt) will automatically convert double quotes to single quotes when possible.
 
 Escaping in strings is supported as in C:
 
@@ -74,7 +74,7 @@ You cannot mutate elements:
 mut s := 'hello 🌎'
 s[0] = `H`
 //   ^ error: cannot assign to s[i] since V strings are immutable
-// (note, that variables may be mutable but string values are always 
+// (note, that variables may be mutable but string values are always
 //  immutable, like in Go and Java)
 ```
 

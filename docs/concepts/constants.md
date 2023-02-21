@@ -86,5 +86,5 @@ module, and inside it.
 That restriction is relaxed only for the `main` module (the one containing your `fn main()`),
 where you can use the unqualified name of constants defined there, i.e. `numbers`, rather than `main.numbers`.
 
-[vfmt](../tools/tools.md#v-fmt) takes care of this rule, so you can type `println(pi)` inside the `math` module,
+[vfmt](../tools/builtin-tools.md#v-fmt) takes care of this rule, so you can type `println(pi)` inside the `math` module,
 and vfmt will automatically update it to `println(math.pi)`.

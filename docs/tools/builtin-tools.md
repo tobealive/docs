@@ -1,6 +1,6 @@
-# Tools
+# Builtin Tools
 
-V has built-in tools to simplify development.
+V has several built-in tools to simplify development.
 
 ## `v fmt`
 

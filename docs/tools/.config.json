@@ -2,8 +2,16 @@
   "title": "Tools",
   "contents": [
     {
-      "title": "Tools",
-      "url": "tools.md"
+      "title": "Builtin Tools",
+      "url": "builtin-tools.md"
+    },
+    {
+      "title": "Playground",
+      "url": "playground.md"
+    },
+    {
+      "title": "Interactive Code Snippets",
+      "url": "interactive-code-snippets.md"
     },
     {
       "title": "Editor Plugins",
