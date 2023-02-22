@@ -5,8 +5,9 @@ that efficiently produce text output.
 This is especially useful for templated HTML views, but the mechanism is general enough
 to be used for other kinds of text output also.
 
-V uses the special compile-time function `$tmpl()` for this, which
-generates template code at compile time, which is then executed
+V uses the special
+[compile-time](../compile-time/overview.md)
+function `$tmpl()` for this, which generates template code at compile time, which is then executed
 when the function using the template is called.
 
 Consider a simple example:

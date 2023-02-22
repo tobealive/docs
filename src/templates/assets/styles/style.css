@@ -57,6 +57,7 @@ html[data-theme=dark] {
   --tag-unsafe-color: #ff6b00;
   --tag-deprecated-color: #9d9d9d;
   --scrollbar-thumb-color: #404042;
+  --keyword-color: #cc7832;
 }
 
 html {
@@ -87,6 +88,7 @@ html {
   --tag-unsafe-color: #ff6b00;
   --tag-deprecated-color: #808080;
   --scrollbar-thumb-color: #d2d2d2;
+  --keyword-color: #0033b3;
 }
 
 header {
@@ -645,6 +647,9 @@ article main :not(pre) > code {
   padding: 3px 6px;
   color: var(--code-text-color);
   background-color: var(--code-background-color);
+}
+article main :not(pre) > code.keyword {
+  color: var(--keyword-color);
 }
 article main pre {
   white-space: pre;

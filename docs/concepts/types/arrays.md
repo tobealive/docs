@@ -85,7 +85,7 @@ the index as shown here:
 count := []int{len: 4, init: it}
 println(count) // [0, 1, 2, 3]
 
-mut squares := []int{len: 6, init: it * it}
+squares := []int{len: 6, init: it * it}
 println(squares) // [0, 1, 4, 9, 16, 25]
 ```
 
@@ -94,7 +94,7 @@ println(squares) // [0, 1, 4, 9, 16, 25]
 You can create an array with a specific length using the `len` field:
 
 ```v play
-mut nums := []int{len: 10}
+nums := []int{len: 10}
 println(nums.len) // 10
 println(nums) // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ```
@@ -106,7 +106,7 @@ println(nums) // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 You can create an array with a specific capacity using the `cap` field:
 
 ```v play
-mut nums := []int{cap: 10}
+nums := []int{cap: 10}
 println(nums.cap) // 10
 println(nums.len) // 0
 println(nums) // []
@@ -123,7 +123,7 @@ may want to do manual optimizations (see [below](#array-initialization)).
 You can use both `len` and `cap` fields to create an array with a specific length and capacity:
 
 ```v play
-mut nums := []int{len: 10, cap: 20}
+nums := []int{len: 10, cap: 20}
 println(nums.len) // 10
 println(nums.cap) // 20
 println(nums) // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]

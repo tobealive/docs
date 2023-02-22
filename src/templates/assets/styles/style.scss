@@ -388,6 +388,10 @@ article {
       padding: 3px 6px;
       color: var(--code-text-color);
       background-color: var(--code-background-color);
+
+      &.keyword {
+        color: var(--keyword-color);
+      }
     }
 
     pre {

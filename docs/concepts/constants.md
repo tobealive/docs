@@ -14,7 +14,7 @@ Multiple constants can be declared in one block:
 ```v
 const (
 	pi = 3.14
-	e  = 2.71828
+	e = 2.71828
 )
 ```
 
@@ -60,7 +60,9 @@ Function calls in constants will be evaluated during program startup.
 
 ## Constants inside modules
 
-Like other declarations, constants can be declared public using the `pub` keyword:
+Like
+[other declarations](../concepts/modules/overview.md#symbol-visibility),
+constants can be declared public using the `pub` keyword:
 
 ```v oksyntax
 module mymodule

@@ -14,14 +14,14 @@ strings that do not contain single quotes.
 
 That is, as long as the string does not contain other single quotes, it is better to use single quotes:
 
-```v
+```v play
 println('Just string')
 ```
 
 But if the string contains single quotes, then it's better to use double quotes to
 avoid having to escape the single quotes:
 
-```v
+```v play
 println("String with 'single quotes'")
 ```
 
@@ -29,32 +29,32 @@ println("String with 'single quotes'")
 
 Escaping in strings is supported as in C:
 
-```v nofmt
+```v nofmt play
 println('\r\n'.len) // 2
 ```
 
 Since strings are stored in UTF-8, any characters can be used, including emoji:
 
-```v
-println('🌎')
+```v play
+println('🌎') // 🌎
 ```
 
 Arbitrary bytes can be directly specified using `\x##` notation where `#` is a hex digit:
 
-```v
+```v play
 println('\xc0'[0]) // u8(0xc0)
 ```
 
 Or using octal escape `\###` notation where `#` is an octal digit:
 
-```v
-println('\141ardvark') == 'aardvark'
+```v play
+println('\141ardvark') == 'aardvark' // true
 ```
 
 Unicode can be specified directly as `\u####` where # is a hex digit and will be converted internally
 to its UTF-8 representation:
 
-```v
+```v play
 println('\u2605') // ★
 println('\xe2\x98\x85') // ★
 ```
@@ -62,7 +62,7 @@ println('\xe2\x98\x85') // ★
 Since all characters in V are stored in UTF-8, the length of the string may differ from the number of visible characters
 in it:
 
-```v
+```v play
 s := 'hello 🌎' // emoji takes 4 bytes
 println(s.len) // 10
 ```
@@ -70,7 +70,7 @@ println(s.len) // 10
 String values are immutable.
 You cannot mutate elements:
 
-```v failcompile
+```v failcompile play
 mut s := 'hello 🌎'
 s[0] = `H`
 //   ^ error: cannot assign to s[i] since V strings are immutable
@@ -82,7 +82,7 @@ Note that indexing a string will produce a `byte`, not a `rune` nor another `str
 Indexes correspond to _bytes_ in the string, not Unicode code points.
 If you want to convert the `byte` to a `string`, use the `.ascii_str()` method on the `byte`:
 
-```v
+```v play
 country := 'Netherlands'
 println(country[0]) // 78
 println(country[0].ascii_str()) // N
@@ -94,7 +94,7 @@ println(country[0].ascii_str()) // N
 
 To get an int from a string, use the `.int()` or `.<type-name>()` method:
 
-```v
+```v play
 s := '42'
 println(s.int()) // 42
 
@@ -104,7 +104,7 @@ println('100'.i16()) // 100
 
 All int literals are supported:
 
-```v
+```v play
 println('0xc3'.int()) // 195
 println('0o10'.int()) // 8
 println('0b1111_0000_1010'.int()) // 3850
@@ -115,7 +115,7 @@ println('-0b1111_0000_1010'.int()) // -3850
 
 To get a float from a string, use the `.f32()` or `.f64()` method:
 
-```v
+```v play
 println('3.14'.f32()) // 3.14
 println('3.14'.parse_uint()) // 3.14
 ```
@@ -124,7 +124,7 @@ println('3.14'.parse_uint()) // 3.14
 
 To get a bool from a string, use the `.bool()` method:
 
-```v
+```v play
 println('true'.bool()) // true
 println('false'.bool()) // false
 ```
@@ -150,7 +150,7 @@ s2 := arr.bytestr()
 
 To get an array of runes from a string, use the `.runes()` method:
 
-```v
+```v play
 arr := 'hello 🌎'.runes()
 println(arr.len) // 7
 ```
@@ -159,7 +159,7 @@ println(arr.len) // 7
 
 To turn an array of runes into a string, use the `.string()` method:
 
-```v
+```v play
 arr := 'hello 🌎'.runes()
 s2 := arr.string()
 println(s2) // hello 🌎
@@ -175,7 +175,7 @@ V also supports "raw" strings, which do not handle escaping and do not support s
 
 For raw strings, prepend string literal with `r`:
 
-```v
+```v play
 s := r'hello\nworld' // the `\n` will be preserved as two characters
 println(s) // hello\nworld
 ```
@@ -186,7 +186,7 @@ V also supports C strings, which are null-terminated arrays of bytes.
 
 For raw strings, prepend string literal with `c`:
 
-```v
+```v play
 s := c'hello\nworld'
 println(typeof(s)) // &u8
 println(s) // &104
@@ -197,7 +197,7 @@ println(s) // &104
 Basic interpolation syntax is pretty simple – use `${` before a variable name and `}` after.
 The variable will be converted to a string and embedded into the literal:
 
-```v
+```v play
 name := 'Bob'
 println('Hello, ${name}!') // Hello, Bob!
 ```
@@ -278,7 +278,7 @@ See
 [Format Placeholder Specification](https://en.wikipedia.org/wiki/Printf_format_string#Format_placeholder_specification)
 for more information.
 
-```v
+```v nofmt play
 x := 123.4567
 println('[${x:.2}]') // round to two decimal places => [123.46]
 println('[${x:10}]') // right-align with spaces on the left => [   123.457]
@@ -289,7 +289,8 @@ println('[${int(x):o}]') // output as octal => [173]
 println('[${int(x):X}]') // output as uppercase hex => [7B]
 
 println('[${10.0000:.2}]') // remove insignificant 0s at the end => [10]
-println('[${10.0000:.2f}]') // do show the 0s at the end, even though they do not change the number => [10.00]
+println('[${10.0000:.2f}]') // do show the 0s at the end, even though they
+                            // do not change the number => [10.00]
 ```
 
 ## String operators
@@ -298,7 +299,7 @@ V defines the `+` and `+=` operators for strings:
 
 `+` – used for string concatenation
 
-```v
+```v play
 name := 'Bob'
 bobby := name + 'by'
 println(bobby) // Bobby
@@ -306,7 +307,7 @@ println(bobby) // Bobby
 
 `+=` – used to append to a string
 
-```v
+```v play
 mut s := 'Hello, '
 s += 'World!'
 println(s) // Hello, World!
@@ -315,24 +316,24 @@ println(s) // Hello, World!
 All operators in V must have values of the same type on both sides.
 You cannot concatenate an integer to a string:
 
-```v failcompile
-age := 10
+```v failcompile play
+age := 20
 println('age = ' + age)
 //      ^^^^^^^^^^^^^^ error: infix expr: cannot use `int` (right expression) as `string`
 ```
 
 To concatenate a string with a number, you must first convert the number to a string.
 
-```v
-age := 11
-println('age = ' + age.str())
+```v play
+age := 21
+println('age = ' + age.str()) // age = 21
 ```
 
 or use string interpolation (**preferred**):
 
-```v
-age := 12
-println('age = ${age}')
+```v play
+age := 22
+println('age = ${age}') // age = 22
 ```
 
 See all methods of

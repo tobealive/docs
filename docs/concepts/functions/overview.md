@@ -124,7 +124,7 @@ fn sum(a ...int) int {
 sum(2, 3, 4) // [2, 3, 4]
 ```
 
-## Immutable function args by default
+## Immutable function arguments by default
 
 In V function arguments are immutable by default, and mutable args have to be
 marked on call.
@@ -163,6 +163,18 @@ to reduce allocations and copying.
 
 For this reason V doesn't allow the modification of arguments with primitive types (e.g. integers).
 Only more complex types such as arrays and maps may be modified.
+
+## Default argument value
+
+Like Go, V does not support default argument values.
+However, this limitation can be bypassed using
+[Trailing struct literals](../structs/overview.md#trailing-struct-literal-arguments).
+
+## Named parameters
+
+V does not support calling functions with named parameters.
+However, this limitation can be bypassed using
+[Trailing struct literals](../structs/overview.md#trailing-struct-literal-arguments).
 
 ## Parameter evaluation order
 

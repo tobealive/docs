@@ -46,7 +46,8 @@ assert v[0] < 4
 ```
 
 > **Note**
-> All `assert` statements outside of test functions will be removed when compiled with the `-prod` flag.
+> All `assert` statements outside of test functions will be removed when compiled
+> in [production mode](./production-builds.md).
 
 ### Asserts with an extra message
 

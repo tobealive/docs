@@ -87,8 +87,9 @@ fn main() {
 
 By default, in development mode, V will only warn you if you have unused variables.
 
-In production mode (enabled by passing the [`-prod` flag](production-builds.md) to V – `v -prod foo.v`)
-it will not compile at all (like in Go).
+In
+[production mode](production-builds.md)
+it will not compile at all (like in Go):
 
 ```v nofmt
 fn main() {

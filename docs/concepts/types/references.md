@@ -3,7 +3,6 @@
 References in V are similar to those in C++ and Go.
 You can read more about references in
 [wiki article](https://en.wikipedia.org/wiki/Reference_(computer_science)).
-
 Here we will describe some features of working with references in V.
 
 References in V are specified by using the `&` symbol in front of the type:
@@ -60,7 +59,8 @@ struct Foo {
 foo := Foo{}
 foo_ptr := &foo
 mut foo_ptr2 := foo_ptr
-//              ^^^^^^^ error: `foo_ptr` is immutable, cannot have a mutable reference to an immutable object
+//              ^^^^^^^ error: `foo_ptr` is immutable,
+//                      cannot have a mutable reference to an immutable object
 ```
 
 ## Dereferencing a reference

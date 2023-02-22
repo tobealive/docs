@@ -74,7 +74,9 @@ __global:
 
 ### Default field values
 
-All struct fields are zeroed by default during the creation of the struct.
+All struct fields are
+[zeroed](../types/zero-values.md)
+by default during the creation of the struct.
 Array and map fields are allocated.
 
 ```v nofmt
