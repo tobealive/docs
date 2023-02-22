@@ -90,6 +90,7 @@ fn (mut t HTMLTransformer) process() string {
 	t.add_anchors('h2')
 	t.add_anchors('h3')
 	t.add_classes_to_code_tags(0)
+	t.process_links(0)
 
 	return t.content
 }
@@ -221,9 +222,9 @@ fn (mut t HTMLTransformer) add_anchors(tag_name string) {
 	t.content = result
 }
 
-fn (mut t HTMLTransformer) add_classes_to_code_tags(pos int) {
+fn (mut t HTMLTransformer) add_classes_to_code_tags(start_pos int) {
 	code_re := pcre.new_regex(r'(?<!<pre>)<code>(.*?)</code>', 0) or { panic(err) }
-	matched_code := code_re.match_str(t.content, pos, 0) or { return }
+	matched_code := code_re.match_str(t.content, start_pos, 0) or { return }
 	code := matched_code.get(0) or { return }
 	code_content := matched_code.get(1) or { return }
 	trimmed_code := code_content.trim_space()
@@ -235,4 +236,23 @@ fn (mut t HTMLTransformer) add_classes_to_code_tags(pos int) {
 	}
 
 	t.add_classes_to_code_tags(matched_code.pos + code.len)
+}
+
+fn (mut t HTMLTransformer) process_links(start_pos int) {
+	a_re := pcre.new_regex(r'<a href="(.*?)".*?>.*?</a>', 0) or { panic(err) }
+	matched_a := a_re.match_str(t.content, start_pos, 0) or { return }
+	anchor := matched_a.get(0) or { return }
+	anchor_href := matched_a.get(1) or { return }
+
+	if anchor_href.starts_with('#') {
+		t.process_links(matched_a.pos + anchor.len)
+
+		return
+	}
+
+	if anchor_href.starts_with('http') {
+		t.content = t.content.replace(anchor, anchor.replace('<a ', '<a class="external-link" '))
+	}
+
+	t.process_links(matched_a.pos + anchor.len)
 }
