@@ -250,9 +250,20 @@ fn (mut t HTMLTransformer) process_links(start_pos int) {
 		return
 	}
 
+	mut new_anchor := anchor
+
 	if anchor_href.starts_with('http') {
-		t.content = t.content.replace(anchor, anchor.replace('<a ', '<a class="external-link" '))
+		new_anchor = anchor.replace('<a ', '<a class="external-link" ')
+		t.content = t.content.replace(anchor, new_anchor)
+	} else {
+		if anchor_href.contains('.md') {
+			new_anchor = anchor.replace('.md', '.html')
+			t.content = t.content.replace(anchor, new_anchor)
+		} else if !anchor_href.ends_with('.html') && !anchor_href.contains('#') {
+			new_anchor = anchor.replace(anchor_href, '${anchor_href}.html')
+			t.content = t.content.replace(anchor, new_anchor)
+		}
 	}
 
-	t.process_links(matched_a.pos + anchor.len)
+	t.process_links(matched_a.pos + new_anchor.len)
 }

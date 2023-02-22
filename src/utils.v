@@ -15,7 +15,7 @@ fn create_output_directory() ! {
 
 fn mkdir_if_not_exists(path string) ! {
 	if !os.exists(path) {
-		os.mkdir(path)!
+		os.mkdir_all(path, os.MkdirParams{})!
 	}
 }
 

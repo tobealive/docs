@@ -21,9 +21,7 @@ enum NodeOffset {
 
 fn new_document_node(config_node &ConfigNode, parent &DocumentNode) !&DocumentNode {
 	markdown_content := os.read_file(config_node.url) or { '' }
-	directory_name := config_node.get_parent_dir_name()
-	filename := os.base(config_node.url)
-	file_url := '${directory_name}/${filename.trim_right('.md')}.html'
+	html_path := config_node.url.replace_once('${docs_path}/', '').replace('.md', '.html')
 
 	mut transformer := MarkdownTransformer{
 		content: markdown_content
@@ -34,7 +32,7 @@ fn new_document_node(config_node &ConfigNode, parent &DocumentNode) !&DocumentNo
 		url: config_node.url
 		is_folder: config_node.is_folder
 		markdown_content: transformer.process()
-		html_url: if config_node.is_folder { '' } else { file_url }
+		html_url: if config_node.is_folder { '' } else { html_path }
 		modification_time: get_last_modification_date_of_file(config_node.url) or { time.now() }
 		parent: parent
 	}
