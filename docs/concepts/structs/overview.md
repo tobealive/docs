@@ -99,7 +99,7 @@ struct Foo {
 ### Required fields
 
 As already described earlier, when creating an instance of a structure, fields can be omitted.
-To mark some fields as required, use `[required]` [attribute](./attributes):
+To mark some fields as required, use `[required]` [attribute](../attributes.md):
 
 ```v
 struct Foo {
@@ -242,7 +242,7 @@ is called, but a pointer to it will be passed.
 ## Allocate structs on the heap
 
 Structs are allocated on the stack.
-To allocate a struct on the heap and get a [reference](./references) to it, use the `&` prefix:
+To allocate a struct on the heap and get a [reference](../types/references.md) to it, use the `&` prefix:
 
 ```v
 struct Point {
@@ -255,12 +255,12 @@ p := &Point{10, 10}
 println(p.x)
 ```
 
-See also [Stack and Heap](./stack-and-heap)
+See also [Stack and Heap](../memory-management.md#stack-and-heap)
 
 ### Always heap allocated structs
 
 For some structures, you may want them to always be allocated on the heap.
-You can use [attribute](../attributes) `[heap]` for this:
+You can use [attribute](../attributes.md) `[heap]` for this:
 
 ```v
 [heap]

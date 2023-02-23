@@ -6,9 +6,7 @@ To see simple examples for basic syntax see
 [Basic Syntax](../basics/basic-syntax.md)
 article.
 
-You can then go to the articles in the
-[Concepts](../concepts)
-section to find out what a V program consists of.
+You can then go to the articles in the Concepts section to find out what a V program consists of.
 
 You can also play with V in the online playground:
 [play.vlang.foundation](https://play.vlang.foundation/).

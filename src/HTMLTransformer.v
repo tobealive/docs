@@ -209,7 +209,7 @@ fn (mut t HTMLTransformer) add_anchors(tag_name string) {
 		if line.starts_with(tag) && line.ends_with(tag_end) {
 			title := line.substr_ni(tag.len, -tag_end.len)
 			plain_title := markdown.to_plain(title)
-			id := title_to_filename(plain_title)
+			id := title_to_filename(plain_title).replace('amp;', '')
 
 			new_line = new_line
 				.replace(title, '${title} <a href="#${id}" class="header-anchor" aria-hidden="true">#</a>')

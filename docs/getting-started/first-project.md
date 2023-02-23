@@ -18,7 +18,7 @@ tree .
 # ├── src
 # │   └── main.v
 # └── v.mod
-# 
+#
 # 2 directories, 2 files
 ```
 
@@ -35,7 +35,7 @@ v run .
 V is a modular language, any projects on it consist of a set of modules.
 Each module is a separate folder containing code files.
 
-To learn more about modules, see the article [Modules](/docs/concepts/modules).
+To learn more about modules, see the article [Modules](../concepts/modules/overview.md).
 
 Modules can be located both in the project root folder and in the **src** folder.
 The **src** folder itself is not a module, it is used to store all project modules in one place.
@@ -43,7 +43,7 @@ The **src** folder itself is not a module, it is used to store all project modul
 ### v.mod
 
 The **v.mod** file contains information about the project, such as its name and version.
-It also contains a list of the project's dependencies, which we'll look at [Modules](/docs/concepts/modules) article.
+It also contains a list of the project's dependencies, which we'll look at [Modules](../concepts/modules/overview.md) article.
 
 This file can be used as a marker for the project's root folder, `@VMODROOT` constant
 can be used to get the path to the project's root folder.

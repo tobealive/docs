@@ -29,7 +29,7 @@ fn main() {
 
 The `fields` field is of type `[]FieldData`.
 You can see what fields this type has in
-[compiler source code](https://github.com/vlang/v/blob/master/vlib/builtin/builtin.v#L111).
+[compiler source code](https://github.com/vlang/v/blob/d3870a0c7e380cc8fcfd80e176e30f82f774ff5f/vlib/builtin/builtin.v#L111).
 For example, `FieldData` has a `typ` field that contains the type of the field.
 
 ## Methods

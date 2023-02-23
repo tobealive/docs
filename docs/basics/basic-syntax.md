@@ -63,7 +63,7 @@ Function calls looks like this:
 concatenate('Hello, ', 'World!')
 ```
 
-See [Functions](../concepts/functions) for more information.
+See [Functions](../concepts/functions/overview.md) for more information.
 
 ## Variables
 
