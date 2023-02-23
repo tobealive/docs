@@ -253,7 +253,7 @@ fn (mut t HTMLTransformer) process_links(start_pos int) {
 	mut new_anchor := anchor
 
 	if anchor_href.starts_with('http') {
-		new_anchor = anchor.replace('<a ', '<a class="external-link" ')
+		new_anchor = anchor.replace('<a ', '<a class="external-link" target="_blank"')
 		t.content = t.content.replace(anchor, new_anchor)
 	} else {
 		if anchor_href.contains('.md') {
