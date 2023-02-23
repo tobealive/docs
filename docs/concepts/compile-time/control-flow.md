@@ -97,4 +97,7 @@ fn main() {
 // age
 ```
 
+> **Note**
+> Currently, `break` and `continue` cannot be used inside `$for`.
+
 See the [Compile-time Reflection](./reflection.md) article for more details.

@@ -32,6 +32,80 @@ You can see what fields this type has in
 [compiler source code](https://github.com/vlang/v/blob/d3870a0c7e380cc8fcfd80e176e30f82f774ff5f/vlib/builtin/builtin.v#L111).
 For example, `FieldData` has a `typ` field that contains the type of the field.
 
+While processing fields, you can separate logic by field name:
+
+```v play
+struct User {
+	name string
+	age  int
+}
+
+fn main() {
+	$for field in User.fields {
+		$if field.name == 'name' {
+			println('found name field')
+		}
+	}
+}
+```
+
+### Field access
+
+While processing the fields of a structure, you can access the fields of
+an object of that structure using the syntax `object.$(field.name)`:
+
+```v play
+struct User {
+    name string
+    age  int
+}
+
+fn main() {
+    user := User{
+        name: 'John'
+        age: 25
+    }
+    $for field in User.fields {
+        print('${field.name}: ')
+        println(user.$(field.name))
+    }
+}
+
+// name: John
+// age: 25
+```
+
+You can also overwrite object field values:
+
+```v play
+struct User {
+    name string
+    age  int
+}
+
+fn main() {
+    user := User{
+        name: 'John'
+        age: 25
+    }
+    $for field in User.fields {
+		$if field.typ is string {
+        	user.$(field.name) = 'Mark'
+		}
+    }
+    println(user)
+}
+
+// User{
+//     name: 'Mark'
+//     age: 25
+// }
+```
+
+> **Note**
+> Accessing object fields via `object.$(field.name)` only works
+> inside the `$for field in T.fields` loop.
+
 ## Methods
 
 Each type has a `methods` field, which contains information about the methods of type.
@@ -104,6 +178,9 @@ fn main() {
 }
 ```
 
+> **Note**
+> Currently, function attributes cannot be retrieved.
+
 ## Types checking
 
 The types stored in the `typ` field in `FieldData` and `FunctionData` can be compared using the `is` operator:
@@ -148,3 +225,6 @@ $if field.typ is $Enum {
 	println('${field.name} is Enum')
 }
 ```
+
+> **Note**
+> To check the type of field, you need to use `$if` rather than `if`.
