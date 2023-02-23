@@ -1,4 +1,4 @@
-# Compile time constants
+# Compile-time constants
 
 V provides access to some constants at compile time.
 
