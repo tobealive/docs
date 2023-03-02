@@ -239,7 +239,7 @@ fn (mut t HTMLTransformer) add_classes_to_code_tags(start_pos int) {
 }
 
 fn (mut t HTMLTransformer) process_links(start_pos int) {
-	a_re := pcre.new_regex(r'<a href="(.*?)".*?>.*?</a>', 0) or { panic(err) }
+	a_re := pcre.new_regex(r'<a href="(.*?)".*?>[\s\S]*?</a>', 0) or { panic(err) }
 	matched_a := a_re.match_str(t.content, start_pos, 0) or { return }
 	anchor := matched_a.get(0) or { return }
 	anchor_href := matched_a.get(1) or { return }
