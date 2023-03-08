@@ -512,6 +512,9 @@ article {
     transition: border .25s;
 
     display: grid;
+    text-decoration-style: unset !important;
+    text-decoration: none;
+    color: var(--text-color);
 
     &:hover {
       cursor: pointer;

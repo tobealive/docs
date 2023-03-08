@@ -749,6 +749,9 @@ article main .tag.deprecated {
   border: 1px solid var(--divider-color);
   transition: border 0.25s;
   display: grid;
+  text-decoration-style: unset !important;
+  text-decoration: none;
+  color: var(--text-color);
 }
 .cards .card:hover {
   cursor: pointer;
