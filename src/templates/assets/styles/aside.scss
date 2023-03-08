@@ -5,7 +5,7 @@ aside {
   position: fixed;
 
   color: var(--text-color);
-  background-color: var(--aside-background);
+  background-color: var(--aside-background-color);
 
   padding: 20px 20px 20px 50px;
 
@@ -30,7 +30,7 @@ aside {
     span {
       font-size: 17px;
       font-weight: 500;
-      color: var(--color);
+      color: var(--text-color);
     }
   }
 
@@ -80,7 +80,7 @@ aside {
         height: 20px;
         left: -5px;
 
-        fill: var(--secondary-color)
+        fill: var(--aside-link-text-color)
       }
 
       &.open > svg {
@@ -92,16 +92,16 @@ aside {
         display: block;
         margin: 4px 0;
         padding-left: 17px;
-        color: var(--secondary-color);
+        color: var(--aside-link-text-color);
         text-decoration: none;
 
         &:hover {
           cursor: pointer;
-          color: var(--color);
+          color: var(--aside-link-text-color-hover);
         }
 
         &.active {
-          color: var(--theme-color);
+          color: var(--aside-link-text-color-active);
         }
       }
 

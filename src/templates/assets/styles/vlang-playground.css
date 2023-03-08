@@ -770,8 +770,8 @@ span.CodeMirror-selectedtext {
 }
 
 .v-playground[data-theme=light] {
-    --theme-color: #ff6b00;
-    --theme-color-dark: #cc5307;
+    --brand-color: #ff6b00;
+    --brand-color-dark: #cc5307;
     --background-color: #fff;
     --text-color: #000;
     --header-background-color: #f7f8fa;
@@ -801,8 +801,8 @@ span.CodeMirror-selectedtext {
 }
 
 .v-playground[data-theme=dark] {
-    --theme-color: #ff6b00;
-    --theme-color-dark: #cc5307;
+    --brand-color: #ff6b00;
+    --brand-color-dark: #cc5307;
     --background-color: #1e1f22;
     --text-color: #e0e0e0;
     --header-background-color: #2a2a2d;
@@ -936,11 +936,11 @@ span.CodeMirror-selectedtext {
 
 .show-all-button:hover {
     cursor: pointer;
-    border: 1px solid var(--theme-color)
+    border: 1px solid var(--brand-color)
 }
 
 .show-all-button:hover svg line {
-    stroke: var(--theme-color)
+    stroke: var(--brand-color)
 }
 
 .run-style-button {
@@ -1023,7 +1023,7 @@ span.CodeMirror-selectedtext {
 }
 
 .copy-button:hover svg {
-    stroke: var(--theme-color)
+    stroke: var(--brand-color)
 }
 
 .copy-button svg {

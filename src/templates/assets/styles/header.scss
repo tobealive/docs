@@ -99,11 +99,11 @@ header {
 
           &:hover {
             cursor: pointer;
-            color: var(--color);
+            color: var(--text-color);
           }
 
           &.active {
-            color: var(--theme-color);
+            color: var(--brand-color);
           }
         }
       }

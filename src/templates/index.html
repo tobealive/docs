@@ -158,6 +158,8 @@
                                         <span class="title">@prev_node.title</span>
                                     </a>
                                 </div>
+                            @else
+                                <div></div>
                             @end
 
                             @if next_node.html_url != ''
@@ -167,6 +169,8 @@
                                         <span class="title">@next_node.title</span>
                                     </a>
                                 </div>
+                            @else
+                                <div></div>
                             @end
                         </div>
                     </footer>
@@ -242,17 +246,17 @@
 
 <script>
     document.addEventListener("keydown", (event) => {
-        @if prev_node.html_url != ''
+        //@if prev_node.html_url != ''
             if (event.key === "ArrowLeft") {
                 window.open("/@prev_node.html_url", "_self");
             }
-        @end
+        //@end
 
-        @if next_node.html_url != ''
+        //@if next_node.html_url != ''
             if (event.key === "ArrowRight") {
                 window.open("/@next_node.html_url", "_self");
             }
-        @end
+        //@end
     });
 
     window.onload = () => {

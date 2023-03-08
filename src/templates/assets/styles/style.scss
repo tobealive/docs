@@ -1,5 +1,5 @@
 @import "fonts";
-@import "variables";
+@import "colors";
 @import "header";
 @import "aside";
 @import "blockquote";
@@ -14,7 +14,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb-color);
+  background: transparent;
   border-radius: 5px;
 }
 
@@ -32,8 +32,8 @@
 }
 
 body {
-  background-color: var(--background);
-  color: var(--color);
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
   padding: 0;
 
@@ -136,11 +136,11 @@ article {
               cursor: pointer;
 
               a {
-                color: var(--theme-color-dark);
+                color: var(--brand-color-dark);
               }
 
               svg {
-                fill: var(--theme-color-dark);
+                fill: var(--brand-color-dark);
               }
             }
 
@@ -151,7 +151,7 @@ article {
               line-height: 25px;
               font-size: 14px;
               font-weight: 500;
-              color: var(--theme-color);
+              color: var(--brand-color);
               text-decoration: none;
               transition: color .25s;
             }
@@ -161,7 +161,7 @@ article {
               margin-right: 8px;
               width: 14px;
               height: 14px;
-              fill: var(--theme-color);
+              fill: var(--brand-color);
               transition: fill .25s;
             }
           }
@@ -176,7 +176,7 @@ article {
 
         .prev-next {
           padding-top: 25px;
-          border-top: 1px solid var(--divider-color);
+          border-top: 1px solid var(--border-color);
           display: grid;
           grid-template-columns: 1fr 1fr;
           grid-column-gap: 20px;
@@ -195,7 +195,7 @@ article {
 
           .page-link {
             display: block;
-            border: 1px solid var(--divider-color);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 11px 16px 13px;
             width: 100%;
@@ -205,10 +205,10 @@ article {
 
             &:hover {
               cursor: pointer;
-              border-color: var(--theme-color);
+              border-color: var(--brand-color);
 
               .title {
-                color: var(--theme-color-dark);
+                color: var(--brand-color-dark);
               }
             }
 
@@ -225,7 +225,7 @@ article {
               line-height: 20px;
               font-size: 14px;
               font-weight: 500;
-              color: var(--theme-color);
+              color: var(--brand-color);
               transition: color .25s;
             }
           }
@@ -265,9 +265,9 @@ article {
           padding: 0 0 0 10px;
 
           &.active {
-            border-left: 3px solid var(--theme-color);
+            border-left: 3px solid var(--brand-color);
             a {
-              color: var(--color);
+              color: var(--text-color);
             }
           }
 
@@ -280,7 +280,7 @@ article {
 
             &:hover {
               cursor: pointer;
-              color: var(--color);
+              color: var(--text-color);
             }
           }
         }
@@ -318,7 +318,7 @@ article {
           line-height: 25px;
           font-size: 14px;
           font-weight: 500;
-          color: var(--theme-color);
+          color: var(--brand-color);
           transition: color .25s;
         }
       }
@@ -363,13 +363,13 @@ article {
 
       &:hover {
         cursor: pointer;
-        color: var(--theme-color-dark);
+        color: var(--brand-color-dark);
       }
     }
 
     a {
       font-weight: 500;
-      color: var(--theme-color);
+      color: var(--brand-color);
       text-decoration-style: dotted;
       transition: color .25s;
     }
@@ -392,20 +392,20 @@ article {
       font-size: 0.875em;
 
       &.symbol-ref {
-        color: var(--theme-color);
+        color: var(--brand-color);
       }
     }
 
     a > code {
-      color: var(--theme-color) !important;
+      color: var(--brand-color) !important;
     }
 
     :not(pre) > code {
       white-space: nowrap;
       border-radius: 4px;
       padding: 3px 6px;
-      color: var(--code-text-color);
-      background-color: var(--code-background-color);
+      color: var(--inline-code-text-color);
+      background-color: var(--inline-code-background-color);
 
       &.keyword {
         color: var(--keyword-color);
@@ -416,9 +416,9 @@ article {
       white-space: pre;
       border-radius: 0;
       padding: 10px 20px;
-      color: var(--code-block-text-color);
-      background-color: var(--code-block-background-color);
-      border: 1px solid var(--code-block-border-color);
+      color: var(--block-code-text-color);
+      background-color: var(--block-code-background-color);
+      border: 1px solid var(--block-code-border-color);
 
       &.terminal__output {
         border: unset;
@@ -436,26 +436,23 @@ article {
         font-weight: 500;
         text-align: left;
         padding: 10px 15px;
-        border-bottom: 1px solid var(--divider-color);
+        border-bottom: 1px solid var(--border-color);
       }
 
       td {
         padding: 10px 15px;
-        border-bottom: 1px solid var(--divider-color);
+        border-bottom: 1px solid var(--border-color);
       }
     }
 
     kbd {
       display: inline-block;
-      padding: 3px 5px;
-      font: 11px "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      font: 13px "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
       line-height: 10px;
-      color: #444d56;
-      vertical-align: middle;
-      background-color: #fafbfc;
-      border: solid 1px #d1d5da;
-      border-bottom-color: #c6cbd1;
-      border-radius: 3px;
+      border-radius: 4px;
+      padding: 5px 6px;
+      color: var(--inline-code-text-color);
+      background-color: var(--inline-code-background-color);
     }
 
     ul {
@@ -508,7 +505,7 @@ article {
     margin: 0 10px 20px;
     padding: 20px;
     border-radius: 5px;
-    border: 1px solid var(--divider-color);
+    border: 1px solid var(--border-color);
     transition: border .25s;
 
     display: grid;
@@ -518,11 +515,11 @@ article {
 
     &:hover {
       cursor: pointer;
-      border: 1px solid var(--theme-color);
+      border: 1px solid var(--brand-color);
 
       .logo {
         svg .background {
-          fill: var(--theme-color);
+          fill: var(--brand-color);
         }
       }
     }

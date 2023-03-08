@@ -70,10 +70,10 @@ header .header-container ul li a {
 }
 header .header-container ul li a:hover {
   cursor: pointer;
-  color: var(--color);
+  color: var(--text-color);
 }
 header .header-container ul li a.active {
-  color: var(--theme-color);
+  color: var(--brand-color);
 }
 
 /*# sourceMappingURL=header.css.map */
