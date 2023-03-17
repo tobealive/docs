@@ -513,12 +513,22 @@ article {
     text-decoration: none;
     color: var(--text-color);
 
+    & .logo svg .foreground {
+      fill: var(--black);
+    }
+
     &:hover {
       cursor: pointer;
       border: 1px solid var(--brand-color);
 
       .logo {
         svg .background {
+          fill: var(--brand-color);
+        }
+        //svg .foreground {
+        //  fill: var(--black);
+        //}
+        svg .background.foreground {
           fill: var(--brand-color);
         }
       }
@@ -539,6 +549,9 @@ article {
         height: 100%;
 
         .background {
+          transition: fill .25s;
+        }
+        .foreground {
           transition: fill .25s;
         }
       }
