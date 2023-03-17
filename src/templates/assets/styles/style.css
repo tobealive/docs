@@ -589,8 +589,8 @@ article .container {
 @media (max-width: 1200px) {
   article .container {
     grid-template-columns: 100%;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   article .container .aside {
     display: none;
@@ -611,7 +611,7 @@ article .container .content .content-container {
 @media (max-width: 1000px) {
   article .container .content .content-container {
     margin: 0;
-    width: calc(100vw - 50px);
+    width: calc(100vw - 60px);
   }
 }
 article .container .content footer {
