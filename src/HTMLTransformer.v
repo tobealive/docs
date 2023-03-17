@@ -212,7 +212,7 @@ fn (mut t HTMLTransformer) add_anchors(tag_name string) {
 			id := title_to_filename(plain_title).replace('amp;', '')
 
 			new_line = new_line
-				.replace(title, '${title} <a href="#${id}" class="header-anchor" aria-hidden="true">#</a>')
+				.replace(title, '<a href="#${id}" class="header-anchor" aria-hidden="true">#</a> ${title}')
 				.replace('<${tag_name}>', '<${tag_name} id="${id}">')
 		}
 

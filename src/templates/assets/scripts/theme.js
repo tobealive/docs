@@ -11,12 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
         setTheme(theme);
     }
 
-    const changeThemeButton = document.querySelector(".js-change-theme__action");
-    changeThemeButton.addEventListener("click", () => {
-        const currentTheme = document.documentElement.getAttribute("data-theme");
-        const newTheme = currentTheme === "dark" ? "light" : "dark";
+    const changeThemeButton = document.querySelectorAll(".js-change-theme__action");
+    changeThemeButton.forEach(button => {
+        button.addEventListener("click", () => {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
 
-        setTheme(newTheme);
+            setTheme(newTheme);
+        })
     });
 });
 

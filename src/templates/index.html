@@ -11,21 +11,30 @@
 </head>
 <body>
 
+
 <header>
     <div class="header-container">
         <div class="logo"></div>
 
-        <ul>
-            <li>
+        <div class="mobile-header-logo">
+            <a href="https://vlang.io/" target="_blank">
+                <img src="/assets/images/logo.svg" alt="V Logo">
+            </a>
+
+            <span>Documentation</span>
+        </div>
+
+        <ul class="main-header-list">
+            <li class="navigation-item">
                 <a class="active" href="#">Documentation</a>
             </li>
-            <li>
+            <li class="navigation-item">
                 <a href="#">Standard Library</a>
             </li>
-            <li>
+            <li class="navigation-item">
                 <a href="https://play.vlang.foundation/">Play</a>
             </li>
-            <li>
+            <li class="navigation-item">
                 <a href="https://github.com/vlang/v" target="_blank">GitHub</a>
             </li>
 
@@ -51,11 +60,75 @@
                 </svg>
             </li>
         </ul>
+
+        <ul class="mobile-header-list">
+            <li>
+                <button class="search">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_126_9)">
+                            <circle class="icon-stroke" cx="6.15425" cy="6.5229" r="4.43781"
+                                    transform="rotate(44.8191 6.15425 6.5229)"
+                                    stroke="black"/>
+                            <path class="icon-data"
+                                  d="M10.4302 9.76331L10.0755 9.41088L9.37066 10.1202L9.72532 10.4726L10.4302 9.76331ZM13.3535 14.078C13.5494 14.2726 13.866 14.2716 14.0606 14.0758C14.2553 13.8799 14.2543 13.5633 14.0584 13.3687L13.3535 14.078ZM9.72532 10.4726L13.3535 14.078L14.0584 13.3687L10.4302 9.76331L9.72532 10.4726Z"
+                                  fill="black"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_126_9">
+                                <rect width="16" height="16" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button class="open-menu js-open-mobile-menu">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect class="icon-data" x="1" y="2.00775" width="14" height="1" rx="0.5" fill="black"/>
+                        <rect class="icon-data" x="1" y="13.0379" width="14" height="1" rx="0.5" fill="black"/>
+                        <rect class="icon-data" x="1" y="7.5" width="14" height="1" rx="0.5" fill="black"/>
+                    </svg>
+                </button>
+            </li>
+        </ul>
     </div>
 </header>
+<aside class="mobile-header-aside">
+    <nav>
+        <div class="aside-header">
+            <div class="close-button-wrapper">
+                <div class="close-button js-close-header-aside-button">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="icon-stroke" d="M2.32349 2.34091L13.7059 13.7233" stroke="black" stroke-linecap="round"/>
+                        <path class="icon-stroke" d="M2.32349 13.7233L13.7059 2.34091" stroke="black" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <ul class="aside-navigation">
+            <li class="navigation-item">
+                <a class="active" href="#">Documentation</a>
+            </li>
+            <li class="navigation-item">
+                <a href="#">Standard Library</a>
+            </li>
+            <li class="navigation-item">
+                <a href="https://play.vlang.foundation/">Play</a>
+            </li>
+            <li class="navigation-item">
+                <a href="https://github.com/vlang/v" target="_blank">GitHub</a>
+            </li>
+            <li class="navigation-item js-change-theme__action">
+                <a target="_blank">Change theme</a>
+            </li>
+        </ul>
+    </nav>
+</aside>
+<div class="header-mobile-overlay js-header-mobile-overlay"></div>
+
 
 <div class="wrapper">
-    <aside>
+    <aside class="navigation">
         <a href="/index.html" class="title">
             <img src="/assets/images/logo.svg" alt="">
             <span>Documentation</span>
@@ -242,6 +315,7 @@
 
 <script src="/assets/scripts/aside.js"></script>
 <script src="/assets/scripts/theme.js"></script>
+<script src="/assets/scripts/header.js"></script>
 <script src="/assets/scripts/rightside.js"></script>
 
 <script>

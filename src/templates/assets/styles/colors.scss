@@ -14,7 +14,10 @@ html {
   --gray-87: rgba(255, 255, 255, .87);
   --gray-f9: #f9f9f9;
   --dark-transparent-gray: rgba(25, 25, 28, .7);
+  --background-transparent-gray: rgba(30, 31, 34, .7);
+  --semi-dark-transparent-gray: rgba(0, 0, 0, 0.32);
   --light-transparent-gray: rgba(255, 255, 255, 0.05);
+  --background-light-transparent-gray: rgba(255, 255, 255, .7);
   --light-white: #f3f3f3;
   --white: #fff;
   --black: #000;
@@ -39,6 +42,13 @@ html {
   --divider-color: var(--gray-e0);
   --text-color: var(--black);
   --secondary-color: var(--gray-7e);
+
+  // header
+  --header-background-color: var(--main-color);
+  --header-transparent-background-color: var(--background-light-transparent-gray);
+
+  // overlay
+  --overlay-background-color: var(--semi-dark-transparent-gray);
 
   // <aside>
   --aside-background-color: var(--gray-f9);
@@ -71,6 +81,9 @@ html {
   --tag-unsafe-color: var(--brand-color);
   --tag-deprecated-color: var(--gray-be);
 
+  // buttons
+  --button-hover-background-color: var(--gray-ec);
+
   --keyword-color: #0033b3;
 }
 
@@ -84,6 +97,13 @@ html[data-theme="dark"] {
   --divider-color: var(--gray-3a);
   --text-color: var(--gray-87);
   --secondary-color: var(--gray-be);
+
+  // header
+  --header-background-color: var(--main-color);
+  --header-transparent-background-color: var(--background-transparent-gray);
+
+  // overlay
+  --overlay-background-color: var(--semi-dark-transparent-gray);
 
   // <aside>
   --aside-background-color: var(--almost-black);
@@ -115,6 +135,9 @@ html[data-theme="dark"] {
   // tags
   --tag-unsafe-color: var(--brand-color);
   --tag-deprecated-color: var(--gray-be);
+
+  // buttons
+  --button-hover-background-color: var(--gray-32);
 
   --keyword-color: #cc7832;
 }

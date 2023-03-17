@@ -71,6 +71,10 @@ a.external-link {
 .wrapper {
   width: 100vw;
   height: 100vh;
+
+  @media (max-width: 1000px) {
+    height: auto;
+  }
 }
 
 article {
@@ -96,8 +100,8 @@ article {
     @media (max-width: 1200px) {
       grid-template-columns: 100%;
 
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: 25px;
+      padding-right: 25px;
 
       .aside {
         display: none;
@@ -114,6 +118,11 @@ article {
       .content-container {
         margin: 0 40px;
         max-width: 800px;
+
+        @media (max-width: 1000px) {
+          margin: 0;
+          width: calc(100vw - 50px);
+        }
       }
 
       footer {
@@ -419,6 +428,8 @@ article {
       color: var(--block-code-text-color);
       background-color: var(--block-code-background-color);
       border: 1px solid var(--block-code-border-color);
+
+      overflow-x: scroll;
 
       &.terminal__output {
         border: unset;

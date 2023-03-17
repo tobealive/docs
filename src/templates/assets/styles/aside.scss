@@ -1,4 +1,4 @@
-aside {
+aside.navigation {
   width: 300px;
   height: 100vh;
 
@@ -9,7 +9,7 @@ aside {
 
   padding: 20px 20px 20px 50px;
 
-  z-index: 1000;
+  z-index: 998;
 
   @media (max-width: 1000px) {
     display: none;
