@@ -9,6 +9,7 @@ html {
   --gray-5a: #5a5a5c;
   --gray-7e: #7e7e80;
   --gray-be: #bebebf;
+  --gray-cb: #cbc9c9;
   --gray-ec: #ecedf1;
   --gray-e0: #e0e0e0;
   --gray-87: rgba(255, 255, 255, .87);
@@ -22,6 +23,7 @@ html {
   --white: #fff;
   --black: #000;
 
+  --light-salat-green: #AFBF7E;
   --light-green: rgb(77, 187, 95);
   --dark-transparent-green: rgba(77, 187, 95, 0.2);
 
@@ -85,6 +87,15 @@ html {
   --button-hover-background-color: var(--gray-ec);
 
   --keyword-color: #0033b3;
+  --comment-color: #8c8c8c;
+  --number-color: #1750eb;
+  --string-color: #067d17;
+
+  // symbol and module references
+  --symbol-ref-link-color: var(--brand-color-dark);
+  --symbol-ref-underline: none;
+  --symbol-ref-hover-color: var(--symbol-ref-link-color);
+  --module-ref-link-color: var(--brand-color-dark);
 }
 
 // dark theme
@@ -140,4 +151,13 @@ html[data-theme="dark"] {
   --button-hover-background-color: var(--gray-32);
 
   --keyword-color: #cc7832;
+  --comment-color: gray;
+  --number-color: #2AACB8;
+  --string-color: #6AAB73;
+
+  // symbol and module references
+  --symbol-ref-link-color: var(--keyword-color);
+  --symbol-ref-underline: underline;
+  --symbol-ref-hover-color: var(--keyword-color);
+  --module-ref-link-color: var(--light-salat-green);
 }

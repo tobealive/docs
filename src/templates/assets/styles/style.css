@@ -38,6 +38,7 @@ html {
   --gray-5a: #5a5a5c;
   --gray-7e: #7e7e80;
   --gray-be: #bebebf;
+  --gray-cb: #cbc9c9;
   --gray-ec: #ecedf1;
   --gray-e0: #e0e0e0;
   --gray-87: rgba(255, 255, 255, .87);
@@ -50,6 +51,7 @@ html {
   --light-white: #f3f3f3;
   --white: #fff;
   --black: #000;
+  --light-salat-green: #AFBF7E;
   --light-green: rgb(77, 187, 95);
   --dark-transparent-green: rgba(77, 187, 95, 0.2);
   --orange: rgb(244, 92, 75);
@@ -88,6 +90,13 @@ html {
   --tag-deprecated-color: var(--gray-be);
   --button-hover-background-color: var(--gray-ec);
   --keyword-color: #0033b3;
+  --comment-color: #8c8c8c;
+  --number-color: #1750eb;
+  --string-color: #067d17;
+  --symbol-ref-link-color: var(--brand-color-dark);
+  --symbol-ref-underline: none;
+  --symbol-ref-hover-color: var(--symbol-ref-link-color);
+  --module-ref-link-color: var(--brand-color-dark);
 }
 
 html[data-theme=dark] {
@@ -120,6 +129,13 @@ html[data-theme=dark] {
   --tag-deprecated-color: var(--gray-be);
   --button-hover-background-color: var(--gray-32);
   --keyword-color: #cc7832;
+  --comment-color: gray;
+  --number-color: #2AACB8;
+  --string-color: #6AAB73;
+  --symbol-ref-link-color: var(--keyword-color);
+  --symbol-ref-underline: underline;
+  --symbol-ref-hover-color: var(--keyword-color);
+  --module-ref-link-color: var(--light-salat-green);
 }
 
 .close-button {
@@ -143,16 +159,34 @@ html[data-theme=dark] {
   stroke: var(--text-color);
 }
 
-header {
-  height: 70px;
-  width: 100%;
+.header-component.underline header {
+  border-bottom: 1px solid var(--divider-color);
+}
+.header-component.fixed header {
   position: fixed;
   top: 0;
-  z-index: 997;
-  font: 400 14px/1.5 "JetBrainsSans", Helvetica, Arial, sans-serif;
+}
+.header-component.transparent header {
   -webkit-backdrop-filter: saturate(50%) blur(8px);
   backdrop-filter: saturate(50%) blur(8px);
   background: var(--header-transparent-background-color);
+}
+.header-component.no-change-theme .change-theme {
+  display: none !important;
+}
+.header-component.no-change-theme .main-header-list .navigation-item:nth-last-child(-n+2) {
+  margin-right: 0 !important;
+}
+.header-component.no-search-button .header-container button.search {
+  display: none !important;
+}
+
+header {
+  height: 70px;
+  width: 100%;
+  z-index: 997;
+  font: 400 14px/1.5 "JetBrainsSans", Helvetica, Arial, sans-serif;
+  background: var(--header-background-color);
 }
 @media (max-width: 1000px) {
   header {
@@ -165,7 +199,6 @@ header {
 header .header-container {
   padding: 0 50px;
   height: 100%;
-  width: 100%;
   display: grid;
   grid-template-columns: auto max-content;
   align-items: center;
