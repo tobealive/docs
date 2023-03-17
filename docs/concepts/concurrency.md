@@ -303,7 +303,7 @@ using `rlock` for read-only and `lock` for read/write access.
 
 ```v
 struct St {
-	mut:
+mut:
 	x int // data to be shared
 }
 
