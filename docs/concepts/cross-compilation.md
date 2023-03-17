@@ -1,6 +1,6 @@
 # Cross compilation
 
-To cross compile your project simply run:
+To cross compile your project, simply run:
 
 ```shell
 v -os windows .

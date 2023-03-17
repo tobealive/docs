@@ -3,7 +3,8 @@
 ## If expression
 
 `if` expressions are pretty straightforward and similar to most other languages.
-Unlike other C-like languages, there are no parentheses surrounding the condition and the braces are always required.
+Unlike other C-like languages,
+there are no parentheses surrounding the condition and the braces are always required.
 
 ```v play
 a := 10
@@ -30,7 +31,8 @@ println(s) // odd
 If you're using if as an expression, for example, for returning its value or assigning
 it to a variable, the else branch is mandatory.
 
-Therefore, there is no ternary operator (`condition ? then : else`) because ordinary `if` works fine in this role.
+Therefore, there is no ternary operator (`condition ? then : else`) because ordinary `if` works fine
+in this role.
 
 To handle Result/Optional types, there is a special `if`:
 

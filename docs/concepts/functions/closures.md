@@ -3,8 +3,8 @@
 V also supports closures.
 This means that anonymous functions can inherit variables from the scope they were created in.
 
-However, from a large number of languages, captured variables must be explicitly listed after the `fn` keyword
-inside square brackets.
+However, from a large number of languages, captured variables must be explicitly listed after
+the `fn` keyword inside square brackets.
 
 ```v play
 my_int := 1

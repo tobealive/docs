@@ -5,7 +5,8 @@ types while maintaining type safety.
 
 Suppose you need to describe the width of an element in CSS.
 It can be specified either as a number of pixels or as a string expression.
-Of course the CSS specification is more complex, but we'll simplify it for the sake of the example.
+Of course, the CSS specification is more complex,
+but we will simplify it for the sake of the example.
 
 To specify the sum type, use the `type` keyword:
 
@@ -15,7 +16,7 @@ type Width = int | string
 
 The `|` lists the types that the sum type will consist of.
 
-Now let's try to use it:
+Now let us try to use it:
 
 ```v play
 type Width = int | string
@@ -128,7 +129,7 @@ fn absolute_width(width Width) int {
 }
 ```
 
-With sum types you could build recursive structures:
+With sum types, you could build recursive structures:
 
 ```v play
 struct Empty {}
@@ -205,8 +206,9 @@ In this example, `width` is of type `int` within the body of the `if` block.
 The compiler understands that inside the `if` block, the `width` variable is of type `int`,
 since the condition of the `if` block checks that `width is int`.
 
-If `width` is a mutable identifier, it would be unsafe if the compiler smart casts it without a warning.
-That's why you have to declare a `mut` before the `is` expression:
+If `width` is a mutable identifier, it would be unsafe if the compiler smart casts it without a
+warning.
+That is why you have to declare a `mut` before the `is` expression:
 
 ```v play
 type Width = int | string

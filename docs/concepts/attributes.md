@@ -1,8 +1,10 @@
 # Attributes
 
-Attributes offer the ability to add structured, machine-readable metadata information on declarations in code.
+Attributes offer the ability to add structured, machine-readable metadata information on
+declarations in code.
 
-Structures, interfaces, enums, methods, functions, fields, constants and modules can be the target of an attribute.
+Structures, interfaces, enums, methods, functions, fields, constants, and modules can be the target
+of an attribute.
 The metadata defined by attributes can then be inspected at compile-time using the
 [Reflection APIs](compile-time/reflection.md).
 Attributes could therefore be thought of as a configuration language embedded directly into code.
@@ -44,7 +46,8 @@ struct Foo {
 }
 ```
 
-The special syntax of the `if` attribute allows you to specify a condition under which the definition will be compiled:
+The special syntax of the `if` attribute allows you to specify a condition under which the
+definition will be compiled:
 
 ```v
 [if debug]
@@ -69,8 +72,10 @@ fn run() {}
 
 ### `[deprecated]`, `[deprecated_after]`
 
-The `[deprecated]` attribute indicates that the definition is deprecated and should not be used in new code.
-If a definition is marked with the `[deprecated]` attribute, the compiler will issue a warning when it is used.
+The `[deprecated]` attribute indicates that the definition is deprecated and should not be used in
+new code.
+If a definition is marked with the `[deprecated]` attribute, the compiler will issue a warning when
+it is used.
 
 ```v
 [deprecated]
@@ -80,8 +85,8 @@ fn legacy_function() {
 legacy_function() // warning: function `legacy_function` has been deprecated
 ```
 
-The `[deprecated]` attribute has an optional parameter that allows you to specify a message to be displayed when
-using the deprecated definition:
+The `[deprecated]` attribute has an optional parameter that allows you to specify a message to be
+displayed when using the deprecated definition:
 
 ```v
 [deprecated: 'use new_function() instead']
@@ -90,7 +95,8 @@ fn legacy_function() {}
 legacy_function() // warning: function `legacy_function` has been deprecated: use new_function() instead
 ```
 
-The `[deprecated_after]` attribute allows you to specify a date after which the definition will be marked as deprecated:
+The `[deprecated_after]` attribute allows you to specify a date after which the definition will be
+marked as deprecated:
 
 ```v
 [deprecated: 'use new_function() instead']
@@ -101,9 +107,10 @@ fn legacy_function() {}
 ### `[unsafe]`
 
 The `[unsafe]` attribute specifies that the function should be called in an `unssafe` block.
-Code in the body of such function will still be checked, unless you also wrap it in `unsafe {}` blocks.
-This is useful, when you want to have an `[unsafe]` function that has checks before/after a certain unsafe
-operation, that will still benefit from V's safety features.
+Code in the body of such function will still be checked, unless you also wrap it in `unsafe {}`
+blocks.
+This is useful, when you want to have an `[unsafe]` function that has checks before/after a certain
+unsafe operation, that will still benefit from V's safety features.
 
 ```v play
 [unsafe]
@@ -133,8 +140,8 @@ The `[noinline]` attribute, on the other hand, indicates that function calls sho
 You can learn more about inline functions at
 [Wiki page](https://en.wikipedia.org/wiki/Inline_function).
 
-You usually don't need to add them manually, because C compilers are smart enough to figure out
-which functions to inline.
+You usually do not need to add them manually, because C compilers are smart enough to figure out
+which functions need inline.
 
 ### `[noreturn]`
 
@@ -157,8 +164,10 @@ See [Structs](structs/overview.md#always-heap-allocated-structs) for more detail
 
 ### `[if debug]`, `[if my_flag ?]`
 
-The `[if debug]` attribute specifies that the definition will only be compiled if the `-g` flag has been passed.
-The `[if my_flag ?]` attribute specifies that the definition will only be compiled if the `-d my_flag` flag was passed.
+The `[if debug]` attribute specifies that the definition will only be compiled
+if the `-g` flag has been passed.
+The `[if my_flag ?]` attribute specifies that the definition will only be compiled
+if the `-d my_flag` flag was passed.
 
 ```v
 [if debug]
@@ -172,7 +181,8 @@ fn bar() {
 
 ### `[keep_args_alive]`
 
-The `[keep_args_alive]` attribute specifies that the memory pointed to by the function arguments will not be
+The `[keep_args_alive]` attribute specifies that the memory pointed to by the function arguments
+will not be
 freed by the garbage collector (if used) until the function returns.
 This is useful when a function calls a C function that stores a pointer to the arguments.
 
@@ -183,7 +193,8 @@ fn C.my_external_function(voidptr, int, voidptr) int
 
 ### `[manualfree]`
 
-The `[manualfree]` attribute specifies that the function will not automatically free memory allocated within it.
+The `[manualfree]` attribute specifies that the function will not automatically free memory
+allocated within it.
 You will have to deallocate the memory inside the function yourself.
 
 ```v
@@ -205,7 +216,8 @@ struct C.Foo {
 
 ### `[callconv: "stdcall"]`
 
-The `[callconv: "..."]` attribute indicates that the function should be called with a specific calling convention.
+The `[callconv: "..."]` attribute indicates that the function should be called with a specific
+calling convention.
 For example: `stdcall`, `fastcall` and `cdecl`.
 This list also applies to alias types.
 
@@ -219,11 +231,12 @@ type FastFn = fn (int) bool
 
 ### `[console]` (Windows only)
 
-Without this attribute all graphical apps will have the following behavior on Windows:
+Without this attribute, all graphical apps will have the following behavior on Windows:
 
-- If run from a console or terminal; keep the terminal open so all (e)println statements can be viewed.
-- If run from e.g. Explorer, by double-click; app is opened, but no terminal is opened, and no (e)println output can be
-  seen.
+- If run from a console or terminal, keep the terminal open so all (e)println statements can be
+  viewed.
+- If run from e.g. Explorer, by double-click an app is opened, but no terminal is opened, and no
+  `(e)println` output can be seen.
 
 Use it to force-open a terminal to view output in, even if the app is started from Explorer.
 

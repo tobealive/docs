@@ -24,7 +24,7 @@ for i, name in names {
 // 2. Peter
 ```
 
-Note, that the value is read-only.
+Note that the value is read-only.
 If you need to modify the array while looping, you need to declare the element as mutable:
 
 ```v
@@ -144,7 +144,8 @@ Here `i` doesn't need to be declared with `mut` since it's always going to be mu
 `break` and `continue` control the innermost `for` loop.
 
 - `break` terminates the innermost `for` loop.
-- `continue` skips the rest of the current iteration and proceeds to the next step of the nearest enclosing loop.
+- `continue` skips the rest of the current iteration and proceeds to the next step of the nearest
+  enclosing loop.
 
 ## Labelled break & continue
 

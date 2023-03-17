@@ -1,6 +1,7 @@
 # Structs
 
-A structure is a data type that allows you to combine several other data types into one with unique names for each.
+A structure is a data type that allows you to combine several other data types into one with unique
+names for each.
 
 Suppose you want to store information about a person.
 You need to store the name and age.
@@ -59,14 +60,14 @@ In total, there are 5 possible options:
 ```v
 struct Foo {
 	a int // private immutable (default)
-mut:
+	mut:
 	b int // private mutable
 	c int // (you can list multiple fields with the same access modifier)
-pub:
+	pub:
 	d int // public immutable (readonly)
-pub mut:
+	pub mut:
 	e int // public, but mutable only in parent module
-__global:
+	__global:
 	// (not recommended to use, that's why the 'global' keyword starts with __)
 	f int // public and mutable both inside and outside parent module
 }
@@ -123,7 +124,8 @@ fn (p Person) say_hi() {
 ```
 
 Before the function name, a new parameter is added called `receiver`.
-It defines the type of the structure that the method belongs to, as well as the name of the variable,
+It defines the type of the structure that the method belongs to, as well as the name of the
+variable,
 through which you can access an instance of the structure on which the method is called.
 
 By convention, the receiver name should not be `self` or `this`.
@@ -183,7 +185,7 @@ within a method, even if they are marked `mut`.
 ### Mutable receivers
 
 By default, struct fields cannot be changed in methods, even if the field itself is marked as `mut`.
-The following code will not compile:
+The following code will not be compiled:
 
 ```v play
 struct Person {
@@ -198,11 +200,12 @@ fn (p Person) birthday() {
 }
 ```
 
-To change the fields of a structure in a method, you need to add `mut` before the name of the receiver:
+To change the fields of a structure in a method, you need to add `mut` before the name of the
+receiver:
 
 ```v
 struct Person {
-mut:
+	mut:
 	name string
 	age  int
 }
@@ -242,7 +245,8 @@ is called, but a pointer to it will be passed.
 ## Allocate structs on the heap
 
 Structs are allocated on the stack.
-To allocate a struct on the heap and get a [reference](../types/references.md) to it, use the `&` prefix:
+To allocate a struct on the heap and get a [reference](../types/references.md) to it, use the `&`
+prefix:
 
 ```v
 struct Point {
@@ -309,7 +313,7 @@ syntax after the `...u` will be changed in the copy.
 
 ## Trailing struct literal arguments
 
-V doesn't have default function arguments or named arguments, for that trailing struct
+V does not have default function arguments or named arguments, for that trailing struct
 literal syntax can be used instead:
 
 ```v
@@ -348,7 +352,7 @@ new_button(ButtonConfig{text:'Click me', width:100})
 
 This only works for functions that take a struct for the last argument.
 
-`[params]` [attribute](../attributes) is used to tell V, that the trailing struct parameter
+`[params]` [attribute](../attributes) is used to tell V that the trailing struct parameter
 can be omitted *entirely*, so that you can write `button := new_button()`.
 Without it, you have to specify *at least* one of the field names, even if it
 has its default value, otherwise the compiler will produce this error message,
@@ -401,7 +405,7 @@ fn main() {
 
 ## Structs with reference fields
 
-Structs with references to require explicitly setting the initial value to a
+Structs with references require explicitly setting the initial value to a
 reference value unless the struct already defines its own initial value.
 
 Zero-value references, or nil pointers, will **NOT** be supported in the future,
@@ -436,7 +440,7 @@ println(qux)
 
 ## Anonymous structs
 
-V supports anonymous structs: structs that don't have to be declared separately
+V supports anonymous structs: structs that do not have to be declared separately
 with a struct name.
 
 ```v play

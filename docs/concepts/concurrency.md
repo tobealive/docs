@@ -24,7 +24,7 @@ fn main() {
 }
 ```
 
-There's also a `go` keyword.
+There is also a `go` keyword.
 Right now `go foo()` will be automatically renamed via vfmt to `spawn foo()`, and
 there will be a way to launch a coroutine with `go` (a lightweight thread managed by the runtime).
 
@@ -173,7 +173,8 @@ Any attempt to do so will then result in a runtime panic (except `select` and
 `try_push()` – see below).
 Attempts to pop will return immediately if the associated channel has been closed and
 the buffer is empty.
-This situation can be handled using an `or {}` block (see [Handling options/results](error-handling.md)).
+This situation can be handled using an `or {}` block
+(see [Handling options/results](error-handling.md)).
 
 ```v wip
 ch := chan int{}
@@ -192,7 +193,7 @@ y := <-ch2 ?
 ### Channel Select
 
 The `select` command allows monitoring several channels at the same time
-without noticeable CPU load.
+without a noticeable CPU load.
 It consists of a list of possible transfers and associated branches of statements – similar to
 the [match](control-flow/conditions.md#match-expression) expression:
 
@@ -263,7 +264,7 @@ if select {
 
 ### Special Channel Features
 
-For special purposes there are some builtin fields and methods:
+For special purposes, there are some builtin fields and methods:
 
 ```v
 struct Abc {
@@ -287,7 +288,7 @@ res2 := ch2.try_pop(mut b) // try to perform `b = <-ch2`
 The `try_push/pop()` methods will return immediately with one of the results
 `.success`, `.not_ready` or `.closed` – dependent on whether the object has been transferred or
 the reason why not.
-Usage of these methods and fields in production is not recommended -
+Usage of these methods and fields in production is not recommended —
 algorithms based on them are often subject to race conditions.
 Especially `.len` and `.closed` should not be used to make decisions.
 Use `or` branches, error propagation or `select` instead (see [Syntax and Usage](#syntax-and-usage)
@@ -302,7 +303,7 @@ using `rlock` for read-only and `lock` for read/write access.
 
 ```v
 struct St {
-mut:
+	mut:
 	x int // data to be shared
 }
 
@@ -324,4 +325,4 @@ fn main() {
 }
 ```
 
-Shared variables must be structs, arrays or maps.
+Shared variables must be structs, arrays, or maps.

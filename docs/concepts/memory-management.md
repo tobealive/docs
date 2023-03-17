@@ -12,9 +12,9 @@ Most objects (~90-100%) are freed by V's autofree engine: the compiler inserts
 necessary free calls automatically during compilation. Remaining small percentage
 of objects is freed via reference counting.
 
-The developer doesn't need to change anything in their code. "It just works", like in
-Python, Go, or Java, except there's no heavy GC tracing everything or expensive RC for
-each object.
+The developer does not need to change anything in their code.
+"It just works", like in Python, Go, or Java, except there's no heavy GC tracing everything or
+expensive RC for each object.
 
 ## Control
 
@@ -35,8 +35,8 @@ Just as the compiler frees C data types with C's `free()`, it will statically in
 
 Autofree can be enabled with an `-autofree` flag.
 
-For developers willing to have more low level control, autofree can be disabled with
-`-manualfree`, or by adding a `[manualfree]` on each function that wants manage its
+For developers willing to have more low-level control, autofree can be disabled with
+`-manualfree`, or by adding a `[manualfree]` on each function that wants to manage its
 memory manually.
 See [attributes](./attributes) for more information.
 
@@ -60,10 +60,10 @@ fn draw_scene() {
 }
 ```
 
-The strings don't escape `draw_text`, so they are cleaned up when
+The strings do not escape `draw_text`, so they are cleaned up when
 the function exits.
 
-In fact, with the `-prealloc` flag, the first two calls won't result in any allocations at all.
+In fact, with the `-prealloc` flag, the first two calls will not result in any allocations at all.
 These two strings are small, so V will use a preallocated buffer for them.
 
 ```v
@@ -87,24 +87,24 @@ fn test() []int {
 
 ### Stack and Heap Basics
 
-Like with most other programming languages there are two locations where data can
+Like with most other programming languages, there are two locations where data can
 be stored:
 
 - The *stack* allows fast allocations with almost zero administrative overhead. The
   stack grows and shrinks with the function call depth – so every called
   function has its stack segment that remains valid until the function returns.
-  No freeing is necessary, however, this also means that a reference to a stack
+  No freeing is necessary; however, this also means that a reference to a stack
   object becomes invalid on function return. Furthermore, stack space is
   limited (typically to a few Megabytes per thread).
 - The *heap* is a large memory area (typically some Gigabytes) that is administrated
   by the operating system. Heap objects are allocated and freed by special function
   calls that delegate the administrative tasks to the OS. This means that they can
-  remain valid across several function calls, however, the administration is
+  remain valid across several function calls; however, the administration is
   expensive.
 
 ### V's default approach
 
-Due to performance considerations V tries to put objects on the stack if possible
+Due to performance considerations, V tries to put objects on the stack if possible
 but allocates them on the heap when obviously necessary. Example:
 
 ```v
@@ -243,12 +243,13 @@ fn (mut a MyStruct) f() &MyStruct {
 ```
 
 Here `f()` is passed a reference `a` as receiver that is passed back to the caller and returned
-as result at the same time. The intention behind such a declaration is method chaining like
-`y = x.f().g()`. However, the problem with this approach is that a second reference
+as a result at the same time.
+The intention behind such a declaration is method chaining like`y = x.f().g()`.
+However, the problem with this approach is that a second reference
 to `a` is created – so it is not only borrowed and `MyStruct` has to be
 declared as `[heap]`.
 
-In V the better approach is:
+In V, the better approach is:
 
 ```v play
 struct MyStruct {
@@ -279,8 +280,8 @@ However, stack space is very limited as mentioned above. For this reason the `[h
 attribute might be suitable for very large structures even if not required by use cases
 like those mentioned above.
 
-There is an alternative way to manually control allocation on a case to case basis. This
-approach is not recommended but shown here for the sake of completeness:
+There is an alternative way to manually control allocation on a case-to-case basis.
+This approach is not recommended but shown here for the sake of completeness:
 
 ```v play
 struct MyStruct {

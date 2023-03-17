@@ -9,23 +9,25 @@ to encode strings.
 All strings in V are an immutable byte array.
 
 Strings in V are specified using single or double quotes.
-Both options are equivalent, however it is recommended to use single quotes for
+Both options are equivalent; however, it is recommended to use single quotes for
 strings that do not contain single quotes.
 
-That is, as long as the string does not contain other single quotes, it is better to use single quotes:
+That is, as long as the string does not contain other single quotes,
+it is better to use single quotes:
 
 ```v play
 println('Just string')
 ```
 
-But if the string contains single quotes, then it's better to use double quotes to
+But if the string contains single quotes, then it is better to use double quotes to
 avoid having to escape the single quotes:
 
 ```v play
 println("String with 'single quotes'")
 ```
 
-[vfmt](../../tools/builtin-tools.md#v-fmt) will automatically convert double quotes to single quotes when possible.
+[vfmt](../../tools/builtin-tools.md#v-fmt) will automatically convert double quotes to single quotes
+when possible.
 
 Escaping in strings is supported as in C:
 
@@ -51,7 +53,8 @@ Or using octal escape `\###` notation where `#` is an octal digit:
 println('\141ardvark') == 'aardvark' // true
 ```
 
-Unicode can be specified directly as `\u####` where # is a hex digit and will be converted internally
+Unicode can be specified directly as `\u####` where # is a hex digit and will be converted
+internally
 to its UTF-8 representation:
 
 ```v play
@@ -59,7 +62,8 @@ println('\u2605') // ★
 println('\xe2\x98\x85') // ★
 ```
 
-Since all characters in V are stored in UTF-8, the length of the string may differ from the number of visible characters
+Since all characters in V are stored in UTF-8, the length of the string may differ from the number
+of visible characters
 in it:
 
 ```v play
@@ -252,7 +256,8 @@ Ignored if variable is an integer.
 
 - `f` and `F` specify the input is a float and should be rendered as such.
 - `e` and `E` specify the input is a float and should be rendered as an exponent (partially broken).
-- `g` and `G` specify the input is a float--the renderer will use floating point notation for small values and exponent
+- `g` and `G` specify the input is a float--the renderer will use floating point notation for small
+  values and exponent
   notation for large values.
 - `d` specifies the input is an integer and should be rendered in base-10 digits.
 - `x` and `X` require an integer and will render it as hexadecimal digits.
@@ -262,17 +267,18 @@ Ignored if variable is an integer.
 
 > **Note**
 > When a numeric type can render alphabetic characters, such as hex strings or special values
-> like `infinity`, the lowercase version of the type forces lowercase alphabetics and the
-> uppercase version forces uppercase alphabetics.
+> like `infinity`, the lowercase version of the type forces lowercase alphabetic and the
+> uppercase version forces uppercase alphabetic.
 
-In most cases, it's best to leave the format type empty. Floats will be rendered by
-default as `g`, integers will be rendered by default as `d`, and `s` is almost always redundant.
+In most cases, it is best to leave the format type empty.
+Floats will be rendered by default as `g`, integers will be rendered
+by default as `d`, and `s` is almost always redundant.
 There are only three cases where specifying a type is recommended:
 
 - format strings are parsed at compile time, so specifying a type can help detect errors then
 - format strings default to using lowercase letters for hex digits and the `e` in exponents.
   Use an uppercase type to force the use of uppercase hex digits and an uppercase `E` in exponents.
-- format strings are the most convenient way to get hex, binary or octal strings from an integer.
+- format strings are the most convenient way to get hex, binary, or octal strings from an integer.
 
 See
 [Format Placeholder Specification](https://en.wikipedia.org/wiki/Printf_format_string#Format_placeholder_specification)

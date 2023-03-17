@@ -28,20 +28,21 @@ print('Hello,')
 print(' World!')
 ```
 
-`println` prints the value passed to it to standard output and adds a newline character at the end.
+`println` prints the value passed to it to standard output and adds a newline
+character at the end.
 
 ```v play
 println('Hello, World!')
 println("I'm V!")
 ```
 
-Try to run this examples to see the difference.
+Try to run these examples to see the difference.
 
 See [Builtin functions](../concepts/builtin-functions.md) for more information.
 
 ## Functions
 
-A function with two string arguments and string return type.
+A function with two string arguments and a string return type.
 
 ```v
 fn concatenate(a string, b string) string {
@@ -80,7 +81,8 @@ You can also declare multiple variables in one line.
 name, age := 'V', 4
 ```
 
-By default all variables are immutable. To make a variable mutable, use `mut` keyword.
+By default all variables are immutable. To make a variable mutable, use `mut`
+keyword.
 
 ```v
 mut name := 'V'
@@ -91,7 +93,8 @@ See [Variables](../concepts/variables) for more information.
 
 ## Constants
 
-Constants in V declared with `const` keyword. It can be declared only in the top level scope.
+Constants in V declared with `const` keyword. It can be declared only in the top
+level scope.
 
 ```v play
 const name = 'V'
@@ -137,7 +140,8 @@ fn main() {
 }
 ```
 
-By default, all fields in a struct are immutable, private and can be accessed only from the same module.
+By default, all fields in a struct are immutable, private, and can be accessed
+only from the same module.
 To make a field mutable, use `mut` keyword.
 
 ```v play
@@ -234,7 +238,8 @@ age := 4
 println('V is ${age} years old!')
 ```
 
-See [String templates](../concepts/types/strings.md#string-interpolation) for more information.
+See [String templates](../concepts/types/strings.md#string-interpolation) for
+more information.
 
 ## Conditional expressions
 
@@ -263,7 +268,8 @@ status := if age < 18 {
 println(status)
 ```
 
-See [Conditional expressions](../concepts/control-flow/conditions.md) for more information.
+See [Conditional expressions](../concepts/control-flow/conditions.md) for more
+information.
 
 ## For loop
 
@@ -334,7 +340,8 @@ match status {
 }
 ```
 
-See [Match expression](../concepts/control-flow/conditions.md#match-expression) for more information.
+See [Match expression](../concepts/control-flow/conditions.md#match-expression)
+for more information.
 For more information about sum types see [Sum types](../concepts/sum-types).
 
 ## Error handling

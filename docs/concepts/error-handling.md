@@ -59,7 +59,7 @@ The amount of work required to "upgrade" a function to an option/result function
 you have to add a `?` or `!` to the return type and return an error when something goes wrong.
 
 This is the primary mechanism for error handling in V.
-They are still values, like in Go, but the advantage is that errors can't be unhandled, and
+They are still values, like in Go, but the advantage is that errors cannot be unhandled, and
 handling them is a lot less verbose.
 Unlike other languages, V does not handle exceptions with `throw/try/catch` blocks.
 
@@ -157,7 +157,7 @@ V gives you the ability to define custom error types through the `IError` interf
 The interface requires two methods: `msg() string` and `code() int`.
 Every type that implements these methods can be used as an error.
 
-When defining a custom error type it is recommended to embed the builtin `Error` default
+When defining a custom error type, it is recommended to embed the builtin `Error` default
 implementation.
 This provides an empty default implementation for both required methods, so you only have
 to implement what you really need, and may provide additional utility functions in the future.

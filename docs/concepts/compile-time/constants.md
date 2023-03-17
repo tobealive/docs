@@ -16,13 +16,15 @@ V provides access to some constants at compile time.
 - `@VMOD_FILE` – contents of the nearest **v.mod** file (as a string).
 - `@VMODROOT` – folder, where the nearest **v.mod** file is (as a string).
 
-That allows you to do the following example, useful while debugging/logging/tracing your code:
+That allows you to do the following example, useful while
+debugging/logging/tracing your code:
 
 ```v play
 eprintln('file: ' + @FILE + ' | line: ' + @LINE + ' | fn: ' + @MOD + '../..' + @FN)
 ```
 
-Another example, is if you want to embed the version/name from **v.mod** *inside* your executable:
+Another example is if you want to embed the version/name from **v.mod**
+*inside* your executable:
 
 ```v ignore
 import v.vmod

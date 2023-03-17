@@ -9,7 +9,7 @@ To display the value of a variable in a template, use `@{}`:
 
 ```html
 <p>
-	@{name}
+    @{name}
 </p>
 ```
 
@@ -73,7 +73,7 @@ to avoid extra spaces in the resulting text.
 ### `if` statement
 
 The `if` directive, consists of three parts, the `@if` tag, the condition (same syntax like in V)
-and the body, where you can write text or html, which will be rendered if the condition is true.
+and the body, where you can write text or HTML, which will be rendered if the condition is true.
 Optionally, the `if` directive can have an `else` branch.
 The full syntax of the `if` directive is:
 
@@ -165,17 +165,17 @@ they point to the index and value of an array element or the key and value of a 
 
 ```html
 @for index, name in articles
-<span>@{index}. @{name}</span>
+	<span>@{index}. @{name}</span>
 @end
 ```
 
 ### Other `for` syntax
 
-You can use any `for` loop syntax in V that is supported by V:
+You can use any `for` loop syntax that V support:
 
 ```html
 @for i := 0; i < 5; i++
-<span>@{i}</span>
+	<span>@{i}</span>
 @end
 ```
 

@@ -8,4 +8,5 @@ Currently, the best support is provided by
 for JetBrains IDE (IntelliJ, PyCharm, GoLand and other).
 
 The plugin can be used with the free IntelliJ IDEA Community Edition or PyCharm Community Edition.
-In paid versions (GoLand, IntelliJ IDEA Ultimate, CLion), the plugin also provides the ability to debug.
+In paid versions (GoLand, IntelliJ IDEA Ultimate, CLion), the plugin also provides the ability to
+debug.

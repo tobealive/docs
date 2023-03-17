@@ -1,8 +1,8 @@
 # Writing Documentation
 
-The way it works is very similar to Go. It's very simple: there's no need to
-write documentation separately for your code, vdoc will generate it from docstrings
-in the source code.
+The way it works is very similar to Go.
+It's straightforward: there's no need to write documentation separately for your code,
+`vdoc` will generate it from doc-comments in the source code.
 
 Documentation for each function/type/const must be placed right before the declaration:
 
@@ -29,18 +29,20 @@ By convention, it is preferred that comments are written in *present tense*.
 
 ## Module Documentation
 
-Documentation for modules is written in a separate file **README.md** in the root of the module folder.
+Documentation for modules is written in a separate file **README.md** in the root of the module
+folder.
+
 The file must start with a header:
 
 ```md
 ## Description:
 ```
 
-Which must be followed by a description of the module.
+which must be followed by a description of the module.
 
 ## Documentation Generation
 
-To generate documentation use vdoc, for example `v doc net.http`.
+To generate documentation use `vdoc`, for example `v doc net.http`.
 
 ## Newlines in Documentation Comments
 

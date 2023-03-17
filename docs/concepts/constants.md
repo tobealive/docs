@@ -1,7 +1,7 @@
 # Constants
 
 In V, in addition to variables, you can also create constants.
-Such constants can only be declared outside of functions in the global scope.
+Such constants can only be declared outside functions in the global scope.
 
 Constants are declared with `const`:
 
@@ -81,12 +81,14 @@ a `const ( ... )` block.
 
 Outside from `main` module all constants need to be prefixed with the module name.
 
-In order to distinguish constants from local variables, the full path to constants must be specified.
+In order to distinguish constants from local variables, the full path to constants must be
+specified.
 
-For example, to access the `pi` const, full `math.pi` name must be used both outside the `math`
+For example, to access the `pi` constant, full `math.pi` name must be used both outside the `math`
 module, and inside it.
 That restriction is relaxed only for the `main` module (the one containing your `fn main()`),
-where you can use the unqualified name of constants defined there, i.e. `numbers`, rather than `main.numbers`.
+where you can use the unqualified name of constants defined there, i.e. `numbers`, rather
+than `main.numbers`.
 
-[vfmt](../tools/builtin-tools.md#v-fmt) takes care of this rule, so you can type `println(pi)` inside the `math` module,
-and vfmt will automatically update it to `println(math.pi)`.
+[vfmt](../tools/builtin-tools.md#v-fmt) takes care of this rule, so you can type `println(pi)`
+inside the `math` module, and vfmt will automatically update it to `println(math.pi)`.

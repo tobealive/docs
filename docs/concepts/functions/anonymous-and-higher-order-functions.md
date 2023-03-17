@@ -27,7 +27,7 @@ fn main() {
 }
 ```
 
-In the example above, the `run()` function takes another function as its second argument,
+In the example above, the `run()` function takes another function as its second argument;
 its type describes the function type.
 
 Such a type is described as `fn (<param_types>) <return_type>`, for example:
@@ -120,8 +120,8 @@ fn main() {
 }
 ```
 
-V has duck-typing, so functions don't need to declare compatibility with
-a function type – they just have to be compatible:
+V has duck-typing, so functions do not need to declare compatibility with
+a function type — they just have to be compatible:
 
 ```v
 fn uppercase(s string) string {

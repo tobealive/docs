@@ -44,16 +44,16 @@ to race conditions.
 There are several approaches to deal with these:
 
 - use `shared` types for the variable declarations and use `lock` blocks for access.
-  This is most appropriate for larger objects like structs, arrays or maps.
+  This is most appropriate for larger objects like structs, arrays, or maps.
 
 - handle primitive data types as [`atomics`](../concepts/atomics.md) using special C-functions.
 
 - use explicit synchronization primitives like mutexes to control access. The compiler
   cannot really help in this case, so you have to know what you are doing.
 
-- don't care – this approach is possible but makes only sense if the exact values
+- do not care – this approach is possible, but it makes only sense if the exact values
   of global variables do not really matter. An example can be found in the `rand` module
   where global variables are used to generate (non-cryptographic) pseudo random numbers.
-  In this case data races lead to random numbers in different threads becoming somewhat
+  In this case, data races lead to random numbers in different threads becoming somewhat
   correlated, which is acceptable considering the performance penalty that using
   synchronization primitives would represent.

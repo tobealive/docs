@@ -1,19 +1,19 @@
 # Atomics
 
-V has no special support for atomics, yet, nevertheless it's possible to treat variables as atomics
+V has no special support for atomics, yet, nevertheless, it's possible to treat variables as atomics
 by [calling C](./v-and-c) functions from V.
 
 The standard C11 atomic functions like `atomic_store()` are usually defined with the help of macros
 and C compiler magic to provide a kind of *overloaded C functions*.
 
-Since V does not support overloading functions by intention there are wrapper functions defined in
+Since V does not support overloading functions by intention, there are wrapper functions defined in
 C headers named **atomic.h** that are part of the V compiler infrastructure.
 
 There are dedicated wrappers for all unsigned integer types and for pointers.
 (`byte` is not fully supported on Windows) – the function names include the type name
 as suffix. e.g. `C.atomic_load_ptr()` or `C.atomic_fetch_add_u64()`.
 
-To use these functions the C header for the used OS has to be included and the functions
+To use these functions, the C header for the used OS has to be included and the functions
 that are intended to be used have to be declared. Example:
 
 ```v globals
@@ -87,5 +87,5 @@ The last replacement will be with `31` which makes the spawned thread finish.
 
 It is not predictable how many replacements occur in which thread, but the sum will always
 be 10000000.
-With the non-atomic commands from the comments the value will be higher or the program
-will hang – dependent on the compiler optimization used.
+With the non-atomic commands from the comments, the value will be higher or the program
+will stop responding – dependent on the compiler optimization used.

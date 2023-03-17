@@ -3,7 +3,8 @@
 Generics are a way of defining functions and data structures that can operate on any data type.
 This allows you to create more generic code that can be reused for different data types.
 
-In V at the moment, generics are pretty limited and don't have such important things as type constraints.
+In V at the moment, generics are pretty limited and do not have such important things as type
+constraints.
 
 Unlike many languages, V uses the `[T]` syntax instead of `<T>` to specify generics.
 
@@ -11,7 +12,8 @@ Generic names use single letters such as `T` or `U`, any other names are current
 
 ## Functions
 
-Generic functions are defined using square brackets after the function name containing the parameter types:
+Generic functions are defined using square brackets after the function name containing the parameter
+types:
 
 ```v
 fn compare[T](a T, b T) int {
@@ -34,7 +36,8 @@ println(compare[string]('a', 'b'))
 println(compare(10.0, 20.0))
 ```
 
-In the first case `compare` will be generated for type `int` and called with `int` and `int` parameters.
+In the first case `compare` will be generated for type `int` and called with `int` and `int`
+parameters.
 
 If you try to pass `"b"` instead of `0`, you will get a compilation error:
 
@@ -89,14 +92,15 @@ op2 := Option{
 
 ### Methods of generic structs
 
-To describe methods of generic structures, the receiver must be of type `Type[<generic parameters>]`:
+To describe methods of generic structures, the receiver must be of
+type `Type[<generic parameters>]`:
 
 ```v play
 struct Optional[T] {
 	value      T
 	is_defined bool = true
 }
-   
+
 fn (o Optional[T]) or_else(default T) T {
 	if o.is_defined {
 		return o.value
@@ -110,7 +114,8 @@ fn main() {
 }
 ```
 
-Generic struct methods can use struct parameter types as method parameter types or as return value types.
+Generic struct methods can use struct parameter types as method parameter types or as return value
+types.
 
 Such methods can define their own parameter types:
 
@@ -140,12 +145,14 @@ fn main() {
 }
 ```
 
-You may notice that when the `map()` method is called, the parameter type `U` is not explicitly specified.
+You may notice that when the `map()` method is called, the parameter type `U` is not explicitly
+specified.
 The V compiler itself inferred the type of the `U` parameter from the function passed to it.
 
 ## Interfaces
 
-Generic interfaces are defined using square brackets after the interface name containing the parameter types:
+Generic interfaces are defined using square brackets after the interface name containing the
+parameter types:
 
 ```v play
 interface Iterator[T] {
@@ -155,7 +162,8 @@ mut:
 }
 ```
 
-This interface can be implemented by any data type that implements the `has_next()` and `next()` methods.
+This interface can be implemented by any data type that implements the `has_next()` and `next()`
+methods.
 
 A struct can also be generic:
 
@@ -244,8 +252,8 @@ interface Iterator[T] {
 
 ## Compile-time conditions
 
-Due to the fact that V has [compile-time](./compile-time/control-flow.md) `if`, in the body of generic functions,
-you can separate the code depending on the type passed:
+Due to the fact that V has [compile-time](./compile-time/control-flow.md) `if`, in the body of
+generic functions, you can separate the code depending on the type passed:
 
 ```v play
 fn myprintln[T](data T) {
@@ -275,8 +283,8 @@ fn myprintln[T](data T) {
 
 myprintln([1,2,3])
 // array: [
-// 1, 
-// 2, 
+// 1,
+// 2,
 // 3
 // ]
 

@@ -49,7 +49,8 @@ foo_ptr.abc = 123
 println(foo.abc) // 123
 ```
 
-Taking the address from an immutable variable and assigning it to a mutable reference is **prohibited**:
+Taking the address from an immutable variable and assigning it to a mutable reference is *
+*prohibited**:
 
 ```v play
 struct Foo {
@@ -100,8 +101,8 @@ println(foo_ptr)
 // }
 ```
 
-Unlike other languages, a value is displayed that is stored by reference, in order to
-display the address of the reference, you should use string interpolation:
+Unlike other languages, a value is displayed that is stored by reference.
+To display the address of the reference, you should use string interpolation:
 
 ```v play
 struct Foo {

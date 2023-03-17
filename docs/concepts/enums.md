@@ -16,7 +16,8 @@ println(color) // red
 ```
 
 By default, V uses `int` to store enum values.
-To use any other numeric type (e.g. `u8`), you can specify it after the enum name with the `as` keyword:
+To use any other numeric type (e.g. `u8`), you can specify it after the enum
+name with the `as`keyword:
 
 ```v
 enum Color as u8 {
@@ -52,7 +53,8 @@ enum Color {
 ```
 
 If you do not specify a value for the first field, then it will be 0.
-If you do not specify a value for the next field, then it will be equal to the value of the previous field plus 1.
+If you do not specify a value for the next field, then it will be equal to the value of the previous
+field plus 1.
 
 ```v
 enum Color {
@@ -160,7 +162,8 @@ one
 
 ## Bitfield enums
 
-Enums can be used as bitfields. To do this, add the `flag` [attribute](./attributes) to the definition:
+Enums can be used as bitfields.
+To do this, add the `flag` [attribute](./attributes) to the definition:
 
 ```v
 [flag]
@@ -172,8 +175,8 @@ enum BitField {
 ```
 
 The maximum number of fields in such an enum depends on the type you use to store the field values.
-For example, if you use `u8`, then the maximum number of fields will be 8. The default is `int` so
-the maximum number of fields will be 32.
+For example, if you use `u8`, then the maximum number of fields will be 8.
+The default is `int` so the maximum number of fields will be 32.
 
 In such an enumeration, the fields will have the following values:
 

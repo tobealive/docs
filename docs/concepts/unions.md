@@ -26,10 +26,11 @@ fn main() {
 Unions are specified using the `union` keyword. Fields are set in the same way as in structures.
 
 In this example, we have created a `val` variable of type `IntOrString`.
-At the beginning, `val` does not contain any data, so we should explicitly state what we want to store in it.
+At the beginning, `val` does not contain any data, so we should explicitly state what we want to
+store in it.
 
-Since the size of the union is equal to the size of the largest field, in this case, the size of `val` is equal to the
-size of `string`, i.e. 16.
+Since the size of the union is equal to the size of the largest field, in this case, the size
+of `val` is equal to the size of `string`, i.e. 16.
 
 In memory, it will look like this:
 
@@ -93,7 +94,7 @@ interpreted them as an integer.
  pointer to data     len    additio-
                             nal info
 ^^^^^^^^
-  try access to this memory                            
+  try access to this memory
 +---------------+  +---------------+
       8 bytes           8 bytes
 ```

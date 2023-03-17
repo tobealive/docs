@@ -1,7 +1,7 @@
 # Embedded structs
 
-There is no inheritance in V, but the language provides embedding through which composition can be expressed
-as an analogue of inheritance.
+There is no inheritance in V, but the language provides embedding through which composition can be
+expressed as an analogue of inheritance.
 
 ```v play
 struct Size {

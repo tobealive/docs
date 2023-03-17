@@ -1,6 +1,6 @@
 # Memory-unsafe code
 
-Sometimes for efficiency you may want to write low-level code that can potentially
+Sometimes for efficiency, you may want to write low-level code that can potentially
 corrupt memory or be vulnerable to security exploits.
 V supports writing such code, but not by default.
 
@@ -12,7 +12,7 @@ Examples of potentially memory-unsafe operations are:
 
 - Pointer arithmetic
 - Pointer indexing
-- Conversion to pointer from an incompatible type
+- Conversion to a pointer from an incompatible type
 - Calling certain C functions, e.g. `free`, `strlen` and `strncmp`.
 
 To mark potentially memory-unsafe operations, enclose them in an `unsafe` block:
@@ -44,6 +44,3 @@ so the compiler can verify it.
 If you suspect your program does violate memory-safety, you have a head start on
 finding the cause: look at the `unsafe` blocks (and how they interact with
 surrounding code).
-
-> **Note**
-> This is work in progress.

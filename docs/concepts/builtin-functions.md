@@ -106,7 +106,8 @@ println(__offsetof(Foo, b)) // 8
 
 You can dump/trace the value of any V expression using `dump(expr)`.
 This function takes an expression and returns it, so you can use it anywhere in the expression.
-`dump(expr)` keeps track of the original location, the expression itself, and the value of the expression.
+`dump(expr)` keeps track of the original location, the expression itself, and the value of the
+expression.
 
 ```v play
 fn factorial(n u32) u32 {

@@ -31,9 +31,10 @@ any // similar to C's void* and Go's interface{}
 
 ## Promotions
 
-There is an exception to the rule that all operators in V must have values of the same type on both sides.
-A small primitive type on one side can be automatically promoted if it fits completely into the data
-range of the type on the other side.
+There is an exception to the rule that all operators in V must have values of the
+same type on both sides.
+A small primitive type on one side can be automatically promoted if it fits completely
+into the data range of the type on the other side.
 
 These are the allowed possibilities:
 

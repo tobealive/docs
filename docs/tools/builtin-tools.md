@@ -27,10 +27,10 @@ a := [1, 2, 3]
 // vfmt off
 // This code will not be formatted
 b := [
-		1,
-		2,
-		3,
-	 ]
+	1,
+	2,
+	3,
+]
 // vfmt on
 
 // Affected by fmt

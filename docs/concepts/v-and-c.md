@@ -3,10 +3,11 @@
 ## Including C code
 
 You can include C code directly in your V module.
-For example, let's say that your C code is located in a folder named **'c'** inside your module folder.
+For example, let's say that your C code is located in a folder named **'c'** inside your module
+folder.
 Then:
 
-- Put a **v.mod** file inside the toplevel folder of your module (if you
+- Put a **v.mod** file inside the top-level folder of your module (if you
   created your module with `v new` you already have **v.mod** file).
   For example:
 
@@ -32,8 +33,8 @@ Module {
 > where there is a **v.mod** file*.
 > Any **.v** file beside or below the folder where the **v.mod** file is,
 > can use `#flag @VMODROOT/abc` to refer to this folder.
-> The `@VMODROOT` folder is also *prepended* to the module lookup path,
-> so you can *import* other modules under your `@VMODROOT`, by just naming them.
+> The `@VMODROOT` folder is also *prepended* to the module lookup path, so
+> you can *import* other modules under your `@VMODROOT`, by just naming them.
 
 The instructions above will make V look for a compiled **.o** file in
 your module **folder/c/implementation.o**.
@@ -41,7 +42,7 @@ If V finds it, the **.o** file will get linked to the main executable, that used
 If it does not find it, V assumes that there is a `@VMODROOT/c/implementation.c` file,
 and tries to compile it to a **.o** file, then will use that.
 
-This allows you to have C code, that is contained in a V module, so that its distribution is easier.
+This allows you to have C code that is contained in a V module, so that its distribution is easier.
 You can see a complete minimal example for using C code in a V wrapper module here:
 [project_with_c_code](https://github.com/vlang/v/tree/master/vlib/v/tests/project_with_c_code).
 Another example, demonstrating passing structs from C to V and back again:
@@ -51,7 +52,7 @@ Another example, demonstrating passing structs from C to V and back again:
 
 Add `#flag` directives to the top of your V files to provide C compilation flags like:
 
-- `-I` for adding C include files search paths
+- `-I` for adding C include file search paths
 - `-l` for adding C library names that you want to get linked
 - `-L` for adding C library files search paths
 - `-D` for setting compile time variables
@@ -104,8 +105,9 @@ The `.pc` files are looked up into a hardcoded list of default pkg-config paths,
 extra paths by using the `PKG_CONFIG_PATH` environment variable. Multiple modules can be passed.
 
 To check the existence of a pkg-config use `$pkgconfig('pkg')` as a compile time "if" condition to
-check if a pkg-config exists. If it exists the branch will be created. Use `$else` or `$else $if`
-to handle other cases.
+check if a pkg-config exists.
+If it exists, the branch will be created.
+Use `$else` or `$else $if`to handle other cases.
 
 ```v ignore
 $if $pkgconfig('mysqlclient') {
@@ -155,7 +157,7 @@ To cast a `voidptr` to a V reference, use:
 user := unsafe { &User(user_void_ptr) }
 ```
 
-`voidptr` can also be dereferenced into a V struct through casting:
+`voidptr` can also be dereferences into a V struct through casting:
 
 ```v failcompile
 user := unsafe { User(user_void_ptr) }
@@ -167,7 +169,8 @@ for a complete example.
 
 ## C Declarations
 
-C identifiers are accessed with the `C` prefix similarly to how module-specific identifiers are accessed.
+C identifiers are accessed with the `C` prefix similarly to how module-specific identifiers are
+accessed.
 Functions must be redeclared in V before they can be used.
 Any C types may be used behind the `C` prefix, but types must be redeclared in V in
 order to access type members.
@@ -233,7 +236,7 @@ V can translate your C code to human-readable V code, and generating V wrappers
 on top of C libraries.
 
 [C2V](https://github.com/vlang/c2v)
-currently uses Clang's AST to generate V, so to translate a C file to V
+currently uses Clang's AST to generate V, so to translate a C file to V,
 you need to have Clang installed on your machine.
 
 Let's create a simple program **test.c** first:
@@ -271,7 +274,8 @@ See [libsodium wrapper](https://github.com/vlang/libsodium) generated with C2V.
 
 ## When should you translate C code and when should you simply call C code from V?
 
-If you have well-written, well-tested C code, then of course you can always simply call this C code from V.
+If you have well-written, well-tested C code, then of course you can always simply call this C code
+from V.
 
 Translating it to V gives you several advantages:
 

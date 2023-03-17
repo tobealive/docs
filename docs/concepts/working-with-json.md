@@ -2,14 +2,15 @@
 
 Because of the ubiquitous nature of JSON, support for it is built directly into V.
 
-V generates code for JSON encoding and decoding using [compile-time reflection](compile-time/reflection.md).
+V generates code for JSON encoding and decoding using
+[compile-time reflection](compile-time/reflection.md).
 
 Since any JSON object must be represented as a structure, the first step in working with
 JSON is to create a structure that will represent the JSON object.
 
 Each structure field describes one field of the JSON object.
 
-For example, let's consider the following JSON object:
+For example, let us consider the following JSON object:
 
 ```json
 {
@@ -29,22 +30,24 @@ struct User {
 }
 ```
 
-In this example, we have created a `User` structure that contains three fields: `name`, `last_name` and `age`.
-As you can see from the example, the field name `last_name` in the structure is different from the field name in the
-JSON object.
+In this example, we have created a `User` structure that contains three fields: `name`, `last_name`
+and `age`.
+As you can see from the example, the field name `last_name` in the structure is different from the
+field name in the JSON object.
 To specify which field name to use when decoding JSON, use `json`
 [attribute](attributes.md).
 The value of this attribute is the name of the field in the JSON object.
 
 V provides the following attributes for structure fields:
 
-- `[json: name]` – describes the field name in the JSON object
-- `[required]` – indicates that the field must be present in the JSON object,
+- `[json: name]` – describes the field name in the JSON object.
+- `[required]` – indicates that the field must be present in the JSON object;
   otherwise decoding will fail.
-  Without the attribute, in this case the field will be assigned a default value,
-- `[skip]` – indicates that the field may not be present in the JSON object and will be skipped during encoding
-- `[omitempty]` – indicates that the field may not be present in the JSON object and will be skipped during encoding,
-  if it has a default value
+  Without the attribute, in this case the field will be assigned a default value.
+- `[skip]` – indicates that the field may not be present in the JSON object and will be skipped
+  during encoding.
+- `[omitempty]` – indicates that the field may not be present in the JSON object and will be skipped
+  during encoding, if it has a default value.
 
 ## Decoding JSON
 

@@ -1,6 +1,6 @@
 # ORM
 
-V has a built-in ORM (object-relational mapping) which supports SQLite, MySQL and Postgres.
+V has a built-in ORM (object-relational mapping) which supports SQLite, MySQL, and Postgres.
 
 V's ORM provides a number of benefits:
 

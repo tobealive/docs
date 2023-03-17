@@ -39,7 +39,7 @@ The type of array is determined by the first element:
 
 The user can explicitly specify the type for the first element: `[u8(16), 32, 64, 128]`.
 
-The above syntax is fine for a small number of known elements but for very large or empty
+The above syntax is fine for a small number of known elements, but for very large or empty
 arrays there is a second initialization syntax:
 
 ```v
@@ -63,7 +63,7 @@ arr := []int{len: 5, init: -1}
 users := []int{}
 ```
 
-Setting the capacity improves performance of pushing elements to the array
+Setting the capacity improves the performance of pushing elements to the array
 as reallocations can be avoided:
 
 ```v play
@@ -115,7 +115,7 @@ println(nums) // []
 `cap`: *capacity* – the amount of memory space which has been reserved for elements,
 but not initialized or counted as elements.
 The array can grow up to this size without being reallocated.
-Usually, V takes care of this field automatically but there are cases where the user
+Usually, V takes care of this field automatically, but there are cases where the user
 may want to do manual optimizations (see [below](#array-initialization)).
 
 ## Array with initial length and capacity
@@ -164,7 +164,8 @@ println('John' !in names) // false
 ```
 
 > **Note**
-> Complexity of the `in` and `!in` operation for arrays is `O(n)`, where n is the length of the array.
+> Complexity of the `in` and `!in` operation for arrays is `O(n)`, where n is the length of the
+> array.
 
 ## Multidimensional Arrays
 
@@ -282,7 +283,7 @@ println(filtered) // ['PIPPO.JPG', 'IMG_02.JPG', 'IMG_01.JPG']
 
 ## Sorting arrays
 
-Sorting arrays of all kinds is very simple and intuitive.
+Sorting arrays of all kinds is elementary and intuitive.
 Special variables `a` and `b` are used when providing a custom sorting condition.
 
 ```v play
@@ -344,7 +345,7 @@ users.sort_with_compare(custom_sort_fn)
 
 A slice is a part of a parent array.
 Initially it refers to the elements between two indices separated by a `..` operator.
-The right-side index must be greater than or equal to the left side index.
+The right-side index must be greater than or equal to the left-side index.
 
 If a right-side index is absent, it is assumed to be the array length.
 If a left-side index is absent, it is assumed to be 0.
@@ -357,7 +358,7 @@ println(nums[1..]) // [10, 20, 30, 40]
 ```
 
 In V slices are arrays themselves (they are not distinct types).
-As a result all array operations may be performed on them.
+As a result, all array operations may be performed on them.
 E.g. they can be pushed onto an array of the same type:
 
 ```v play
@@ -370,10 +371,10 @@ println(array_2) // `[0, 1, 3, 5, 4]`
 A slice is always created with the smallest possible capacity `cap == len` (see
 [`cap` above](#array-initialization)) no matter what the capacity or length
 of the parent array is.
-As a result it is immediately reallocated and copied to another
-memory location when the size increases thus becoming independent of the
-parent array (*copy on grow*).
-In particular pushing elements to a slice does not alter the parent:
+
+As a result, it is immediately reallocated and copied to another memory location when
+the size increases, thus becoming independent of the parent array (*copy on grow*).
+In particular, pushing elements to a slice does not alter the parent:
 
 ```v play
 mut a := [0, 1, 2, 3, 4, 5]

@@ -2,7 +2,8 @@
 
 V has initial support for profiling your programs.
 
-Next command will run your program and generate a **profile.txt** file, which you can then analyze:
+The next command will run your program and generate a **profile.txt** file,
+which you can then analyze:
 
 ```bash
 v -profile profile.txt run file.v
@@ -10,10 +11,10 @@ v -profile profile.txt run file.v
 
 The generated **profile.txt** file will have lines with 4 columns:
 
-1. how many times a function was called
-2. how much time in total a function took (in ms)
-3. how much time on average, a call to a function took (in ns)
-4. the name of the V function
+1. How many times a function was called
+2. How much time in total a function took (in ms)
+3. How much time, on average, a call to a function took (in nanoseconds)
+4. The name of the V function
 
 You can sort on column 3 (average time per function) using:
 

@@ -22,9 +22,10 @@ red := Color{
 println(red) // {255, 0, 0}
 ```
 
-The `str()` method is implicitly defined for all types, the code above overrides it for the `Color` structure.
+The `str()` method is implicitly defined for all types, the code above overrides it for the `Color`
+structure.
 
-You can override it for any type, even arrays, maps or sum types:
+You can override it for any type, even arrays, maps, or sum types:
 
 ```v
 struct Color {

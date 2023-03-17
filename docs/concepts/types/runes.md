@@ -5,7 +5,8 @@
 Many languages have a type like `char` which represents a character, usually ASCII,
 since the size of `char` is defined as 1 byte.
 
-V does not have a `char` type as such (the `u8` type can be used instead), instead V has a `rune` type.
+V does not have a `char` type as such (the `u8` type can be used instead),
+instead V has a `rune` type.
 
 A `rune` represents a single Unicode character and is an alias for `u32`.
 To denote them, use <code>`</code> (backticks):
@@ -42,9 +43,10 @@ println(`\xe2\x98\x85`.bytes()) // [226, 152, 133]
 println(`\342\230\205`.bytes()) // [226, 152, 133]
 ```
 
-Note that `rune` literals use the same escape syntax as strings, but they can only hold one unicode
-character. Therefore, if your code does not specify a single Unicode character, you will receive an
-error at compile time.
+Note that `rune` literals use the same escape syntax as strings,
+but they can only hold one Unicode character.
+Therefore, if your code does not specify a single Unicode character,
+you will receive an error at compile time.
 
 Also remember that strings are indexed as bytes, not runes, so beware:
 

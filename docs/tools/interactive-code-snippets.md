@@ -14,5 +14,5 @@ This is done with
 [V Playground Component](https://github.com/vlang-foundation/playground-component).
 This component is easily embedded on any web page.
 See
-[Project Readme](https://github.com/vlang-foundation/playground-component/blob/master/README.md)
+[Project README](https://github.com/vlang-foundation/playground-component/blob/master/README.md)
 for more details.

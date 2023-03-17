@@ -41,7 +41,8 @@ if parser.token in [.plus, .minus, .div] {
 }
 ```
 
-V optimizes such expressions, so both `if` statements above produce the same machine code and no arrays are created.
+V optimizes such expressions, so both `if` statements above produce the same machine code and no
+arrays are created.
 
 ### `is` and `as` operators
 

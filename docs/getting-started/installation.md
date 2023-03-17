@@ -15,9 +15,9 @@ make
 ## On Windows run make.bat in a cmd shell, or ./make.bat in PowerShell
 ```
 
-And that's it! Find your V executable at `./v`.
+And that is it! Find your V executable at `./v`.
 
-Let's check if it works:
+Let us check if it works:
 
 ```bash
 ./v run examples/hello_world.v
@@ -41,8 +41,8 @@ The [Tiny C Compiler (tcc)](https://repo.or.cz/w/tinycc.git) is downloaded for y
 there is a compatible version for your system, and installed under the V `thirdparty` directory.
 This compiler is very fast, but does almost no optimizations. It is best for development builds.
 
-If V can't find a compatible version of tcc, it will try to use the system C compiler.
-If you don't have a C compiler installed, follow these instructions:
+If V cannot find a compatible version of tcc, it will try to use the system C compiler.
+If you do not have a C compiler installed, follow these instructions:
 
 - [Installing a C compiler on Linux and macOS](https://github.com/vlang/v/wiki/Installing-a-C-compiler-on-Linux-and-macOS)
 - [Installing a C compiler on Windows](https://github.com/vlang/v/wiki/Installing-a-C-compiler-on-Windows)
@@ -50,7 +50,8 @@ If you don't have a C compiler installed, follow these instructions:
 ### Symlinking
 
 To have convenient access to the compiler by its name from anywhere, the compiler provides
-the handy `symlink` command, which creates a symbolic link `/usr/local/bin/v` to the executable V on Unix.
+the handy `symlink` command, which creates a symbolic link `/usr/local/bin/v` to the executable V on
+Unix.
 On Windows, it adds the path to the V executable to the PATH environment variable.
 
 #### Unix
@@ -61,10 +62,10 @@ sudo ./v symlink
 
 #### Windows
 
-On Windows, start a new shell with administrative privileges, for example by pressing the
+On Windows, start a new shell with administrative privileges, for example, by pressing the
 <kbd>Windows Key</kbd>, then type `cmd.exe`, right-click on its menu entry, and choose `Run as
-administrator`. In the new administrative shell, cd to the path where you have compiled V, then
-type:
+administrator`.
+In the new administrative shell, cd to the path where you have compiled V, then type:
 
 ```bat
 v symlink
@@ -162,7 +163,7 @@ On Windows, OpenSSL is simply hard to get working correctly. The instructions
 
 V's `sync` module and channel implementation uses libatomic.
 It is most likely already installed on your system, but if not,
-you can install it, by doing the following:
+you can install it by doing the following:
 
 ```bash
 macOS: already installed
@@ -178,10 +179,11 @@ sudo dnf install libatomic-static
 > If you run into any trouble, or you have a different operating
 > system or Linux distribution that doesn't install or work immediately, please see
 > [Installation Issues](https://github.com/vlang/v/discussions/categories/installation-issues)
-> and search for your OS and problem. If you can't find your problem, please add it to an
-> existing discussion if one exists for your OS, or create a new one if a main discussion
-> doesn't yet exist for your OS.
+> and search for your OS and problem.
+> If you cannot find your problem,
+> please add it to an existing discussion if one exists for your OS,
+> or create a new one if a main discussion does not yet exist for your OS.
 
-And that's it! We ready to start code in V!
+And that is it! We are ready to start code in V!
 
-In next article we will learn how to write our first "Hello, World" program in V.
+In the next article, we will learn how to write our first "Hello, World" program in V.

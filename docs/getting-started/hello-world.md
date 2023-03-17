@@ -7,10 +7,12 @@ fn main() {
 ```
 
 Save this snippet into a file named **hello.v** and run `v run hello.v`.
+Or run an example right here using the Run button in the top right corner.
 
 Congratulations – you just wrote and executed your first V program!
 
-You can compile a program without execution with `v hello.v`. It will produce an executable named `hello`.
+You can compile a program without execution with `v hello.v`.
+It will produce an executable named `hello`.
 You can then run it with `./hello`.
 
 See `v help` for all supported commands.
@@ -21,7 +23,7 @@ In this case `main` doesn't return anything, so there is no return type.
 
 As in many other languages (such as C, Go, and Rust), `main` is the entry point of your program.
 
-[`println`](../concepts/builtin-functions.md#eprintln--printing-to-the-console)
+[`println`](../concepts/builtin-functions.md#eprintln-printing-to-the-console)
 is one of the few
 [built-in functions](../concepts/builtin-functions.md).
 It prints the value passed to it to standard output.
@@ -30,7 +32,7 @@ It prints the value passed to it to standard output.
 This is useful when writing small programs, "scripts", or just learning the language.
 For brevity, `fn main()` will be skipped in this tutorial.
 
-This means that a "hello world" program in V is as simple as
+This means that a "hello world" program in V is as simple as:
 
 ```v
 println('hello world')

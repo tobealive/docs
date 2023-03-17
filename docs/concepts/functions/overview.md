@@ -16,7 +16,7 @@ add(2, 3)
 
 ## Parameters
 
-Function parameters are written in the Go style, first comes the name, then the type:
+Function parameters are written in the Go style; first comes the name, then the type:
 
 ```v
 fn greet(name string, age int) {
@@ -152,8 +152,8 @@ mutate(mut nums)
 println(nums) // [1, 2, 3, 2]
 ```
 
-Note, that you have to add `mut` before `nums` when calling this function. This makes
-it clear that the function being called will modify the value.
+Note that you have to add `mut` before `nums` when calling this function.
+This makes it clear that the function being called will modify the value.
 
 It is preferable to return values instead of modifying arguments,
 e.g. `user = register(user)` instead of `register(mut user)`.
@@ -161,7 +161,8 @@ e.g. `user = register(user)` instead of `register(mut user)`.
 Modifying arguments should only be done in performance-critical parts of your application
 to reduce allocations and copying.
 
-For this reason V doesn't allow the modification of arguments with primitive types (e.g. integers).
+For this reason, V does not allow the modification of arguments with primitive types
+(e.g. integers).
 Only more complex types such as arrays and maps may be modified.
 
 ## Default argument value
@@ -179,7 +180,7 @@ However, this limitation can be bypassed using
 ## Parameter evaluation order
 
 The evaluation order of the parameters of function calls is *NOT* guaranteed.
-Take for example the following program:
+Take, for example, the following program:
 
 ```v
 fn f(a1 int, a2 int, a3 int) {
@@ -191,13 +192,14 @@ fn main() {
 }
 ```
 
-V currently does not guarantee, that it will print 100, 200, 300 in that order.
+V currently does not guarantee that it will print 100, 200, 300 in that order.
 The only guarantee is that 600 (from the body of `f`), will be printed after all of them.
 That *may* change in V 1.0.
 
 ## Generic functions
 
-Functions can have generic parameters, which are specified using square brackets after the function name:
+Functions can have generic parameters, which are specified using square brackets after the function
+name:
 
 ```v
 fn each[T](a []T, cb fn (T)) {

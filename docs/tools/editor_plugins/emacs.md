@@ -4,7 +4,8 @@
 
 Link: <https://github.com/damon-kwok/v-mode>
 
-Syntax highlighting for V files, code navigation, go to definition, code completion and code formatting.
+Syntax highlighting for V files, code navigation, go to definition, code completion and code
+formatting.
 
 ## vlang-mode.el
 

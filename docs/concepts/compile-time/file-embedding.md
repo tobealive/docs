@@ -1,6 +1,7 @@
 # File Embedding
 
-V can embed arbitrary files into the executable with the `$embed_file(<path>)` compile time function.
+V can embed arbitrary files into the executable with the `$embed_file(<path>)`
+compile time function.
 Paths can be absolute or relative to the source file.
 
 ```v ignore
@@ -12,15 +13,18 @@ fn main() {
 }
 ```
 
-When you build your code in a **non-**[**production mode**](../production-builds.md),
+When you build your code in a
+**non-**[**production mode**](../production-builds.md),
 the file will not be embedded.
-Instead, it will be loaded *the first time* your program calls `embedded_file.data()` at runtime, making
-it easier to change in external editor programs, without needing to recompile your executable.
+Instead, it will be loaded *the first time* your program
+calls `embedded_file.data()` at runtime, making it easier to change in external
+editor programs, without needing to recompile your executable.
 
 In [production mode](../production-builds.md),
-the file *will be embedded inside* your executable, increasing your binary size, but making it more
-self-contained and thus easier to distribute.
-In this case, `embedded_file.data()` will cause *no IO*, and it will always return the same data.
+the file *will be embedded inside* your executable, increasing your binary size,
+but making it more self-contained and thus easier to distribute.
+In this case, `embedded_file.data()` will cause *no IO*, and it will always
+return the same data.
 
 `$embed_file` supports compression of the embedded file in production mode.
 Currently only one compression type is supported: `zlib`

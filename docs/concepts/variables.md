@@ -11,7 +11,7 @@ large_number := i64(9999999999)
 
 This means that variables always have an initial value.
 
-The variable's type is inferred from the value on the right hand side.
+The variable's type is inferred from the value on the right-hand side.
 To choose a different type, use type conversion: the expression `T(v)`
 converts the value `v` to the type `T`.
 
@@ -36,7 +36,7 @@ println(age)
 
 To change the value of the variable you can use `=`.
 
-Try run the program above after removing `mut` from the first line.
+Try to run the program above after removing `mut` from the first line.
 
 ## Initialization vs assignment
 

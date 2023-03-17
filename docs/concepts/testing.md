@@ -1,7 +1,8 @@
 # Testing
 
 Testing in V is similar to Go.
-Just like in Go, test files are usually located next to the code under test and have the **_test.v** suffix.
+Just like in Go, test files are usually located next to the code under test and have the **_test.v**
+suffix.
 Each test function must be prefixed with `test_`.
 However, unlike Go, test functions do not take any parameters.
 
@@ -32,7 +33,7 @@ When `assert` fails, V tries to display the values on both sides of the comparis
 (e.g. `<`, `==`).
 This is useful for quickly finding an unexpected value.
 
-`assert` can however be used outside of test functions, which can be useful when developing a new
+`assert` can however be used outside test functions, which can be useful when developing a new
 functionality.
 
 ```v
@@ -46,13 +47,13 @@ assert v[0] < 4
 ```
 
 > **Note**
-> All `assert` statements outside of test functions will be removed when compiled
+> All `assert` statements outside test functions will be removed when compiled
 > in [production mode](./production-builds.md).
 
 ### Asserts with an extra message
 
 This form of the `assert` statement, will print the extra message when it fails.
-Note, that you can use any string expression there – string literals, functions returning a string,
+Note that you can use any string expression there – string literals, functions returning a string,
 strings that interpolate variables, etc.
 
 ```v
@@ -65,10 +66,10 @@ fn test_assertion_with_extra_message_failure() {
 
 ### Asserts that do not abort your program
 
-When initially prototyping functionality and tests, it is sometimes desirable to have asserts,
+When initially prototyping functionality and tests, it is sometimes desirable to have asserts
 that do not stop the program, but just print their failures.
 That can be achieved by tagging your assert containing functions with an `[assert_continues]`
-tag, for example running this program:
+tag, for example, running this program:
 
 ```v
 [assert_continues]
@@ -101,7 +102,7 @@ assert_continues_example.v:3: FAIL: fn main.abc: assert num == 2
 
 ## Test runner
 
-For example, let's take the following code that we want to test:
+For example, let us take the following code that we want to test:
 
 **hello.v:**
 
@@ -154,7 +155,7 @@ Will only run the `test_hello` and `test_add` tests.
 
 ### Alternative test runners
 
-For ease integration, V supports alternative test runners.
+To ease integration, V supports alternative test runners.
 You can specify a test runner using the `-test-runner RUNNER_NAME` flag.
 See an up-to-date list of test runners using `v help test`.
 
@@ -164,7 +165,8 @@ There are two kinds of tests in V: internal and external.
 
 ### Internal
 
-Internal tests must have a module name declaration (`module foo`), like all other **.v** files from the same module.
+Internal tests must have a module name declaration (`module foo`), like all other **.v** files from
+the same module.
 
 Internal tests can call private functions from the unit under test.
 
@@ -213,8 +215,9 @@ fn test_atoi() ? {
 You can put additional test data, including **.v** source files in a folder, named
 `testdata`, right next to your **_test.v** files.
 V's test framework will *ignore* such folders, while scanning for tests to run.
-This is useful, if you want to put **.v** files with invalid V source code, or other tests,
-including known failing ones, that should be run in a specific way/options by a parent **_test.v** file.
+This is useful if you want to put **.v** files with invalid V source code, or other tests,
+including known failing ones, that should be run in a specific way/options by a parent **_test.v**
+file.
 
 ## Running other test files in a test
 
@@ -234,7 +237,7 @@ With `@VEXE` you can call the V compiler and run another test file.
 
 ## Under the hood
 
-All **_test.v** files (both external and internal ones), are compiled as *separate programs*.
+All **_test.v** files (both external and internal ones) are compiled as *separate programs*.
 In other words, you may have as many **_test.v** files, and tests in them as you like, they will
 not affect the compilation of your other code in **.v.v** files normally at all, but only when you
 do explicitly `v file_test.v` or `v test .`.

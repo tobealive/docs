@@ -11,7 +11,8 @@ All modules are compiled statically into a single executable file.
 
 ## Create new modules
 
-To create a new module, create a folder with the name of the module and place the V source files in it.
+To create a new module, create a folder with the name of the module
+and place the V source files in it.
 
 ```shell
 cd your-project
@@ -28,7 +29,8 @@ pub fn say_hi() {
 }
 ```
 
-Each file in a module must have the `module` keyword with the name of the module at the beginning of the file.
+Each file in a module must have the `module` keyword with the name of the module
+at the beginning of the file.
 The folder cannot contain files that define another module.
 
 Now you can use the module in your code:
@@ -49,7 +51,8 @@ To learn more about importing modules, see the [import documentation](module-imp
 
 Sometimes it is useful to combine several modules into one.
 
-To do this, just create another folder inside the folder of the existing module with the name of the submodule:
+To do this, just create another folder inside the folder of the existing module with
+the name of the submodule:
 
 ```shell
 mkdir mymodule/submodule
@@ -78,7 +81,7 @@ fn main() {
 ## Symbol visibility
 
 In the examples above, we used the `pub` keyword when declaring the functions.
-By default, all functions, structures, constants and types are private (not exported).
+By default, all functions, structures, constants, and types are private (not exported).
 To make them available to other modules, add `pub` before their declaration.
 This allows other modules to use them in their own code.
 

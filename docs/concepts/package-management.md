@@ -5,7 +5,7 @@ A V *package* can contain one or more V modules.
 A V *package* must have a `v.mod` file at its top folder, describing the contents of the package.
 
 V packages are installed normally in your `~/.vmodules` folder.
-That location can be overridden by setting the env variable `VMODULES`.
+That location can be overridden by setting the ENV variable `VMODULES`.
 
 ## Package commands
 
@@ -179,9 +179,9 @@ Package are up to date.
 
    > **Warning**
    > Currently it is not possible to edit your entry after submitting.
-   > Check your package name and GitHub url twice as this cannot be changed by you later.
+   > Check your package name and GitHub URL twice as you cannot change this later.
 6. The final package name is a combination of your GitHub account and
    the package name you provided e.g. `mygithubname.mypackage`.
 
-**Optional:** tag your V package with `vlang` and `vlang-package` on github.com
+**Optional:** tag your V package with `vlang` and `vlang-package` on GitHub.com
 to allow for a better search experience.

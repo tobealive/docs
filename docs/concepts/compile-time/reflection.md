@@ -1,8 +1,9 @@
 # Compile-time reflection
 
-V provides compile time reflection to get information about data types and structures at compile time.
-With its help, you can, for example, make your own efficient serializer for any data format that will
-be generated during compilation.
+V provides compile time reflection to get information about data types and structures at compile
+time.
+With its help, you can, for example, make your own efficient serializer for any data format that
+will be generated during compilation.
 
 ## Fields
 
@@ -108,7 +109,7 @@ fn main() {
 
 ## Methods
 
-Each type has a `methods` field, which contains information about the methods of type.
+Each type has a `methods` field, which contains information about the methods of the type.
 This field is of type `[]FunctionData`.
 You can see what fields this type has in
 [compiler source](https://github.com/vlang/v/blob/b6ecd634e3174d657c60a061ad74d31705f12f5f/vlib/builtin/builtin.v#L101).
@@ -183,7 +184,8 @@ fn main() {
 
 ## Types checking
 
-The types stored in the `typ` field in `FieldData` and `FunctionData` can be compared using the `is` operator:
+The types stored in the `typ` field in `FieldData` and `FunctionData` can be compared using the `is`
+operator:
 
 ```v failcompile
 $if method.typ is fn (string) string {

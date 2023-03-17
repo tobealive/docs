@@ -1,6 +1,7 @@
 # Defer
 
-A `defer` statement defers the execution of a block of statements until the surrounding function returns.
+A `defer` statement defers the execution of a block of statements until the surrounding function
+returns.
 
 ```v
 import os
@@ -21,7 +22,8 @@ fn read_log() {
 }
 ```
 
-If the function returns a value the `defer` block is executed *after* the return expression is evaluated:
+If the function returns a value the `defer` block is executed *after* the return expression is
+evaluated:
 
 ```v
 import os

@@ -29,7 +29,7 @@ interface Speaker {
 }
 
 struct Dog {}
-   
+
 fn (d Dog) speak(msg string) string {
     return '${msg}. Woof, woof!'
 }
@@ -37,7 +37,7 @@ fn (d Dog) speak(msg string) string {
 fn greet(s Speaker) {
     println(s.speak("Hello"))
 }
-    
+
 fn main() {
     d := Dog{}
     greet(d) // Hello. Woof, woof!
@@ -120,13 +120,13 @@ interface Speaker {
 }
 
 struct Dog {}
-   
+
 fn (d Dog) speak(msg string) string {
     return '${msg}. Woof, woof!'
 }
-    
+
 struct Cat {}
-    
+
 fn (c Cat) speak(msg string) string {
     return '${msg}. Meow, meow!'
 }
@@ -167,11 +167,12 @@ fn greet(s Speaker) {
 
 ### Interface method definitions
 
-Also unlike Go, an interface can have its own methods, similar to how
+Also, unlike Go, an interface can have its own methods, similar to how
 structs can have their methods.
-These 'interface methods' do not have to be implemented, by structs which implement that interface.
+These 'interface methods' do not have to be implemented by structs which implement that interface.
 They are just a convenient way to write `i.some_function()` instead of `some_function(i)`,
-similar to how struct methods can be looked at, as a convenience for writing `s.xyz()` instead of `xyz(s)`.
+similar to how struct methods can be looked at, as a convenience for writing `s.xyz()` instead
+of `xyz(s)`.
 
 > **Note**
 > This feature is NOT a "default implementation" like in C#.

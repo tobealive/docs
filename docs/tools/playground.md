@@ -5,11 +5,12 @@ where you can run, edit and share V code online.
 
 Playground is an
 [open source project](https://github.com/vlang-foundation/playground)
-that you can help develop, or study its source code for yourself.
+that you can help develop or study its source code for yourself.
 If you find any problems, please let us know by creating a new
 [issue](https://github.com/vlang-foundation/playground/issues/new).
 
-In the playground editor, you can write any code as if you were writing it in a file on your computer.
+In the playground editor, you can write any code as if you were writing it in a file on your
+computer.
 You can add structures, functions, import modules, etc.
 
 The playground saves your code in your browser's local storage.
@@ -28,13 +29,13 @@ To format the code, press <kbd>Ctrl + L</kbd> or click the **Format** button on 
 
 ### Share code
 
-To share the code, press the **Share** button in the toolbar.
-It's create a new URL to your code and copy it to your clipboard.
-Created link also available in the **Terminal**.
+To share the code, press the **Share** button on the toolbar.
+It's creating a new URL to your code and copy it to your clipboard.
+Created link is also available in the **Terminal**.
 
 ### Select predefined examples
 
-On the toolbar on the right side there is a drop-down list **Examples**.
+On the toolbar on the right side, there is a drop-down list of **Examples**.
 These examples have comments to help you understand how V works.
 
 ### Pass arguments to your program
@@ -55,7 +56,8 @@ The default configuration runs your code like a normal program.
 
 The **Test** configuration runs your code as
 [tests](../concepts/testing.md).
-That is, if functions with the `test_` prefix are defined in the file, then all of them will be run as tests.
+That is, if functions with the `test_` prefix are defined in the file, then all of them will be run
+as tests.
 
 ### Show Generated C code
 

@@ -33,5 +33,5 @@ println(os.args)
 
 > **Note**
 > Any V compiler flags should be passed *before* the `run` command.
-> Everything after the source file/folder, will be passed to the program
+> Everything after the source file/folder will be passed to the program
 > as is – it will not be processed by V.
