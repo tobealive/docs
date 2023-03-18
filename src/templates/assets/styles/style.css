@@ -248,10 +248,16 @@ header .header-container .mobile-header-logo a {
   display: grid;
   align-items: center;
 }
-header .header-container .mobile-header-logo span {
+header .header-container .mobile-header-logo span.title {
   font-size: 17px;
   font-weight: 500;
   color: var(--text-color);
+}
+header .header-container .mobile-header-logo a.title {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-color);
+  text-decoration: none;
 }
 header .header-container .mobile-header-logo img {
   width: 30px;

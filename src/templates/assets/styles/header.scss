@@ -110,10 +110,17 @@ header {
         align-items: center;
       }
 
-      span {
+      span.title {
         font-size: 17px;
         font-weight: 500;
         color: var(--text-color);
+      }
+
+      a.title {
+        font-size: 17px;
+        font-weight: 500;
+        color: var(--text-color);
+        text-decoration: none;
       }
 
       img {
