@@ -62,6 +62,11 @@ searchResultsElements.forEach((searchResultElement) => {
     searchResultElement.addEventListener("mouseenter", () => {
         selectSearchResultElement(searchResultElement);
     })
+
+    // on touch set aria-selected to true and remove from other elements
+    searchResultElement.addEventListener("touchstart", () => {
+        selectSearchResultElement(searchResultElement);
+    })
 })
 
 document.addEventListener("keydown", (event) => {

@@ -523,6 +523,7 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
     height: 100%;
     margin: 0;
     padding: 20px;
+    border: none;
   }
 }
 .search-window .search-form .search-header {
