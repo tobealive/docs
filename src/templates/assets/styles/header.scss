@@ -49,10 +49,18 @@
       grid-template-columns: max-content auto max-content;
       grid-column-gap: 10px;
     }
+
+    .mobile-header-list-before-logo {
+      display: block;
+    }
   }
 
   &.with-search-desktop {
     @media (min-width: 1000px) {
+      .search-container {
+        display: block;
+      }
+
       .header-container {
         grid-template-columns: 320px auto max-content;
         grid-column-gap: 10px;
@@ -116,9 +124,7 @@ header {
     }
 
     .search-container {
-      @media (max-width: 1000px) {
-        display: none;
-      }
+      display: none;
 
       .search-button {
         padding: 10px 20px 10px 17px;
@@ -271,6 +277,10 @@ header {
 
     .mobile-header-list {
       @media (min-width: 1000px) {
+        display: none;
+      }
+
+      &.mobile-header-list-before-logo {
         display: none;
       }
 
@@ -429,6 +439,7 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
       margin: 0;
       padding: 20px;
 
+      border-radius: 0;
       border: none;
     }
 

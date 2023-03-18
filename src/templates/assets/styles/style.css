@@ -214,7 +214,13 @@ html[data-theme=dark] {
   grid-template-columns: max-content auto max-content;
   grid-column-gap: 10px;
 }
+.header-component.with-button-before-logo .mobile-header-list-before-logo {
+  display: block;
+}
 @media (min-width: 1000px) {
+  .header-component.with-search-desktop .search-container {
+    display: block;
+  }
   .header-component.with-search-desktop .header-container {
     grid-template-columns: 320px auto max-content;
     grid-column-gap: 10px;
@@ -272,10 +278,8 @@ header .header-container .logo span {
 header .header-container .logo img {
   width: 25px;
 }
-@media (max-width: 1000px) {
-  header .header-container .search-container {
-    display: none;
-  }
+header .header-container .search-container {
+  display: none;
 }
 header .header-container .search-container .search-button {
   padding: 10px 20px 10px 17px;
@@ -397,6 +401,9 @@ header .header-container ul.main-header-list li {
   header .header-container .mobile-header-list {
     display: none;
   }
+}
+header .header-container .mobile-header-list.mobile-header-list-before-logo {
+  display: none;
 }
 header .header-container .mobile-header-list button {
   position: relative;
@@ -523,6 +530,7 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
     height: 100%;
     margin: 0;
     padding: 20px;
+    border-radius: 0;
     border: none;
   }
 }
