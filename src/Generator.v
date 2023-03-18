@@ -4,7 +4,8 @@ import markdown
 import os
 
 const (
-	template_path = './templates/index.html'
+	template_path  = './templates/index.html'
+	main_page_path = './src/templates/main-page.html'
 )
 
 [noinit]
@@ -21,8 +22,7 @@ fn new_generator(document_node &DocumentNode, output_path string) !&Generator {
 }
 
 fn (g &Generator) generate() ! {
-	write_output_file('index.html', g.render_page_from_template(g.root_node, g.root_node,
-		g.root_node.markdown_content, markdown.to_html(g.root_node.markdown_content)))!
+	write_output_file('index.html', g.render_index_page_from_template(g.root_node, g.root_node))!
 
 	g.generate_from_tree(g.root_node)!
 }
@@ -53,6 +53,23 @@ fn (_ &Generator) render_page_from_template(root_node &DocumentNode, node &Docum
 	markdown_subtopics := split_source_by_topics(markdown_content, 2)
 	subtopics := extract_topics_from_markdown_parts(markdown_subtopics, true)
 	content := html_content
+
+	return $tmpl(template_path)
+}
+
+fn (_ &Generator) render_index_page_from_template(root_node &DocumentNode, node &DocumentNode) string {
+	// get first subtopic of root node
+	next_node := root_node.contents.first().contents.first()
+	prev_node := node.prev()
+
+	markdown_subtopics := []string{}
+	subtopics := []Topic{}
+
+	main_page_content := os.read_file(main_page_path) or {
+		eprintln('Could not read main page content')
+		return ''
+	}
+	content := main_page_content
 
 	return $tmpl(template_path)
 }

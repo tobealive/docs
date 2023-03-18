@@ -275,6 +275,7 @@ article {
 
           &.active {
             border-left: 3px solid var(--brand-color);
+
             a {
               color: var(--text-color);
             }
@@ -347,6 +348,12 @@ article {
         padding-bottom: 50px;
         border-bottom: 1px solid var(--divider-color);
       }
+    }
+
+    h3.subtitle {
+      font-size: 20px;
+      font-weight: 300;
+      margin-bottom: 20px;
     }
 
     section {
@@ -520,12 +527,20 @@ article {
     transition: border .25s;
 
     display: grid;
+    grid-auto-rows: max-content;
     text-decoration-style: unset !important;
     text-decoration: none;
     color: var(--text-color);
 
+    &.bigger-logo {
+      .logo {
+        width: 70px;
+        height: 70px;
+      }
+    }
+
     & .logo svg .foreground {
-      fill: var(--black);
+      fill: var(--text-color);
     }
 
     &:hover {
@@ -536,6 +551,7 @@ article {
         svg .background {
           fill: var(--brand-color);
         }
+
         //svg .foreground {
         //  fill: var(--black);
         //}
@@ -562,6 +578,7 @@ article {
         .background {
           transition: fill .25s;
         }
+
         .foreground {
           transition: fill .25s;
         }
@@ -577,7 +594,7 @@ article {
     .description {
       font-size: 14px;
       font-weight: 400;
-      margin-bottom: 20px;
+      margin-bottom: 5px;
     }
   }
 }
