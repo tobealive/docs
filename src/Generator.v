@@ -62,7 +62,6 @@ fn (_ &Generator) render_index_page_from_template(root_node &DocumentNode, node 
 	next_node := root_node.contents.first().contents.first()
 	prev_node := node.prev()
 
-	markdown_subtopics := []string{}
 	subtopics := []Topic{}
 
 	main_page_content := os.read_file(main_page_path) or {

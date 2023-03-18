@@ -3,6 +3,7 @@ html {
   --dark-gray: #1e1f22;
   --almost-black: #1a1a1a;
 
+  --gray-22: #222226;
   --gray-32: #323438;
   --gray-3a: #3a3a3a;
   --gray-3b: #3b3c3c;
@@ -10,6 +11,7 @@ html {
   --gray-7e: #7e7e80;
   --gray-be: #bebebf;
   --gray-cb: #cbc9c9;
+  --gray-ef: #efefef;
   --gray-ec: #ecedf1;
   --gray-e0: #e0e0e0;
   --gray-87: rgba(255, 255, 255, .87);
@@ -86,10 +88,22 @@ html {
   // buttons
   --button-hover-background-color: var(--gray-ec);
 
+  // code-related
   --keyword-color: #0033b3;
   --comment-color: #8c8c8c;
   --number-color: #1750eb;
   --string-color: #067d17;
+
+  // search
+  --search-button-background-color: var(--gray-f9);
+  --search-button-hover-border-color: var(--brand-color);
+  --search-button-text-color: var(--gray-7e);
+  --search-input-placeholder-color: var(--gray-be);
+  --search-result-active-background-color: var(--brand-color);
+  --search-result-active-text-color: var(--text-color);
+  --search-result-footer-hint-text-color: var(--gray-7e);
+  --search-result-footer-hint-key-background-color: var(--gray-ef);
+  --search-result-footer-hint-keytext-color: var(--gray-3b);
 
   // symbol and module references
   --symbol-ref-link-color: var(--brand-color-dark);
@@ -150,6 +164,18 @@ html[data-theme="dark"] {
   // buttons
   --button-hover-background-color: var(--gray-32);
 
+  // search
+  --search-button-background-color: var(--almost-black);
+  --search-button-hover-border-color: var(--brand-color);
+  --search-button-text-color: var(--gray-be);
+  --search-input-placeholder-color: var(--gray-5a);
+  --search-result-active-background-color: var(--brand-color);
+  --search-result-active-text-color: var(--text-color);
+  --search-result-footer-hint-text-color: var(--gray-5a);
+  --search-result-footer-hint-key-background-color: var(--gray-22);
+  --search-result-footer-hint-keytext-color: var(--gray-be);
+
+  // code-related
   --keyword-color: #cc7832;
   --comment-color: gray;
   --number-color: #2AACB8;
