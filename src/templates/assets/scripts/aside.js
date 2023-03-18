@@ -37,3 +37,28 @@ document.querySelectorAll('.js-item .link').forEach((item) => {
 document.querySelectorAll('.js-sub-list').forEach((subList) => {
     subList.classList.remove('open')
 });
+
+const asideNavigation = document.querySelector("aside.navigation");
+const closeAsideNavigationButton = asideNavigation.querySelector(".js-close-aside-navigation-button");
+const asideNavigationOverlay = document.querySelector(".aside-navigation-overlay");
+const openAsideNavigationButton = document.querySelector(".js-open-aside-navigation-button");
+
+const closeAsideNavigation = () => {
+    asideNavigation.classList.remove("open");
+}
+
+const openAsideNavigation = () => {
+    asideNavigation.classList.add("open");
+}
+
+openAsideNavigationButton.addEventListener("click", () => {
+    openAsideNavigation();
+})
+
+closeAsideNavigationButton.addEventListener("click", () => {
+    closeAsideNavigation();
+});
+
+asideNavigationOverlay.addEventListener("click", () => {
+    closeAsideNavigation();
+});

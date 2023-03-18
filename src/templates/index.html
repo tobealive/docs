@@ -11,9 +11,21 @@
 </head>
 <body>
 
-<div class="header-component fixed transparent">
+<div class="header-component fixed transparent-desktop with-button-before-logo">
     <header>
         <div class="header-container">
+            <ul class="mobile-header-list">
+                <li>
+                    <button class="open-menu js-open-aside-navigation-button">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect class="icon-data" x="1" y="2.00775" width="14" height="1" rx="0.5" fill="black"/>
+                            <rect class="icon-data" x="1" y="13.0379" width="14" height="1" rx="0.5" fill="black"/>
+                            <rect class="icon-data" x="1" y="7.5" width="14" height="1" rx="0.5" fill="black"/>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+
             <div class="logo"></div>
 
             <div class="mobile-header-logo">
@@ -131,10 +143,22 @@
 
 <div class="wrapper">
     <aside class="navigation">
-        <a href="/index.html" class="title">
-            <img src="/assets/images/logo.svg" alt="">
-            <span>Documentation</span>
-        </a>
+        <div class="header">
+            <a href="/index.html" class="title">
+                <img src="/assets/images/logo.svg" alt="">
+                <span>Documentation</span>
+            </a>
+            <div class="close-button-wrapper">
+                <div class="close-button js-close-aside-navigation-button">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="icon-stroke" d="M2.32349 2.34091L13.7059 13.7233" stroke="black"
+                              stroke-linecap="round"/>
+                        <path class="icon-stroke" d="M2.32349 13.7233L13.7059 2.34091" stroke="black"
+                              stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
         <nav>
             <div class="group">
                 <section>
@@ -197,6 +221,7 @@
             </div>
         </nav>
     </aside>
+    <div class="aside-navigation-overlay js-aside-navigation-overlay"></div>
 
     <article>
         <div class="container">

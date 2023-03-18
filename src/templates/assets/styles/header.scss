@@ -14,11 +14,17 @@
     }
   }
 
-  &.transparent {
+  &.transparent-desktop {
     header {
       -webkit-backdrop-filter: saturate(50%) blur(8px);
       backdrop-filter: saturate(50%) blur(8px);
       background: var(--header-transparent-background-color);
+
+      @media (max-width: 1000px) {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        background: var(--header-background-color);
+      }
     }
   }
 
@@ -35,6 +41,13 @@
   &.no-search-button {
     .header-container button.search {
       display: none !important;
+    }
+  }
+
+  &.with-button-before-logo {
+    .header-container {
+      grid-template-columns: max-content auto max-content;
+      grid-column-gap: 10px;
     }
   }
 }
@@ -267,7 +280,6 @@ aside.mobile-header-aside {
   .close-button-wrapper {
     display: grid;
     justify-items: end;
-
   }
 
   ul.aside-navigation {
