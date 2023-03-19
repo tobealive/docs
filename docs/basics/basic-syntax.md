@@ -26,6 +26,7 @@ To print to the console, use the `print` or `println` functions.
 ```v play
 print('Hello,')
 print(' World!')
+print("\n")
 ```
 
 `println` prints the value passed to it to standard output and adds a newline
@@ -50,7 +51,7 @@ fn concatenate(a string, b string) string {
 }
 ```
 
-If function doesn't return anything, you can omit the return type.
+If a function doesn't return anything, you can omit the return type.
 
 ```v
 fn say_hello() {
@@ -58,7 +59,7 @@ fn say_hello() {
 }
 ```
 
-Function calls looks like this:
+Function calls look like this:
 
 ```v ignore
 concatenate('Hello, ', 'World!')
@@ -175,7 +176,7 @@ fn main() {
 		name: 'Bob'
 		age: 42
 	}
-	println(.age)
+	println(p.age)
 }
 ```
 
@@ -223,6 +224,13 @@ fn (p Person) greet() {
 
 fn greet(g Greeter) {
 	g.greet()
+}
+
+fn main() {
+    p := Person{
+        name: 'Bob'
+    }
+    greet(p)
 }
 ```
 
