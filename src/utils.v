@@ -23,6 +23,10 @@ fn copy_assets_to_output() ! {
 	os.cp_all(assets_path, os.join_path(output_path, 'assets'), true)!
 }
 
+fn copy_images_to_output() ! {
+	os.cp_all(images_path, os.join_path(output_path, 'assets/_images'), true)!
+}
+
 fn write_output_file(filename string, content string) ! {
 	os.write_file(os.join_path(output_path, filename), content)!
 }

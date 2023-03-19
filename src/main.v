@@ -4,6 +4,7 @@ const (
 	docs_path   = 'docs'
 	output_path = 'output'
 	assets_path = 'src/templates/assets'
+	images_path = 'docs/_images'
 )
 
 fn main() {
@@ -17,4 +18,5 @@ fn main() {
 	generator.generate()!
 
 	copy_assets_to_output()!
+	copy_images_to_output()!
 }
