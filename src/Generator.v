@@ -50,6 +50,8 @@ fn (_ &Generator) render_page_from_template(root_node &DocumentNode, node &Docum
 	next_node := node.next()
 	prev_node := node.prev()
 
+	need_playground := used_playground(markdown_content)
+
 	markdown_subtopics := split_source_by_topics(markdown_content, 2)
 	subtopics := extract_topics_from_markdown_parts(markdown_subtopics, true)
 	content := html_content
@@ -63,6 +65,7 @@ fn (_ &Generator) render_index_page_from_template(root_node &DocumentNode, node 
 	prev_node := node.prev()
 
 	subtopics := []Topic{}
+	need_playground := false
 
 	main_page_content := os.read_file(main_page_path) or {
 		eprintln('Could not read main page content')

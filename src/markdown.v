@@ -44,3 +44,7 @@ fn extract_topics_from_markdown_parts(parts []string, skip_first bool) []Topic {
 
 	return topics
 }
+
+fn used_playground(source string) bool {
+	return source.split_into_lines().any(it.contains('```v'))
+}

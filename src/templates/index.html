@@ -5,7 +5,10 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
     <link rel="stylesheet" href="/assets/styles/style.css">
+
+    @if need_playground
     <link rel="stylesheet" href="/assets/styles/vlang-playground.css">
+    @end
 
     <title>V Documentation</title>
 </head>
@@ -420,6 +423,7 @@
 
 </script>
 
+@if need_playground
 <script src="/assets/scripts/vlang-playground.js"></script>
 
 <script>
@@ -435,8 +439,8 @@
             playgrounds.push(playground);
         });
     })
-
 </script>
+@end
 
 <script src="/assets/scripts/aside.js"></script>
 <script src="/assets/scripts/theme.js"></script>
