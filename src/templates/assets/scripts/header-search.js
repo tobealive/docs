@@ -105,3 +105,18 @@ document.addEventListener("keydown", (event) => {
 const setNoResults = () => {
     searchResults.classList.add("no-results-found");
 }
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "k" && (event.metaKey || event.ctrlKey)) {
+        event.preventDefault();
+        openSearchWindow();
+    }
+})
+
+document.addEventListener("DOMContentLoaded", () => {
+    const ctrlKey = document.querySelector(".ctrl-key");
+    const platform = navigator.platform.toLowerCase();
+    if (platform.includes("mac") || platform.includes("ios")) {
+        ctrlKey.textContent = "⌘";
+    }
+})
