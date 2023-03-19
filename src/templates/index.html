@@ -343,7 +343,12 @@
                             <div class="page prev-page">
                                 <a class="page-link" href="/@prev_node.html_url">
                                     <span class="desc">Previous page</span>
-                                    <span class="title">@prev_node.title</span>
+
+                                    @if prev_node.title == 'Overview'
+                                    <span class="title">@{prev_node.parent.title} Overview</span>
+                                    @else
+                                    <span class="title">@{prev_node.title}</span>
+                                    @end
                                 </a>
                             </div>
                             @else
@@ -354,7 +359,12 @@
                             <div class="page next-page">
                                 <a class="page-link" href="/@next_node.html_url">
                                     <span class="desc">Next page</span>
-                                    <span class="title">@next_node.title</span>
+
+                                    @if next_node.title == 'Overview'
+                                    <span class="title">@{next_node.parent.title} Overview</span>
+                                    @else
+                                    <span class="title">@{next_node.title}</span>
+                                    @end
                                 </a>
                             </div>
                             @else
