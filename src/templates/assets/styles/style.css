@@ -33,6 +33,7 @@ html {
   --dark-gray: #1e1f22;
   --almost-black: #1a1a1a;
   --gray-22: #222226;
+  --gray-24: #242424;
   --gray-32: #323438;
   --gray-3a: #3a3a3a;
   --gray-3b: #3b3c3c;
@@ -69,6 +70,7 @@ html {
   --divider-color: var(--gray-e0);
   --text-color: var(--black);
   --secondary-color: var(--gray-7e);
+  --scrollbar-thumb-color: var(--gray-ef);
   --header-background-color: var(--main-color);
   --header-transparent-background-color: var(--background-light-transparent-gray);
   --overlay-background-color: var(--semi-dark-transparent-gray);
@@ -108,6 +110,8 @@ html {
   --symbol-ref-underline: none;
   --symbol-ref-hover-color: var(--symbol-ref-link-color);
   --module-ref-link-color: var(--brand-color-dark);
+  --playground-header-background-color: var(--white);
+  --tools-background-color: var(--white);
 }
 
 html[data-theme=dark] {
@@ -117,6 +121,7 @@ html[data-theme=dark] {
   --divider-color: var(--gray-3a);
   --text-color: var(--gray-87);
   --secondary-color: var(--gray-be);
+  --scrollbar-thumb-color: var(--gray-32);
   --header-background-color: var(--main-color);
   --header-transparent-background-color: var(--background-transparent-gray);
   --overlay-background-color: var(--semi-dark-transparent-gray);
@@ -156,6 +161,8 @@ html[data-theme=dark] {
   --symbol-ref-underline: underline;
   --symbol-ref-hover-color: var(--keyword-color);
   --module-ref-link-color: var(--light-salat-green);
+  --playground-header-background-color: var(--gray-24);
+  --tools-background-color: var(--dark-gray);
 }
 
 .close-button {
