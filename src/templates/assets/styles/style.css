@@ -908,7 +908,7 @@ kbd:active {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: transparent;
+  background: var(--scrollbar-thumb-color);
   border-radius: 5px;
 }
 
