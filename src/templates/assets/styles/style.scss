@@ -3,6 +3,7 @@
 @import "header";
 @import "aside";
 @import "blockquote";
+@import "shortcut";
 
 * {
   box-sizing: border-box;
@@ -251,7 +252,6 @@ article {
 
       .aside-container {
         top: 50px;
-        position: -webkit-sticky;
         position: sticky;
         padding-top: 50px;
       }
@@ -463,16 +463,6 @@ article {
       }
     }
 
-    kbd {
-      display: inline-block;
-      font: 13px "JetBrains Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-      line-height: 10px;
-      border-radius: 4px;
-      padding: 5px 6px;
-      color: var(--inline-code-text-color);
-      background-color: var(--inline-code-background-color);
-    }
-
     ul {
       list-style: disc;
       padding-left: 20px;
@@ -481,6 +471,11 @@ article {
       li {
         margin: 5px 0;
       }
+    }
+
+    img {
+      max-width: 100%;
+      border: 1px solid var(--border-color);
     }
 
     .tag {
