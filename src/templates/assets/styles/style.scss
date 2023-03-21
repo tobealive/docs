@@ -40,6 +40,7 @@ body {
 
   font: 400 14px/1.5 "JetBrainsSans", Helvetica, Arial, sans-serif;
   -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
   font-feature-settings: "kern" 1;
   overflow-x: hidden;
 }
@@ -336,7 +337,7 @@ article {
   }
 
   main {
-    font: 300 16px/1.5 "JetBrainsSans", Helvetica, Arial, sans-serif;
+    font: 400 16px/1.5 "JetBrainsSans", Helvetica, Arial, sans-serif;
     color: var(--text-color);
 
     h1 {
