@@ -1,5 +1,7 @@
 # Maps
 
+<!-- Add information about or block -->
+
 ```v
 mut m := map[string]int{} // a map with `string` keys and `int` values
 m['one'] = 1

@@ -63,7 +63,7 @@ if user := get_user(0) {
 // user not found
 ```
 
-See [Error handling](../error-handling.md) for more information.
+See [Error handling](../error-handling/overview.md) for more information.
 
 ## Match expression
 

@@ -40,8 +40,13 @@ The following tokens are always interpreted as keywords and cannot be used as id
     - declares a [mutable variable](../concepts/variables.md)
     - starts a [mutable fields block](../concepts/structs/overview.md#fields)
     - declares method receiver as [mutable](../concepts/structs/overview.md#mutable-receivers)
-- `none` – literal value of the [none type](../concepts/error-handling.md)
-- `or` – defines the branch for [result or option type](../concepts/error-handling.md)
+- `none` – literal value of the [none type](../concepts/error-handling/overview.md)
+- `or`
+    - defines the branch for
+      [result or option type](../concepts/error-handling/overview.md#or-blocks)
+    - defines the branch for
+      [array fetch](../concepts/types/arrays.md#array-element-fetching)
+      that is executed when the index is out of bounds
 - `pub`
     - makes a [declaration](../concepts/modules/overview.md#symbol-visibility) public
     - starts a [public fields block](../concepts/structs/overview.md#fields)

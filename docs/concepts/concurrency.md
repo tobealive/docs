@@ -174,7 +174,7 @@ Any attempt to do so will then result in a runtime panic (except `select` and
 Attempts to pop will return immediately if the associated channel has been closed and
 the buffer is empty.
 This situation can be handled using an `or {}` block
-(see [Handling options/results](error-handling.md)).
+(see [Handling options/results](error-handling/overview.md)).
 
 ```v wip
 ch := chan int{}

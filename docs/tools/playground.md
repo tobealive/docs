@@ -23,13 +23,13 @@ So you can close the tab and come back later to continue working on your code.
 To run the code, press <kbd>Ctrl + R</kbd> or click the **Run** button on the toolbar.
 See also [available configurations](#configurations).
 
-![](/assets/_images/tools/playground/run.png)
+![Run button](/assets/_images/tools/playground/run.png)
 
 ### Format code
 
 To format the code, press <kbd>Ctrl + L</kbd> or click the **Format** button on the toolbar.
 
-![](/assets/_images/tools/playground/format.png)
+![Format button](/assets/_images/tools/playground/format.png)
 
 ### Share code
 
@@ -37,21 +37,21 @@ To share the code, press the **Share** button on the toolbar.
 It's creating a new URL to your code and copy it to your clipboard.
 The created link is also available in the **Terminal**.
 
-![](/assets/_images/tools/playground/share.png)
+![Share button](/assets/_images/tools/playground/share.png)
 
 ### Select predefined examples
 
 On the toolbar on the right side, there is a drop-down list of **Examples**.
 These examples have comments to help you understand how V works.
 
-![](/assets/_images/tools/playground/examples.png)
+![Examples drop-down list](/assets/_images/tools/playground/examples.png)
 
 ### Pass arguments to compiler
 
 Optionally, you can pass arguments to the compiler that it will use when compiling.
 To do this, add them to the **Build arguments** field in the toolbar.
 
-![](/assets/_images/tools/playground/build-arguments.png)
+![Build arguments input](/assets/_images/tools/playground/build-arguments.png)
 
 ### Pass arguments to your program
 
@@ -59,14 +59,14 @@ Sometimes you may need to pass command line arguments, for example,
 if your program accepts some flags.
 You can add them to the **Run Arguments** field on the toolbar.
 
-![](/assets/_images/tools/playground/run-arguments.png)
+![Run arguments input](/assets/_images/tools/playground/run-arguments.png)
 
 ## Configurations
 
 By default, playground runs your code like a normal program.
 However, the Playground also provides configurations for tests and for viewing the generated C code.
 
-![](/assets/_images/tools/playground/configurations.png)
+![Configuration options](/assets/_images/tools/playground/configurations.png)
 
 ### Run
 
@@ -84,7 +84,7 @@ as tests.
 The **Show Generated C code** configuration shows the generated C code.
 This configuration is very useful to understand how V translates your code to C.
 
-![](/assets/_images/tools/playground/cgen-mode.png)
+![Show C generated mode](/assets/_images/tools/playground/cgen-mode.png)
 
 In this mode, the source code in V is shown on the left,
 and the generated C code is shown on the right.

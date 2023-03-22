@@ -175,7 +175,7 @@ The label must immediately precede the outer loop.
 ## Custom iterators
 
 Types that implement a `next()` method returning an
-[`Option`](../error-handling.md#optionresult-types)
+[`Option`](../error-handling/overview.md#option-types)
 can be iterated with a `for` loop.
 
 ```v play

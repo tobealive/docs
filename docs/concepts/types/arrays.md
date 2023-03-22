@@ -129,6 +129,45 @@ println(nums.cap) // 20
 println(nums) // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ```
 
+## Array element fetching
+
+You can fetch an element from an array using the index operator `[]`:
+
+```v play
+mut nums := [1, 2, 3]
+println(nums[0]) // 1
+println(nums[1]) // 2
+```
+
+If the index is out of bounds of the array,
+then a panic will be triggered and the program will end with an error:
+
+```v failcompile play
+mut nums := [1, 2, 3]
+println(nums[3]) // panic: index out of range (i == 3, a.len == 3)
+```
+
+To return the default value if the array is out of bounds, use the `or` block:
+
+```v play
+mut nums := [1, 2, 3]
+println(nums[3] or { 100 }) // 100
+```
+
+`or` block, as in the case of
+[handling Result/Option types](../error-handling/overview.md#or-blocks),
+can contain several statements:
+
+```v play
+mut nums := [1, 2, 3]
+println(nums[3] or {
+    println('index out of range')
+    100
+})
+// index out of range
+// 100
+```
+
 ## Append to an array
 
 An element can be appended to the end of an array using the push operator `<<`.
@@ -388,7 +427,7 @@ println(a) // `[0, 1, 7, 3, 4, 5]` – no change
 println(b) // `[7, 3, 9]`
 ```
 
-Appending to the parent array may or may not make it independent of its child slices.
+Appending the parent array may or may not make it independent of its child slices.
 The behaviour depends on the parent's capacity and is predictable:
 
 ```v play
@@ -450,7 +489,7 @@ You can only modify their elements in place.
 
 However, access to the elements of fixed size arrays is more efficient,
 they need less memory than ordinary arrays, and unlike ordinary arrays,
-their data is on the stack, so you may want to use them as buffers if you
+their data are on the stack, so you may want to use them as buffers if you
 do not want additional heap allocations.
 
 Most methods are defined to work on ordinary arrays, not on fixed size arrays.
