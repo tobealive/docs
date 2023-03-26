@@ -76,6 +76,19 @@ html[data-theme="dark"] {
       }
     }
   }
+
+  &.search-desktop-after-logo {
+    @media (min-width: 1000px) {
+      .search-container {
+        margin-left: 30px;
+      }
+
+      .header-container {
+        grid-template-columns: max-content auto max-content;
+        grid-column-gap: 10px;
+      }
+    }
+  }
 }
 
 header {
@@ -362,6 +375,10 @@ li.navigation-item {
       grid-column-gap: 4px;
       align-items: center;
 
+      @media (max-width: 1000px) {
+        margin-left: -20px;
+      }
+
       svg {
         width: 13px;
 
@@ -439,7 +456,7 @@ aside.mobile-header-aside {
   z-index: 1000;
 
   transform: translateX(100%);
-  transition: transform 100ms ease-in-out;
+  transition: opacity .25s, transform .5s cubic-bezier(.19, 1, .22, 1);
 
   &.open {
     transform: translateX(0);
@@ -451,7 +468,7 @@ aside.mobile-header-aside {
   }
 
   ul.aside-navigation {
-    padding: 10px 70px 0 0;
+    padding: 10px 100px 0 0;
     margin: 0;
     list-style: none;
 
@@ -500,22 +517,28 @@ aside.mobile-header-aside {
 }
 
 aside.mobile-header-aside.open + .header-mobile-overlay {
-  display: block;
+  visibility: visible;
   background-color: var(--overlay-background-color);
+  opacity: 1;
 }
 
 .header-mobile-overlay, .search-overlay {
-  display: none;
+  display: block;
+  visibility: hidden;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   position: fixed;
   z-index: 999;
+  opacity: 0;
+
+  transition: opacity .5s;
 }
 
 .search-window {
-  display: none;
+  display: grid;
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -525,8 +548,14 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
 
   pointer-events: none;
 
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity .20s, visibility .20s, transform .20s;
+
   &.open {
-    display: grid;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
   }
 
   .search-form {
@@ -834,6 +863,7 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
 }
 
 .search-window.open + .search-overlay {
-  display: block;
+  visibility: visible;
   background-color: var(--overlay-background-color);
+  opacity: 1;
 }

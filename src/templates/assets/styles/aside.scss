@@ -21,7 +21,7 @@ aside.navigation {
     z-index: 1000;
 
     transform: translateX(-100%);
-    transition: transform 100ms ease-in-out;
+    transition: opacity .25s, transform .5s cubic-bezier(.22, 1, .19, 1);
 
     font-size: 16px;
 
@@ -111,14 +111,31 @@ aside.navigation {
       svg {
         position: absolute;
         width: 20px;
-        height: 20px;
+        height: 15px;
+        top: 3px;
         left: -5px;
 
-        fill: var(--aside-link-text-color)
+        fill: var(--aside-link-text-color);
+
+        @media (max-width: 1000px) {
+          height: 18px;
+          top: 3px;
+        }
       }
 
       &.open > svg {
         transform: rotate(90deg);
+      }
+
+      &:hover {
+        .link {
+          cursor: pointer;
+          color: var(--aside-link-text-color-hover);
+        }
+
+        svg {
+          fill: var(--aside-link-text-color-hover)
+        }
       }
 
       .link {
@@ -128,11 +145,6 @@ aside.navigation {
         padding-left: 17px;
         color: var(--aside-link-text-color);
         text-decoration: none;
-
-        &:hover {
-          cursor: pointer;
-          color: var(--aside-link-text-color-hover);
-        }
 
         &.active {
           color: var(--aside-link-text-color-active);
@@ -144,16 +156,20 @@ aside.navigation {
 }
 
 aside.navigation.open + .aside-navigation-overlay {
-  display: block;
+  visibility: visible;
   background-color: var(--overlay-background-color);
+  opacity: 1;
 }
 
 .aside-navigation-overlay {
-  display: none;
+  visibility: hidden;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   position: fixed;
   z-index: 999;
+  opacity: 0;
+
+  transition: opacity .5s;
 }

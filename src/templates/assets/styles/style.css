@@ -251,6 +251,15 @@ html[data-theme=dark] {
     grid-column-gap: 10px;
   }
 }
+@media (min-width: 1000px) {
+  .header-component.search-desktop-after-logo .search-container {
+    margin-left: 30px;
+  }
+  .header-component.search-desktop-after-logo .header-container {
+    grid-template-columns: max-content auto max-content;
+    grid-column-gap: 10px;
+  }
+}
 
 header {
   height: 70px;
@@ -482,6 +491,11 @@ li.navigation-item a.with-icon, li.navigation-item span.with-icon {
   grid-column-gap: 4px;
   align-items: center;
 }
+@media (max-width: 1000px) {
+  li.navigation-item a.with-icon, li.navigation-item span.with-icon {
+    margin-left: -20px;
+  }
+}
 li.navigation-item a.with-icon svg, li.navigation-item span.with-icon svg {
   width: 13px;
 }
@@ -540,7 +554,7 @@ aside.mobile-header-aside {
   background-color: var(--aside-background-color);
   z-index: 1000;
   transform: translateX(100%);
-  transition: transform 100ms ease-in-out;
+  transition: opacity 0.25s, transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 aside.mobile-header-aside.open {
   transform: translateX(0);
@@ -550,7 +564,7 @@ aside.mobile-header-aside .close-button-wrapper {
   justify-items: end;
 }
 aside.mobile-header-aside ul.aside-navigation {
-  padding: 10px 70px 0 0;
+  padding: 10px 100px 0 0;
   margin: 0;
   list-style: none;
 }
@@ -585,22 +599,27 @@ aside.mobile-header-aside ul.aside-navigation li.navigation-item a.active {
 }
 
 aside.mobile-header-aside.open + .header-mobile-overlay {
-  display: block;
+  visibility: visible;
   background-color: var(--overlay-background-color);
+  opacity: 1;
 }
 
 .header-mobile-overlay, .search-overlay {
-  display: none;
+  display: block;
+  visibility: hidden;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   position: fixed;
   z-index: 999;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
 .search-window {
-  display: none;
+  display: grid;
+  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -608,9 +627,14 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
   height: 100vh;
   z-index: 1000;
   pointer-events: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
 }
 .search-window.open {
-  display: grid;
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
 }
 .search-window .search-form {
   display: grid;
@@ -848,8 +872,9 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
 }
 
 .search-window.open + .search-overlay {
-  display: block;
+  visibility: visible;
   background-color: var(--overlay-background-color);
+  opacity: 1;
 }
 
 aside.navigation {
@@ -869,7 +894,7 @@ aside.navigation {
     background-color: var(--aside-background-color);
     z-index: 1000;
     transform: translateX(-100%);
-    transition: transform 100ms ease-in-out;
+    transition: opacity 0.25s, transform 0.5s cubic-bezier(0.22, 1, 0.19, 1);
     font-size: 16px;
   }
   aside.navigation.open {
@@ -946,12 +971,26 @@ aside.navigation .group .item {
 aside.navigation .group .item svg {
   position: absolute;
   width: 20px;
-  height: 20px;
+  height: 15px;
+  top: 3px;
   left: -5px;
   fill: var(--aside-link-text-color);
 }
+@media (max-width: 1000px) {
+  aside.navigation .group .item svg {
+    height: 18px;
+    top: 3px;
+  }
+}
 aside.navigation .group .item.open > svg {
   transform: rotate(90deg);
+}
+aside.navigation .group .item:hover .link {
+  cursor: pointer;
+  color: var(--aside-link-text-color-hover);
+}
+aside.navigation .group .item:hover svg {
+  fill: var(--aside-link-text-color-hover);
 }
 aside.navigation .group .item .link {
   position: relative;
@@ -961,27 +1000,26 @@ aside.navigation .group .item .link {
   color: var(--aside-link-text-color);
   text-decoration: none;
 }
-aside.navigation .group .item .link:hover {
-  cursor: pointer;
-  color: var(--aside-link-text-color-hover);
-}
 aside.navigation .group .item .link.active {
   color: var(--aside-link-text-color-active);
 }
 
 aside.navigation.open + .aside-navigation-overlay {
-  display: block;
+  visibility: visible;
   background-color: var(--overlay-background-color);
+  opacity: 1;
 }
 
 .aside-navigation-overlay {
-  display: none;
+  visibility: hidden;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   position: fixed;
   z-index: 999;
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
 blockquote {
@@ -1325,7 +1363,7 @@ article .footer {
   color: var(--secondary-color);
 }
 article .footer .footer-content {
-  padding: 0 50px;
+  padding: 0 90px;
 }
 @media (max-width: 1000px) {
   article .footer .footer-content {

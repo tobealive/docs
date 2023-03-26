@@ -38,7 +38,7 @@
             <div class="logo"></div>
 
             <div class="mobile-header-logo">
-                <a href="https://vlang.foundation/" target="_blank">
+                <a href="https://vlang.foundation/">
                     <img src="https://vlang.foundation/images/logo.svg" alt="V Logo">
                 </a>
 
@@ -172,12 +172,12 @@
                 </li>
                 <li class="navigation-item with-mobile-items">
                     <span class="with-icon js-open-menu">
-                        Play
                         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
                              viewBox="0 0 24 24">
                             <path class="icon-data"
                                   d="M12,16c-0.3,0-0.5-0.1-0.7-0.3l-6-6c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l5.3,5.3l5.3-5.3c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-6,6C12.5,15.9,12.3,16,12,16z"></path>
                         </svg>
+                        Play
                     </span>
 
                     <ul class="sub-menu">
@@ -223,7 +223,8 @@
                     <input id="search-input" type="text"
                            autocorrect="off" autocapitalize="off" spellcheck="false"
                            autocomplete="off"
-                           placeholder="Search docs"
+                           placeholder="Search in documentation..."
+                           data-place="documentation"
                            class="js-search-input">
 
                     <button class="close-button clear-input js-clear-input-button">
@@ -285,7 +286,7 @@
 <div class="wrapper">
     <aside class="navigation">
         <div class="header">
-            <a href="/index.html" class="title">
+            <a href="https://vlang.foundation" class="title">
                 <img src="/assets/images/logo.svg" alt="">
                 <span>Documentation</span>
             </a>
@@ -315,8 +316,9 @@
                         </li>
                         @else
                         <li class="js-item item with-sublist">
-                            <svg viewBox="-5 -3 24 24">
-                                <path d="M11 9l-6 5.25V3.75z"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                                 viewBox="0 0 24 24" class="caret-icon" data-v-f241169b="">
+                                <path d="M9,19c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l5.3-5.3L8.3,6.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6,6c0.4,0.4,0.4,1,0,1.4l-6,6C9.5,18.9,9.3,19,9,19z"></path>
                             </svg>
 
                             <a class="link">@first_child.title</a>
@@ -333,8 +335,9 @@
                                 </li>
                                 @else
                                 <li class="js-item item with-sublist">
-                                    <svg viewBox="-5 -3 24 24">
-                                        <path d="M11 9l-6 5.25V3.75z"></path>
+                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"
+                                         viewBox="0 0 24 24" class="caret-icon" data-v-f241169b="">
+                                        <path d="M9,19c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l5.3-5.3L8.3,6.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6,6c0.4,0.4,0.4,1,0,1.4l-6,6C9.5,18.9,9.3,19,9,19z"></path>
                                     </svg>
 
                                     <a class="link">@second_child.title</a>

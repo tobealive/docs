@@ -9,9 +9,11 @@ const searchCloseButton = document.querySelector(".js-close-search-button");
 const searchClearButton = document.querySelector(".js-clear-input-button");
 const searchPlaceRadioBoxes = document.querySelectorAll(".search-place-item input");
 
+const localSearchCache = {};
+
 const pageIcon = `<svg width="20" height="20" viewBox="0 0 20 20"><path d="M17 6v12c0 .52-.2 1-1 1H4c-.7 0-1-.33-1-1V2c0-.55.42-1 1-1h8l5 5zM14 8h-3.13c-.51 0-.87-.34-.87-.87V4" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linejoin="round"></path></svg>`
 const textIcon = `<svg width="20" height="20" viewBox="0 0 20 20"><path d="M17 5H3h14zm0 5H3h14zm0 5H3h14z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linejoin="round"></path></svg>`
-const subHeaderIcon = `<svg width="20" height="20" viewBox="0 0 20 20"><path d="M13 13h4-4V8H7v5h6v4-4H7V8H3h4V3v5h6V3v5h4-4v5zm-6 0v4-4H3h4z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>`
+const subHeaderIcon = `<svg width="20" height="20" viewBox="0 0 20 20"><path d="M13 13h4-4V8H7v5h6v4-4H7V8H3h4V3v5h6V3v5h4-4v5zm-6 0v4-4H3h4z" stroke="currentColor" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>`;
 
 const resetSearch = () => {
     searchInput.value = "";
@@ -29,17 +31,25 @@ const closeSearchWindow = () => {
 
 const openSearchWindow = () => {
     searchWindow.classList.add("open");
-    searchInput.focus();
+    setTimeout(() => {
+        searchInput.focus();
+    }, 250)
 }
 
 const searchWindowIsOpen = () => {
     return searchWindow.classList.contains("open");
 }
 
+const resetPlaceholder = () => {
+    searchInput.placeholder = `Search ${getSelectedSearchPlacePresentation()}...`;
+}
+
 searchPlaceRadioBoxes.forEach((radioBox) => {
     radioBox.addEventListener("change", () => {
         runSearch();
         searchInput.focus();
+
+        resetPlaceholder();
     });
 })
 
@@ -48,41 +58,47 @@ const getSelectedSearchPlace = () => {
     return selectedSearchPlace.value ?? "All";
 }
 
-function doSearch(searchQuery) {
-    const searchEndpoint = "https://vlang.foundation/search"
+const getSelectedSearchPlacePresentation = () => {
+    const selectedSearchPlace = document.querySelector(".search-place-item input:checked");
+    let presentation = "";
+    switch (selectedSearchPlace.value) {
+        case "all":
+            presentation = "everywhere";
+            break;
+        case "documentation":
+            presentation = "in documentation";
+            break;
+        case "blog":
+            presentation = "in blog";
+            break;
+        case "modules":
+            presentation = "in modules";
+            break;
+        default:
+            presentation = "everywhere";
+            break;
+    }
+    return presentation
+}
 
-    fetch(searchEndpoint + "?" + new URLSearchParams({
-        place: getSelectedSearchPlace(),
-        q: searchQuery,
-    }))
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            console.log(data);
-            console.log(data[0]);
-            searchResultsList.innerHTML = "";
+function clearResults() {
+    searchResultsList.innerHTML = "";
+}
 
-            let hits = [];
-            data.forEach((result) => {
-                hits = hits.concat(result.hits);
-            })
+function setResults(hits) {
+    hits.forEach((result) => {
+        const formatted = result['_formatted']
+        const icon = formatted.title.includes("search-highlight") ? pageIcon : (result.parent !== "" ? subHeaderIcon : textIcon);
 
-            if (hits.length > 0) {
-                setWithResults();
-                hits.forEach((result) => {
-                    const formatted = result['_formatted']
-                    const icon = formatted.title.includes("search-highlight") ? pageIcon : (result.parent !== "" ? subHeaderIcon : textIcon);
+        const searchResult = document.createElement("li");
+        searchResult.classList.add("search-result");
+        searchResult.setAttribute("role", "option");
+        searchResult.setAttribute("aria-selected", "false");
 
-                    const searchResult = document.createElement("li");
-                    searchResult.classList.add("search-result");
-                    searchResult.setAttribute("role", "option");
-                    searchResult.setAttribute("aria-selected", "false");
-
-                    const link = document.createElement("a");
-                    link.classList.add("search-result-content");
-                    link.setAttribute("href", result.url.replace(".md", ".html"));
-                    link.innerHTML = `
+        const link = document.createElement("a");
+        link.classList.add("search-result-content");
+        link.setAttribute("href", result.url.replace(".md", ".html"));
+        link.innerHTML = `
                         <div class="content-icon">
                             ${icon}
                         </div>
@@ -91,9 +107,47 @@ function doSearch(searchQuery) {
                             <span class="description">${formatted.body}</span>
                         </div>
                     `;
-                    searchResult.appendChild(link);
-                    searchResultsList.appendChild(searchResult);
-                });
+        searchResult.appendChild(link);
+        searchResultsList.appendChild(searchResult);
+    });
+}
+
+function doSearch(searchQuery) {
+    const place = getSelectedSearchPlace();
+    const localSearchCacheElement = localSearchCache[searchQuery + place];
+    if (localSearchCacheElement && localSearchCacheElement.length > 0) {
+        setWithResults();
+        clearResults();
+        setResults(localSearchCacheElement);
+        setSearchElementsListeners();
+        return
+    }
+
+    const searchEndpoint = "https://vlang.foundation/search"
+
+    fetch(searchEndpoint + "?" + new URLSearchParams({
+        place: place,
+        q: searchQuery,
+    }))
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            console.log(data);
+            console.log(data[0]);
+            clearResults();
+
+            let hits = [];
+            data.forEach((result) => {
+                hits = hits.concat(result.hits);
+            })
+
+            if (hits.length > 0) {
+                setWithResults();
+                setResults(hits);
+                setSearchElementsListeners();
+
+                localSearchCache[searchQuery + place] = hits;
             } else {
                 setNoResults();
             }
@@ -143,26 +197,32 @@ searchWindowOverlay.addEventListener("click", () => {
     closeSearchWindow();
 });
 
-const selectSearchResultElement = (element) => {
+const selectSearchResultElement = (element, scroll = true) => {
     const searchResultsElements = document.querySelectorAll(".search-result");
     searchResultsElements.forEach((searchResultElement) => {
         searchResultElement.setAttribute("aria-selected", "false");
     });
     element.setAttribute("aria-selected", "true");
+
+    if (scroll) {
+        element.scrollIntoView({block: "nearest", inline: "nearest"})
+    }
 }
 
-const searchResultsElements = document.querySelectorAll(".search-result");
-searchResultsElements.forEach((searchResultElement) => {
-    // on hover set aria-selected to true and remove from other elements
-    searchResultElement.addEventListener("mouseenter", () => {
-        selectSearchResultElement(searchResultElement);
-    })
+const setSearchElementsListeners = () => {
+    const searchResultsElements = document.querySelectorAll(".search-result");
+    searchResultsElements.forEach((searchResultElement) => {
+        // on hover set aria-selected to true and remove from other elements
+        searchResultElement.addEventListener("mouseenter", () => {
+            selectSearchResultElement(searchResultElement, false);
+        })
 
-    // on touch set aria-selected to true and remove from other elements
-    searchResultElement.addEventListener("touchstart", () => {
-        selectSearchResultElement(searchResultElement);
+        // on touch set aria-selected to true and remove from other elements
+        searchResultElement.addEventListener("touchstart", () => {
+            selectSearchResultElement(searchResultElement, false);
+        })
     })
-})
+}
 
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
@@ -209,6 +269,10 @@ document.addEventListener("keydown", (event) => {
         }
     }
 
+    if (event.key === "Enter" && searchResultActiveElement) {
+        searchResultActiveElement.querySelector("a").click();
+    }
+
     const value = searchInput.value;
     if (value === "") {
         setEmptySearch();
@@ -252,4 +316,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (platform.includes("mac") || platform.includes("ios")) {
         ctrlKey.textContent = "⌘";
     }
-})
+});
+
+(function () {
+    const place = searchInput.getAttribute("data-place");
+    if (place) {
+        const radioBox = document.querySelector(`.search-place-item input[value="${place}"]`);
+        radioBox.checked = true;
+
+        resetPlaceholder();
+    }
+})()
