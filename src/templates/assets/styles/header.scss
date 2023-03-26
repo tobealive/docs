@@ -468,6 +468,7 @@ aside.mobile-header-aside {
 
           li {
             padding: 0 0 10px;
+
             &:last-child {
               padding-bottom: 0;
             }
@@ -530,11 +531,11 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
 
   .search-form {
     display: grid;
-    grid-template-rows: max-content auto max-content;
+    grid-template-rows: max-content max-content auto max-content;
     grid-row-gap: 10px;
 
     pointer-events: all;
-    width: 500px;
+    width: 550px;
     height: max-content;
     min-height: 250px;
 
@@ -542,7 +543,7 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.2);
     border: 1px solid var(--divider-color);
 
-    margin: 150px auto 0;
+    margin: 75px auto 0;
     padding: 10px 10px 0;
 
     background-color: var(--aside-background-color);
@@ -555,6 +556,8 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
 
       border-radius: 0;
       border: none;
+
+      grid-template-rows: max-content max-content auto;
     }
 
     .search-header {
@@ -637,16 +640,76 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
       }
     }
 
+    .search-place {
+      display: flex;
+      align-items: center;
+
+      .search-in-label {
+        font-size: 13px;
+        color: var(--search-labels-text-color);
+
+        margin-right: 20px;
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        display: flex;
+        column-gap: 20px;
+
+        @media (max-width: 1000px) {
+          column-gap: 10px;
+        }
+
+        li.search-place-item {
+          input {
+            display: none;
+          }
+
+          input:checked + label {
+            border-bottom: 2px solid var(--brand-color);
+          }
+
+          label {
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
     .search-results {
       height: 100%;
+      max-height: 483px;
+      overflow: scroll;
 
       display: grid;
+
+      @media (max-width: 1000px) {
+        max-height: 100%;
+      }
 
       &.no-results-found {
         align-items: center;
         justify-items: center;
 
         .no-results-found {
+          display: block;
+        }
+
+        .search-results-list {
+          display: none;
+        }
+      }
+
+      &.with-caption {
+        align-items: center;
+        justify-items: center;
+
+        .caption {
           display: block;
         }
 
@@ -674,10 +737,13 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
 
           .search-result-content {
             display: grid;
-            grid-template-columns: 100px auto;
+            grid-template-columns: 30px auto;
+            column-gap: 5px;
             align-items: center;
-            padding: 20px;
+            padding: 20px 20px 20px 10px;
             margin-bottom: 5px;
+
+            text-decoration: none;
 
             border: 1px solid var(--divider-color);
             border-radius: 5px;
@@ -688,21 +754,39 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
               cursor: pointer;
             }
 
-            .search-result-title {
-              font-size: 18px;
-              font-weight: 600;
-              color: var(--text-color);
+            .content-icon {
+              svg {
+                path {
+                  stroke: var(--text-color);
+                }
+              }
             }
 
-            .search-result-excerpt {
-              font-size: 14px;
-              color: var(--secondary-color);
+            .content-wrapper {
+              display: grid;
+
+              .search-highlight {
+                font-weight: 600;
+                color: var(--brand-color);
+              }
+
+              .title {
+                font-size: 18px;
+                font-weight: 600;
+                color: var(--text-color);
+              }
+
+              .description {
+                font-size: 14px;
+                color: var(--secondary-color);
+                text-decoration: none;
+              }
             }
           }
         }
       }
 
-      .no-results-found {
+      .caption {
         display: none;
         text-align: center;
         margin: 20px 0;
@@ -716,6 +800,10 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
     }
 
     .search-footer {
+      @media (max-width: 1000px) {
+        display: none;
+      }
+
       .search-footer-content {
         padding: 0 5px;
 
@@ -726,10 +814,6 @@ aside.mobile-header-aside.open + .header-mobile-overlay {
           align-items: center;
 
           margin: 10px 0;
-
-          @media (max-width: 1000px) {
-            display: none;
-          }
 
           .search-hint {
             font-size: 13px;
