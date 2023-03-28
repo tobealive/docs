@@ -2,14 +2,16 @@
 
 ```v play
 fn main() {
-	println('hello world')
+	println('Hello, world!')
 }
 ```
 
 Save this snippet into a file named **hello.v** and run `v run hello.v`.
-Or run an example right here using the Run button in the top right corner.
+And that's it, you just wrote and executed your first V program!
 
-Congratulations – you just wrote and executed your first V program!
+> **Tip**
+> You can also run the example in the browser using the **Run** button in the top
+> right corner of any code snippet.
 
 You can compile a program without execution with `v hello.v`.
 It will produce an executable named `hello`.

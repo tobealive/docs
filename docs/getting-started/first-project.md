@@ -36,10 +36,11 @@ v run .
 V is a modular language, any projects on it consist of a set of modules.
 Each module is a separate folder containing code files.
 
-To learn more about modules, see the article [Modules](../concepts/modules/overview.md).
-
 Modules can be located both in the project root folder and in the **src** folder.
 The **src** folder itself is not a module, it is used to store all project modules in one place.
+
+> **Tip**
+> To learn more about modules, see [Modules](../concepts/modules/overview.md) section.
 
 ### v.mod
 
