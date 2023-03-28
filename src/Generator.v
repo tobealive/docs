@@ -47,6 +47,8 @@ fn (g &Generator) generate_from_tree(node &DocumentNode) ! {
 }
 
 fn (_ &Generator) render_page_from_template(root_node &DocumentNode, node &DocumentNode, markdown_content string, html_content string) string {
+	title := node.title
+
 	next_node := node.next()
 	prev_node := node.prev()
 
@@ -60,6 +62,8 @@ fn (_ &Generator) render_page_from_template(root_node &DocumentNode, node &Docum
 }
 
 fn (_ &Generator) render_index_page_from_template(root_node &DocumentNode, node &DocumentNode) string {
+	title := node.title
+
 	// get first subtopic of root node
 	next_node := root_node.contents.first().contents.first()
 	prev_node := node.prev()

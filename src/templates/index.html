@@ -16,7 +16,11 @@
     <link rel="manifest" href="https://vlang.foundation/images/site.webmanifest">
     <link rel="icon" type="image/x-icon" href="https://vlang.foundation/images/favicon.ico">
 
-    <title>V Documentation</title>
+    @if title == 'Overview'
+    <title>${node.parent.title} @{title} | V Documentation</title>
+    @else
+    <title>@{title} | V Documentation</title>
+    @end
 </head>
 <body>
 
