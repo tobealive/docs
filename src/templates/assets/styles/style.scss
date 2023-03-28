@@ -275,8 +275,10 @@ article {
         padding: 0;
         margin: 0;
 
+        border-left: 1px solid var(--divider-color);
+
         li {
-          margin: 5px 0;
+          margin: 5px 0 5px -1px;
           border-left: 3px solid var(--background);
           padding: 0 0 0 10px;
 
@@ -432,22 +434,6 @@ article {
 
       &.keyword {
         color: var(--keyword-color);
-      }
-    }
-
-    pre {
-      position: relative;
-      white-space: pre;
-      border-radius: 0;
-      padding: 12px 20px 5px;
-      color: var(--block-code-text-color);
-      background-color: var(--block-code-background-color);
-      border: 1px solid var(--block-code-border-color);
-
-      overflow-x: scroll;
-
-      &.terminal__output {
-        border: unset;
       }
     }
 

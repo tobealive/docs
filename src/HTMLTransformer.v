@@ -9,6 +9,7 @@ const (
 	code_tag_end       = '</code></pre>'
 	strong_note_tag    = '<strong>Note</strong>'
 	strong_warning_tag = '<strong>Warning</strong>'
+	strong_tip_tag     = '<strong>Tip</strong>'
 	v_keywords         = [
 		'as',
 		'asm',
@@ -110,6 +111,8 @@ fn (mut t HTMLTransformer) process_blockquotes() {
 	} else if content.contains(strong_warning_tag) {
 		t.process_warning_blockquotes(blockquote, content.replace(strong_warning_tag,
 			''))
+	} else if content.contains(strong_tip_tag) {
+		t.process_tip_blockquotes(blockquote, content.replace(strong_tip_tag, ''))
 	} else {
 		t.process_tip_blockquotes(blockquote, content)
 	}

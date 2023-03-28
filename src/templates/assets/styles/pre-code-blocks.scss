@@ -1,7 +1,7 @@
 html {
   --copy-button-ok-text-color: var(--light-green);
   --copy-button-error-text-color: var(--orange);
-  --copy-button-background-color: var(--gray-e0);
+  --copy-button-background-color: var(--gray-f9);
 }
 
 html[data-theme="dark"] {
@@ -11,6 +11,21 @@ html[data-theme="dark"] {
 }
 
 pre {
+  position: relative;
+  white-space: pre;
+  padding: 12px 20px 5px;
+  color: var(--block-code-text-color);
+  background-color: var(--block-code-background-color);
+
+  border: 1px solid var(--block-code-border-color);
+  border-radius: 8px;
+
+  overflow-x: scroll;
+
+  &.terminal__output {
+    border: unset;
+  }
+
   .copy-button {
     position: absolute;
 
@@ -66,7 +81,7 @@ pre {
       }
 
       &:before {
-        content: "Error (see terminal)";
+        content: "Error (see console log)";
         position: absolute;
         width: max-content;
         left: calc(-100% - 50px);
