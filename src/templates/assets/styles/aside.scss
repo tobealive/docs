@@ -48,22 +48,25 @@ aside.navigation {
       margin-top: 3px;
     }
 
-    .title {
+    .title-wrapper {
       display: grid;
-      grid-template-columns: max-content auto;
-      grid-column-gap: 10px;
       align-items: center;
-      text-decoration: none;
-      margin-top: 3px;
+      grid-template-columns: max-content max-content;
+      grid-column-gap: 10px;
+      margin-top: 2px;
+      line-height: 1;
 
       img {
         width: 25px;
       }
 
-      span {
+      .title {
+        display: grid;
+        align-items: center;
         font-size: 17px;
         font-weight: 500;
         color: var(--text-color);
+        text-decoration: none;
       }
     }
   }
@@ -127,17 +130,6 @@ aside.navigation {
         transform: rotate(90deg);
       }
 
-      &:hover {
-        & > .link {
-          cursor: pointer;
-          color: var(--aside-link-text-color-hover);
-        }
-
-        svg {
-          fill: var(--aside-link-text-color-hover)
-        }
-      }
-
       .link {
         position: relative;
         display: block;
@@ -145,6 +137,11 @@ aside.navigation {
         padding-left: 17px;
         color: var(--aside-link-text-color);
         text-decoration: none;
+
+        &:hover {
+          cursor: pointer;
+          color: var(--aside-link-text-color-hover);
+        }
 
         &.active {
           color: var(--aside-link-text-color-active);
