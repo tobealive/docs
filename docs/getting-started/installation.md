@@ -105,7 +105,7 @@ make
 
 ## Installing from pre-built binaries
 
-You can download pre-built binaries directly from the https://vlang.io website for Linux, macOS, and
+You can download pre-built binaries directly from the <https://vlang.io> website for Linux, macOS, and
 Windows or from the [release page](https://github.com/vlang/v/releases).
 
 > **Note**
