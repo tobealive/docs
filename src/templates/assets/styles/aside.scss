@@ -128,7 +128,7 @@ aside.navigation {
       }
 
       &:hover {
-        .link {
+        & > .link {
           cursor: pointer;
           color: var(--aside-link-text-color-hover);
         }
