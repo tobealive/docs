@@ -6,12 +6,12 @@
       "url": "overview.md"
     },
     {
-      "title": "VS Code",
-      "url": "vs-code.md"
-    },
-    {
       "title": "JetBrains IDE",
       "url": "jetbrains-ide.md"
+    },
+    {
+      "title": "VS Code",
+      "url": "vs-code.md"
     },
     {
       "title": "Vim",

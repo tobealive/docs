@@ -5,7 +5,7 @@ import os
 
 const (
 	template_path  = './templates/index.html'
-	main_page_path = './src/templates/main-page.html'
+	main_page_path = './src/templates/index-page.html'
 )
 
 [noinit]

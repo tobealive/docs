@@ -5,9 +5,14 @@
 @import "blockquote";
 @import "shortcut";
 @import "pre-code-blocks";
+@import "cards";
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -500,99 +505,6 @@ article {
         color: var(--tag-deprecated-color);
         border: 1px solid var(--tag-deprecated-color);
       }
-    }
-  }
-}
-
-// cards
-
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: space-between;
-  margin: 40px -10px;
-
-  @media (max-width: 700px) {
-    grid-template-columns: 1fr;
-    margin: 0;
-  }
-
-  .card {
-    margin: 0 10px 20px;
-    padding: 20px;
-    border-radius: 5px;
-    border: 1px solid var(--border-color);
-    transition: border .25s;
-
-    display: grid;
-    grid-auto-rows: max-content;
-    text-decoration-style: unset !important;
-    text-decoration: none;
-    color: var(--text-color);
-
-    &.bigger-logo {
-      .logo {
-        width: 70px;
-        height: 70px;
-      }
-    }
-
-    & .logo svg .foreground {
-      fill: var(--text-color);
-    }
-
-    &:hover {
-      cursor: pointer;
-      border: 1px solid var(--brand-color);
-
-      .logo {
-        svg .background {
-          fill: var(--brand-color);
-        }
-
-        //svg .foreground {
-        //  fill: var(--black);
-        //}
-        svg .background.foreground {
-          fill: var(--brand-color);
-        }
-      }
-    }
-
-    @media (max-width: 700px) {
-      margin: 0 0 20px;
-    }
-
-    .logo {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 20px;
-      overflow: hidden;
-
-      svg {
-        width: 100%;
-        height: 100%;
-
-        .background {
-          transition: fill .25s;
-        }
-
-        .foreground {
-          transition: fill .25s;
-        }
-      }
-    }
-
-    .title {
-      font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-
-    .description {
-      font-size: 14px;
-      font-weight: 400;
-      margin-bottom: 5px;
     }
   }
 }
