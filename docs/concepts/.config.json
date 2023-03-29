@@ -118,40 +118,8 @@
       "url": "writing-documentation.md"
     },
     {
-      "title": "Memory Unsafe Code",
-      "url": "memory-unsafe-code.md"
-    },
-    {
-      "title": "Profiling",
-      "url": "profiling.md"
-    },
-    {
-      "title": "Performance Tuning",
-      "url": "performance-tuning.md"
-    },
-    {
-      "title": "Cross compilation",
-      "url": "cross-compilation.md"
-    },
-    {
-      "title": "Hot Code Reloading",
-      "url": "hot-code-reloading.md"
-    },
-    {
-      "title": "V and C",
-      "url": "v-and-c.md"
-    },
-    {
-      "title": "Atomics",
-      "url": "atomics.md"
-    },
-    {
       "title": "Cross-platform Shell Scripts",
       "url": "cross-platform-shell-scripts.md"
-    },
-    {
-      "title": "Inline Assembly",
-      "url": "inline-assembly.md"
     }
   ]
 }

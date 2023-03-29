@@ -3,20 +3,20 @@
 ## Overview
 
 The generated C code is usually fast enough when you compile in
-[production mode](./production-builds.md).
+[production mode](../concepts/production-builds.md).
 There are some situations, though, where you may want to give additional hints to the compiler,
 so that it can further optimize some blocks of code.
 
 > **Note**
 > These are *rarely* needed, and should not be used unless you
-> *[profile](./profiling.md) your code*, and then see that there are significant benefits for them.
+> *[profile](profiling.md) your code*, and then see that there are significant benefits for them.
 > To cite GCC's documentation: "programmers are notoriously bad at predicting
 > how their programs actually perform".
 
 ### `[inline]`
 
 The `[inline]`
-[attribute](attributes/known-attributes.md#inline-noinline)
+[attribute](../concepts/attributes/known-attributes.md#inline-noinline)
 can be added to a function to force the compiler to inline it.
 C compiler will try to inline them, which in some cases, may be beneficial for performance,
 but may impact the size of your executable.

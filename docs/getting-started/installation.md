@@ -133,13 +133,13 @@ the handy `symlink` command, which creates a symbolic link `/usr/local/bin/v` to
 Unix.
 On Windows, it adds the path to the V executable to the PATH environment variable.
 
-### Unix
+### On Unix
 
 ```bash
 sudo ./v symlink
 ```
 
-### Windows
+### On Windows
 
 On Windows, start a new shell with administrative privileges, for example, by pressing the
 <kbd>Windows Key</kbd>, then type `cmd.exe`, right-click on its menu entry, and choose `Run as

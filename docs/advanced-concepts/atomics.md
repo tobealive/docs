@@ -1,7 +1,7 @@
 # Atomics
 
 V has no special support for atomics, yet, nevertheless, it's possible to treat variables as atomics
-by [calling C](./v-and-c) functions from V.
+by [calling C](v-and-c.md) functions from V.
 
 The standard C11 atomic functions like `atomic_store()` are usually defined with the help of macros
 and C compiler magic to provide a kind of *overloaded C functions*.

@@ -85,4 +85,4 @@ contain arbitrary characters (only lower case latin letters + numbers + `_`).
 **_notd_customflag.v** – similar to **_d_customflag.v**, but will be used
 *only* if you do NOT pass `-d customflag` to V.
 
-See also [Cross Compilation](../cross-compilation).
+See also [Cross Compilation](../../advanced-concepts/cross-compilation.md).

@@ -7,9 +7,9 @@ The following tokens are always interpreted as keywords and cannot be used as id
     - used in [sum types](../concepts/sum-types.md#is-and-as-operators)
     - specify an [alias for an import](../concepts/modules/module-imports.md)
     - specify a inner type for a [enum](../concepts/enums.md)
-- `asm` – used in [inline assembly](../concepts/inline-assembly.md)
+- `asm` – used in [inline assembly](../advanced-concepts/inline-assembly.md)
 - `assert` – used in [testing](../concepts/testing.md)
-- `atomic` – used in [atomics](../concepts/atomics.md)
+- `atomic` – used in [atomics](../advanced-concepts/atomics.md)
 - `break` – [terminates the execution of a loop](../concepts/control-flow/loops.md#break--continue)
 - `const` – declares a [constant](../concepts/constants.md)
 - `continue` – [proceeds to the next step of the nearest enclosing loop](../concepts/control-flow/loops.md#break--continue)
@@ -68,7 +68,7 @@ The following tokens are always interpreted as keywords and cannot be used as id
 - `typeof` – returns
   the [type of expression](../concepts/builtin-functions.md#typeof-getting-the-type-of-expression)
 - `union` – declares a [union](../concepts/unions.md)
-- `unsafe` – starts an [unsafe block](../concepts/memory-unsafe-code.md)
+- `unsafe` – starts an [unsafe block](../advanced-concepts/memory-unsafe-code.md)
 - `volatile` – used in [volatile variables](../concepts/variables.md)
 - `__global` – declares a [global variable](../concepts/global-variables.md)
 - `__offsetof` – returns
