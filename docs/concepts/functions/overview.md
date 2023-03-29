@@ -28,6 +28,11 @@ In V, function parameters cannot have default values.
 Just like in Go and C, functions cannot be overloaded.
 This simplifies the code and improves its maintainability and readability.
 
+> **Tip**
+> You can use
+> [Trailing struct literal arguments](../structs/overview.md#trailing-struct-literal-arguments)
+> to emulate default values and named arguments.
+
 ## Return values
 
 As you may have noticed, the return type is specified after the parameter list.
