@@ -8,9 +8,10 @@ will be generated during compilation.
 ## Fields
 
 Each
-[structure](../structs/overview.md)
-or
+[structure](../structs/overview.md),
 [union](../unions.md)
+and
+[interface](../interfaces.md)
 has a `fields` field that contains information about the fields of the structure:
 
 ```v play
@@ -182,7 +183,31 @@ fn main() {
 > **Note**
 > Currently, function attributes cannot be retrieved.
 
-## Types checking
+## Enums values
+
+Each enum has a `values` field, which contains information about the values of the enum.
+The `values` field is of type `[]EnumData`.
+You can see what fields this type has in
+[compiler source code](https://github.com/vlang/v/blob/master/vlib/builtin/builtin.v#L110).
+
+```v play
+enum Color {
+    red
+    green
+    blue
+}
+
+fn main() {
+    $for value in Color.values {
+        println("${value.name} has value ${value.value}")
+    }
+    // red has value 0
+    // green has value 1
+    // blue has value 2
+}
+```
+
+## Type checking
 
 The types stored in the `typ` field in `FieldData` and `FunctionData` can be compared using the `is`
 operator:
@@ -205,25 +230,25 @@ $if field.typ in [string, int] {
 }
 ```
 
-For convenience of checks, V defines some type constants:
+For the convenience of checks, V defines some type constants:
 
-- `$Int` - any integer type
-- `$Float` - any floating point type
-- `$Array` - any array
-- `$Map` - any map
-- `$Struct` - any structure
-- `$Interface` - any interface
-- `$Enum` – any enum
-- `$Alias` - any alias type
-- `$Sumtype` – any summary type
-- `$Funtion` - any function
+- `$int` - any integer type
+- `$float` - any floating point type
+- `$array` - any array
+- `$map` - any map
+- `$struct` - any structure
+- `$interface` - any interface
+- `$enum` – any enum
+- `$alias` - any alias type
+- `$sumtype` – any summary type
+- `$function` - any function
 
 ```v failcompile
-$if field.typ is $Int {
+$if field.typ is $int {
 	println('${field.name} is of type int')
 }
 
-$if field.typ is $Enum {
+$if field.typ is $enum {
 	println('${field.name} is Enum')
 }
 ```

@@ -24,7 +24,7 @@ This means that code like `[1, 'a']` will not compile:
 
 ```v failcompile play
 mut names := ['John']
-names << 'Peter'
+names << 'Fred'
 names << 'Sam'
 names << 10
 //    ^^ error: cannot append `int literal` to `[]string`
@@ -78,14 +78,14 @@ for i in 0 .. 1000 {
 > **Note**
 > The above code uses a [range `for`](../control-flow/loops.md#range-for) statement.
 
-You can initialize the array by accessing the `it` variable which gives
+You can initialize the array by accessing the `index` variable which gives
 the index as shown here:
 
 ```v play
-count := []int{len: 4, init: it}
+count := []int{len: 4, init: index}
 println(count) // [0, 1, 2, 3]
 
-squares := []int{len: 6, init: it * it}
+squares := []int{len: 6, init: index * index}
 println(squares) // [0, 1, 4, 9, 16, 25]
 ```
 
@@ -268,7 +268,7 @@ println(upper_fn) // ['HELLO', 'WORLD']
 
 ### `it` variable
 
-`it` is a builtin variable which refers to the element currently being
+`it` is a special variable which refers to the element currently being
 processed in filter/map methods.
 
 Additionally, `.any()` and `.all()` can be used to conveniently test
@@ -308,8 +308,7 @@ See also [vlib/arrays](https://modules.vlang.io/arrays.html).
 
 ### Array method chaining
 
-You can chain the calls of array methods like `.filter()` and `.map()` and use
-the
+You can chain the calls of array methods like `.filter()` and `.map()` and use the
 [`it` built-in variable](#it-variable)
 to achieve a classic `map/filter` functional paradigm:
 
