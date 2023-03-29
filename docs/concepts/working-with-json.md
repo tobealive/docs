@@ -123,3 +123,6 @@ data['y'] = 360
 println(json.encode(data)) // {"x":42,"y":360}
 println(json.encode(user)) // {"name":"Pierre","score":1024}
 ```
+
+The json module also supports anonymous struct fields, which helps with complex JSON APIs with lots
+of levels.

@@ -94,7 +94,6 @@ docker run --rm -it vlang:latest
 
 On Termux, V needs some packages preinstalled – a working C compiler, `libexecinfo`,
 `libgc` and `libgc-static`.
-After installing them, you can use the same script, like on Linux/macOS:
 
 ```bash
 pkg install clang libexecinfo libgc libgc-static make git
