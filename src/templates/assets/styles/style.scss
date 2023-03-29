@@ -377,14 +377,23 @@ article {
       line-height: 1.7;
     }
 
+    h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+      .header-anchor {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
     .header-anchor {
       float: left;
       margin-left: -0.87em;
       padding-right: 0.23em;
       font-weight: 500;
       user-select: none;
-      opacity: 1;
+      opacity: 0;
       transition: color .25s, opacity .25s;
+
+      visibility: hidden;
 
       &:hover {
         cursor: pointer;
@@ -395,7 +404,7 @@ article {
     a {
       font-weight: 500;
       color: var(--brand-color);
-      text-decoration-style: dotted;
+      text-decoration: none;
       transition: color .25s;
     }
 
