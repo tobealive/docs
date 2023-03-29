@@ -2,7 +2,7 @@
 
 Now you know the basics of how to work with V!
 
-To see simple examples for basic syntax see
+To see simple examples for basic syntax, see
 [Basic Syntax](../basics/basic-syntax.md)
 article.
 
@@ -11,6 +11,8 @@ You can then go to the articles in the Concepts section to find out what a V pro
 You can also play with V in the online playground:
 [play.vlang.foundation](https://play.vlang.foundation/).
 It also provides a number of commented examples for you to explore.
+
+See also [FAQ](faq.md) for answers to common questions.
 
 Join our Discord server:
 [discord.gg/vlang](https://discord.gg/vlang).

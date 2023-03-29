@@ -234,7 +234,7 @@ fn foo() {
 
 ## Translating C to V
 
-V can translate your C code to human-readable V code, and generating V wrappers
+V can translate your C code to human-readable V code, and generate V wrappers
 on top of C libraries.
 
 [C2V](https://github.com/vlang/c2v)
