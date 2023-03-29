@@ -47,6 +47,9 @@ The following tokens are always interpreted as keywords and cannot be used as id
     - defines the branch for
       [array fetch](../concepts/types/arrays.md#array-element-fetching)
       that is executed when the index is out of bounds
+    - defines the branch for
+      [map fetch](../concepts/types/maps.md#get-element-from-a-map-by-key)
+      that is executed when the key is not found
 - `pub`
     - makes a [declaration](../concepts/modules/overview.md#symbol-visibility) public
     - starts a [public fields block](../concepts/structs/overview.md#fields)
