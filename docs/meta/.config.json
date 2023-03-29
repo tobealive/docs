@@ -1,0 +1,13 @@
+{
+  "title": "Meta",
+  "contents": [
+    {
+      "title": "How to install C compiler on Linux/macOS",
+      "url": "how-to-install-c-compiler-on-unix.md"
+    },
+    {
+      "title": "How to install C compiler on Windows",
+      "url": "how-to-install-c-compiler-on-windows.md"
+    }
+  ]
+}

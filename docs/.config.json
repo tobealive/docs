@@ -24,6 +24,10 @@
       "url": "tools"
     },
     {
+      "title": "Meta",
+      "url": "meta"
+    },
+    {
       "title": "Language Reference",
       "url": "language-reference"
     }

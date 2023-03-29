@@ -3,7 +3,7 @@
 ## Installing V from source (preferred way)
 
 To install from source, you need `git`, `make` and C compiler installed on your system.
-V ship with TCC compiler, so most probably you do not need to install C compiler manually, but
+V ships with TCC compiler, so most probably you do not need to install C compiler manually, but
 if there is an error during the build V, see [C compiler](#c-compiler) section for more details.
 
 ### Linux, macOS, *BSD, Solaris, WSL, etc
@@ -102,7 +102,7 @@ cd v
 make
 ```
 
-## Installing from pre-built binaries
+## Installing pre-built binaries
 
 You can download pre-built binaries directly from the <https://vlang.io> website for Linux, macOS, and
 Windows or from the [release page](https://github.com/vlang/v/releases).
@@ -122,8 +122,8 @@ This compiler is very fast, but does almost no optimizations. It is best for dev
 If V cannot find a compatible version of tcc, it will try to use the system C compiler.
 If you do not have a C compiler installed, follow these instructions:
 
-- [Installing a C compiler on Linux and macOS](https://github.com/vlang/v/wiki/Installing-a-C-compiler-on-Linux-and-macOS)
-- [Installing a C compiler on Windows](https://github.com/vlang/v/wiki/Installing-a-C-compiler-on-Windows)
+- [How to install C compiler on Linux and macOS](../meta/how-to-install-c-compiler-on-unix.md)
+- [How to install C compiler on Windows](../meta/how-to-install-c-compiler-on-windows.md)
 
 ## Symlinking
 
