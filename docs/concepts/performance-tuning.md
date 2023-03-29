@@ -16,7 +16,7 @@ so that it can further optimize some blocks of code.
 ### `[inline]`
 
 The `[inline]`
-[attribute](./attributes.md#inline-noinline)
+[attribute](attributes/known-attributes.md#inline-noinline)
 can be added to a function to force the compiler to inline it.
 C compiler will try to inline them, which in some cases, may be beneficial for performance,
 but may impact the size of your executable.

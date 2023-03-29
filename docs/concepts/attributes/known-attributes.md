@@ -1,76 +1,13 @@
-# Attributes
+# Known attributes
 
-Attributes offer the ability to add structured, machine-readable metadata information on
-declarations in code.
+> **Note**
+> This list is not complete yet.
+> If you know of an attribute that is not listed here, please
+> [open an issue](https://github.com/vlang-foundation/docs/issues/new)
+> or
+> [create a pull request](https://github.com/vlang-foundation/docs/edit/master/docs/concepts/attributes/known-attributes.md).
 
-Structures, interfaces, enums, methods, functions, fields, constants, and modules can be the target
-of an attribute.
-The metadata defined by attributes can then be inspected at compile-time using the
-[Reflection APIs](compile-time/reflection.md).
-Attributes could therefore be thought of as a configuration language embedded directly into code.
-
-Attributes in V are declared inside square brackets `[]` before the declaration.
-
-```v
-[inline]
-fn foo() {}
-```
-
-If multiple attributes need to be declared, they must be separated by `;` (semicolon):
-
-```v
-[inline; unsafe]
-fn foo() {}
-```
-
-You can also declare attributes on multiple lines:
-
-```v nofmt
-[inline]
-[unsafe]
-fn foo() {}
-```
-
-Attributes can have a value that is specified after the attribute name:
-
-```v
-[deprecated: 'use new_function() instead']
-fn foo() {}
-```
-
-Field attributes of structures or interfaces are specified after the field declaration:
-
-```v
-struct Foo {
-	name string [sql: 'Name']
-}
-```
-
-The special syntax of the `if` attribute allows you to specify a condition under which the
-definition will be compiled:
-
-```v
-[if debug]
-fn log() {}
-```
-
-For custom options:
-
-```v
-[if my_trace ?]
-fn log() {}
-```
-
-You also can declare string attribute:
-
-```v
-['/run']
-fn run() {}
-```
-
-## General attributes
-
-### `[deprecated]`, `[deprecated_after]`
+## `[deprecated]`
 
 The `[deprecated]` attribute indicates that the definition is deprecated and should not be used in
 new code.
@@ -92,8 +29,11 @@ displayed when using the deprecated definition:
 [deprecated: 'use new_function() instead']
 fn legacy_function() {}
 
-legacy_function() // warning: function `legacy_function` has been deprecated: use new_function() instead
+legacy_function() // warning: function `legacy_function`
+                  // has been deprecated: use new_function() instead
 ```
+
+## `[deprecated_after]`
 
 The `[deprecated_after]` attribute allows you to specify a date after which the definition will be
 marked as deprecated:
@@ -104,7 +44,7 @@ marked as deprecated:
 fn legacy_function() {}
 ```
 
-### `[unsafe]`
+## `[unsafe]`
 
 The `[unsafe]` attribute specifies that the function should be called in an `unssafe` block.
 Code in the body of such function will still be checked, unless you also wrap it in `unsafe {}`
@@ -132,7 +72,7 @@ fn main() {
 }
 ```
 
-### `[inline]`, `[noinline]`
+## `[inline]`, `[noinline]`
 
 The `[inline]` attribute specifies that function calls should be inlined at the call site.
 The `[noinline]` attribute, on the other hand, indicates that function calls should not be inlined.
@@ -143,7 +83,7 @@ You can learn more about inline functions at
 You usually do not need to add them manually, because C compilers are smart enough to figure out
 which functions need inline.
 
-### `[noreturn]`
+## `[noreturn]`
 
 The `[noreturn]` attribute specifies that the function does not return to its callers.
 Such functions can be used at the end of `or` blocks, just like `exit(1)` or `panic('message')`.
@@ -157,12 +97,12 @@ fn forever() {
 }
 ```
 
-### `[heap]`
+## `[heap]`
 
 The `[heap]` attribute specifies that the structure should always be allocated on the heap.
-See [Structs](structs/overview.md#always-heap-allocated-structs) for more details.
+See [Structs](../structs/overview.md#always-heap-allocated-structs) for more details.
 
-### `[if debug]`, `[if my_flag ?]`
+## `[if debug]`, `[if my_flag ?]`
 
 The `[if debug]` attribute specifies that the definition will only be compiled
 if the `-g` flag has been passed.
@@ -179,7 +119,7 @@ fn bar() {
 }
 ```
 
-### `[keep_args_alive]`
+## `[keep_args_alive]`
 
 The `[keep_args_alive]` attribute specifies that the memory pointed to by the function arguments
 will not be
@@ -191,7 +131,7 @@ This is useful when a function calls a C function that stores a pointer to the a
 fn C.my_external_function(voidptr, int, voidptr) int
 ```
 
-### `[manualfree]`
+## `[manualfree]`
 
 The `[manualfree]` attribute specifies that the function will not automatically free memory
 allocated within it.
@@ -203,7 +143,7 @@ fn custom_allocations() {
 }
 ```
 
-### `[typedef]`
+## `[typedef]`
 
 The `[typedef]` attribute indicates that the structure is defined with `typedef struct` in C.
 This is useful when you want to use a structure defined in C in V.
@@ -214,7 +154,7 @@ struct C.Foo {
 }
 ```
 
-### `[callconv: "stdcall"]`
+## `[callconv: "stdcall"]`
 
 The `[callconv: "..."]` attribute indicates that the function should be called with a specific
 calling convention.
@@ -229,7 +169,7 @@ fn C.DefWindowProc(hwnd int, msg int, lparam int, wparam int)
 type FastFn = fn (int) bool
 ```
 
-### `[console]` (Windows only)
+## `[console]` (Windows only)
 
 Without this attribute, all graphical apps will have the following behavior on Windows:
 

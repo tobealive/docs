@@ -211,7 +211,7 @@ See [Generics](../generics.md) for more information.
 
 ## Inline functions
 
-Functions can be declared as inline using the `inline` [attribute](../attributes.md):
+Functions can be declared as inline using the `inline` [attribute](../attributes/overview.md):
 
 ```v
 [inline]
@@ -223,7 +223,7 @@ fn add(x int, y int) int {
 This will cause the function to be inlined at the call site.
 This can improve performance, but also increase the size of the binary.
 
-To prevent the inlining of a function, use the `noinline` [attribute](../attributes.md):
+To prevent the inlining of a function, use the `noinline` [attribute](../attributes/overview.md):
 
 ```v
 [noinline]

@@ -29,7 +29,7 @@ a folder (like `v -live run .`) – in that case you need to modify content of
 a folder (add new file, for example), because changes in *message.v* will have no effect.
 
 Functions that you want to be reloaded must have `[live]`
-[attribute](./attributes.md)
+[attribute](attributes/overview.md)
 before their definition.
 
 Right now it's not possible to modify types while the program is running.

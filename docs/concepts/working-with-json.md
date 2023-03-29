@@ -35,7 +35,7 @@ and `age`.
 As you can see from the example, the field name `last_name` in the structure is different from the
 field name in the JSON object.
 To specify which field name to use when decoding JSON, use `json`
-[attribute](attributes.md).
+[attribute](attributes/overview.md).
 The value of this attribute is the name of the field in the JSON object.
 
 V provides the following attributes for structure fields:

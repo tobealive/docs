@@ -100,7 +100,7 @@ struct Foo {
 ### Required fields
 
 As already described earlier, when creating an instance of a structure, fields can be omitted.
-To mark some fields as required, use `[required]` [attribute](../attributes.md):
+To mark some fields as required, use `[required]` [attribute](../attributes/overview.md):
 
 ```v
 struct Foo {
@@ -264,7 +264,7 @@ See also [Stack and Heap](../memory-management.md#stack-and-heap)
 ### Always heap allocated structs
 
 For some structures, you may want them to always be allocated on the heap.
-You can use [attribute](../attributes.md) `[heap]` for this:
+You can use [attribute](../attributes/overview.md) `[heap]` for this:
 
 ```v
 [heap]
