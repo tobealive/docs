@@ -365,7 +365,7 @@ Without it, you have to specify *at least* one of the field names, even if it
 has its default value, otherwise the compiler will produce this error message,
 when you call the function with no parameters:
 
-```
+```text
 error: expected 1 arguments, but got 0
 ```
 
