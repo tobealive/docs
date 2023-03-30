@@ -26,15 +26,6 @@ For now, V emits C and uses GCC/Clang for optimized
 [production builds](../concepts/production-builds.md).
 This way you get access to sophisticated optimization.
 
-Such builds are compiled ≈150 times slower than V development builds (but are still an order of
-magnitude faster than C++ production builds).
-
-This can be a problem for industries where optimization is required during development (for example,
-AAA games).
-In this case,
-[hot code reloading](../advanced-concepts/hot-code-reloading.md)
-can be used.
-
 ## Is there garbage collection?
 
 Yes, by default V uses a GC.
@@ -72,7 +63,7 @@ not the focus of development right now.
 
 ## Will I be able to use a custom allocator?
 
-Not for now.
+Yes, but not for now.
 This hasn't been implemented yet.
 
 ## Is V going to change a lot?
@@ -90,12 +81,14 @@ Windows, macOS, Linux, FreeBSD, OpenBSD, NetBSD, DragonflyBSD, Solaris, Android 
 
 600+ open source [contributors](https://github.com/vlang/v/graphs/contributors).
 
-## How can it translate C?
+## Can I use C libs in V?
 
-It is very hard for one person to write a C parser.
-There is a [C2V](https://github.com/vlang/c2v) tool, that can help you with translation or wrapper
-generation from C to V.
-Clang parser is used for translating C to V.
+Yes.
+V works with libraries written in C without overhead.
+You can find out more in the article [V and C](../advanced-concepts/v-and-c.md).
+
+We also have [C2V](https://github.com/vlang/c2v) tool to translate C code to V.
+Please note that this is currently in alpha.
 
 ## What about editor support?
 
@@ -120,8 +113,7 @@ The name is not very searchable (like Go), so use #vlang on Twitter, vlang on Go
 
 ## Any plans to implement macros?
 
-No,
-macros can be really useful, but they complicate the code significantly.
+No, macros can be really useful, but they complicate the code significantly.
 Every company, team, and developer can extend the language, and it is no longer possible to jump
 into a new codebase and immediately understand what's going on.
 
