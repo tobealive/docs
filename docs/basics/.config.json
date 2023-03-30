@@ -4,6 +4,10 @@
     {
       "title": "Basic Syntax",
       "url": "basic-syntax.md"
+    },
+    {
+      "title": "Idioms",
+      "url": "idioms.md"
     }
   ]
 }

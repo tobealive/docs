@@ -53,10 +53,6 @@ println(c()) // 3
 
 If you need the value to be modified outside the function, use a reference.
 
-> **Warning**
-> You need to make sure the reference is always valid,
-> otherwise this can result in undefined behavior.
-
 ```v oksyntax
 mut i := 0
 mut ref := &i
