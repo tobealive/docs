@@ -15,10 +15,12 @@ odd_numbers := [1, 2, 3, 4].filter(it % 2 == 1)
 ## Check if a map does not contain a key
 
 ```v
-10 !in {
-    1: '0x1'
-    2: '0x2'
+int_to_hex_string := {
+	1: '0x1'
+	2: '0x2'
 }
+
+10 !in int_to_hex_string
 ```
 
 ## String interpolation
@@ -44,7 +46,7 @@ fn process(val StringOrIntOrBool) {
 ## Iterate over a range
 
 ```v
-for i in 0 .. 10 {} // inclusive end
+for i in 0 .. 10 {}
 ```
 
 ## Iterate over an array
