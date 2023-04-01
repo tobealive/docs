@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dark" style="opacity: 0">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -317,6 +317,11 @@
         }
         //@end
     });
+
+    window.onload = () => {
+        const html = document.querySelector("html");
+        html.style.opacity = '1';
+    };
 </script>
 </body>
 </html>
