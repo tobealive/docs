@@ -47,7 +47,11 @@ fn (g &Generator) generate_from_tree(node &DocumentNode) ! {
 }
 
 fn (_ &Generator) render_page_from_template(root_node &DocumentNode, node &DocumentNode, markdown_content string, html_content string) string {
-	title := node.title
+	title := if node.title == 'Overview' {
+		node.parent.title + ' ' + node.title
+	} else {
+		node.title
+	}
 
 	next_node := node.next()
 	prev_node := node.prev()
@@ -58,11 +62,17 @@ fn (_ &Generator) render_page_from_template(root_node &DocumentNode, node &Docum
 	subtopics := extract_topics_from_markdown_parts(markdown_subtopics, true)
 	content := html_content
 
+	page_url := node.html_url
+
 	return $tmpl(template_path)
 }
 
 fn (_ &Generator) render_index_page_from_template(root_node &DocumentNode, node &DocumentNode) string {
-	title := node.title
+	title := if node.title == 'Overview' {
+		node.parent.title + ' ' + node.title
+	} else {
+		node.title
+	}
 
 	// get first subtopic of root node
 	next_node := root_node.contents.first().contents.first()
@@ -76,6 +86,8 @@ fn (_ &Generator) render_index_page_from_template(root_node &DocumentNode, node 
 		return ''
 	}
 	content := main_page_content
+
+	page_url := node.html_url
 
 	return $tmpl(template_path)
 }

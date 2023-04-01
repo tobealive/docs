@@ -97,7 +97,7 @@ fn (mut t HTMLTransformer) process() string {
 }
 
 fn (mut t HTMLTransformer) add_main_class_to_first_h1() {
-	t.content = t.content.replace_once('<h1', '<h1 class="main"')
+	t.content = t.content.replace_once('<h1', '<h1 itemprop="headline" class="main"')
 }
 
 fn (mut t HTMLTransformer) process_blockquotes() {
