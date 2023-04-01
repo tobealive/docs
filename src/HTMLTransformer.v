@@ -177,8 +177,8 @@ fn (mut t HTMLTransformer) prepare_v_and_c_code_for_playground() {
 			classes := if next_line == 'play' { next_line } else { '' }
 
 			new_line = new_line
-				.replace(v_code_tag, '<div class="language-v ${classes}">')
-				.replace(c_code_tag, '<div class="language-c ${classes}">')
+				.replace(v_code_tag, '<div itemscope itemtype="https://schema.org/SoftwareSourceCode" class="language-v ${classes}">')
+				.replace(c_code_tag, '<div itemscope itemtype="https://schema.org/SoftwareSourceCode" class="language-c ${classes}">')
 
 			in_v_code_tag = true
 		}
