@@ -54,8 +54,6 @@ pre {
     }
 
     &.copy-success {
-      outline: 1px solid var(--copy-button-ok-text-color);
-
       svg {
         stroke: var(--copy-button-ok-text-color) !important;
       }
@@ -74,8 +72,6 @@ pre {
     }
 
     &.copy-error {
-      outline: 1px solid var(--copy-button-error-text-color);
-
       svg {
         stroke: var(--copy-button-error-text-color) !important;
       }

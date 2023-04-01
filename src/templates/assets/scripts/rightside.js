@@ -20,10 +20,9 @@ function setupRightSideWatcher() {
 
     sections.forEach(section => {
         sectionPositions.push(section.offsetTop);
-        console.log(section.offsetTop)
     });
 
-    window.addEventListener('scroll', function (_) {
+    window.addEventListener('scroll', () => {
         document.querySelectorAll('.aside-container li[class="active"]').forEach(link => {
             link.classList.remove('active');
         });

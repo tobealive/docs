@@ -82,7 +82,7 @@
         <div class="header">
             <span class="title-wrapper">
                 <a href="https://vlang.foundation" aria-label="Go to main V Software Foundation page">
-                    <img width="25" height="26" src="/assets/images/logo.svg" alt="">
+                    <img width="25" height="26" src="https://vlang.foundation/images/logo.svg" alt="">
                 </a>
                 <a href="/" class="title">Documentation</a>
             </span>
@@ -184,10 +184,12 @@
                                 </a>
                             </div>
                             <div class="last-updated">
+                                @if title != 'V Language Documentation'
                                 Last updated:
                                 <time itemprop="dateModified" datetime="@{node.modification_time.format_rfc3339()}">
                                     @{node.modification_time.format_ss()}
                                 </time>
+                                @end
                             </div>
                         </div>
 
@@ -255,7 +257,7 @@
                         <div class="copyright">
                             Copyright © 2023 &nbsp;
                             <a class="link" href="https://vlang.foundation" target="_blank">
-                                VSF (V Software Foundation)
+                                V Software Foundation
                             </a>
                         </div>
                     </div>
