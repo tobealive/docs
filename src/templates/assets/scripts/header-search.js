@@ -308,7 +308,7 @@ document.addEventListener("keydown", (event) => {
         event.preventDefault();
         openSearchWindow();
     }
-})
+});
 
 (function () {
     const place = searchInput.getAttribute("data-place");
