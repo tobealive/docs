@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark" style="opacity: 0">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="V Programming Language documentation">
+
+    <link rel="preload" href="https://vlang.foundation/fonts/JetBrainsSans-Regular.woff2"
+          as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://vlang.foundation/fonts/JetBrainsSans-Medium.woff2"
+          as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://vlang.foundation/fonts/JetBrainsSans-Bold.woff2"
+          as="font" type="font/woff2" crossorigin>
 
     <!-- Open Graph-->
     <meta property="og:title" content="@{title} | V Documentation">
@@ -70,8 +77,8 @@
     <aside class="navigation">
         <div class="header">
             <span class="title-wrapper">
-                <a href="https://vlang.foundation">
-                    <img src="/assets/images/logo.svg" alt="">
+                <a href="https://vlang.foundation" aria-label="Go to main V Software Foundation page">
+                    <img width="25" height="26" src="/assets/images/logo.svg" alt="">
                 </a>
                 <a href="/" class="title">Documentation</a>
             </span>
@@ -106,7 +113,7 @@
                                 <path d="M9,19c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l5.3-5.3L8.3,6.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6,6c0.4,0.4,0.4,1,0,1.4l-6,6C9.5,18.9,9.3,19,9,19z"></path>
                             </svg>
 
-                            <a class="link">@first_child.title</a>
+                            <span class="top-level-title link">@first_child.title</span>
 
                             <ul class="js-sub-list sub-list top-level-sublist">
                                 @for second_child in first_child.contents
@@ -125,7 +132,7 @@
                                         <path d="M9,19c-0.3,0-0.5-0.1-0.7-0.3c-0.4-0.4-0.4-1,0-1.4l5.3-5.3L8.3,6.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l6,6c0.4,0.4,0.4,1,0,1.4l-6,6C9.5,18.9,9.3,19,9,19z"></path>
                                     </svg>
 
-                                    <a class="link">@second_child.title</a>
+                                    <span class="link">@second_child.title</span>
 
                                     <ul class="js-sub-list sub-list">
                                         @for third_child in second_child.contents
@@ -243,8 +250,9 @@
                     <div class="end-line">
                         <div class="copyright">
                             Copyright © 2023 &nbsp;
-                            <a class="link" href="https://vlang.foundation" target="_blank"
-                               rel="noreferrer">vlang.foundation</a>
+                            <a class="link" href="https://vlang.foundation" target="_blank">
+                                VSF (V Software Foundation)
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -307,11 +315,6 @@
         }
         //@end
     });
-
-    window.onload = () => {
-        const html = document.querySelector("html");
-        html.style.opacity = '1';
-    };
 </script>
 </body>
 </html>

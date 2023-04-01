@@ -162,12 +162,12 @@ aside.navigation {
           margin-top: 0;
         }
 
-        & > .link {
+        .top-level-title {
+          display: block;
+          position: relative;
+          margin: 4px 0 15px;
           padding-left: 2px;
-          margin-bottom: 15px;
-        }
 
-        & > a {
           font-weight: 700;
           font-size: 15px;
 
