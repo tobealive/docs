@@ -32,7 +32,7 @@ mut numbers := [1, 2, 3]
 for mut num in numbers {
 	num++
 }
-println(numbers) // [1, 2, 3]
+println(numbers) // [2, 3, 4]
 ```
 
 When an identifier is just a single underscore, it is ignored.
