@@ -81,7 +81,7 @@
     <aside class="navigation">
         <div class="header">
             <span class="title-wrapper">
-                <a href="https://vlang.foundation" aria-label="Go to main V Software Foundation page">
+                <a class="image-link" href="https://vlang.foundation" aria-label="Go to main V Software Foundation page">
                     <img width="25" height="26" src="https://vlang.foundation/images/logo.svg" alt="V Foundation Logo">
                 </a>
                 <a href="/" class="title">Documentation</a>
@@ -184,7 +184,7 @@
                                 </a>
                             </div>
                             <div class="last-updated">
-                                @if title != 'V Language Documentation'
+                                @if title != 'V Language Documentation (aka Vlang Docs)'
                                 Last updated:
                                 <time itemprop="dateModified" datetime="@{node.modification_time.format_rfc3339()}">
                                     @{node.modification_time.format_ss()}
