@@ -58,7 +58,8 @@ fn generate_json_line(filepath string, mut id_ptr &int) ?string {
 	body := lines[1..].join('\n')
 	(*id_ptr)++
 
-	html_path := 'https://docs.vlang.foundation/' + filepath.replace_once('${docs_path}/', '').replace('.md', '.html')
+	html_path := 'https://docs.vlang.foundation/' +
+		filepath.replace_once('${docs_path}/', '').replace('.md', '.html')
 	result.write_string('{ "id": ${*id_ptr}, "title": "${title}", "body": "${process_content(body)}", "url": "${html_path}" },\n')
 
 	for subtopic in subtopics {
@@ -68,9 +69,6 @@ fn generate_json_line(filepath string, mut id_ptr &int) ?string {
 		result.write_string('{ "id": ${*id_ptr}, "parent": "${title}", "title": "${subtopic.title}", "body": "${process_content(subtopic_content)}", "url": "${html_path}#${subtopic.id}" },\n')
 	}
 
-	// body := lines[1..].join('\n')
-	// (*id_ptr)++
-	// return '{ "id": ${*id_ptr}, "title": "${title}", "body": "${process_content(body)}", "url": "${filepath}" },\n'
 	return result.str()
 }
 
