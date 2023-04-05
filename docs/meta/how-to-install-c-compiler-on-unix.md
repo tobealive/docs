@@ -7,19 +7,19 @@ command line tools.
 
 ## Debian/Ubuntu
 
-```
+```sh
 sudo apt install build-essential
 ```
 
 ## CentOS/RHEL
 
-```
+```sh
 sudo yum groupinstall "Development Tools"
 ```
 
 ## Fedora
 
-```
+```sh
 sudo dnf install @development-tools
 ```
 

@@ -1,6 +1,6 @@
 # How to install C compiler on Windows
 
-### MinGW
+## MinGW
 
 You can get an up-to-date build of MinGW [here](https://winlibs.com/) **(recommended)**,
 or [here](https://github.com/mstorsjo/llvm-mingw/releases).
@@ -15,7 +15,7 @@ Just ~1GB of disk space.
 If you want to uninstall this compiler, you can simply delete the folder where you unpacked the
 zip (eg. `C:\mingw\`).
 
-### Visual Studio
+## Visual Studio
 
 Visual Studio takes up a lot more space (typically
 [20GB-50GB](https://learn.microsoft.com/en-us/visualstudio/releases/2022/system-requirements#hardware)),
