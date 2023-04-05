@@ -238,7 +238,7 @@ fn (mut t HTMLTransformer) add_classes_to_code_tags(start_pos int) {
 		t.content = t.content.replace(code, code.replace('<code>', '<code class="type">'))
 	}
 
-	t.add_classes_to_code_tags(matched_code.pos + code.len)
+	t.add_classes_to_code_tags(start_pos + code.len)
 }
 
 fn (mut t HTMLTransformer) process_links(start_pos int) {
@@ -248,7 +248,7 @@ fn (mut t HTMLTransformer) process_links(start_pos int) {
 	anchor_href := matched_a.get(1) or { return }
 
 	if anchor_href.starts_with('#') {
-		t.process_links(matched_a.pos + anchor.len)
+		t.process_links(start_pos + anchor.len)
 
 		return
 	}
@@ -268,5 +268,5 @@ fn (mut t HTMLTransformer) process_links(start_pos int) {
 		}
 	}
 
-	t.process_links(matched_a.pos + new_anchor.len)
+	t.process_links(start_pos + new_anchor.len)
 }
