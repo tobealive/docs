@@ -115,3 +115,17 @@ foo_ptr := &foo
 println('${foo_ptr:p}')
 // 2ae32cf2dfe0
 ```
+
+Or use `ptr_str()`:
+
+```v play
+struct Foo {
+    abc int
+}
+
+foo := Foo{}
+foo_ptr := &foo
+
+println(ptr_str(foo_ptr))
+// 2ae32cf2dfe0
+```

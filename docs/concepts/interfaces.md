@@ -105,7 +105,7 @@ fn write(mut s Bar) {
 }
 ```
 
-### Casting an interface
+## Casting an interface
 
 Interfaces allow you to abstract away from a specific implementation,
 but sometimes you need to access a specific implementation.
@@ -165,7 +165,7 @@ fn greet(s Speaker) {
 }
 ```
 
-### Interface method definitions
+## Interface method definitions
 
 Also, unlike Go, an interface can have its own methods, similar to how
 structs can have their methods.
@@ -214,7 +214,7 @@ fn main() {
 }
 ```
 
-### Embedded interface
+## Embedded interface
 
 Interfaces support embedding, just like structs.
 In this case, all methods and fields of the interface will belong to the parent

@@ -325,7 +325,8 @@ You cannot concatenate an integer to a string:
 ```v failcompile play
 age := 20
 println('age = ' + age)
-//      ^^^^^^^^^^^^^^ error: infix expr: cannot use `int` (right expression) as `string`
+//      ^^^^^^^^^^^^^^ error: infix expr:
+//                     cannot use `int` (right expression) as `string`
 ```
 
 To concatenate a string with a number, you must first convert the number to a string.

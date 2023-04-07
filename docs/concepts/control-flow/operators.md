@@ -44,6 +44,13 @@ if parser.token in [.plus, .minus, .div] {
 V optimizes such expressions, so both `if` statements above produce the same machine code and no
 arrays are created.
 
-### `is` and `as` operators
+## `is` and `as` operators
 
-See [Sum types](../sum-types.md#is-and-as-operators).
+See how `is` and `as` operators work for
+[Sum types](../sum-types.md#is-and-as-operators), for
+[Interfaces](../interfaces.md#casting-an-interface) and for
+[Compile-time reflection](../compile-time/reflection.md#type-checking).
+
+## Other operators
+
+See [Operators](../../language-reference/operators.md) for more information about all operators.

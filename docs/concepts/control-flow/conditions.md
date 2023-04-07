@@ -169,7 +169,7 @@ typ := match c {
 	else { 'other' }
 }
 println(typ)
-// 'lowercase'
+// lowercase
 ```
 
 Note that the ranges use `...` (three dots) rather than `..` (two dots).

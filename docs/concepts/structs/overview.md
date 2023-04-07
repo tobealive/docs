@@ -189,7 +189,7 @@ The following code will not be compiled:
 
 ```v play
 struct Person {
-	mut:
+mut:
 	name string
 	age  int
 }

@@ -8,6 +8,9 @@ constraints.
 
 Unlike many languages, V uses the `[T]` syntax instead of `<T>` to specify generics.
 
+> **Tip**
+> Initially V used the `<T>` syntax, but it was changed to `[T]` to simplify the parser.
+
 Generic names use single letters such as `T` or `U`, any other names are currently prohibited.
 
 ## Functions
@@ -39,7 +42,7 @@ println(compare(10.0, 20.0))
 In the first case `compare` will be generated for type `int` and called with `int` and `int`
 parameters.
 
-If you try to pass `"b"` instead of `0`, you will get a compilation error:
+If you try to pass `'b'` instead of `0`, you will get a compilation error:
 
 ```v failcompile
 println(compare[int](0, 'b'))

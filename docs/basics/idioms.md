@@ -52,13 +52,9 @@ for i in 0 .. 10 {}
 ## Iterate over an array
 
 ```v
-for index, element in arr {
-
-}
+for index, element in arr {}
 // or
-for element in arr {
-
-}
+for element in arr {}
 ```
 
 ## Error handling
