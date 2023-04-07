@@ -15,3 +15,13 @@ jobs:
         with:
           config: './.markdownlint.jsonc'
           args: './docs'
+
+  check-markdown-examples:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build V
+        run: make
+      - name: Check markdown line length && code examples
+        run: ./v check-md -hide-warnings ./docs
