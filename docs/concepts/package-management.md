@@ -133,7 +133,7 @@ Package are up to date.
 
    Example `v.mod`:
 
-   ```v ignore
+   ```vmod ignore
    Module {
        name: 'mypackage'
        description: 'My nice package.'

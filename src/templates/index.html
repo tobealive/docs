@@ -282,13 +282,18 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const playgroundElements = [...document.querySelectorAll(".language-v"), ...document.querySelectorAll(".language-c")];
+        const playgroundElements = [
+            ...document.querySelectorAll(".language-v"),
+            ...document.querySelectorAll(".language-c"),
+            ...document.querySelectorAll(".language-vmod")
+        ];
         playgroundElements.forEach(playgroundElement => {
             const playground = Playground.create(playgroundElement, {
                 fontSize: "14px",
                 highlightOnly: !playgroundElement.classList.contains("play"),
                 showFooter: false,
                 showLineNumbers: playgroundElement.classList.contains("play"),
+                isModuleFile: playgroundElement.classList.contains("language-vmod"),
             });
             playgrounds.push(playground);
         });

@@ -11,7 +11,7 @@ Then:
   created your module with `v new` you already have **v.mod** file).
   For example:
 
-```v ignore
+```vmod ignore
 Module {
 	name: 'mymodule',
 	description: 'My nice module wraps a simple C library.',

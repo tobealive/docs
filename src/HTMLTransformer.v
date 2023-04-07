@@ -5,6 +5,7 @@ import pcre
 
 const (
 	v_code_tag         = '<pre><code class="language-v">'
+	vmod_code_tag      = '<pre><code class="language-vmod">'
 	c_code_tag         = '<pre><code class="language-c">'
 	code_tag_end       = '</code></pre>'
 	strong_note_tag    = '<strong>Note</strong>'
@@ -172,12 +173,14 @@ fn (mut t HTMLTransformer) prepare_v_and_c_code_for_playground() {
 	for index, line in lines {
 		mut new_line := line
 
-		if line.starts_with(v_code_tag) || line.starts_with(c_code_tag) {
+		if line.starts_with(v_code_tag) || line.starts_with(vmod_code_tag)
+			|| line.starts_with(c_code_tag) {
 			next_line := lines[index + 1]
 			classes := if next_line == 'play' { next_line } else { '' }
 
 			new_line = new_line
 				.replace(v_code_tag, '<div itemscope itemtype="https://schema.org/SoftwareSourceCode" class="language-v ${classes}">')
+				.replace(vmod_code_tag, '<div itemscope itemtype="https://schema.org/SoftwareSourceCode" class="language-vmod ${classes}">')
 				.replace(c_code_tag, '<div itemscope itemtype="https://schema.org/SoftwareSourceCode" class="language-c ${classes}">')
 
 			in_v_code_tag = true
