@@ -28,5 +28,4 @@ jobs:
       - name: Build V
         run: cd v && make && sudo ./v symlink && cd -
       - name: Check markdown line length && code examples
-        working-directory: v
         run: v check-md -hide-warnings ./docs
