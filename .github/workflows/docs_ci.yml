@@ -27,5 +27,7 @@ jobs:
           path: v
       - name: Build V
         run: cd v && make && sudo ./v symlink && cd -
+      - name: Checkout docs
+        uses: actions/checkout@v2
       - name: Check markdown line length && code examples
         run: v check-md -hide-warnings ./docs
