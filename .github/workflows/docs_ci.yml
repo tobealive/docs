@@ -29,5 +29,7 @@ jobs:
         run: cd v && make && sudo ./v symlink && cd -
       - name: Checkout docs
         uses: actions/checkout@v2
+        with:
+          path: docs
       - name: Check markdown line length && code examples
         run: v check-md -hide-warnings ./docs
