@@ -8,6 +8,10 @@
     {
       "title": "Idioms",
       "url": "idioms.md"
+    },
+    {
+      "title": "Coding conventions",
+      "url": "coding-conventions.md"
     }
   ]
 }

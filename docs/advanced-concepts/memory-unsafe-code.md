@@ -17,7 +17,7 @@ Examples of potentially memory-unsafe operations are:
 
 To mark potentially memory-unsafe operations, enclose them in an `unsafe` block:
 
-```v
+```v play
 // allocate 2 uninitialized bytes & return a reference to them
 mut p := unsafe { malloc(3) }
 p[0] = `h` // warning: pointer indexing is only allowed in `unsafe` blocks
@@ -27,8 +27,7 @@ unsafe {
 	p[1] = `e`
 	p[2] = `l`
 }
-p++
-// warning: pointer arithmetic is only allowed in `unsafe` blocks
+p++ // warning: pointer arithmetic is only allowed in `unsafe` blocks
 
 unsafe {
 	p++ // ok

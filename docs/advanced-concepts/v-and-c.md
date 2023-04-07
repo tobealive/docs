@@ -293,5 +293,5 @@ Since V can compile to C, calling V code from C is very easy, once you know how.
 Use `v -o file.c your_file.v` to generate a C file, corresponding to the V code.
 
 See
-[Call_V_from_C Example](https://github.com/vlang/v/tree/master/examples/call_v_from_c)
+[Call V from C Example](https://github.com/vlang/v/tree/master/examples/call_v_from_c)
 for a complete example.
