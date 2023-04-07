@@ -46,7 +46,7 @@ The **src** folder itself is not a module, it is used to store all project modul
 
 The **v.mod** file contains information about the project, such as its name and version.
 It also contains a list of the project's dependencies, which we'll look
-at [Modules](../concepts/modules/overview.md) article.
+at [Module config files](../concepts/modules/vmod.md) article.
 
 This file can be used as a marker for the project's root folder, `@VMODROOT` constant
 can be used to get the path to the project's root folder.

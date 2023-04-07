@@ -10,6 +10,10 @@
       "url": "module-imports.md"
     },
     {
+      "title": "Module config files",
+      "url": "vmod.md"
+    },
+    {
       "title": "Running Project Folder with Several Files",
       "url": "running-a-project-folder-with-several-files.md"
     }
