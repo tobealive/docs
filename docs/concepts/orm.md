@@ -14,18 +14,18 @@ V's ORM provides a number of benefits:
 ```v
 import db.sqlite
 
-// sets a custom table name. Default is struct name (case-sensitive)
+// Sets a custom table name. Default is struct name (case-sensitive)
 [table: 'customers']
 struct Customer {
-	id        int    [primary; sql: serial] // a field named `id` of integer type must be the first field
+	id        int    [primary; sql: serial] // A field named `id` of integer type must be the first field
 	name      string [nonull]
 	nr_orders int
 	country   string [nonull]
 }
 
-db := sqlite.connect('customers.db')!
+db := sqlite.connect(':memory:')!
 
-// you can create tables:
+// You can create tables:
 // CREATE TABLE IF NOT EXISTS `Customer` (
 //      `id` INTEGER PRIMARY KEY,
 //      `name` TEXT NOT NULL,
@@ -34,30 +34,31 @@ db := sqlite.connect('customers.db')!
 // )
 sql db {
 	create table Customer
+}!
+
+// Insert a new customer
+new_customer := Customer{
+	name: 'Bob'
+	nr_orders: 10
+	country: 'uk'
 }
+sql db {
+	insert new_customer into Customer
+}!
 
 // select count(*) from customers
 nr_customers := sql db {
 	select count from Customer
-}
-println('number of all customers: ${nr_customers}')
+} or { 0 }
+println('Number of all customers: ${nr_customers}')
 
 // V syntax can be used to build queries
 uk_customers := sql db {
 	select from Customer where country == 'uk' && nr_orders > 0
-}
-println(uk_customers.len)
+}!
+
 for customer in uk_customers {
 	println('${customer.id} - ${customer.name}')
-}
-
-// insert a new customer
-new_customer := Customer{
-	name: 'Bob'
-	nr_orders: 10
-}
-sql db {
-	insert new_customer into Customer
 }
 ```
 
