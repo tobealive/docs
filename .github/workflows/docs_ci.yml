@@ -20,10 +20,13 @@ jobs:
     runs-on: ubuntu-20.04
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout latest V
+        uses: actions/checkout@v2
+        with:
+          repository: vlang/v
+          path: v
       - name: Build V
-        working-directory: ./v
-        run: make
+        run: cd v && make && sudo ./v symlink && cd -
       - name: Check markdown line length && code examples
-        working-directory: ./v
-        run: ./v check-md -hide-warnings ../docs
+        working-directory: v
+        run: v check-md -hide-warnings ../docs
