@@ -163,7 +163,7 @@ one
 ## Bitfield enums
 
 Enums can be used as bitfields.
-To do this, add the `flag` [attribute](./attributes) to the definition:
+To do this, add the `flag` [attribute](./attributes/overview.md) to the definition:
 
 ```v
 [flag]

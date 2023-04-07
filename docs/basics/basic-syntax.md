@@ -90,7 +90,7 @@ mut name := 'V'
 name = 'V Language'
 ```
 
-See [Variables](../concepts/variables) for more information.
+See [Variables](../concepts/variables.md) for more information.
 
 ## Constants
 
@@ -119,7 +119,7 @@ fn main() {
 }
 ```
 
-See [Constants](../concepts/constants) for more information.
+See [Constants](../concepts/constants.md) for more information.
 
 ## Structs
 
@@ -201,7 +201,7 @@ fn main() {
 }
 ```
 
-See [Structs](../concepts/structs) for more information.
+See [Structs](../concepts/structs/overview.md) for more information.
 
 ## Interfaces
 
@@ -234,7 +234,7 @@ fn main() {
 }
 ```
 
-See [Interfaces](../concepts/interfaces) for more information.
+See [Interfaces](../concepts/interfaces.md) for more information.
 
 ## String templates
 
@@ -380,7 +380,7 @@ fn main() {
 }
 ```
 
-See [Modules](../concepts/modules/overview) for more information.
+See [Modules](../concepts/modules/overview.md) for more information.
 
 ## Comments
 

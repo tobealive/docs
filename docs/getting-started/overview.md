@@ -9,4 +9,5 @@ Anything you can do in other languages, you can do in V.
 
 The language promotes writing simple and clear code with minimal abstraction.
 
-Let's get started to learn V! In the first article, we will learn how to install V.
+Let's get started to learn V!
+In the first article, we will learn how to install all the necessary tools to start writing V code.

@@ -37,7 +37,7 @@ For brevity, `fn main()` will be skipped in this tutorial.
 This means that a "hello world" program in V is as simple as:
 
 ```v
-println('hello world')
+println('Hello, World!')
 ```
 
 > **Note**

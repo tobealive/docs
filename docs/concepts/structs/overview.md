@@ -359,7 +359,7 @@ new_button(text: 'Click me', width: 100)
 > **Note**
 > This only works for functions that take a struct for the last argument.
 
-`[params]` [attribute](../attributes) is used to tell V that the trailing struct parameter
+`[params]` [attribute](../attributes/overview.md) is used to tell V that the trailing struct parameter
 can be omitted *entirely*, so that you can write `button := new_button()`.
 Without it, you have to specify *at least* one of the field names, even if it
 has its default value, otherwise the compiler will produce this error message,
