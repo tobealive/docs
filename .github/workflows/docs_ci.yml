@@ -22,6 +22,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build V
+        working-directory: ./v
         run: make
       - name: Check markdown line length && code examples
-        run: ./v check-md -hide-warnings ./docs
+        working-directory: ./v
+        run: ./v check-md -hide-warnings ../docs
