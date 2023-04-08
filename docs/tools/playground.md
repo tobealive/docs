@@ -34,7 +34,7 @@ To format the code, press <kbd>Ctrl + L</kbd> or click the **Format** button on 
 ### Share code
 
 To share the code, press the **Share** button on the toolbar.
-It's creating a new URL to your code and copy it to your clipboard.
+It is creating a new URL to your code and copy it to your clipboard.
 The created link is also available in the **Terminal**.
 
 ![Share button](/assets/_images/tools/playground/share.png)
@@ -106,6 +106,10 @@ The total compilation and execution time is limited.
 ### Disk
 
 The total disk space available to the compiler and resulting executable is limited.
+
+### Network
+
+The playground does not have access to the network.
 
 ### Persistence
 
