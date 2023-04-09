@@ -418,6 +418,22 @@ article {
 
       .playground__wrapper {
         overflow: hidden;
+
+        border-radius: 10px;
+
+        background-color: var(--block-code-background-color);
+
+        .CodeMirror {
+          background-color: var(--block-code-background-color);
+
+          .CodeMirror-gutters {
+            background-color: var(--block-code-background-color);
+          }
+        }
+
+        .terminal__close-button {
+          z-index: 10;
+        }
       }
     }
 
