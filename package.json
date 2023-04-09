@@ -1,0 +1,22 @@
+{
+  "name": "V Documentation",
+  "version": "1.0.0",
+  "description": "Source code for V Documentation website",
+  "scripts": {
+    "generate": "v -o generator src && ./generator",
+    "serve": "v -o generator src && ./generator && python3 -m http.server -d output 8081",
+    "sass-watch": "sass --watch --style compressed src/templates/assets/styles/style.scss:src/templates/assets/styles/style.css",
+    "sass-build": "sass --style compressed src/templates/assets/styles/style.scss:src/templates/assets/styles/style.css",
+    "fmt": "v fmt -w .",
+    "clean": "rm -rf ./output"
+  },
+  "author": [
+    "Petr Makhnev",
+    "Mark @walkingdevel"
+  ],
+  "bugs": {
+    "url": "https://github.com/vlang-foundation/docs/issues"
+  },
+  "homepage": "https://docs.vlang.foundation/",
+  "dependencies": {}
+}

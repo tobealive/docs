@@ -16,3 +16,37 @@ separate site.
 
 Also, dividing the documentation into separate articles makes it easier to delve into each article,
 as well as easier to add new articles or entire sections.
+
+## Build the documentation
+
+To build the documentation, run the following command:
+
+```bash
+npm run generate
+```
+
+This will generate the documentation in the `output` directory.
+
+To run documentation server, run the following command:
+
+```bash
+npm run serve
+```
+
+If you want change styles, make sure you have installed `sass` globally:
+
+```bash
+npm install -g sass
+```
+
+And run the following command to watch for changes:
+
+```bash
+npm run sass-watch
+```
+
+## License
+
+This project is under the **MIT License**. See the
+[LICENSE](https://github.com/vlang-foundation/docs/blob/master/LICENSE)
+file for the full license text.
