@@ -22,10 +22,11 @@ as well as easier to add new articles or entire sections.
 To build the documentation, run the following command:
 
 ```bash
+v install
 npm run generate
 ```
 
-This will generate the documentation in the `output` directory.
+This will install all dependencies, and generate the documentation in the `output` directory.
 
 To run documentation server, run the following command:
 
