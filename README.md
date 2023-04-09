@@ -9,6 +9,8 @@
     <a href="https://docs.vlang.foundation/">docs.vlang.foundation</a>
 </div>
 
+[![Foundation Official Project][FoundationOfficialBadge]][FoundationUrl]
+
 This documentation is based on the original V documentation that can be found in
 [vlang/v](https://github.com/vlang/v/blob/master/doc/docs.md).
 It has been heavily rewritten for most of the articles, although some articles have remained almost
@@ -55,3 +57,6 @@ npm run sass-watch
 This project is under the **MIT License**. See the
 [LICENSE](https://github.com/vlang-foundation/docs/blob/master/LICENSE)
 file for the full license text.
+
+[FoundationOfficialBadge]: https://vlang.foundation/badge.svg
+[FoundationUrl]: https://vlang.foundation
