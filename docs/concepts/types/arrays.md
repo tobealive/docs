@@ -142,7 +142,7 @@ println(nums[1]) // 2
 If the index is out of bounds of the array,
 then a panic will be triggered and the program will end with an error:
 
-```v failcompile play
+```v play
 mut nums := [1, 2, 3]
 println(nums[3]) // panic: index out of range (i == 3, a.len == 3)
 ```

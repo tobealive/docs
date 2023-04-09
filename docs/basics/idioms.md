@@ -8,13 +8,13 @@ odd_numbers := [1, 2, 3, 4].filter(it % 2 == 1)
 
 ## Check if array contains element
 
-```v
+```v failcompile
 10 in [1, 2, 3, 4]
 ```
 
 ## Check if a map does not contain a key
 
-```v
+```v failcompile
 int_to_hex_string := {
 	1: '0x1'
 	2: '0x2'
@@ -25,14 +25,14 @@ int_to_hex_string := {
 
 ## String interpolation
 
-```v
-println("Hello, ${name}")
+```v failcompile
+println('Hello, ${name}')
 ```
 
 ## Sym types handling
 
 ```v
-type StringOrIntOrBool = string | int | bool
+type StringOrIntOrBool = bool | int | string
 
 fn process(val StringOrIntOrBool) {
 	match val {
@@ -51,7 +51,7 @@ for i in 0 .. 10 {}
 
 ## Iterate over an array
 
-```v
+```v failcompile
 for index, element in arr {}
 // or
 for element in arr {}
@@ -59,7 +59,7 @@ for element in arr {}
 
 ## Error handling
 
-```v
+```v nofmt failcompile
 fn get() !int { ... }
 
 val := get() or {
@@ -72,7 +72,7 @@ println(val)
 
 ## If unwrapping
 
-```v
+```v nofmt failcompile
 fn get() !int { ... }
 
 if val := get() {
@@ -85,7 +85,7 @@ if val := get() {
 
 ## If expression
 
-```v
+```v failcompile
 val := if a == 1 {
 	100
 } else if a == 2 {
@@ -97,7 +97,7 @@ val := if a == 1 {
 
 ## Swap two variables
 
-```v
+```v failcompile
 a, b = b, a
 ```
 
@@ -111,7 +111,7 @@ fn sum[T](a T, b T) T {
 
 ## Embed file
 
-```v
+```v failcompile
 embedded_file := $embed_file('index.html')
 println(embedded_file.to_string())
 ```
@@ -135,7 +135,7 @@ fn main() {
 
 ## Defer execution
 
-```v
+```v nofmt failcompile
 fn main() {
 	mut f := os.open('log.txt') or { panic(err) }
 	defer {
@@ -148,6 +148,6 @@ fn main() {
 
 ## Run function in separate thread
 
-```v
+```v failcompile
 spawn foo()
 ```

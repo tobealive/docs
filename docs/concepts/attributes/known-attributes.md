@@ -25,7 +25,7 @@ legacy_function() // warning: function `legacy_function` has been deprecated
 The `[deprecated]` attribute has an optional parameter that allows you to specify a message to be
 displayed when using the deprecated definition:
 
-```v
+```v nofmt
 [deprecated: 'use new_function() instead']
 fn legacy_function() {}
 

@@ -260,7 +260,7 @@ generic functions, you can separate the code depending on the type passed:
 
 ```v play
 fn myprintln[T](data T) {
-	$if T is $Array {
+	$if T is $array {
 		println('array: [')
 		for i, elem in data {
 			myprintln(elem)
@@ -270,7 +270,7 @@ fn myprintln[T](data T) {
 			println('')
 		}
 		println(']')
-	} $else $if T is $Map {
+	} $else $if T is $map {
 		println('map: {')
 		for key, val in data {
 			print('\t(key) ')

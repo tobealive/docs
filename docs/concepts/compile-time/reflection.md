@@ -212,7 +212,7 @@ fn main() {
 The types stored in the `typ` field in `FieldData` and `FunctionData` can be compared using the `is`
 operator:
 
-```v failcompile
+```v nofmt failcompile
 $if method.typ is fn (string) string {
 	println('${method.name} IS `fn(string) string`')
 }
@@ -224,7 +224,7 @@ $if field is string {
 
 As with normal `if` expressions, you can use the `in` statement:
 
-```v failcompile
+```v nofmt failcompile
 $if field.typ in [string, int] {
 	println('${field.name} is of type int or float')
 }
@@ -243,7 +243,7 @@ For the convenience of checks, V defines some type constants:
 - `$sumtype` – any summary type
 - `$function` - any function
 
-```v failcompile
+```v nofmt failcompile
 $if field.typ is $int {
 	println('${field.name} is of type int')
 }

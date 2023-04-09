@@ -46,7 +46,8 @@ There are several approaches to deal with these:
 - use `shared` types for the variable declarations and use `lock` blocks for access.
   This is most appropriate for larger objects like structs, arrays, or maps.
 
-- handle primitive data types as [`atomics`](../advanced-concepts/atomics.md) using special C-functions.
+- handle primitive data types as [`atomics`](../advanced-concepts/atomics.md) using special
+  C-functions.
 
 - use explicit synchronization primitives like mutexes to control access. The compiler
   cannot really help in this case, so you have to know what you are doing.

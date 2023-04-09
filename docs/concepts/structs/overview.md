@@ -57,7 +57,7 @@ Privacy means that access to them will be only within the current [module](../mo
 Fields access modifiers can be changed with `pub` and `mut` keywords.
 In total, there are 5 possible options:
 
-```v
+```v skip
 struct Foo {
 	a int // private immutable (default)
 mut:
@@ -203,7 +203,7 @@ fn (p Person) birthday() {
 To change the fields of a structure in a method, you need to add `mut` before the name of the
 receiver:
 
-```v
+```v skip
 struct Person {
 mut:
 	name string
@@ -359,8 +359,8 @@ new_button(text: 'Click me', width: 100)
 > **Note**
 > This only works for functions that take a struct for the last argument.
 
-`[params]` [attribute](../attributes/overview.md) is used to tell V that the trailing struct parameter
-can be omitted *entirely*, so that you can write `button := new_button()`.
+`[params]` [attribute](../attributes/overview.md) is used to tell V that the trailing struct
+parameter can be omitted *entirely*, so that you can write `button := new_button()`.
 Without it, you have to specify *at least* one of the field names, even if it
 has its default value, otherwise the compiler will produce this error message,
 when you call the function with no parameters:

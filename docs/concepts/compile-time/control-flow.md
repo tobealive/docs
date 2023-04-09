@@ -13,7 +13,7 @@ see
 
 It supports multiple conditions in one branch:
 
-```v failcompile
+```v nofmt
 $if ios || android {
 	println('Running on a mobile device!')
 }
@@ -31,7 +31,7 @@ println('Using ${os}')
 
 Can have `$else-$if` and `$else` branches:
 
-```v failcompile
+```v nofmt
 $if tinyc {
 	println('tinyc')
 } $else $if clang {
@@ -45,7 +45,7 @@ $if tinyc {
 
 Can be used to check compilation options:
 
-```v failcompile
+```v nofmt
 $if test {
 	println('testing')
 }
@@ -61,7 +61,7 @@ $if prod {
 
 Custom compiler options passed via `-d` can be checked with `$if option ? {}`:
 
-```v failcompile
+```v nofmt
 // v -d option ...
 $if option ? {
 	println('custom option')

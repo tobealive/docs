@@ -63,7 +63,7 @@ Currently the `linux`, `darwin` , `freebsd`, and `windows` flags are supported.
 > **Note**
 > Each flag must go on its own line (for now)
 
-```v
+```v skip
 #flag linux -lsdl2
 #flag linux -Ivig
 #flag linux -DCIMGUI_DEFINE_ENUMS_AND_STRUCTS=1

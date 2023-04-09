@@ -24,7 +24,7 @@ There are two syntaxes for creating a map.
 
 The first one is used to create an empty map:
 
-```v
+```v failcompile
 // map with keys of type `string` and values of type `int`
 m := map[string]int{}
 // map with keys of type `string` and values of type `Foo`
@@ -210,7 +210,7 @@ println(3 in m.values()) // false
 
 In V, you can't just assign the value of a map variable to another variable:
 
-```v failcompile play
+```v nofmt failcompile play
 m := {
 	'one': 1
 	'two': 2

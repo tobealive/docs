@@ -14,7 +14,7 @@ The Option type is specified with a question mark `?` in front of the type name:
 
 For example, a function that finds a user by id in the database might look like this:
 
-```v
+```v failcompile
 fn (r Repo) find_user_by_id(id int) ?User {
 	//                              ^ Option type
 	for user in r.users {
@@ -43,7 +43,7 @@ The Result type is specified with an exclamation mark `!` before the type name: 
 
 Let us rewrite the `find_user_by_id` function using the Result type:
 
-```v
+```v failcompile
 fn (r Repo) find_user_by_id(id int) !User {
 	//                              ^ Result type
 	for user in r.users {
@@ -98,7 +98,7 @@ propagated and handled by the one who calls `get_body()` function.
 
 For example:
 
-```v
+```v failcompile
 fn business_logic() {
 	body := get_body('https://gogle.com') or {
 		// handle error
@@ -307,7 +307,7 @@ return values, but may fail.
 
 To do this, functions can define their return type as simply `!`:
 
-```v
+```v failcompile
 fn foo() ! {
 	resp := http.get(url)!
 	println(resp.body)

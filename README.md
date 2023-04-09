@@ -7,11 +7,12 @@
 
 This documentation is based on the original V documentation that can be found in
 [vlang/v](https://github.com/vlang/v/blob/master/doc/docs.md).
-It has been heavily rewritten for most of the articles, although some articles have remained almost unchanged.
+It has been heavily rewritten for most of the articles, although some articles have remained almost
+unchanged.
 
-The purpose of this documentation is to provide more detailed information about V than the original 
-documentation, and also to provide a better reading experience, as the documentation is hosted on a 
+The purpose of this documentation is to provide more detailed information about V than the original
+documentation, and also to provide a better reading experience, as the documentation is hosted on a
 separate site.
 
-Also, dividing the documentation into separate articles makes it easier to delve into each article, 
+Also, dividing the documentation into separate articles makes it easier to delve into each article,
 as well as easier to add new articles or entire sections.

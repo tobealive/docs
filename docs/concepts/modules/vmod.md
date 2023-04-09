@@ -7,7 +7,7 @@ which case it will contain the description of the entire project.
 
 `v.mod` example:
 
-```vmod ignore
+```vmod skip
 Module {
     name: 'myproject'
     version: '0.1.0'

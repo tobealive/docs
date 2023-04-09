@@ -46,8 +46,8 @@ V provides the following attributes for structure fields:
   Without the attribute, in this case the field will be assigned a default value.
 - `[skip]` – indicates that the field may not be present in the JSON object and will be skipped
   during encoding.
-- `[omitempty]` – indicates that the field may not be present in the JSON object and will be skipped
-  during encoding, if it has a default value.
+- `[omitempty]` – indicates that the field may not be present in the JSON object and will be
+  skipped during encoding, if it has a default value.
 
 ## Decoding JSON
 
