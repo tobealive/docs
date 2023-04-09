@@ -6,7 +6,7 @@ suffix.
 Each test function must be prefixed with `test_`.
 However, unlike Go, test functions do not take any parameters.
 
-```v
+```v play-test
 fn test_add() {
 	assert 1 + 1 == 2
 }
@@ -15,7 +15,7 @@ fn test_add() {
 In the tests themselves, the `assert` statement is used for checks.
 If the expression inside `assert` is not true, then the test will fail.
 
-```v
+```v play-test
 fn test_add() {
 	assert 1 + 1 == 2
 	assert 1 + 1 == 3 // this will fail
@@ -36,7 +36,7 @@ This is useful for quickly finding an unexpected value.
 `assert` can however be used outside test functions, which can be useful when developing a new
 functionality.
 
-```v
+```v play
 fn foo(mut v []int) {
 	v[0] = 1
 }
@@ -120,7 +120,7 @@ fn main() {
 
 **hello_test.v:**
 
-```v play-test
+```v
 module main
 
 fn test_hello() {

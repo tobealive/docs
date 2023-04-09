@@ -38,6 +38,6 @@ Assignment Operators
 | 4          | `+`  `-`  `^`                       |
 | 3          | `==`  `!=`  `<`  `<=`  `>`  `>=`    |
 | 2          | `&&`                                |
-| 1          | `&#124;&#124;`                      |
+| 1          | `❘❘`                                |
 
 See also [Limited Operator Overloading](../concepts/functions/limited-operator-overloading.md).

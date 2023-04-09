@@ -3,7 +3,7 @@
 You can define custom output for your types.
 To do this, it is enough to define a `str()` method that returns a string.
 
-```v
+```v play
 struct Color {
 	r int
 	g int
@@ -27,7 +27,7 @@ structure.
 
 You can override it for any type, even arrays, maps, or sum types:
 
-```v
+```v play
 struct Color {
 	r int
 	g int

@@ -243,6 +243,8 @@ For the convenience of checks, V defines some type constants:
 - `$sumtype` – any summary type
 - `$function` - any function
 
+Example:
+
 ```v nofmt failcompile
 $if field.typ is $int {
 	println('${field.name} is of type int')

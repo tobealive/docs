@@ -11,7 +11,7 @@ strings, numbers, arrays, maps, structs.
 
 `eprint` is the same as `eprintln`, but doesn't add a newline character at the end.
 
-```v
+```v play
 struct User {
 	name string
 	age  int
@@ -55,7 +55,7 @@ println(sizeof(1)) // 8
 
 `typeof` returns the type of expression in `TypeInfo` struct.
 
-```v
+```v play
 struct User {
 	name string
 	age  int
@@ -80,7 +80,7 @@ struct TypeInfo {
 
 `isreftype` returns `true` if the type is a reference type, `false` otherwise.
 
-```v nofmt
+```v play nofmt
 println(isreftype[int]())            // false
 println(isreftype[string]())         // true
 println(isreftype[[]int]())          // true
@@ -93,7 +93,7 @@ println(isreftype(10))               // true
 
 `__offsetof` returns the offset of a struct field in bytes.
 
-```v
+```v play
 struct Foo {
 	a int
 	b string

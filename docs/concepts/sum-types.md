@@ -24,7 +24,7 @@ type Width = int | string
 fn main() {
     int_width := Width(10)
     println(int_width)
-    string_width = Width('calc(100% - 100px)')
+    string_width := Width('calc(100% - 100px)')
     println(string_width)
 }
 ```
@@ -51,9 +51,9 @@ type JsonValue = []JsonValue | bool | f64 | int | map[string]JsonValue | string
 ## Accessing fields from structures in the sum type
 
 If the sum type contains structures, then through the sum type you can access their fields
-provided that a field with the same name exists in all structures that are part of the sum type.
+if a field with the same name exists in all structures that are part of the sum type.
 
-```v
+```v play
 struct Star {
 	name string
 }

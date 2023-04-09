@@ -17,7 +17,7 @@ println(color) // red
 
 By default, V uses `int` to store enum values.
 To use any other numeric type (e.g. `u8`), you can specify it after the enum
-name with the `as`keyword:
+name with the `as` keyword:
 
 ```v
 enum Color as u8 {
@@ -216,6 +216,8 @@ Such enums provide convenient methods for setting/removing bits:
 - `clear()` – clears a bit
 - `toggle()` – toggles a bit
 - `all()` – checks if all bits are set
+
+Example:
 
 ```v play
 [flag]

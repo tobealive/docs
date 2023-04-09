@@ -14,7 +14,7 @@ V is a very modular language, so any programs should be organized into modules, 
 separate folders within the project.
 You can read more in the [Modules](../concepts/modules/overview.md) article.
 
-The root of all modules can be either the project root or the special `src/` folder.
+The root of all modules can be either the project root or the special **src/** folder.
 
 ```text
 project/

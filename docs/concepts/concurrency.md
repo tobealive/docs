@@ -197,7 +197,7 @@ without a noticeable CPU load.
 It consists of a list of possible transfers and associated branches of statements – similar to
 the [match](control-flow/conditions.md#match-expression) expression:
 
-```v
+```v play
 import time
 
 fn main() {
@@ -266,7 +266,7 @@ if select {
 
 For special purposes, there are some builtin fields and methods:
 
-```v
+```v play
 struct Abc {
 	x int
 }
@@ -278,11 +278,13 @@ println(res)
 l := ch.len // number of elements in queue
 c := ch.cap // maximum queue length
 is_closed := ch.closed // bool flag – has `ch` been closed
+println(is_closed)
 println(l)
 println(c)
 mut b := Abc{}
 ch2 := chan Abc{}
 res2 := ch2.try_pop(mut b) // try to perform `b = <-ch2`
+println(res2)
 ```
 
 The `try_push/pop()` methods will return immediately with one of the results
