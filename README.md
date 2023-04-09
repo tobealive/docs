@@ -5,6 +5,10 @@
     <h1>The V Programming Language Documentation</h1>
 </div>
 
+<div align="center">
+    <a href="https://docs.vlang.foundation/">docs.vlang.foundation</a>
+</div>
+
 This documentation is based on the original V documentation that can be found in
 [vlang/v](https://github.com/vlang/v/blob/master/doc/docs.md).
 It has been heavily rewritten for most of the articles, although some articles have remained almost
