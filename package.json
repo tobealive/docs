@@ -15,8 +15,8 @@
     "Mark @walkingdevel"
   ],
   "bugs": {
-    "url": "https://github.com/vlang-foundation/docs/issues"
+    "url": "https://github.com/vlang-association/docs/issues"
   },
-  "homepage": "https://docs.vlang.foundation/",
+  "homepage": "https://docs.vosca.dev/",
   "dependencies": {}
 }

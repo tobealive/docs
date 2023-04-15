@@ -1,13 +1,13 @@
 # Playground
 
-[V Playground](https://play.vlang.foundation/) is a web-based playground for V
+[V Playground](https://play.vosca.dev/) is a web-based playground for V
 where you can run, edit and share V code online.
 
 Playground is an
-[open source project](https://github.com/vlang-foundation/playground)
+[open source project](https://github.com/vlang-association/playground)
 that you can help develop or study its source code for yourself.
 If you find any problems, please let us know by creating a new
-[issue](https://github.com/vlang-foundation/playground/issues/new).
+[issue](https://github.com/vlang-association/playground/issues/new).
 
 In the playground editor, you can write any code as if you were writing it in a file on your
 computer.

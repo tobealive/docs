@@ -3,9 +3,9 @@
 > **Note**
 > This list is not complete yet.
 > If you know of an attribute that is not listed here, please
-> [open an issue](https://github.com/vlang-foundation/docs/issues/new)
+> [open an issue](https://github.com/vlang-association/docs/issues/new)
 > or
-> [create a pull request](https://github.com/vlang-foundation/docs/edit/master/docs/concepts/attributes/known-attributes.md).
+> [create a pull request](https://github.com/vlang-association/docs/edit/master/docs/concepts/attributes/known-attributes.md).
 
 ## `[deprecated]`
 

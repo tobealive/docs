@@ -61,7 +61,7 @@ fn (mut s SearchIndexGenerator) process_file(filepath string) {
 	body := lines[1..].join('\n')
 
 	normalized_filename := filepath.replace_once('${docs_path}/', '').replace('.md', '.html')
-	html_path := 'https://docs.vlang.foundation/${normalized_filename}'
+	html_path := 'https://docs.vosca.dev/${normalized_filename}'
 
 	s.entries << SearchIndexEntry{
 		id: s.counter++

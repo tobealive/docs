@@ -6,10 +6,10 @@
 </div>
 
 <div align="center">
-    <a href="https://docs.vlang.foundation/">docs.vlang.foundation</a>
+    <a href="https://docs.vosca.dev/">docs.vosca.dev</a>
 </div>
 
-[![Foundation Official Project][FoundationOfficialBadge]][FoundationUrl]
+[![Association Official Project][AssociationOfficialBadge]][AssociationUrl]
 
 This documentation is based on the original V documentation that can be found in
 [vlang/v](https://github.com/vlang/v/blob/master/doc/docs.md).
@@ -55,8 +55,8 @@ npm run sass-watch
 ## License
 
 This project is under the **MIT License**. See the
-[LICENSE](https://github.com/vlang-foundation/docs/blob/master/LICENSE)
+[LICENSE](https://github.com/vlang-association/docs/blob/master/LICENSE)
 file for the full license text.
 
-[FoundationOfficialBadge]: https://vlang.foundation/badge.svg
-[FoundationUrl]: https://vlang.foundation
+[AssociationOfficialBadge]: https://vosca.dev/badge.svg
+[AssociationUrl]: https://vosca.dev

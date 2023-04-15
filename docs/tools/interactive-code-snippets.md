@@ -11,8 +11,8 @@ fn main() {
 ```
 
 This is done with
-[V Playground Component](https://github.com/vlang-foundation/playground-component).
+[V Playground Component](https://github.com/vlang-association/playground-component).
 This component is easily embedded on any web page.
 See
-[Project README](https://github.com/vlang-foundation/playground-component/blob/master/README.md)
+[Project README](https://github.com/vlang-association/playground-component/blob/master/README.md)
 for more details.

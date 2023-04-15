@@ -8,7 +8,7 @@ article.
 You can then go to the articles in the Concepts section to find out what a V program consists of.
 
 You can also play with V in the online playground:
-[play.vlang.foundation](https://play.vlang.foundation/).
+[play.vosca.dev](https://play.vosca.dev/).
 It also provides a number of commented examples for you to explore.
 
 V also has a great variety of examples in the
