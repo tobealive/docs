@@ -10,7 +10,10 @@
     "fmt": "v fmt -w .",
     "clean": "rm -rf ./output"
   },
-  "author": "V Open Source Community Association (VOSCA)",
+  "author": {
+    "name": "V Open Source Community Association (VOSCA)",
+    "url": "https://vosca.dev/"
+  },
   "contributors": [
     "Petr Makhnev",
     "Mark @walkingdevel"
