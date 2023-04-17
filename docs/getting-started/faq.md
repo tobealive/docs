@@ -85,7 +85,7 @@ Windows, macOS, Linux, FreeBSD, OpenBSD, NetBSD, DragonflyBSD, Solaris, Android 
 
 Yes.
 V works with libraries written in C without overhead.
-You can find out more in the article [V and C](../advanced-concepts/v-and-c.md).
+You can find out more in the [V and C](../advanced-concepts/v-and-c.md) article.
 
 We also have [C2V](https://github.com/vlang/c2v) tool to translate C code to V.
 Please note that this is currently in alpha.
