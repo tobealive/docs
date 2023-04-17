@@ -290,12 +290,17 @@
             ...document.querySelectorAll(".language-vmod")
         ];
         playgroundElements.forEach(playgroundElement => {
+            const elementClasses = playgroundElement.classList;
+            const isTest = elementClasses.contains("play-test");
+            const isPlay = elementClasses.contains("play");
+
             const playground = Playground.create(playgroundElement, {
                 fontSize: "14px",
-                highlightOnly: !playgroundElement.classList.contains("play"),
+                highlightOnly: !(isPlay || isTest),
                 showFooter: false,
-                showLineNumbers: playgroundElement.classList.contains("play"),
+                showLineNumbers: isPlay || isTest,
                 isModuleFile: playgroundElement.classList.contains("language-vmod"),
+                configuration: isPlay ? "play" : "tests"
             });
             playgrounds.push(playground);
         });

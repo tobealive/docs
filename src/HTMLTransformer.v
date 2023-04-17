@@ -176,7 +176,7 @@ fn (mut t HTMLTransformer) prepare_v_and_c_code_for_playground() {
 		if line.starts_with(v_code_tag) || line.starts_with(vmod_code_tag)
 			|| line.starts_with(c_code_tag) {
 			next_line := lines[index + 1]
-			classes := if next_line == 'play' { next_line } else { '' }
+			classes := if next_line == 'play' || next_line == 'play-test' { next_line } else { '' }
 
 			new_line = new_line
 				.replace(v_code_tag, '<div itemscope itemtype="https://schema.org/SoftwareSourceCode" class="language-v ${classes}">')
@@ -193,7 +193,7 @@ fn (mut t HTMLTransformer) prepare_v_and_c_code_for_playground() {
 				in_v_code_tag = false
 			}
 
-			if line == 'play' {
+			if line == 'play' || line == 'play-test' {
 				continue
 			}
 		}
