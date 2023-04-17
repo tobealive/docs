@@ -25,7 +25,7 @@ html[data-theme="dark"] {
     transition: border .25s;
 
     display: grid;
-    grid-template-rows: auto max-content;
+    grid-template-rows: max-content auto;
     align-items: start;
 
     text-decoration-style: unset !important;
