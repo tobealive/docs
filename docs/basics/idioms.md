@@ -29,7 +29,7 @@ int_to_hex_string := {
 println('Hello, ${name}')
 ```
 
-## Sym types handling
+## Sum types handling
 
 ```v
 type StringOrIntOrBool = bool | int | string
