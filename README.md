@@ -23,6 +23,8 @@ separate site.
 Also, dividing the documentation into separate articles makes it easier to delve into each article,
 as well as easier to add new articles or entire sections.
 
+Learn more about documentation in the [blog post](https://blog.vosca.dev/meet-new-documentation/).
+
 ## Build the documentation
 
 To build the documentation, run the following command:
