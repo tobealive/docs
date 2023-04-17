@@ -1,5 +1,5 @@
 {
-  "name": "V Documentation",
+  "name": "vlang-documentation",
   "version": "1.0.0",
   "description": "Source code for V Documentation website",
   "scripts": {
@@ -10,7 +10,8 @@
     "fmt": "v fmt -w .",
     "clean": "rm -rf ./output"
   },
-  "author": [
+  "author": "V Open Source Community Association (VOSCA)",
+  "contributors": [
     "Petr Makhnev",
     "Mark @walkingdevel"
   ],
