@@ -181,12 +181,12 @@ They do not have access to private functions/module types.
 They can only test the external/public API that the module exposes.
 
 ```v play-test
-module foo
+module main
 
 import arrays
 
-fn test_arrays() {
-    assert arrays.contains([1, 2, 3], 2)
+fn test_arrays() ! {
+    assert arrays.min([1, 2, 3])! == 1
 }
 ```
 
@@ -201,7 +201,7 @@ V provides a path to execute code before and after all test functions in a test 
 
 If a test function has an error return type, any propagated errors will fail the test:
 
-```v
+```v play-test
 import strconv
 
 fn test_atoi() ? {
