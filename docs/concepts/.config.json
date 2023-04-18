@@ -82,6 +82,10 @@
       "url": "printing-custom-types.md"
     },
     {
+      "title": "Custom Compiler Flags",
+      "url": "custom-compiler-flags.md"
+    },
+    {
       "title": "Working with JSON",
       "url": "working-with-json.md"
     },

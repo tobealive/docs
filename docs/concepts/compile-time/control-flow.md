@@ -43,7 +43,7 @@ $if tinyc {
 }
 ```
 
-Can be used to check compilation options:
+It can be used to check compilation options:
 
 ```v nofmt
 $if test {
@@ -67,6 +67,10 @@ $if option ? {
 	println('custom option')
 }
 ```
+
+Learn more about custom compiler options in the
+[Custom Compiler Flags](../custom-compiler-flags.md)
+article.
 
 Below are all the main supported options:
 
