@@ -3,13 +3,21 @@
     <a href="https://vlang.io/" target="_blank"><img width="80" src="https://raw.githubusercontent.com/vlang/v-logo/master/dist/v-logo.svg?sanitize=true" alt="V logo"></a>
 </p>
     <h1>The V Programming Language Documentation</h1>
-</div>
 
 <div align="center">
     <a href="https://docs.vosca.dev/">docs.vosca.dev</a>
 </div>
 
+</div>
+
+<p></p>
+
+<div align="center" style="display:grid;place-items:center;">
+
 [![Association Official Project][AssociationOfficialBadge]][AssociationUrl]
+[![Modules][ModulesBadge]][ModulesUrl]
+
+</div>
 
 This documentation is based on the original V documentation that can be found in
 [vlang/v](https://github.com/vlang/v/blob/master/doc/docs.md).
@@ -62,4 +70,8 @@ file for the full license text.
 
 [AssociationOfficialBadge]: https://vosca.dev/badge.svg
 
+[ModulesBadge]: https://vosca.dev/modules-badge.svg
+
 [AssociationUrl]: https://vosca.dev
+
+[ModulesUrl]: https://modules.vosca.dev
