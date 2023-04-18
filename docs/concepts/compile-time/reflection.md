@@ -31,7 +31,7 @@ fn main() {
 
 The `fields` field is of type `[]FieldData`.
 You can see what fields this type has in
-[compiler source code](https://github.com/vlang/v/blob/d3870a0c7e380cc8fcfd80e176e30f82f774ff5f/vlib/builtin/builtin.v#L111).
+[Standard Library API documentation](https://modules.vosca.dev/standard_library/builtin.html#FieldData).
 For example, `FieldData` has a `typ` field that contains the type of the field.
 
 While processing fields, you can separate logic by field name:
@@ -48,6 +48,23 @@ fn main() {
 			println('found name field')
 		}
 	}
+}
+```
+
+or by field type:
+
+```v play
+struct User {
+    name string
+    age  int
+}
+
+fn main() {
+    $for field in User.fields {
+        $if field.typ is string {
+            println('found string field')
+        }
+    }
 }
 ```
 
@@ -113,7 +130,7 @@ fn main() {
 Each type has a `methods` field, which contains information about the methods of the type.
 This field is of type `[]FunctionData`.
 You can see what fields this type has in
-[compiler source](https://github.com/vlang/v/blob/b6ecd634e3174d657c60a061ad74d31705f12f5f/vlib/builtin/builtin.v#L101).
+[Standard Library API documentation](https://modules.vosca.dev/standard_library/builtin.html#FunctionData).
 
 ```v play
 struct App {}
@@ -131,7 +148,7 @@ fn (mut app App) method_three(s string) string {
 fn main() {
 	$for method in App.methods {
 		$if method.typ is fn (string) string {
-			println('${method.name} IS `fn(string) string`')
+			println('${method.name} is `fn(string) string`')
 		} $else {
 			println('${method.name} is NOT `fn(string) string`')
 		}
@@ -145,11 +162,11 @@ fn main() {
 		$if method.args[0].typ !is string {
 			println("${method.name}'s first arg is NOT `string`")
 		} $else {
-			println("${method.name}'s first arg IS `string`")
+			println("${method.name}'s first arg is `string`")
 		}
 
 		$if method.typ is fn () {
-			println('${method.name} IS a void method')
+			println('${method.name} is a void method')
 		} $else {
 			println('${method.name} is NOT a void method')
 		}
@@ -158,12 +175,44 @@ fn main() {
 }
 ```
 
+### Method call
+
+While processing the methods of a type, you can call the methods of
+an object of that type using the syntax `object.$method(args)`:
+
+```v play
+struct App {}
+
+fn (mut app App) method_one() {}
+
+fn (mut app App) method_two() int {
+    return 0
+}
+
+fn (mut app App) method_three(s string) string {
+    return s
+}
+
+fn main() {
+    app := App{}
+    $for method in App.methods {
+        $if method.typ is fn (string) string {
+            println(app.$method('hello'))
+        }
+
+        $if method.typ is fn () int {
+            println(app.$method())
+        }
+    }
+}
+```
+
 ## Attributes
 
 Each type has an `attributes` field, which contains information about the attributes of the type.
 This field is of type `[]StructAttribute`.
 You can see what fields this type has in
-[compiler source](https://github.com/vlang/v/blob/b6ecd634e3174d657c60a061ad74d31705f12f5f/vlib/builtin/builtin.v#L142).
+[Standard Library API documentation](https://modules.vosca.dev/standard_library/builtin.html#StructAttribute).
 
 ```v play
 [name: "user"]
@@ -188,7 +237,7 @@ fn main() {
 Each enum has a `values` field, which contains information about the values of the enum.
 The `values` field is of type `[]EnumData`.
 You can see what fields this type has in
-[compiler source code](https://github.com/vlang/v/blob/master/vlib/builtin/builtin.v#L110).
+[Standard Library API documentation](https://modules.vosca.dev/standard_library/builtin.html#EnumData).
 
 ```v play
 enum Color {
@@ -209,16 +258,24 @@ fn main() {
 
 ## Type checking
 
-The types stored in the `typ` field in `FieldData` and `FunctionData` can be compared using the `is`
+The types stored in the `typ` field in `FieldData` or `FunctionData` can be compared using the `is`
 operator:
 
 ```v nofmt failcompile
 $if method.typ is fn (string) string {
-	println('${method.name} IS `fn(string) string`')
+	println('${method.name} is of type `fn (string) string`')
 }
 
 $if field is string {
 	println('${field.name} is of type string')
+}
+```
+
+`!is` is also supported:
+
+```v nofmt failcompile
+$if field.typ !is string {
+    println('${field.name} is NOT of type string')
 }
 ```
 
