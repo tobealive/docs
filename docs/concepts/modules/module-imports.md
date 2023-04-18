@@ -14,7 +14,7 @@ fn main() {
 
 This program can use any public definitions from the `os` module, such
 as the `input` function.
-See the [standard library](https://modules.vlang.io/) documentation for a list of
+See the [standard library](https://modules.vosca.dev/standard_library/) documentation for a list of
 common modules and their public symbols.
 
 By default, you have to specify the module prefix every time you call an external function.

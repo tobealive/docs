@@ -14,9 +14,9 @@ The order is a guaranteed language feature.
 This may change in the future.
 
 See all methods of
-[`map`](https://modules.vlang.io/index.html#map)
+[`map`](https://modules.vosca.dev/standard_library/builtin.html#map) struct
 and
-[`maps`](https://modules.vlang.io/maps.html).
+[`maps`](https://modules.vosca.dev/standard_library/maps.html) module.
 
 ## Map Initialization
 

@@ -302,9 +302,9 @@ There are further built-in methods for arrays:
 - `a.join(joiner)` concatenates an array of strings into one string
   using `joiner` string as a separator
 
-See all methods of [array](https://modules.vlang.io/index.html#array)
-
-See also [vlib/arrays](https://modules.vlang.io/arrays.html).
+See all methods of [`array`](https://modules.vosca.dev/standard_library/builtin.html#array) struct
+and
+[`vlib/arrays`](https://modules.vosca.dev/standard_library/arrays.html) module.
 
 ### Array method chaining
 

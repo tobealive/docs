@@ -39,5 +39,5 @@ fn main() {
 ```
 
 `$embed_file` returns
-[EmbedFileData](https://modules.vlang.io/v.embed_file.html#EmbedFileData)
+[`EmbedFileData`](https://modules.vosca.dev/standard_library/v/embed_file.html#EmbedFileData)
 which could be used to obtain the file contents as `string` or `[]u8`.

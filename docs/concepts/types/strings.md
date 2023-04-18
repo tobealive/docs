@@ -170,7 +170,7 @@ println(s2) // hello 🌎
 ```
 
 For more advanced `string` processing and conversions, refer to the
-[vlib/strconv](https://modules.vlang.io/strconv.html)
+[`vlib/strconv`](https://modules.vosca.dev/standard_library/strconv.html)
 module.
 
 ## Raw strings
@@ -344,7 +344,7 @@ println('age = ${age}') // age = 22
 ```
 
 See all methods of
-[string](https://modules.vlang.io/index.html#string)
+[string](https://modules.vosca.dev/standard_library/builtin.html#string)
 and related modules
-[strings](https://modules.vlang.io/strings.html),
-[strconv](https://modules.vlang.io/strconv.html).
+[`strings`](https://modules.vosca.dev/standard_library/strings.html),
+[`strconv`](https://modules.vosca.dev/standard_library/strconv.html).
