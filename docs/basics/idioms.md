@@ -101,6 +101,14 @@ val := if a == 1 {
 a, b = b, a
 ```
 
+## Get CLI parameters
+
+```v
+import os
+
+println(os.args)
+```
+
 ## Generic function
 
 ```v
@@ -114,6 +122,20 @@ fn sum[T](a T, b T) T {
 ```v failcompile
 embedded_file := $embed_file('index.html')
 println(embedded_file.to_string())
+```
+
+## Runtime reflection
+
+```v failcompile
+module main
+
+import v.reflection
+
+fn main() {
+    a := 100
+    typ := reflection.type_of(a)
+    println(typ.name) // int
+}
 ```
 
 ## Compile-time reflection
