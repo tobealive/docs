@@ -19,7 +19,7 @@ cd your-project
 mkdir mymodule
 ```
 
-Let's add the file **mymodule/myfile.v**:
+Then add the file **mymodule/myfile.v**:
 
 ```v failcompile
 module mymodule
@@ -58,7 +58,7 @@ the name of the submodule:
 mkdir mymodule/submodule
 ```
 
-Let's create a file **mymodule/submodule/myfile.v**:
+Then create a file **mymodule/submodule/myfile.v**:
 
 ```v failcompile
 module submodule
