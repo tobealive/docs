@@ -14,8 +14,9 @@ fn main() {
 
 This program can use any public definitions from the `os` module, such
 as the `input` function.
-See the [standard library](https://modules.vosca.dev/standard_library/) documentation for a list of
-common modules and their public symbols.
+See the
+[standard library](https://modules.vosca.dev/standard_library/index.html)
+documentation for a list of common modules and their public symbols.
 
 By default, you have to specify the module prefix every time you call an external function.
 This may seem verbose at first, but it makes code much more readable and easier to
