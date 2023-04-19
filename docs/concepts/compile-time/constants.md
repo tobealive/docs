@@ -30,5 +30,5 @@ Another example is if you want to embed the version/name from **v.mod**
 import v.vmod
 
 vm := vmod.decode(@VMOD_FILE) or { panic(err) }
-eprintln('${vm.name} ${vm.version}\n ${vm.description}')
+println('${vm.name} ${vm.version}\n ${vm.description}')
 ```
