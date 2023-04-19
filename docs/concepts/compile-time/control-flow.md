@@ -59,7 +59,8 @@ $if prod {
 }
 ```
 
-Custom compiler options passed via `-d` can be checked with `$if option ? {}`:
+[Custom compiler options](../custom-compiler-options.md)
+passed via `-d` can be checked with `$if option ? {}`:
 
 ```v nofmt
 // v -d option ...
@@ -67,10 +68,6 @@ $if option ? {
 	println('custom option')
 }
 ```
-
-Learn more about custom compiler options in the
-[Custom Compiler Flags](../custom-compiler-flags.md)
-article.
 
 Below are all the main supported options:
 
