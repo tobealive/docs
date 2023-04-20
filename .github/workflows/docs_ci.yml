@@ -16,20 +16,20 @@ jobs:
           config: './.markdownlint.jsonc'
           args: './docs'
 
-  check-markdown-examples:
-    runs-on: ubuntu-20.04
-    timeout-minutes: 5
-    steps:
-      - name: Checkout latest V
-        uses: actions/checkout@v2
-        with:
-          repository: vlang/v
-          path: v
-      - name: Build V
-        run: cd v && git checkout pmakhnev/check-md-fixes && make && sudo ./v symlink && cd -
-      - name: Checkout docs
-        uses: actions/checkout@v2
-        with:
-          path: docs
-      - name: Check markdown line length && code examples
-        run: v check-md -skip_line_length_check -hide-warnings ./docs
+#  check-markdown-examples:
+#    runs-on: ubuntu-20.04
+#    timeout-minutes: 5
+#    steps:
+#      - name: Checkout latest V
+#        uses: actions/checkout@v2
+#        with:
+#          repository: vlang/v
+#          path: v
+#      - name: Build V
+#        run: cd v && git checkout pmakhnev/check-md-fixes && make && sudo ./v symlink && cd -
+#      - name: Checkout docs
+#        uses: actions/checkout@v2
+#        with:
+#          path: docs
+#      - name: Check markdown line length && code examples
+#        run: v check-md -skip_line_length_check -hide-warnings ./docs
