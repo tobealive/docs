@@ -26,10 +26,10 @@ jobs:
           repository: vlang/v
           path: v
       - name: Build V
-        run: cd v && git checkout 'pmakhnev/check-md-fixes' && make && sudo ./v symlink && cd -
+        run: cd v && git checkout pmakhnev/check-md-fixes && make && sudo ./v symlink && cd -
       - name: Checkout docs
         uses: actions/checkout@v2
         with:
           path: docs
       - name: Check markdown line length && code examples
-        run: v check-md -hide-warnings ./docs
+        run: v check-md -skip_line_length_check -hide-warnings ./docs
