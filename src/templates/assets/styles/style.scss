@@ -108,8 +108,8 @@ article {
     @media (max-width: 1200px) {
       grid-template-columns: 100%;
 
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
 
       .aside {
         display: none;
@@ -129,7 +129,7 @@ article {
 
         @media (max-width: 1000px) {
           margin: 0;
-          width: calc(100vw - 60px);
+          width: calc(100vw - 40px);
         }
       }
 

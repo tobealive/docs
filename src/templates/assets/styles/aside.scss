@@ -73,6 +73,10 @@ aside.navigation {
         font-weight: 500;
         color: var(--text-color);
         text-decoration: none;
+
+        @media (max-width: 1000px) {
+          margin-top: 2px;
+        }
       }
     }
   }
