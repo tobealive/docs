@@ -16,6 +16,7 @@
 
 [![Association Official Project][AssociationOfficialBadge]][AssociationUrl]
 [![Modules][ModulesBadge]][ModulesUrl]
+[![Build Status][WorkflowBadge]][WorkflowUrl]
 
 </div>
 
@@ -72,6 +73,10 @@ file for the full license text.
 
 [ModulesBadge]: https://vosca.dev/modules-badge.svg
 
+[WorkflowBadge]: https://github.com/vlang-association/docs/actions/workflows/docs_ci.yml/badge.svg
+
 [AssociationUrl]: https://vosca.dev
 
 [ModulesUrl]: https://modules.vosca.dev
+
+[WorkflowUrl]: https://github.com/vlang-association/docs/commits/main
