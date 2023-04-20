@@ -120,7 +120,7 @@ fn main() {
 
 **hello_test.v:**
 
-```v
+```v failcompile
 module main
 
 fn test_hello() {

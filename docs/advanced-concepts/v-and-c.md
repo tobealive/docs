@@ -201,7 +201,7 @@ struct C.SomeCStruct {
 	implTraits  byte
 	memPoolData u16
 	// These members are part of sub data structures that can't
-    // currently be represented in V.
+	// currently be represented in V.
 	// Declaring them directly like this is sufficient for access.
 	// union {
 	// struct {

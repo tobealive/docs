@@ -126,21 +126,21 @@ println(embedded_file.to_string())
 
 ## Runtime reflection
 
-```v failcompile
+```v okfmt
 module main
 
 import v.reflection
 
 fn main() {
-    a := 100
-    typ := reflection.type_of(a)
-    println(typ.name) // int
+	a := 100
+	typ := reflection.type_of(a)
+	println(typ.name) // int
 }
 ```
 
 ## Compile-time reflection
 
-```v
+```v okfmt
 struct User {
 	name string
 	age  int
