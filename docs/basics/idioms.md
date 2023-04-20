@@ -57,6 +57,17 @@ for index, element in arr {}
 for element in arr {}
 ```
 
+## Return value or error
+
+```v nofmt failcompile
+fn first(arr []int) !int {
+	if arr.len == 0 {
+		return error('array is empty')
+	}
+	return arr[0]
+}
+```
+
 ## Error handling
 
 ```v nofmt failcompile
