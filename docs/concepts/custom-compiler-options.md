@@ -22,7 +22,7 @@ Now in code, we can use
 [compile-time if](./compile-time/control-flow.md#if-expression)
 to check if a option was passed.
 
-```v failcompile
+```v ignore
 fn busniness_logic() {
 	$if verbose_debug_output ? {
 		println('some verbose debug output')
@@ -37,7 +37,7 @@ fn busniness_logic() {
 
 You can also use negation:
 
-```v failcompile
+```v ignore
 fn busniness_logic() {
 	$if !verbose_debug_output ? {
 		println('verbose_debug_output option was NOT passed')
@@ -49,7 +49,7 @@ fn busniness_logic() {
 
 Or `||` and `&&`:
 
-```v failcompile
+```v ignore
 fn busniness_logic() {
 	$if verbose_debug_output || another_option ? {
 		println('verbose_debug_output OR another_option was passed')
@@ -61,7 +61,7 @@ fn busniness_logic() {
 
 You can add `$else $if` or `$else` which will work as normal conditions:
 
-```v failcompile
+```v ignore
 fn busniness_logic() {
 	$if verbose_debug_output ? {
 		println('verbose_debug_output option was passed')

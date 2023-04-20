@@ -57,7 +57,7 @@ Privacy means that access to them will be only within the current [module](../mo
 Fields access modifiers can be changed with `pub` and `mut` keywords.
 In total, there are 5 possible options:
 
-```v skip
+```v ignore
 struct Foo {
 	a int // private immutable (default)
 mut:
@@ -203,7 +203,7 @@ fn (p Person) birthday() {
 To change the fields of a structure in a method, you need to add `mut` before the name of the
 receiver:
 
-```v skip
+```v ignore
 struct Person {
 mut:
 	name string

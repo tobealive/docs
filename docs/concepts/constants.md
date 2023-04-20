@@ -11,7 +11,7 @@ const pi = 3.14
 
 Multiple constants can be declared in one block:
 
-```v skip
+```v ignore
 const (
 	pi = 3.14
 	e  = 2.71828

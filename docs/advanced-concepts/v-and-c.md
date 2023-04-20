@@ -11,7 +11,7 @@ Then:
   created your module with `v new` you already have **v.mod** file).
   For example:
 
-```vmod ignore
+```vmod
 Module {
 	name: 'mymodule',
 	description: 'My nice module wraps a simple C library.',
@@ -63,7 +63,7 @@ Currently the `linux`, `darwin` , `freebsd`, and `windows` flags are supported.
 > **Note**
 > Each flag must go on its own line (for now)
 
-```v skip
+```v ignore
 #flag linux -lsdl2
 #flag linux -Ivig
 #flag linux -DCIMGUI_DEFINE_ENUMS_AND_STRUCTS=1

@@ -52,7 +52,7 @@ blocks.
 This is useful, when you want to have an `[unsafe]` function that has checks before/after a certain
 unsafe operation, that will still benefit from V's safety features.
 
-```v none
+```v ignore
 [unsafe]
 fn risky_business() {
     // code that will be checked, perhaps checking pre conditions

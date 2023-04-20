@@ -7,7 +7,7 @@ which case it will contain the description of the entire project.
 
 `v.mod` example:
 
-```vmod skip
+```vmod
 Module {
     name: 'myproject'
     version: '0.1.0'
@@ -42,7 +42,7 @@ module to work with `v.mod` files in V code.
 
 To get `Manifest` struct from `v.mod` file, use `vmod.decode()`:
 
-```v skip
+```v ignore
 module main
 
 import v.vmod
