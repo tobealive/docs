@@ -123,7 +123,7 @@ fn main() {
 See all type options in
 [`reflection.VKind`](https://modules.vosca.dev/standard_library/v/reflection.html#VKind).
 
-## Get all functions/structs/etc.
+## Get all functions/structs/etc
 
 To get a list of all functions/structs/enumerations/etc., functions of the `reflection.get_*()`
 family are used.
