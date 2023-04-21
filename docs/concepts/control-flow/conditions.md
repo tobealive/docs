@@ -34,6 +34,8 @@ it to a variable, the else branch is mandatory.
 Therefore, there is no ternary operator (`condition ? then : else`) because ordinary `if` works fine
 in this role.
 
+### If unwrapping
+
 To handle Result/Optional types, there is a special `if`:
 
 ```v play
@@ -42,7 +44,7 @@ struct User {
 	name string
 }
 
-fn get_user(id int) ?User {
+fn get_user(id int) !User {
 	if id == 1 {
 		return User{
 			id: 1
