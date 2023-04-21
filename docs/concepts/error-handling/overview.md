@@ -66,7 +66,7 @@ This will be discussed in the next article.
 
 Unlike Go with return errors or unchecked exceptions in Java, V does not allow you to ignore errors.
 This means that if an Option or Result type is returned from a function, then you must process it
-before using it value.
+before using its value.
 
 ### Propagating none/errors
 
@@ -291,8 +291,26 @@ if resp := http.get('https://google.com') {
 In the example above, `http.get()` returns `!http.Response`.
 The `if` branch will only be executed if `http.get()` returns a value, not an error.
 If `http.get()` returns an error, the `else` branch will be executed.
+
 As with the `or` block, the `else` block defines a special variable `err` that contains the error
 that was returned from the function.
+
+If unwrapping can be used anywhere an `or` block can be used, for example, for map/array access:
+
+```v play
+mp := {
+	'a': 1
+	'b': 2
+}
+
+if val := mp['c'] {
+	println(val)
+} else {
+	println('key not found')
+}
+
+// key not found
+```
 
 ### Force unwrapping
 
