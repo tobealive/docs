@@ -112,8 +112,10 @@ fn (o Optional[T]) or_else(default T) T {
 }
 
 fn main() {
-	op := Optional[string]{is_defined: false}
-	println(op.or_else("default")) // default
+	op := Optional[string]{
+		is_defined: false
+	}
+	println(op.or_else('default')) // default
 }
 ```
 
@@ -130,18 +132,26 @@ struct Optional[T] {
 
 fn (o Optional[T]) map[U](f fn (T) U) Optional[U] {
 	if o.is_defined {
-		return Optional[U]{value: f(o.value)}
+		return Optional[U]{
+			value: f(o.value)
+		}
 	}
-	return Optional[U]{is_defined: false}
+	return Optional[U]{
+		is_defined: false
+	}
 }
 
 fn main() {
-	op := Optional[string]{value: '100.5'}
+	op := Optional[string]{
+		value: '100.5'
+	}
 	println(op.map(fn (str string) int {
 		return str.int()
 	})) // Optional[int]{value: 100'}
 
-	op2 := Optional[string]{is_defined: false}
+	op2 := Optional[string]{
+		is_defined: false
+	}
 	println(op2.map(fn (str string) int {
 		return str.int()
 	})) // Optional[int]{is_defined: false}
@@ -284,7 +294,7 @@ fn myprintln[T](data T) {
 	}
 }
 
-myprintln([1,2,3])
+myprintln([1, 2, 3])
 // array: [
 // 1,
 // 2,
@@ -292,8 +302,8 @@ myprintln([1,2,3])
 // ]
 
 myprintln({
-	"key1": 100
-	"key2": 200
+	'key1': 100
+	'key2': 200
 })
 // map: {
 // 	  (key) key1

@@ -49,7 +49,7 @@ println('\xc0'[0]) // u8(0xc0)
 
 Or using octal escape `\###` notation where `#` is an octal digit:
 
-```v play
+```v play ignore
 println('\141ardvark') == 'aardvark' // true
 ```
 

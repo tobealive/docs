@@ -14,11 +14,11 @@ fn main() {
 	y := true
 	if x {
 		if y {
-		    unsafe {
+			unsafe {
 				goto my_label
 			}
 			println('never reached')
-        }
+		}
 	}
 	my_label:
 	println('hello')

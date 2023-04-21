@@ -6,7 +6,7 @@ For example:
 
 ```v play
 fn main() {
-    println('Hello, Interactive Playground!')
+	println('Hello, Interactive Playground!')
 }
 ```
 

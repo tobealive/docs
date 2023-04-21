@@ -174,7 +174,7 @@ displaying a message to the user.
 The `or` block can also return values, this can be useful if you want to return a default value on
 error/none:
 
-```v play
+```v play ignore
 struct User {
 	id   int
 	name string
@@ -207,7 +207,7 @@ fn main() {
 V uses the last statement in the `or` block as the value, so the following example will return
 the `default_user` variable from it:
 
-```v play
+```v play ignore
 struct User {
 	id   int
 	name string
@@ -341,18 +341,14 @@ not return any value.
 import net.http
 
 fn foo() ! {
-	resp := http.get("https://gogle.com")!
+	resp := http.get('https://gogle.com')!
 	println(resp.body)
 }
 
 fn main() {
-	foo() or {
-		panic(err)
-	}
+	foo() or { panic(err) }
 
-	a := foo() or {
-		panic(err)
-	}
+	a := foo() or { panic(err) }
 	// assignment mismatch: 1 variable(s) but `foo()` returns 0 value(s)
 }
 ```

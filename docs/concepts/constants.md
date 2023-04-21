@@ -42,7 +42,7 @@ fn rgb(r int, g int, b int) Color {
 
 const (
 	numbers = [1, 2, 3]
-	red = Color{
+	red     = Color{
 		r: 255
 		g: 0
 		b: 0

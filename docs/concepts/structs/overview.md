@@ -145,7 +145,7 @@ fn (p Person) say_hi() {
 
 p := Person{
 	name: 'Bob'
-	age:  20
+	age: 20
 }
 p.say_hi() // Hi, my name is Bob
 ```
@@ -171,7 +171,7 @@ fn (p &Person) say_hi() {
 
 p := Person{
 	name: 'Bob'
-	age:  20
+	age: 20
 }
 p.say_hi() // Hi, my name is Bob
 ```
@@ -465,8 +465,8 @@ struct Book {
 
 book := Book{
 	author: struct {
-	    name: 'Samantha Black'
-	    age: 24
+		name: 'Samantha Black'
+		age: 24
 	}
 }
 println(book.author.name) // Samantha Black

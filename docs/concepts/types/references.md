@@ -120,7 +120,7 @@ Or use `ptr_str()`:
 
 ```v play
 struct Foo {
-    abc int
+	abc int
 }
 
 foo := Foo{}

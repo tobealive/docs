@@ -59,7 +59,7 @@ for element in arr {}
 
 ## Return value or error
 
-```v nofmt failcompile
+```v nofmt
 fn first(arr []int) !int {
 	if arr.len == 0 {
 		return error('array is empty')

@@ -42,8 +42,8 @@ If the base type is a structure, then all fields are also inherited:
 type RawHtml = string
 
 fn main() {
-    s := RawHtml('<html><html/>')
-    println(s.len) // 13
+	s := RawHtml('<html><html/>')
+	println(s.len) // 13
 }
 ```
 

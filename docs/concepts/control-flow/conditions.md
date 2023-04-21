@@ -184,7 +184,7 @@ Constants can also be used in the range branch expressions.
 ```v play
 const (
 	start = 1
-    end = 10
+	end   = 10
 )
 
 val := 2

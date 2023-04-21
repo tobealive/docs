@@ -31,16 +31,16 @@ interface Speaker {
 struct Dog {}
 
 fn (d Dog) speak(msg string) string {
-    return '${msg}. Woof, woof!'
+	return '${msg}. Woof, woof!'
 }
 
 fn greet(s Speaker) {
-    println(s.speak("Hello"))
+	println(s.speak('Hello'))
 }
 
 fn main() {
-    d := Dog{}
-    greet(d) // Hello. Woof, woof!
+	d := Dog{}
+	greet(d) // Hello. Woof, woof!
 }
 ```
 
@@ -122,28 +122,28 @@ interface Speaker {
 struct Dog {}
 
 fn (d Dog) speak(msg string) string {
-    return '${msg}. Woof, woof!'
+	return '${msg}. Woof, woof!'
 }
 
 struct Cat {}
 
 fn (c Cat) speak(msg string) string {
-    return '${msg}. Meow, meow!'
+	return '${msg}. Meow, meow!'
 }
 
 fn greet(s Speaker) {
-    if s is Dog {
-        println('a dog speaks: ${s.speak("Hello")}')
-    } else if s is Cat {
-        println('a cat speaks: ${s.speak("Hello")}')
-    } else {
-        println('something else')
-    }
+	if s is Dog {
+		println('a dog speaks: ${s.speak('Hello')}')
+	} else if s is Cat {
+		println('a cat speaks: ${s.speak('Hello')}')
+	} else {
+		println('something else')
+	}
 }
 
 fn main() {
-    d := Dog{}
-    greet(d) // a dog speaks: Hello. Woof, woof!
+	d := Dog{}
+	greet(d) // a dog speaks: Hello. Woof, woof!
 }
 ```
 

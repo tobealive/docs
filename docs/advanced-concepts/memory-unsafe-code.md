@@ -27,7 +27,8 @@ unsafe {
 	p[1] = `e`
 	p[2] = `l`
 }
-p++ // warning: pointer arithmetic is only allowed in `unsafe` blocks
+p++
+// warning: pointer arithmetic is only allowed in `unsafe` blocks
 
 unsafe {
 	p++ // ok

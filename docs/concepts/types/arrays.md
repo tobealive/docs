@@ -161,8 +161,8 @@ can contain several statements:
 ```v play
 mut nums := [1, 2, 3]
 println(nums[3] or {
-    println('index out of range')
-    100
+	println('index out of range')
+	100
 })
 // index out of range
 // 100

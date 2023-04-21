@@ -26,7 +26,7 @@ To print to the console, use the `print` or `println` functions.
 ```v play
 print('Hello,')
 print(' World!')
-print("\n")
+print('\n')
 ```
 
 `println` prints the value passed to it to standard output and adds a newline
@@ -110,7 +110,7 @@ You can define several constants with next syntax:
 ```v play
 const (
 	name = 'V'
-	age = 4
+	age  = 4
 )
 
 fn main() {
@@ -227,10 +227,10 @@ fn greet(g Greeter) {
 }
 
 fn main() {
-    p := Person{
-        name: 'Bob'
-    }
-    greet(p)
+	p := Person{
+		name: 'Bob'
+	}
+	greet(p)
 }
 ```
 
@@ -292,7 +292,7 @@ for i := 0; i < 10; i++ {
 or
 
 ```v play
-for i in 0..10 {
+for i in 0 .. 10 {
 	println(i)
 }
 ```
@@ -328,7 +328,7 @@ match age {
 Or for sum types:
 
 ```v play
-type Status = string | int
+type Status = int | string
 
 fn get_status() Status {
 	return 'OK'

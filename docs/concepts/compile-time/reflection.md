@@ -55,16 +55,16 @@ or by field type:
 
 ```v play
 struct User {
-    name string
-    age  int
+	name string
+	age  int
 }
 
 fn main() {
-    $for field in User.fields {
-        $if field.typ is string {
-            println('found string field')
-        }
-    }
+	$for field in User.fields {
+		$if field.typ is string {
+			println('found string field')
+		}
+	}
 }
 ```
 
@@ -75,19 +75,19 @@ an object of that structure using the syntax `object.$(field.name)`:
 
 ```v play
 struct User {
-    name string
-    age  int
+	name string
+	age  int
 }
 
 fn main() {
-    user := User{
-        name: 'John'
-        age: 25
-    }
-    $for field in User.fields {
-        print('${field.name}: ')
-        println(user.$(field.name))
-    }
+	user := User{
+		name: 'John'
+		age: 25
+	}
+	$for field in User.fields {
+		print('${field.name}: ')
+		println(user.$(field.name))
+	}
 }
 
 // name: John
@@ -98,21 +98,21 @@ You can also overwrite object field values:
 
 ```v play
 struct User {
-    name string
-    age  int
+	name string
+	age  int
 }
 
 fn main() {
-    user := User{
-        name: 'John'
-        age: 25
-    }
-    $for field in User.fields {
+	user := User{
+		name: 'John'
+		age: 25
+	}
+	$for field in User.fields {
 		$if field.typ is string {
-        	user.$(field.name) = 'Mark'
+			user.$(field.name) = 'Mark'
 		}
-    }
-    println(user)
+	}
+	println(user)
 }
 
 // User{
@@ -186,24 +186,24 @@ struct App {}
 fn (mut app App) method_one() {}
 
 fn (mut app App) method_two() int {
-    return 0
+	return 0
 }
 
 fn (mut app App) method_three(s string) string {
-    return s
+	return s
 }
 
 fn main() {
-    app := App{}
-    $for method in App.methods {
-        $if method.typ is fn (string) string {
-            println(app.$method('hello'))
-        }
+	app := App{}
+	$for method in App.methods {
+		$if method.typ is fn (string) string {
+			println(app.$method('hello'))
+		}
 
-        $if method.typ is fn () int {
-            println(app.$method())
-        }
-    }
+		$if method.typ is fn () int {
+			println(app.$method())
+		}
+	}
 }
 ```
 
@@ -215,7 +215,7 @@ You can see what fields this type has in
 [Standard Library API documentation](https://modules.vosca.dev/standard_library/builtin.html#StructAttribute).
 
 ```v play
-[name: "user"]
+[name: 'user']
 union User {
 	name string
 	age  int
@@ -241,18 +241,18 @@ You can see what fields this type has in
 
 ```v play
 enum Color {
-    red
-    green
-    blue
+	red
+	green
+	blue
 }
 
 fn main() {
-    $for value in Color.values {
-        println("${value.name} has value ${value.value}")
-    }
-    // red has value 0
-    // green has value 1
-    // blue has value 2
+	$for value in Color.values {
+		println('${value.name} has value ${value.value}')
+	}
+	// red has value 0
+	// green has value 1
+	// blue has value 2
 }
 ```
 

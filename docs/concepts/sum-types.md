@@ -22,10 +22,10 @@ Now let us try to use it:
 type Width = int | string
 
 fn main() {
-    int_width := Width(10)
-    println(int_width)
-    string_width := Width('calc(100% - 100px)')
-    println(string_width)
+	int_width := Width(10)
+	println(int_width)
+	string_width := Width('calc(100% - 100px)')
+	println(string_width)
 }
 ```
 
@@ -165,9 +165,9 @@ The `is` operator checks if the value stored in the sum type is of the specified
 type Width = int | string
 
 fn main() {
-    width := Width(10)
-    println(width is int) // true
-    println(width is string) // false
+	width := Width(10)
+	println(width is int) // true
+	println(width is string) // false
 }
 ```
 
@@ -177,9 +177,9 @@ The `as` operator casts the value stored in the sum type to the specified type:
 type Width = int | string
 
 fn main() {
-    width := Width(10)
-    int_width := width as int
-    println(int_width.hex2()) // 0xa
+	width := Width(10)
+	int_width := width as int
+	println(int_width.hex2()) // 0xa
 }
 ```
 
@@ -195,10 +195,10 @@ The V compiler can automatically type cast inside `if` and `match` blocks:
 type Width = int | string
 
 fn main() {
-    width := Width(10)
-    if width is int {
-        println(width.hex2()) // 0xa
-    }
+	width := Width(10)
+	if width is int {
+		println(width.hex2()) // 0xa
+	}
 }
 ```
 
@@ -214,11 +214,11 @@ That is why you have to declare a `mut` before the `is` expression:
 type Width = int | string
 
 fn main() {
-    mut width := Width(10)
-    if mut width is int {
-        println(width.hex2()) // 0xa
-    }
-Ъ
+	mut width := Width(10)
+	if mut width is int {
+		println(width.hex2()) // 0xa
+	}
+}
 ```
 
 Otherwise `width` would keep its original type.
@@ -229,22 +229,22 @@ This works for both, simple variables and complex expressions like `user.name`:
 type Width = int | string
 
 struct Component {
-    width Width
+	width Width
 }
 
 fn main() {
-    component := Component{
-        width: Width(10)
-    }
-    match component.width {
-        int {
-            // smartcasted to int
-            println(component.width.hex2()) // 0xa
-        }
-        string {
-            // smartcasted to string
-            println(component.width.len)
-        }
-    }
+	component := Component{
+		width: Width(10)
+	}
+	match component.width {
+		int {
+			// smartcasted to int
+			println(component.width.hex2()) // 0xa
+		}
+		string {
+			// smartcasted to string
+			println(component.width.len)
+		}
+	}
 }
 ```

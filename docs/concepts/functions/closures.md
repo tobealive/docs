@@ -12,7 +12,7 @@ the `fn` keyword inside square brackets:
 my_int := 1
 
 my_closure := fn [my_int] () {
-//               ^^^^^^^^ this is a list of captured variables
+	//           ^^^^^^^^ this is a list of captured variables
 	println(my_int)
 }
 

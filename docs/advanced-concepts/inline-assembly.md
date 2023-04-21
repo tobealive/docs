@@ -1,6 +1,6 @@
 # Inline assembly
 
-```v play
+```v play ignore
 a := 100
 b := 20
 mut c := 0

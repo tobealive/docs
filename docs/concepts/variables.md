@@ -74,7 +74,7 @@ println('${a}, ${b}') // 1, 0
 Unlike most languages, variable shadowing is not allowed. Declaring a variable with a name
 that is already used in a parent scope will cause a compilation error.
 
-```v play
+```v play ignore
 fn main() {
 	a := 10
 	if true {

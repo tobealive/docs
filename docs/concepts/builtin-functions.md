@@ -40,8 +40,8 @@ This builtin function can be used in two ways:
 
 ```v play
 struct User {
-    name string
-    age  int
+	name string
+	age  int
 }
 
 user := User{}

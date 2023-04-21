@@ -22,7 +22,7 @@ V provides a handy `@VMODROOT` constant to get the path of the folder with `v.mo
 
 ```v play
 fn main() {
-    println(@VMODROOT)
+	println(@VMODROOT)
 }
 ```
 
@@ -30,7 +30,7 @@ To get content of the nearest `v.mod` file, use `@VMOD_FILE`:
 
 ```v play
 fn main() {
-    println(@VMOD_FILE)
+	println(@VMOD_FILE)
 }
 ```
 

@@ -186,7 +186,7 @@ module main
 import arrays
 
 fn test_arrays() ! {
-    assert arrays.min([1, 2, 3])! == 1
+	assert arrays.min([1, 2, 3])! == 1
 }
 ```
 

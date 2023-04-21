@@ -67,8 +67,8 @@ To delete an element from a map, use the `map.delete()` method:
 
 ```v play
 mut m := {
-    'one': 1
-    'two': 2
+	'one': 1
+	'two': 2
 }
 m.delete('one')
 println(m) // {'two': 2}
@@ -83,8 +83,8 @@ To get an element from a map, use the `map[key]` expression:
 
 ```v play
 m := {
-    'one': 1
-    'two': 2
+	'one': 1
+	'two': 2
 }
 println(m['one']) // 1
 ```
@@ -95,8 +95,8 @@ for a value type:
 
 ```v play
 m := {
-    'one': 1
-    'two': 2
+	'one': 1
+	'two': 2
 }
 println(m['bad_key']) // 0
 ```
@@ -106,8 +106,8 @@ use the `or` block:
 
 ```v play
 m := {
-    'one': 1
-    'two': 2
+	'one': 1
+	'two': 2
 }
 println(m['bad_key'] or { 100 }) // 100
 ```
@@ -118,12 +118,12 @@ can contain several statements:
 
 ```v play
 m := {
-    'one': 1
-    'two': 2
+	'one': 1
+	'two': 2
 }
 println(m['bad_key'] or {
-    println('key not found')
-    100
+	println('key not found')
+	100
 })
 // key not found
 // 100
@@ -134,10 +134,10 @@ expression using `if` unwrapping:
 
 ```v play
 m := {
-    'abc': 'def'
+	'abc': 'def'
 }
 if v := m['abc'] {
-    println('the map value for that key is: ${v}')
+	println('the map value for that key is: ${v}')
 }
 ```
 
@@ -147,8 +147,8 @@ To check if a key exists in a map, use the `key in map` expression:
 
 ```v play
 m := {
-    'one': 1
-    'two': 2
+	'one': 1
+	'two': 2
 }
 println('one' in m) // true
 println('three' in m) // false
@@ -158,8 +158,8 @@ println('three' in m) // false
 
 ```v play
 m := {
-    'one': 1
-    'two': 2
+	'one': 1
+	'two': 2
 }
 println('one' !in m) // false
 println('three' !in m) // true
@@ -171,8 +171,8 @@ To get all the keys from the map, use the `map.keys()` method:
 
 ```v play
 m := {
-    'one': 1
-    'two': 2
+	'one': 1
+	'two': 2
 }
 println(m.keys()) // ['one', 'two']
 ```
@@ -183,8 +183,8 @@ To get all values from a map, use the `map.values()` method:
 
 ```v play
 m := {
-    'one': 1
-    'two': 2
+	'one': 1
+	'two': 2
 }
 println(m.values()) // [1, 2]
 ```
@@ -195,8 +195,8 @@ To check if a value is in a map, you can use a combination of `map.keys()` and t
 
 ```v play
 m := {
-    'one': 1
-    'two': 2
+	'one': 1
+	'two': 2
 }
 println(1 in m.values()) // true
 println(3 in m.values()) // false
@@ -226,8 +226,8 @@ There are three ways to solve this problem:
 
 ```v play
 mut m := {
-    'one': 1
-    'two': 2
+	'one': 1
+	'two': 2
 }
 mut m2 := &m
 println(m2) // &{'one': 1, 'two': 2}
@@ -247,8 +247,8 @@ See [References](./references.md) article for more information about how to use 
 
 ```v play
 m := {
-    'one': 1
-    'two': 2
+	'one': 1
+	'two': 2
 }
 m2 := m.clone()
 println(m2) // {'one': 1, 'two': 2}
@@ -261,8 +261,8 @@ This method creates a copy of the map, so changes in one map will not be visible
 
 ```v play
 mut m := {
-    'one': 1
-    'two': 2
+	'one': 1
+	'two': 2
 }
 m2 := m.move()
 println(m2) // {'one': 1, 'two': 2}

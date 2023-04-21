@@ -53,7 +53,7 @@ the compiler will throw an error.
 
 ```v play
 struct my_struct {
-//     ^^^^^^^^^ error: struct name `my_struct` must begin with capital letter
-    name string
+	// ^^^^^^^^^ error: struct name `my_struct` must begin with capital letter
+	name string
 }
 ```
