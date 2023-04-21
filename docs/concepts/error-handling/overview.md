@@ -131,7 +131,9 @@ If the function returns a value, then the `or` block will be ignored.
 The `or` block is specified after a function call that returns a Result or Option type.
 In the case of Option types, it can also be used for structure fields, function parameters,
 and so on.
-You cannot use the `or` block for regular types.
+
+> **Note**
+> You cannot use the `or` block for regular types.
 
 Let us look at a simple example where we want to find a user by id in the database:
 
