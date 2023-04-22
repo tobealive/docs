@@ -376,7 +376,10 @@ custom_sort_fn := fn (a &User, b &User) int {
 	}
 	return 0
 }
+
 users.sort_with_compare(custom_sort_fn)
+
+println(users)
 ```
 
 ## Array slices
