@@ -239,5 +239,5 @@ With `@VEXE` you can call the V compiler and run another test file.
 
 All **_test.v** files (both external and internal ones) are compiled as *separate programs*.
 In other words, you may have as many **_test.v** files, and tests in them as you like, they will
-not affect the compilation of your other code in **.v.v** files normally at all, but only when you
+not affect the compilation of your other code in **.v** files normally at all, but only when you
 do explicitly `v file_test.v` or `v test .`.
