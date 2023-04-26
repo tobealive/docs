@@ -312,7 +312,7 @@ See [For loop](../concepts/control-flow/loops.md) for more information.
 
 ```v play
 age := 4
-match {
+match true {
 	age < 18 {
 		println('You are a child!')
 	}
