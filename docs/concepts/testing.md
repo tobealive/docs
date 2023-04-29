@@ -219,6 +219,19 @@ This is useful if you want to put **.v** files with invalid V source code, or ot
 including known failing ones, that should be run in a specific way/options by a parent **_test.v**
 file.
 
+## Running test in one thread
+
+By default, to speed up the testing process, tests are run in multiple threads.
+However, sometimes you want the tests to run sequentially, for example, if the tests interact with
+the same resource, or if the tests need to run in a specific order.
+
+To run tests on a single thread, use the `VJOBS` environment variable, which specifies the number of
+threads to be used for testing:
+
+```shell
+VJOBS=1 v test .
+```
+
 ## Running other test files in a test
 
 If necessary, you can run other test files inside the test file.
