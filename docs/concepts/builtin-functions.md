@@ -53,28 +53,9 @@ println(sizeof(1)) // 8
 
 ## `typeof`: Getting the type of expression
 
-`typeof` returns the type of expression in `TypeInfo` struct.
-
-```v play
-struct User {
-	name string
-	age  int
-}
-
-user := User{}
-println(typeof(user)) // User
-println(typeof(user).idx) // 94
-println(typeof(user).name) // User
-```
-
-`TypeInfo` struct definition:
-
-```v
-struct TypeInfo {
-	idx  int    // index of the type in the type table
-	name string // name of the type
-}
-```
+See
+[`typeof` description](./compile-time/reflection.md#typeof-getting-the-type-of-expression)
+in the Compile Time Reflection section.
 
 ## `isreftype`: Checking if a type is a reference type
 

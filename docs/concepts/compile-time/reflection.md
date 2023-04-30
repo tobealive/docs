@@ -5,6 +5,64 @@ time.
 With its help, you can, for example, make your own efficient serializer for any data format that
 will be generated during compilation.
 
+## `typeof`: Getting the type of expression
+
+`typeof` returns the type of expression in `TypeInfo` struct.
+
+This builtin function can be used in two ways:
+
+- `typeof[type]()` – returns the type information of the type
+- `typeof(expr)` – returns the type information of the expression type
+
+```v play
+struct User {
+	name string
+	age  int
+}
+
+user := User{}
+println(typeof(user)) // User
+println(typeof(user).idx) // 96
+println(typeof(user).name) // User
+
+println(typeof[User]().name) // User
+println(typeof[int]().name) // int
+```
+
+`TypeInfo` struct definition:
+
+```v
+struct TypeInfo {
+	idx  int    // index of the type in the type table
+	name string // name of the type
+}
+```
+
+When compiled, V assigns a unique index to each type in the program, so you can match types by
+comparing their indexes:
+
+```v play
+struct User {
+    name string
+    age  int
+}
+
+fn main() {
+    user := User{}
+    if typeof(user.name).idx == typeof[string]().idx {
+        println('user.name is a string')
+    }
+}
+```
+
+Unlike `$if user.name is string`, which will be discussed later, this check can express conditions
+more flexibly.
+
+> **Note**
+> Although the compiler will replace `typeof(user.name).idx` with a constant, the conditions will
+> still be checked at runtime, unlike `$if user.name is string`, which will be checked at
+> compile-time (and removed from the binary if the condition is always false).
+
 ## Fields
 
 Each
