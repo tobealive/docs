@@ -15,14 +15,14 @@ strings that do not contain single quotes.
 That is, as long as the string does not contain other single quotes,
 it is better to use single quotes:
 
-```v play
+```v
 println('Just string')
 ```
 
 But if the string contains single quotes, then it is better to use double quotes to
 avoid having to escape the single quotes:
 
-```v play
+```v
 println("String with 'single quotes'")
 ```
 
@@ -31,25 +31,25 @@ when possible.
 
 Escaping in strings is supported as in C:
 
-```v nofmt play
+```v nofmt
 println('\r\n'.len) // 2
 ```
 
 Since strings are stored in UTF-8, any characters can be used, including emoji:
 
-```v play
+```v
 println('🌎') // 🌎
 ```
 
 Arbitrary bytes can be directly specified using `\x##` notation where `#` is a hex digit:
 
-```v play
+```v
 println('\xc0'[0]) // u8(0xc0)
 ```
 
 Or using octal escape `\###` notation where `#` is an octal digit:
 
-```v play ignore
+```v ignore
 println('\141ardvark') == 'aardvark' // true
 ```
 
