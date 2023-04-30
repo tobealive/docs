@@ -21,6 +21,7 @@ struct Button {
 
 mut button := Button{
 	title: 'Click me'
+	width: 3
 	height: 2
 }
 
