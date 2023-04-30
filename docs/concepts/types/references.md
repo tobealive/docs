@@ -212,9 +212,7 @@ fn main() {
 	foo := Foo{}
 	println(foo.parent) // Option(none)
 
-	foo2 := get_foo_or_none() or {
-		return
-	}
+	foo2 := get_foo_or_none() or { return }
 	println(foo2)
 	// Foo{
 	//   parent: Option(none)

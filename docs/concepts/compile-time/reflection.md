@@ -43,15 +43,15 @@ comparing their indexes:
 
 ```v play
 struct User {
-    name string
-    age  int
+	name string
+	age  int
 }
 
 fn main() {
-    user := User{}
-    if typeof(user.name).idx == typeof[string]().idx {
-        println('user.name is a string')
-    }
+	user := User{}
+	if typeof(user.name).idx == typeof[string]().idx {
+		println('user.name is a string')
+	}
 }
 ```
 

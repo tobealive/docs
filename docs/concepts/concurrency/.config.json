@@ -1,0 +1,25 @@
+{
+  "title": "Concurrency",
+  "contents": [
+    {
+      "title": "Overview",
+      "url": "overview.md"
+    },
+    {
+      "title": "Channels",
+      "url": "channels.md"
+    },
+    {
+      "title": "Mutexes",
+      "url": "mutexes.md"
+    },
+    {
+      "title": "Shared Objects",
+      "url": "shared-objects.md"
+    },
+    {
+      "title": "WaitGroups",
+      "url": "wait-groups.md"
+    }
+  ]
+}
